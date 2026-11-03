@@ -178,7 +178,7 @@ export function InquiryForm({ topics, products }: { topics: Group[]; products: G
                 initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.4, delay: 0.55, ease: [0.25, 1, 0.5, 1] }}
               />
             </svg>
-            <h3 className="mt-6 text-2xl font-semibold tracking-tight text-ink-950">Request received</h3>
+            <h3 className="mt-6 text-2xl tracking-tight text-ink-950">Request received</h3>
             <p className="mt-3 max-w-lg leading-relaxed text-muted">
               Thank you{values.name ? `, ${values.name.trim().split(/\s+/)[0]}` : ""}. Your request has been saved and our team
               will reply by {replyChannel(values)}.
@@ -210,7 +210,7 @@ export function InquiryForm({ topics, products }: { topics: Group[]; products: G
           >
             <div ref={summaryRef} tabIndex={-1} className="outline-none" aria-live="assertive">
               {errorList.length > 0 && (
-                <div role="alert" className="mb-8 rounded-xl border border-red-700/20 bg-red-50 p-5 text-[0.95rem] text-red-900">
+                <div role="alert" className="mb-8 border border-red-700/20 bg-red-50 p-5 text-[0.95rem] text-red-900">
                   <p className="flex items-center gap-2 font-semibold">
                     <CircleAlert aria-hidden className="size-4" />
                     {errors.form ? "Your request wasn't sent" : "Please check the highlighted fields"}
@@ -240,7 +240,7 @@ export function InquiryForm({ topics, products }: { topics: Group[]; products: G
                   return (
                     <label
                       key={t.value}
-                      className={`relative flex cursor-pointer flex-col rounded-xl border px-4 py-3.5 transition-[border-color,background-color,box-shadow] duration-150 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-600 has-[:focus-visible]:ring-offset-2 ${
+                      className={`relative flex cursor-pointer flex-col border px-4 py-3.5 transition-[border-color,background-color,box-shadow] duration-150 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-600 has-[:focus-visible]:ring-offset-2 ${
                         checked ? "border-ink-950 bg-ink-950 text-white" : "border-line-strong/80 bg-white hover:border-ink-500"
                       }`}
                     >
@@ -285,7 +285,7 @@ export function InquiryForm({ topics, products }: { topics: Group[]; products: G
                   return (
                     <label
                       key={c}
-                      className={`inline-flex h-10 cursor-pointer items-center rounded-full border px-4 text-sm capitalize transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-600 has-[:focus-visible]:ring-offset-2 ${
+                      className={`inline-flex h-10 cursor-pointer items-center border px-4 text-sm capitalize transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-600 has-[:focus-visible]:ring-offset-2 ${
                         checked ? "border-brand-700 bg-brand-50 text-brand-800" : "border-line-strong/80 bg-white text-ink-800 hover:border-ink-500"
                       }`}
                     >
@@ -328,12 +328,12 @@ export function InquiryForm({ topics, products }: { topics: Group[]; products: G
                 <Field id={`${formId}-product`} label="Product" optional>
                   {(props) =>
                     values.productSlug && productLabel ? (
-                      <div className="flex h-12 items-center justify-between rounded-xl border border-brand-700/25 bg-brand-50 pr-2 pl-4 text-brand-900">
+                      <div className="flex h-12 items-center justify-between border border-brand-700/25 bg-brand-50 pr-2 pl-4 text-brand-900">
                         <span className="truncate">{productLabel}</span>
                         <button
                           type="button"
                           onClick={() => set("productSlug", "")}
-                          className="inline-flex size-8 items-center justify-center rounded-full hover:bg-brand-100"
+                          className="inline-flex size-8 items-center justify-center hover:bg-brand-100"
                           aria-label={`Remove ${productLabel}`}
                         >
                           <X aria-hidden className="size-4" />
@@ -410,17 +410,21 @@ export function InquiryForm({ topics, products }: { topics: Group[]; products: G
               <button
                 type="submit"
                 disabled={submitting}
-                className="group inline-flex h-13 items-center justify-center gap-2 rounded-full bg-ink-950 px-7 font-medium text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.08)] transition-[background-color,box-shadow,transform] duration-200 hover:bg-ink-800 hover:shadow-[0_12px_28px_-14px_rgb(5_11_29/0.7)] active:translate-y-px disabled:cursor-wait disabled:opacity-70"
+                className="group inline-flex h-12 items-stretch justify-center bg-ink-950 text-white transition-[background-color,transform] duration-200 hover:bg-ink-800 active:translate-y-px disabled:cursor-wait disabled:opacity-70"
               >
                 {submitting ? (
                   <>
-                    <LoaderCircle aria-hidden className="size-4 animate-spin" />
-                    Sending&hellip;
+                    <span className="flex items-center px-6">Sending&hellip;</span>
+                    <span className="flex w-11 items-center justify-center bg-brand-600">
+                      <LoaderCircle aria-hidden className="size-4 animate-spin" />
+                    </span>
                   </>
                 ) : (
                   <>
-                    Send request
-                    <ArrowRight aria-hidden className="arrow-nudge size-4" />
+                    <span className="flex items-center px-6">Send request</span>
+                    <span className="flex w-11 items-center justify-center bg-brand-600 transition-colors group-hover:bg-brand-700">
+                      <ArrowRight aria-hidden className="arrow-nudge size-4" />
+                    </span>
                   </>
                 )}
               </button>
@@ -504,7 +508,7 @@ function Field({
           "aria-invalid": Boolean(error),
           "aria-describedby": describedBy,
           "aria-required": required || undefined,
-          className: `block h-12 w-full rounded-xl border bg-white px-4 text-[0.98rem] text-ink-950 shadow-[inset_0_1px_2px_rgb(8_18_43/0.04)] transition-[border-color,box-shadow] duration-150 outline-none placeholder:text-ink-400 focus:ring-4 ${
+          className: `block h-12 w-full border bg-white px-4 text-[0.98rem] text-ink-950 shadow-[inset_0_1px_2px_rgb(8_18_43/0.04)] transition-[border-color,box-shadow] duration-150 outline-none placeholder:text-ink-400 focus:ring-4 ${
             error
               ? "border-red-700/60 focus:border-red-700 focus:ring-red-700/10"
               : "border-line-strong/80 hover:border-ink-400 focus:border-brand-600 focus:ring-brand-500/15"

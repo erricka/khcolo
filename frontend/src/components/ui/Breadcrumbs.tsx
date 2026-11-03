@@ -9,22 +9,22 @@ export type Crumb = { name: string; path: string };
 export function Breadcrumbs({ items, className = "" }: { items: Crumb[]; className?: string }) {
   return (
     <>
-      <nav aria-label="Breadcrumb" className={`enter text-eyebrow text-ink-400 ${className}`}>
+      <nav aria-label="Breadcrumb" className={`enter text-eyebrow text-muted ${className}`}>
         <ol className="flex flex-wrap items-center gap-x-2 gap-y-2">
           {items.map((item, i) => {
             const last = i === items.length - 1;
             return (
               <li key={item.path} className="flex items-center gap-2">
                 {last ? (
-                  <span aria-current="page" className="text-ink-200">
+                  <span aria-current="page" className="text-ink-950">
                     {item.name}
                   </span>
                 ) : (
                   <>
-                    <Link href={item.path} className="link-underline transition-colors hover:text-white">
+                    <Link href={item.path} className="link-underline transition-colors hover:text-ink-950">
                       {item.name}
                     </Link>
-                    <span aria-hidden className="text-ink-600">
+                    <span aria-hidden className="text-ink-300">
                       /
                     </span>
                   </>

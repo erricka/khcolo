@@ -18,7 +18,7 @@ export function OptionBlockView({ block, headingId }: { block: OptionBlock; head
         {block.layout === "tags" && (
           <ul className="flex flex-wrap gap-2" data-reveal>
             {block.tags.map((t) => (
-              <li key={t} className="rounded-full border border-line-strong/70 bg-white px-4 py-2 text-[0.95rem] text-ink-800 shadow-[var(--shadow-card)]">
+              <li key={t} className="border border-line bg-white px-4 py-2 text-[0.95rem] text-ink-800">
                 {t}
               </li>
             ))}
@@ -47,12 +47,12 @@ function Cards({ block }: { block: OptionBlock }) {
           data-reveal
           data-spotlight
           style={{ ["--i" as string]: i }}
-          className="relative flex flex-col rounded-2xl border border-line bg-white p-7 shadow-[var(--shadow-card)]"
+          className="relative flex flex-col border border-line bg-white p-7"
         >
-          <span aria-hidden className="text-xs font-semibold text-ink-400 tabular-nums">
-            {String(i + 1).padStart(2, "0")}
+          <span aria-hidden className="flex size-6 items-center justify-center bg-brand-600 font-mono text-[0.72rem] text-white tabular-nums">
+            {i + 1}
           </span>
-          <h3 className="mt-4 text-xl font-semibold tracking-tight text-ink-950">{card.title}</h3>
+          <h3 className="mt-5 text-[1.35rem] tracking-[-0.02em] text-ink-950">{card.title}</h3>
           {card.meta && <p className="text-eyebrow mt-2.5 text-brand-700">{card.meta}</p>}
           {card.body && <p className="mt-3 leading-relaxed text-muted">{card.body}</p>}
           {card.items.length > 0 && (
@@ -73,12 +73,12 @@ function Cards({ block }: { block: OptionBlock }) {
 
 function Table({ block }: { block: OptionBlock }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-white px-5 shadow-[var(--shadow-card)] md:px-0" data-reveal>
+    <div className="overflow-hidden border border-line bg-white px-5 md:px-0" data-reveal>
       <table className="table-stack w-full text-left text-[0.95rem]">
         <thead>
-          <tr className="border-b border-line bg-paper/60">
+          <tr className="border-b border-line bg-paper-2">
             {block.columns.map((c) => (
-              <th key={c} scope="col" className="text-eyebrow px-6 py-4 font-medium text-muted">
+              <th key={c} scope="col" className="text-eyebrow px-6 py-4 text-muted">
                 {c}
               </th>
             ))}
@@ -86,10 +86,10 @@ function Table({ block }: { block: OptionBlock }) {
         </thead>
         <tbody className="md:divide-y md:divide-line">
           {block.rows.map((row) => (
-            <tr key={row[0]} className="align-top transition-colors md:hover:bg-paper/50">
+            <tr key={row[0]} className="align-top transition-colors md:hover:bg-paper-2">
               {row.map((cell, ci) =>
                 ci === 0 ? (
-                  <th key={ci} scope="row" data-label={block.columns[ci]} className="px-6 py-5 font-semibold text-ink-950">
+                  <th key={ci} scope="row" data-label={block.columns[ci]} className="px-6 py-5 font-medium text-ink-950">
                     {cell}
                   </th>
                 ) : (

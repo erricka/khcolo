@@ -10,9 +10,9 @@ export function ProductCard({ product, headingLevel = "h3" }: { product: Product
   return (
     <article
       data-spotlight
-      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-[var(--shadow-card)] transition-[translate,box-shadow,border-color] duration-200 ease-[var(--ease-out-quart)] focus-within:-translate-y-[3px] hover:-translate-y-[3px] hover:border-brand-600/35 hover:shadow-[var(--shadow-lift)]"
+      className="group relative flex h-full flex-col overflow-hidden border border-line bg-white transition-[border-color] duration-200 ease-[var(--ease-out-quart)] focus-within:border-ink-950 hover:border-ink-950"
     >
-      <div className="relative m-2 aspect-[4/3] overflow-hidden rounded-xl bg-paper">
+      <div className="relative aspect-[4/3] overflow-hidden border-b border-line bg-paper-2">
         {product.image && (
           <Image
             src={product.image.src}
@@ -22,13 +22,13 @@ export function ProductCard({ product, headingLevel = "h3" }: { product: Product
             className="photo-multiply object-contain p-5 transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:scale-[1.035]"
           />
         )}
-        <span className="absolute top-3 left-3 rounded-full bg-white/85 px-2.5 py-1 text-[0.66rem] font-semibold tracking-[0.08em] text-ink-600 uppercase backdrop-blur">
+        <span className="text-eyebrow absolute top-0 left-0 border-r border-b border-line bg-white px-2.5 py-1.5 text-[0.66rem] text-ink-600">
           {product.facet}
         </span>
       </div>
-      <div className="flex flex-1 flex-col px-5 pt-3 pb-5">
+      <div className="flex flex-1 flex-col px-5 pt-5 pb-5">
         <p className="text-eyebrow text-brand-700">{brandLabel(product)}</p>
-        <Heading className="mt-2.5 text-[1.08rem] leading-snug font-semibold tracking-[-0.015em] text-ink-950">
+        <Heading className="mt-2.5 text-[1.1rem] leading-snug tracking-[-0.015em] text-ink-950">
           <Link href={routes.product(product.slug)} className="after:absolute after:inset-0 after:content-['']">
             {product.name}
           </Link>
@@ -36,12 +36,12 @@ export function ProductCard({ product, headingLevel = "h3" }: { product: Product
         <p className="mt-1 text-sm text-muted">{product.type}</p>
         <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Key specifications">
           {product.keySpecs.map((s) => (
-            <li key={s} className="rounded-md border border-line bg-paper/60 px-2 py-1 font-mono text-[0.7rem] text-ink-700">
+            <li key={s} className="border border-line bg-paper-2 px-2 py-1 font-mono text-[0.7rem] text-ink-700">
               {s}
             </li>
           ))}
         </ul>
-        <span aria-hidden className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-brand-700">
+        <span aria-hidden className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm text-brand-700">
           View details
           <ArrowRight className="arrow-nudge size-4" />
         </span>

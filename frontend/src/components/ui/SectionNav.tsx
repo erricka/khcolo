@@ -32,11 +32,11 @@ export function SectionNav({ items, label = "On this page" }: { items: { id: str
   return (
     <nav
       aria-label={label}
-      className="sticky top-[var(--header-h)] z-30 border-b border-line bg-paper/90 backdrop-blur-xl backdrop-saturate-150"
+      className="sticky top-[var(--header-h)] z-30 border-b border-line bg-white/92 backdrop-blur-xl backdrop-saturate-150"
     >
       <span aria-hidden className="scroll-progress absolute inset-x-0 -bottom-px h-[2px] bg-gradient-to-r from-brand-600 via-brand-400 to-accent-400" />
       <div className="container-site">
-        <ul className="-mx-1 flex gap-1 overflow-x-auto py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <ul className="-mx-1 flex overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {items.map((item) => {
             const isActive = item.id === active;
             return (
@@ -44,14 +44,14 @@ export function SectionNav({ items, label = "On this page" }: { items: { id: str
                 <a
                   href={`#${item.id}`}
                   aria-current={isActive ? "location" : undefined}
-                  className={`relative inline-flex h-10 items-center rounded-full px-4 text-sm transition-colors duration-200 ${
+                  className={`relative inline-flex h-12 items-center px-4 text-sm transition-colors duration-200 ${
                     isActive ? "text-ink-950" : "text-muted hover:text-ink-950"
                   }`}
                 >
                   {isActive && (
                     <m.span
                       layoutId="section-nav-pill"
-                      className="absolute inset-0 rounded-full border border-line-strong/70 bg-white shadow-[var(--shadow-card)]"
+                      className="absolute inset-x-4 bottom-0 h-0.5 bg-brand-600"
                       transition={{ type: "spring", stiffness: 420, damping: 36 }}
                     />
                   )}

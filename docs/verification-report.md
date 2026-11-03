@@ -9,14 +9,67 @@ end.
 
 | Area | Result |
 | --- | --- |
-| API test suite (`pytest`, 21 tests, real PostgreSQL) | 21 passed |
+| API test suite (`pytest`, 23 tests, real PostgreSQL) | 23 passed |
 | TypeScript (`tsc --noEmit`) and production build | Clean, no warnings; 57 routes pre-rendered |
 | No-JS crawl of all 48 sitemap URLs | 48 × 200, one H1 each, self-canonical, 145–160 char descriptions, OG image, valid JSON-LD |
 | Internal links found in HTML | 48 unique, none broken |
 | Redirects / status codes | All 9 edge cases as expected (below) |
 | Structured data (offline structural check) | 96 blocks across 48 pages, 0 issues |
-| Browser checks (Playwright, Chromium) | 19 of 19 passed |
-| Lighthouse (lab) | Accessibility, Best Practices and SEO 100 on all 10 runs; Performance 94–99 mobile, 100 desktop |
+| Browser checks (Playwright, Chromium) | 19 of 19 passed (first design); 22 of 22 after the redesign |
+| Lighthouse (lab) | Accessibility, Best Practices and SEO 100 on every run; Performance 94–97 mobile, 100 desktop after the redesign |
+
+## Redesign re-verification (Render-style light design)
+
+The site was restyled after launch review: white canvas, hairline cell grids, light display type,
+mono labels, square black buttons with a blue chevron block, a two-tone logo redrawn from the
+original artwork, and no dark sections. These checks were re-run on 3 November 2026 against a
+production build made with `SITE_ENV=production`, as on Render.
+
+| Check | Result |
+| --- | --- |
+| `tsc --noEmit` and `next build` | Clean; 57 routes |
+| API tests (`pytest`, real PostgreSQL) | 23 passed |
+| No-JS crawl of the 48 sitemap URLs | 48 × 200, one H1 each, title, 50+ char description, self-canonical, no `undefined`/`NaN` |
+| Internal links in HTML | 51 unique, all 200 or the planned 308 |
+| Home title and H1 contain "3CX" and "Bitrix24"; Organization and WebSite JSON-LD present | Yes |
+| Unknown URL | 404 |
+| Horizontal overflow and text clipped past the viewport edge, 9 templates at 360, 390, 768, 1024, 1440 px | None |
+| Console or page errors on those 9 templates at all five widths | None |
+| Solutions mega menu: opens with Enter, closes with Escape | Yes |
+| Mobile drawer: focus moves inside, Escape closes it | Yes |
+| Primary button hover: the blue block wipes across the whole button | Yes (`clip-path: inset(0)`) |
+| Reduced motion: marquee, caret, floating tiles, sparklines, pulses and travelling dots stopped; every reveal block visible after scrolling | Yes |
+| JavaScript disabled: every reveal block visible | Yes |
+| Empty inquiry: error summary shown, 5 fields marked `aria-invalid` | Yes |
+
+Lighthouse 12.8.2, mobile defaults (Moto G Power emulation, slow 4G, 4× CPU) unless marked desktop:
+
+| Page | Perf | A11y | Best practices | SEO | FCP | LCP | TBT | CLS |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| home (run 1) | 94 | 100 | 100 | 100 | 1.7 s | 2.9 s | 40 ms | 0 |
+| home (run 2) | 95 | 100 | 100 | 100 | 1.7 s | 2.9 s | 50 ms | 0 |
+| home, desktop | 100 | 100 | 100 | 100 | — | 0.5 s | 10 ms | 0 |
+| 3CX + Bitrix24 service | 96 | 100 | 100 | 100 | 1.5 s | 2.8 s | 50 ms | 0 |
+| IP phones category | 94 | 100 | 100 | 100 | 1.5 s | 3.0 s | 60 ms | 0 |
+| Yealink SIP-T46U product | 95 | 100 | 100 | 100 | 0.9 s | 2.7 s | 130 ms | 0 |
+| contact | 97 | 100 | 100 | 100 | 1.5 s | 2.5 s | 60 ms | 0 |
+| about, desktop | 100 | 100 | 100 | 100 | — | 0.5 s | 0 ms | 0 |
+
+Changes made because of these measurements:
+
+- The first build had TBT of 520 ms on mobile. Two decorative loops were repainting every frame: the
+  status pulse animated `box-shadow` and the travelling dots animated `top`. Both now animate only
+  `transform` and `opacity`, which brought TBT to 40–130 ms.
+- Small mono labels inside the hero illustration were 3.2:1 on white. They now use a darker grey that
+  meets 4.5:1.
+- IBM Plex Mono now loads one weight, without a preload, so it no longer competes with Inter and the
+  stylesheet on the critical path.
+- On phones the platform band's heading ran past the screen edge because the marquee's width
+  stretched its grid column. The column is now `minmax(0, 1fr)`, and the browser checks now also look
+  for text clipped past the viewport.
+
+The earlier table below was measured with Lighthouse 13.6 on the first design. The two versions
+model throttling differently, so compare the tables loosely.
 
 ## HTTP behaviour
 

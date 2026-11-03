@@ -32,13 +32,13 @@ export function Accordion({ items }: { items: { q: string; a: string }[] }) {
                 onClick={() => setOpen(open === i ? null : i)}
                 className="group flex w-full items-start justify-between gap-6 py-6 text-left"
               >
-                <span className="text-lg font-semibold tracking-tight text-ink-950 transition-colors group-hover:text-brand-700">
+                <span className="text-[1.15rem] tracking-[-0.015em] text-ink-950 transition-colors group-hover:text-brand-700">
                   {item.q}
                 </span>
                 <span
                   aria-hidden
-                  className={`mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full border transition-[transform,background-color,border-color,color] duration-200 ${
-                    isOpen ? "rotate-45 border-ink-950 bg-ink-950 text-white" : "border-line-strong text-ink-700 group-hover:border-ink-900"
+                  className={`mt-0.5 flex size-8 shrink-0 items-center justify-center border transition-[transform,background-color,border-color,color] duration-200 ${
+                    isOpen ? "rotate-45 border-brand-600 bg-brand-600 text-white" : "border-line-strong text-ink-700 group-hover:border-ink-900"
                   }`}
                 >
                   <Plus className="size-4" />

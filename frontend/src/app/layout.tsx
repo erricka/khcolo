@@ -19,11 +19,13 @@ const sans = Inter({
   display: "swap",
 });
 
+// Mono is only used for small labels, so it stays off the critical path.
 const mono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400"],
   variable: "--font-plex-mono",
   display: "swap",
+  preload: false,
 });
 
 // Only downloaded when a page actually renders Khmer glyphs (unicode-range).
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#050b1d",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
 };
@@ -69,7 +71,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className="min-h-dvh">
         <a
           href="#main"
-          className="sr-only-focusable fixed top-3 left-3 z-[100] rounded-full bg-brand-500 px-5 py-3 font-medium text-white"
+          className="sr-only-focusable fixed top-3 left-3 z-[100] bg-ink-950 px-5 py-3 text-white"
         >
           Skip to content
         </a>

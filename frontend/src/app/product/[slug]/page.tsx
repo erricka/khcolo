@@ -54,12 +54,12 @@ export default async function ProductPage({ params }: Props) {
     <>
       <JsonLd data={productLd(product, category)} />
 
-      <section className="surface-dark bg-grain relative overflow-hidden bg-ink-950 text-white">
+      <section className="relative overflow-hidden border-b border-line bg-white">
         <div
           aria-hidden
-          className="absolute top-[-20rem] left-[-10rem] size-[46rem] rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.22),transparent)]"
+          className="bg-cells absolute inset-y-0 right-0 hidden w-[45%] bg-[position:right_-1px_top_-1px] [mask-image:linear-gradient(to_left,black_20%,transparent_90%)] lg:block"
         />
-        <div className="container-site relative pt-[calc(var(--header-h)+2.5rem)] pb-16 lg:pb-24">
+        <div className="container-site relative pt-8 pb-16 lg:pt-12 lg:pb-24">
           <Breadcrumbs
             items={[
               { name: "Home", path: "/" },
@@ -72,7 +72,7 @@ export default async function ProductPage({ params }: Props) {
             <div className="lg:col-span-6">
               <div
                 data-spotlight
-                className="bg-blueprint-light relative aspect-square overflow-hidden rounded-[1.75rem] bg-paper shadow-[0_40px_80px_-40px_rgb(0_0_0/0.8)] ring-1 ring-white/10">
+                className="bg-cells relative aspect-square overflow-hidden border border-line bg-paper-2 [--cell:46px]">
                 {product.image && (
                   <Image
                     src={product.image.src}
@@ -84,28 +84,28 @@ export default async function ProductPage({ params }: Props) {
                     className="photo-multiply photo-settle object-contain p-8 sm:p-12"
                   />
                 )}
-                <span className="absolute top-5 left-5 rounded-full bg-white/85 px-3 py-1.5 text-[0.7rem] font-semibold tracking-[0.08em] text-ink-600 uppercase">
+                <span className="text-eyebrow absolute top-0 left-0 border-r border-b border-line bg-white px-3 py-2 text-[0.7rem] text-ink-600">
                   {product.facet}
                 </span>
               </div>
             </div>
             <div className="lg:col-span-6">
               <div className="enter" style={{ ["--d" as string]: 0 }}>
-                <Eyebrow tone="dark">{brandLabel(product)}</Eyebrow>
+                <Eyebrow>{brandLabel(product)}</Eyebrow>
               </div>
-              <h1 className="mt-5 text-white">
+              <h1 className="mt-5 text-ink-950">
                 <span className="text-headline block">{product.name}</span>{" "}
-                <span className="mt-3 block text-lg font-normal tracking-normal text-ink-300">
+                <span className="mt-3 block text-lg font-normal tracking-normal text-muted">
                   {product.type}
-                  {product.variant && <span className="text-ink-400"> · {product.variant}</span>}
+                  {product.variant && <span className="text-ink-500"> · {product.variant}</span>}
                 </span>
               </h1>
-              <p className="text-lede mt-6 max-w-xl text-ink-200">
+              <p className="text-lede mt-6 max-w-xl text-muted">
                 {product.summary}
               </p>
-              <ul className="enter mt-8 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/[0.09] bg-white/[0.06]" style={{ ["--d" as string]: 2 }}>
+              <ul className="enter mt-8 grid grid-cols-3 border-t border-l border-line" style={{ ["--d" as string]: 2 }}>
                 {product.keySpecs.map((s) => (
-                  <li key={s} className="bg-ink-950/80 px-4 py-4 text-[0.92rem] leading-snug font-medium text-white">
+                  <li key={s} className="border-r border-b border-line bg-white px-4 py-4 font-mono text-[0.82rem] leading-snug text-ink-900">
                     {s}
                   </li>
                 ))}
@@ -114,6 +114,7 @@ export default async function ProductPage({ params }: Props) {
                 <ButtonLink
                   href={routes.quote(product.slug)}
                   size="lg"
+                  icon="arrow"
                   data-track="quote_click"
                   data-track-method="form"
                   data-track-location="product"
@@ -131,7 +132,7 @@ export default async function ProductPage({ params }: Props) {
                   Ask on Telegram
                 </ButtonLink>
               </div>
-              <p className="enter mt-6 text-sm text-ink-400" style={{ ["--d" as string]: 3 }}>
+              <p className="enter mt-6 text-sm text-muted" style={{ ["--d" as string]: 3 }}>
                 Price and availability confirmed on quotation. Supplied, provisioned and supported by our team.
               </p>
             </div>
@@ -166,7 +167,7 @@ export default async function ProductPage({ params }: Props) {
                 <h3 className="text-eyebrow text-brand-700">Listed accessories</h3>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {product.accessories.map((a) => (
-                    <li key={a} className="rounded-full border border-line-strong/70 bg-white px-4 py-2 font-mono text-[0.82rem] text-ink-800">
+                    <li key={a} className="border border-line bg-white px-4 py-2 font-mono text-[0.82rem] text-ink-800">
                       {a}
                     </li>
                   ))}
@@ -175,7 +176,7 @@ export default async function ProductPage({ params }: Props) {
             )}
 
             {product.publicNotes.length > 0 && (
-              <div className="mt-8 rounded-2xl border border-brand-700/15 bg-brand-50 p-5" data-reveal>
+              <div className="mt-8 border-l-2 border-brand-600 bg-brand-50 p-5" data-reveal>
                 {product.publicNotes.map((n) => (
                   <p key={n} className="flex gap-3 text-[0.95rem] leading-relaxed text-brand-800">
                     <Info aria-hidden className="mt-0.5 size-4 shrink-0" />

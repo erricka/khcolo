@@ -1,9 +1,16 @@
 import {
   ArchiveRestore,
+  BookOpenCheck,
   Cloud,
+  FileCheck2,
+  HardHat,
+  Languages,
+  Layers,
   LockKeyhole,
   Mail,
+  MapPinned,
   PhoneCall,
+  Radar,
   Server,
   ShieldCheck,
   UsersRound,
@@ -23,6 +30,14 @@ const icons: Record<string, LucideIcon> = {
   server: Server,
   mail: Mail,
   wrench: Wrench,
+  // Used for the "what to expect" list on the home page
+  engineer: HardHat,
+  layers: Layers,
+  radar: Radar,
+  languages: Languages,
+  map: MapPinned,
+  file: FileCheck2,
+  book: BookOpenCheck,
 };
 
 export function ServiceIcon({ name, className = "size-5" }: { name: string; className?: string }) {

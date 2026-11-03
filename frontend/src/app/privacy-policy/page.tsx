@@ -80,7 +80,7 @@ export default async function PrivacyPage() {
           { name: "Home", path: "/" },
           { name: "Privacy notice", path: PATH },
         ]}
-        eyebrow={<Eyebrow tone="dark">Last updated {updated}</Eyebrow>}
+        eyebrow={<Eyebrow>Last updated {updated}</Eyebrow>}
         title={page.h1}
         lede={<p>How we handle the information you send through this website.</p>}
       />
@@ -91,7 +91,7 @@ export default async function PrivacyPage() {
               {sections.map((s, i) => (
                 <li key={s.title}>
                   <a href={`#p-${i}`} className="text-muted hover:text-ink-950">
-                    <span className="text-xs font-semibold text-ink-400 tabular-nums">0{i + 1}</span> {s.title}
+                    <span className="font-mono text-xs text-brand-700 tabular-nums">0{i + 1}</span> {s.title}
                   </a>
                 </li>
               ))}

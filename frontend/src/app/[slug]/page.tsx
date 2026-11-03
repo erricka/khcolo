@@ -74,7 +74,7 @@ export default async function ServicePage({ params }: Props) {
           { name: service.shortName, path: routes.service(service.slug) },
         ]}
         eyebrow={
-          <Eyebrow tone="dark">
+          <Eyebrow>
             <span className="inline-flex items-center gap-2.5">
               <ServiceIcon name={service.icon} className="size-4" />
               {group?.name}
@@ -88,31 +88,32 @@ export default async function ServicePage({ params }: Props) {
             <ButtonLink
               href={company.telegram.url}
               size="lg"
+              icon="arrow"
               data-track="contact_click"
               data-track-method="telegram"
               data-track-location={`service_${service.slug}`}
             >
               Talk to our team
             </ButtonLink>
-            <ButtonLink href={routes.consult(service.slug)} variant="secondary" size="lg">
+            <ButtonLink href={routes.consult(service.slug)} variant="secondary" size="lg" icon={null}>
               Request a consultation
             </ButtonLink>
           </>
         }
         aside={
-          <div className="rounded-2xl border border-white/[0.09] bg-white/[0.03] p-7 backdrop-blur-sm">
-            <p className="text-eyebrow text-ink-400">At a glance</p>
+          <div className="border border-line bg-white p-7">
+            <p className="text-eyebrow text-muted">At a glance</p>
             <ul className="mt-5 space-y-3.5">
               {service.highlights.map((h) => (
-                <li key={h} className="flex gap-3 text-[0.98rem] leading-snug text-ink-100">
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-300">
+                <li key={h} className="flex gap-3 text-[0.98rem] leading-snug text-ink-900">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center bg-accent-50 text-accent-700">
                     <Check aria-hidden className="size-3" strokeWidth={2.5} />
                   </span>
                   {h}
                 </li>
               ))}
             </ul>
-            <p className="mt-7 border-t border-white/[0.08] pt-5 text-sm leading-relaxed text-ink-400">
+            <p className="mt-7 border-t border-line pt-5 text-sm leading-relaxed text-muted">
               Local support for Phnom Penh, Siem Reap and on-site installations across Cambodia, in Khmer or English.
             </p>
           </div>
@@ -154,7 +155,7 @@ export default async function ServicePage({ params }: Props) {
                 key={group.title}
                 data-reveal
                 style={{ ["--i" as string]: i }}
-                className="mb-4 break-inside-avoid rounded-2xl border border-line bg-white p-7 shadow-[var(--shadow-card)]"
+                className="mb-4 break-inside-avoid border border-line bg-white p-7"
               >
                 <h3 className="text-eyebrow text-brand-700">{group.title}</h3>
                 <ul className="mt-5 space-y-2.5">
@@ -190,14 +191,13 @@ export default async function ServicePage({ params }: Props) {
       )}
 
       {/* Process */}
-      <section id="how-we-work" aria-labelledby="process-title" className="surface-dark bg-grain relative scroll-mt-32 overflow-hidden bg-ink-900 py-20 lg:py-28">
-        <div aria-hidden className="bg-blueprint absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_80%)]" />
+      <section id="how-we-work" aria-labelledby="process-title" className="bg-tint relative scroll-mt-32 overflow-hidden border-y border-brand-100 py-20 lg:py-28">
         <div className="container-site relative">
-          <SectionHeader tone="dark" eyebrow="How we work" index={service.options.length ? "04" : "03"} id="process-title" title="Implementation and support">
+          <SectionHeader eyebrow="How we work" index={service.options.length ? "04" : "03"} id="process-title" title="Implementation and support">
             Planned with you, delivered by local engineers, and supported after go-live.
           </SectionHeader>
           <div className="mt-16">
-            <ProcessSteps steps={service.process} tone="dark" />
+            <ProcessSteps steps={service.process} />
           </div>
         </div>
       </section>
@@ -213,7 +213,7 @@ export default async function ServicePage({ params }: Props) {
               </h2>
               <p className="mt-5 leading-relaxed text-muted">
                 Something else?{" "}
-                <Link href={routes.consult(service.slug)} className="font-medium text-brand-700 underline decoration-brand-700/30 underline-offset-4 hover:decoration-brand-700">
+                <Link href={routes.consult(service.slug)} className="text-brand-700 underline decoration-brand-700/30 underline-offset-4 hover:decoration-brand-700">
                   Ask our team
                 </Link>
                 .
@@ -243,7 +243,7 @@ export default async function ServicePage({ params }: Props) {
             ))}
           </div>
           {relatedCategories.length > 0 && (
-            <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-line bg-white p-6 sm:flex-row sm:items-center sm:justify-between" data-reveal>
+            <div className="mt-10 flex flex-col gap-4 border border-line bg-white p-6 sm:flex-row sm:items-center sm:justify-between" data-reveal>
               <p className="flex items-center gap-3 text-ink-900">
                 <Info aria-hidden className="size-4 text-brand-700" />
                 Hardware for this solution, supplied and configured by our team:
@@ -253,7 +253,7 @@ export default async function ServicePage({ params }: Props) {
                   <li key={c.slug}>
                     <Link
                       href={routes.category(c.slug)}
-                      className="group inline-flex items-center gap-1.5 rounded-full border border-line-strong/70 px-4 py-2 text-sm font-medium text-ink-900 transition-colors hover:border-ink-900 hover:bg-ink-950 hover:text-white"
+                      className="group inline-flex min-h-10 items-center gap-1.5 border border-ink-950 px-4 py-2 text-sm text-ink-950 transition-colors hover:bg-ink-950 hover:text-white"
                     >
                       {c.name}
                       <ArrowRight aria-hidden className="arrow-nudge size-3.5" />

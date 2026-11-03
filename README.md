@@ -15,18 +15,23 @@ JavaScript get the full content, metadata and structured data in the first respo
 
 ## Design and motion
 
-Navy and royal blue taken from the KHCOLO logo, cool neutral surfaces, and a little green for status
-and confirmation. Type is Inter throughout, with IBM Plex Mono only for model codes and specs. The
-wordmark is traced from the live site and the product photography is real.
-Tokens (colour, type scale, shadows, easing, durations) live in `frontend/src/app/globals.css`.
+A light, engineered look in the manner of render.com: a white canvas, hairline cell grids, large
+light-weight Inter headlines, IBM Plex Mono for small uppercase labels, square corners, black buttons
+with a blue chevron block that wipes across on hover, and blue pixel blocks sitting in the grid.
+Colour comes from the logo, royal blue with the logo's navy for the darkest brand tone, and a little
+green is kept for status and confirmation. The logo is redrawn as vectors from the original artwork
+in its two colours (`frontend/src/components/brand/Logo.tsx`), and the product photography is real.
+Tokens (colour, type scale, radius, easing, durations) live in `frontend/src/app/globals.css`.
 
 Motion is layered so it never costs content or speed:
 
-- **CSS first.** Hero entrances, section reveals (with a soft blur on headings), the self-drawing
-  underline, the reading-progress line (CSS scroll timelines), button sheen and hover states.
+- **CSS first.** Hero entrances, a connector that draws into the hero panel, live-looking
+  sparklines, the platform-tile marquee, floating tiles around the closing call to action, section
+  reveals (with a soft blur on headings), the reading-progress line (CSS scroll timelines) and the
+  button wipe. Looping effects animate only `transform` and `opacity`.
 - **Motion for React** (loaded lazily via `LazyMotion`) for menus, the mobile drawer, accordions,
   the catalog's layout animation, the section-nav indicator and form states.
-- **Small delegated listeners** for the cursor spotlight on cards and the hero diagram's 3D tilt.
+- **Small delegated listeners** for the cursor spotlight on cards.
 - Content is never hidden if JavaScript fails (a fail-safe removes reveal styles), decorative loops
   pause off screen, and `prefers-reduced-motion` turns movement off everywhere.
 

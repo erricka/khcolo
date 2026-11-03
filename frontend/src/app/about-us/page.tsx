@@ -32,11 +32,11 @@ export default async function AboutPage() {
           { name: "Home", path: "/" },
           { name: "About", path: PATH },
         ]}
-        eyebrow={<Eyebrow tone="dark">Since {company.operatingSince}</Eyebrow>}
+        eyebrow={<Eyebrow>Since {company.operatingSince}</Eyebrow>}
         title={page.h1}
         lede={
           <>
-            <p className="text-[clamp(1.5rem,1.2rem+1.2vw,2.15rem)] leading-tight font-semibold tracking-[-0.025em] text-brand-300">
+            <p className="text-[clamp(1.5rem,1.2rem+1.2vw,2.15rem)] leading-tight tracking-[-0.025em] text-brand-700">
               The full stack, under one roof.
             </p>
             <p className="mt-6">
@@ -47,7 +47,7 @@ export default async function AboutPage() {
           </>
         }
         aside={
-          <dl className="divide-y divide-white/[0.08] rounded-2xl border border-white/[0.09] bg-white/[0.03] px-7">
+          <dl className="divide-y divide-line border border-line bg-white px-7">
             {[
               ["Operating since", String(company.operatingSince)],
               ["Service areas", company.serviceAreas.map((a) => a.name).join(" · ")],
@@ -55,8 +55,8 @@ export default async function AboutPage() {
               ["Contact", company.email],
             ].map(([k, v]) => (
               <div key={k} className="flex flex-col gap-1.5 py-5">
-                <dt className="text-eyebrow text-ink-400">{k}</dt>
-                <dd className="text-[1.05rem] text-white">{v}</dd>
+                <dt className="text-eyebrow text-muted">{k}</dt>
+                <dd className="text-[1.05rem] text-ink-950">{v}</dd>
               </div>
             ))}
           </dl>
@@ -100,10 +100,10 @@ export default async function AboutPage() {
                 key={g.key}
                 data-reveal
                 style={{ ["--i" as string]: i }}
-                className="rounded-2xl border border-line bg-white p-7 shadow-[var(--shadow-card)] sm:p-8"
+                className="border border-line bg-white p-7 sm:p-8"
               >
-                <p className="text-xs font-semibold text-ink-400 tabular-nums">0{i + 1}</p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-ink-950">{g.name}</h3>
+                <p className="flex size-6 items-center justify-center bg-brand-600 font-mono text-[0.72rem] text-white tabular-nums">{i + 1}</p>
+                <h3 className="mt-5 text-[1.6rem] tracking-[-0.025em] text-ink-950">{g.name}</h3>
                 <p className="mt-2 leading-relaxed text-muted">{g.summary}</p>
                 <ul className="mt-6 divide-y divide-line border-t border-line">
                   {services
@@ -112,7 +112,7 @@ export default async function AboutPage() {
                       <li key={s.slug}>
                         <Link href={routes.service(s.slug)} className="group flex items-center gap-3 py-3.5 text-ink-900 hover:text-brand-700">
                           <ServiceIcon name={s.icon} className="size-4 text-brand-700" />
-                          <span className="flex-1 font-medium">{s.shortName}</span>
+                          <span className="flex-1">{s.shortName}</span>
                           <ArrowRight aria-hidden className="arrow-nudge size-4 text-ink-400 group-hover:text-brand-700" />
                         </Link>
                       </li>
@@ -124,37 +124,36 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section aria-labelledby="principles-title" className="surface-dark bg-grain relative overflow-hidden bg-ink-900 py-20 lg:py-28">
-        <div aria-hidden className="bg-blueprint absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_80%)]" />
+      <section aria-labelledby="principles-title" className="bg-tint relative overflow-hidden border-y border-brand-100 py-20 lg:py-28">
         <div className="container-site relative">
-          <SectionHeader tone="dark" eyebrow="How we work" index="03" id="principles-title" title="What you can expect from us." />
-          <ul className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08] md:grid-cols-2 lg:grid-cols-4">
+          <SectionHeader eyebrow="How we work" index="03" id="principles-title" title="What you can expect from us." />
+          <ul className="mt-14 grid border-t border-l border-brand-200/70 md:grid-cols-2 lg:grid-cols-4">
             {company.principles.map((p, i) => (
-              <li key={p.title} data-reveal style={{ ["--i" as string]: i }} className="bg-ink-900 p-7 lg:p-8">
-                <span className="text-xs font-semibold text-brand-300 tabular-nums">0{i + 1}</span>
-                <h3 className="mt-8 text-lg font-semibold tracking-tight text-white">{p.title}</h3>
-                <p className="mt-2 leading-relaxed text-ink-300">{p.body}</p>
+              <li key={p.title} data-reveal style={{ ["--i" as string]: i }} className="border-r border-b border-brand-200/70 bg-white/70 p-7 lg:p-8">
+                <span className="flex size-6 items-center justify-center bg-brand-600 font-mono text-[0.72rem] text-white tabular-nums">{i + 1}</span>
+                <h3 className="mt-8 text-[1.2rem] tracking-[-0.015em] text-ink-950">{p.title}</h3>
+                <p className="mt-2 leading-relaxed text-muted">{p.body}</p>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section aria-labelledby="partners-title" className="py-20 lg:py-28">
+      <section id="partners" aria-labelledby="partners-title" className="scroll-mt-24 py-20 lg:py-28">
         <div className="container-site">
           <SectionHeader eyebrow="Partners & platforms" index="04" id="partners-title" title="The vendors behind what we deploy.">
             Each relationship applies to that vendor and its products only.
           </SectionHeader>
-          <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-14 grid border-t border-l border-line sm:grid-cols-2 lg:grid-cols-3">
             {company.partners.map((p, i) => (
               <li
                 key={p.vendor}
                 data-reveal
                 style={{ ["--i" as string]: i }}
-                className="flex flex-col rounded-2xl border border-line bg-white p-7 shadow-[var(--shadow-card)]"
+                className="flex flex-col border-r border-b border-line bg-white p-7"
               >
                 <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="text-2xl font-semibold tracking-tight text-ink-950">{p.vendor}</h3>
+                  <h3 className="text-[1.6rem] tracking-[-0.03em] text-ink-950">{p.vendor}</h3>
                   <span className="text-eyebrow text-right text-brand-700">{p.relationship}</span>
                 </div>
                 <p className="mt-4 leading-relaxed text-muted">{p.scope}</p>

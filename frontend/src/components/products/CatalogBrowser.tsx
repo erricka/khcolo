@@ -70,7 +70,7 @@ export function CatalogBrowser({
 
   return (
     <div>
-      <div className="rounded-2xl border border-line bg-white p-4 shadow-[var(--shadow-card)] sm:p-5" role="search">
+      <div className="border border-line bg-paper-2 p-4 sm:p-5" role="search">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
           <label className="relative block lg:w-80">
             <span className="sr-only">Search products</span>
@@ -80,7 +80,7 @@ export function CatalogBrowser({
               value={filters.q}
               onChange={(e) => update({ q: e.target.value })}
               placeholder="Search model or feature"
-              className="h-11 w-full rounded-full border border-line-strong/70 bg-paper/50 pr-4 pl-11 text-[0.95rem] text-ink-950 transition-colors outline-none placeholder:text-ink-400 hover:border-ink-400 focus:border-brand-600 focus:bg-white focus:ring-4 focus:ring-brand-500/15"
+              className="h-11 w-full border border-line-strong bg-white pr-4 pl-11 text-[0.95rem] text-ink-950 transition-colors outline-none placeholder:text-ink-400 hover:border-ink-400 focus:border-brand-600 focus:bg-white focus:ring-4 focus:ring-brand-500/15"
             />
           </label>
           <div className="flex flex-1 flex-wrap items-center gap-x-6 gap-y-3">
@@ -122,7 +122,7 @@ export function CatalogBrowser({
           <button
             type="button"
             onClick={() => update(EMPTY)}
-            className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium text-brand-700 transition-colors hover:bg-brand-50"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-brand-700 transition-colors hover:bg-brand-50"
           >
             <X aria-hidden className="size-3.5" />
             Clear filters
@@ -148,7 +148,7 @@ export function CatalogBrowser({
       </m.ul>
 
       {results.length === 0 && (
-        <div className="mt-4 rounded-2xl border border-dashed border-line-strong p-12 text-center">
+        <div className="mt-4 border border-dashed border-line-strong p-12 text-center">
           <p className="text-lg font-medium text-ink-950">No models match those filters.</p>
           <p className="mt-2 text-muted">Try a different search, or ask us. We supply more than we list here.</p>
         </div>
@@ -189,14 +189,14 @@ function ChipGroup({
             type="button"
             aria-pressed={pressed}
             onClick={() => onChange(o.value)}
-            className={`inline-flex h-9 items-center gap-1.5 rounded-full border px-3.5 text-sm transition-[background-color,border-color,color] duration-150 ${
+            className={`inline-flex h-9 items-center gap-1.5 border px-3.5 text-sm transition-[background-color,border-color,color] duration-150 ${
               pressed
-                ? "border-ink-950 bg-ink-950 text-white"
-                : "border-line-strong/70 bg-white text-ink-800 hover:border-ink-500"
+                ? "border-brand-600 bg-brand-600 text-white"
+                : "border-line-strong bg-white text-ink-800 hover:border-ink-950"
             }`}
           >
             {o.label}
-            {o.value && <span className={`text-[0.72rem] tabular-nums ${pressed ? "text-ink-300" : "text-ink-400"}`}>{o.count}</span>}
+            {o.value && <span className={`font-mono text-[0.7rem] tabular-nums ${pressed ? "text-brand-100" : "text-ink-500"}`}>{o.count}</span>}
           </button>
         );
       })}

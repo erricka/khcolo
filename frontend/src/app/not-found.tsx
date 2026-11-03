@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/Button";
+import { PixelBlock } from "@/components/ui/Pixels";
 import { routes } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -18,31 +19,40 @@ const LINKS = [
 
 export default function NotFound() {
   return (
-    <section className="surface-dark bg-grain relative min-h-[80vh] overflow-hidden bg-ink-950 text-white">
-      <div aria-hidden className="bg-blueprint absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
-      <div className="container-site relative pt-[calc(var(--header-h)+5rem)] pb-24">
-        <p className="text-eyebrow text-brand-300">Error 404</p>
-        <h1 className="text-display-sm mt-6 max-w-[16ch]">This page isn&rsquo;t here.</h1>
-        <p className="text-lede mt-6 max-w-xl text-ink-300">
+    <section className="relative min-h-[70vh] overflow-hidden bg-white">
+      <div
+        aria-hidden
+        className="bg-cells absolute inset-y-0 right-0 hidden w-[55%] bg-[position:right_-1px_top_-1px] [mask-image:linear-gradient(to_left,black_30%,transparent_95%)] md:block"
+      />
+      <PixelBlock pattern="b" className="absolute top-0 right-[92px] hidden h-[92px] w-[69px] md:flex" />
+      <div className="container-site relative pt-20 pb-24 lg:pt-28">
+        <p className="text-eyebrow text-muted">
+          <span className="text-brand-700">404</span> / Not found
+        </p>
+        <h1 className="text-display-sm mt-6 max-w-[16ch] text-ink-950">
+          This page isn&rsquo;t here.
+          <span aria-hidden className="caret ml-[0.12em] inline-block h-[0.78em] w-[0.36em] translate-y-[0.08em] bg-gradient-to-b from-brand-500 to-brand-200" />
+        </h1>
+        <p className="text-lede mt-6 max-w-xl text-muted">
           The link may be old or the page may have moved during our redesign. These are good places to continue:
         </p>
-        <ul className="mt-12 grid max-w-4xl gap-3 md:grid-cols-3">
+        <ul className="mt-12 grid max-w-4xl border-t border-l border-line md:grid-cols-3">
           {LINKS.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="group flex h-full flex-col rounded-2xl border border-white/[0.09] bg-white/[0.03] p-6 transition-[border-color,background-color] hover:border-brand-300/40 hover:bg-white/[0.06]"
+                className="group flex h-full flex-col border-r border-b border-line bg-white p-6 transition-colors hover:bg-paper-2"
               >
-                <span className="flex items-center justify-between font-medium">
+                <span className="flex items-center justify-between text-[1.1rem] text-ink-950">
                   {l.label}
-                  <ArrowRight aria-hidden className="arrow-nudge size-4 text-brand-300" />
+                  <ArrowRight aria-hidden className="arrow-nudge size-4 text-brand-700" />
                 </span>
-                <span className="mt-2 text-sm leading-relaxed text-ink-400">{l.body}</span>
+                <span className="mt-2 text-sm leading-relaxed text-muted">{l.body}</span>
               </Link>
             </li>
           ))}
         </ul>
-        <ButtonLink href="/" variant="secondary" className="mt-10">
+        <ButtonLink href="/" className="mt-10" icon="arrow">
           Back to the homepage
         </ButtonLink>
       </div>

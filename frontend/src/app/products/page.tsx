@@ -32,7 +32,7 @@ export default async function ProductsPage() {
           { name: "Home", path: "/" },
           { name: "Products", path: PATH },
         ]}
-        eyebrow={<Eyebrow tone="dark">Products</Eyebrow>}
+        eyebrow={<Eyebrow>Products</Eyebrow>}
         title={page.h1}
         lede={
           <p>

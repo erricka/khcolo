@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
-import { ArrowDown } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Check, Languages, MapPin } from "lucide-react";
+import type { CSSProperties, ReactNode } from "react";
 
-import { CorePlatforms } from "@/components/home/CorePlatforms";
-import { HeroTopology } from "@/components/home/HeroTopology";
+import { CallFlow } from "@/components/home/CallFlow";
+import { HeroScene } from "@/components/home/HeroScene";
+import { PlatformBand } from "@/components/home/PlatformBand";
 import { CategoryCard } from "@/components/products/CategoryCard";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { ServiceCard } from "@/components/services/ServiceCard";
 import { ButtonLink } from "@/components/ui/Button";
 import { ContactBand } from "@/components/ui/ContactBand";
+import { PixelBlock } from "@/components/ui/Pixels";
 import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { Eyebrow, SectionHeader } from "@/components/ui/Section";
+import { ServiceIcon } from "@/components/ui/ServiceIcon";
 import { getCategories, getCompany, getPage, getProducts, getServices } from "@/lib/content";
 import { CORE_KEYWORDS, organizationLd, pageMetadata, websiteLd } from "@/lib/seo";
 import { brandLabel, CATEGORY_HERO_PRODUCT, routes } from "@/lib/site";
+import type { Service } from "@/lib/types";
 
 export const revalidate = 3600;
 
@@ -29,6 +34,61 @@ const HOW_WE_WORK = [
   { title: "Support and maintain", body: "Renewals, updates, preventive checks and help when something needs attention." },
 ];
 
+/** The coloured service list. Every colour keeps at least 3:1 contrast on white at this size. */
+const WORDS: { slug: string; label: string; color: string }[] = [
+  { slug: "cloud-call-center", label: "3CX phone systems", color: "var(--color-brand-600)" },
+  { slug: "3cx-bitrix24-integration", label: "Bitrix24 CRM", color: "var(--color-accent-600)" },
+  { slug: "voice-communication", label: "video conferencing", color: "#0284c7" },
+  { slug: "eset-antivirus", label: "ESET antivirus", color: "#6366f1" },
+  { slug: "web-security", label: "SSL certificates", color: "#0d9488" },
+  { slug: "acronis-cyber-protect-cloud", label: "Acronis backup", color: "var(--color-brand-500)" },
+  { slug: "cloud-services", label: "cloud VPS hosting", color: "var(--color-accent-700)" },
+  { slug: "proxmoxve", label: "Proxmox servers", color: "#0369a1" },
+  { slug: "zimbra", label: "Zimbra email", color: "#4f46e5" },
+  { slug: "it-maintenance", label: "IT maintenance", color: "var(--color-brand-700)" },
+];
+
+function DocLink({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <Link href={href} className="group inline-flex items-center gap-1.5 text-[0.95rem] text-brand-700 hover:text-brand-900">
+      {children}
+      <ArrowRight aria-hidden className="arrow-nudge size-4" />
+    </Link>
+  );
+}
+
+function Checks({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-6 space-y-2.5">
+      {items.map((h) => (
+        <li key={h} className="flex gap-2.5 text-[0.95rem] text-ink-900">
+          <Check aria-hidden className="mt-1 size-3.5 shrink-0 text-accent-600" strokeWidth={2.5} />
+          {h}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ServiceLinks({ items }: { items: Service[] }) {
+  return (
+    <ul className="mt-8 divide-y divide-line border-y border-line">
+      {items.map((s) => (
+        <li key={s.slug}>
+          <Link href={routes.service(s.slug)} className="group flex items-center gap-3 py-3.5 text-ink-900 hover:text-brand-700">
+            <span className="flex size-8 items-center justify-center bg-brand-50 text-brand-700 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+              <ServiceIcon name={s.icon} className="size-4" />
+            </span>
+            <span className="flex-1">{s.shortName}</span>
+            <ArrowRight aria-hidden className="arrow-nudge size-4 text-ink-400 group-hover:text-brand-700" />
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+const cell = "relative border-r border-b border-line p-8 sm:p-12 lg:p-14";
 
 export default async function HomePage() {
   const [company, services, categories, products] = await Promise.all([
@@ -37,172 +97,301 @@ export default async function HomePage() {
     getCategories(),
     getProducts(),
   ]);
-  const threecx = services.find((s) => s.slug === "cloud-call-center");
-  const bitrix = services.find((s) => s.slug === "3cx-bitrix24-integration");
+  const bySlug = (slug: string) => services.find((s) => s.slug === slug);
+  const threecx = bySlug("cloud-call-center");
+  const bitrix = bySlug("3cx-bitrix24-integration");
+  const maint = bySlug("it-maintenance");
+  const inGroup = (key: string) => services.filter((s) => s.group === key);
+  const group = (key: string) => company.solutionGroups.find((g) => g.key === key);
+  const security = group("security");
+  const cloud = group("cloud");
+  const managed = group("managed-it");
+
+  const expectations = [
+    ...company.principles.map((p, i) => ({ ...p, icon: ["engineer", "wrench", "layers", "radar"][i] ?? "server" })),
+    { title: "Khmer or English", body: "Talk to engineers directly in the language your team prefers, from planning through support.", icon: "languages" },
+    { title: "On site across Cambodia", body: "Service in Phnom Penh and Siem Reap, with on-site installation across the country.", icon: "map" },
+    { title: "Written quotes", body: "Current options, licensing and pricing are confirmed in writing before any work starts.", icon: "file" },
+    { title: "Training and handover", body: "Your staff learn the system and you receive documentation for what we set up.", icon: "book" },
+  ];
 
   return (
     <>
       <JsonLd data={[organizationLd(company), websiteLd()]} />
 
       {/* Hero ------------------------------------------------------------ */}
-      <section className="surface-dark bg-grain relative overflow-hidden bg-ink-950 text-white">
-        <div
-          aria-hidden
-          className="bg-blueprint absolute inset-0 [mask-image:radial-gradient(ellipse_65%_70%_at_72%_42%,black_20%,transparent_75%)]"
-        />
-        <div
-          aria-hidden
-          className="absolute top-[-18rem] right-[-12rem] size-[52rem] rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.3),transparent)]"
-        />
-        <div
-          aria-hidden
-          className="absolute bottom-[-20rem] left-[-14rem] size-[40rem] rounded-full bg-[radial-gradient(closest-side,rgb(16_185_129/0.08),transparent)]"
-        />
-        <div className="container-site relative grid items-center gap-10 pt-[calc(var(--header-h)+3.5rem)] pb-14 lg:grid-cols-12 lg:gap-6 lg:pt-[calc(var(--header-h)+4.5rem)] lg:pb-20">
-          <div className="lg:col-span-7">
-            <p className="enter text-eyebrow flex items-center gap-3 text-brand-300" style={{ ["--d" as string]: 0 }}>
-              <span className="relative flex size-2">
-                <span className="motion-decor absolute inline-flex size-full animate-ping rounded-full bg-accent-400 opacity-50" />
-                <span className="relative inline-flex size-2 rounded-full bg-accent-400" />
-              </span>
-              3CX · Bitrix24 · IT support in Cambodia
-            </p>
-            <h1 className="text-display mt-7 max-w-[17ch] text-[clamp(2.5rem,1.2rem+3.9vw,4.35rem)] text-white">
-              3CX, Bitrix24 and{" "}
-              <em className="relative inline-block bg-gradient-to-r from-brand-300 to-brand-200 bg-clip-text not-italic text-transparent">
-                local IT support
-                <svg
-                  aria-hidden
-                  viewBox="0 0 300 14"
-                  preserveAspectRatio="none"
-                  className="absolute -bottom-[0.06em] left-[2%] h-[0.16em] w-[96%] overflow-visible"
-                >
-                  <path
-                    d="M2 9.5C48 4.5 96 3 150 4.2c52 1.2 98 3.3 146 1.6"
-                    pathLength={1}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2.6}
-                    strokeLinecap="round"
-                    className="draw-underline text-accent-400"
-                  />
-                </svg>
-              </em>{" "}
-              for
-              Cambodian businesses
+      <section className="relative overflow-hidden border-b border-line bg-white">
+        <div className="container-site relative grid lg:min-h-[640px] lg:grid-cols-12">
+          <div className="relative z-10 pt-14 pb-16 sm:pt-20 lg:col-span-7 lg:pt-28 lg:pb-24">
+            <h1 className="text-display max-w-[11.5em] text-ink-950">
+              3CX, Bitrix24 and local IT support for Cambodian businesses
+              <span
+                aria-hidden
+                className="caret ml-[0.12em] inline-block h-[0.78em] w-[0.36em] translate-y-[0.08em] bg-gradient-to-b from-brand-500 to-brand-200"
+              />
             </h1>
-            <p className="text-lede mt-7 max-w-[34rem] text-ink-300">
+            <p className="text-lede mt-8 max-w-[33rem] text-muted">
               3CX phone systems, Bitrix24 CRM, cybersecurity, backup, hosting and IT maintenance, planned, installed and
               supported by one local team, in Khmer or English.
             </p>
-            <div className="enter mt-9 flex flex-wrap gap-3" style={{ ["--d" as string]: 2 }}>
+            <div className="enter mt-10 flex flex-wrap gap-3" style={{ ["--d" as string]: 1 }}>
               <ButtonLink
                 href={company.telegram.url}
                 size="lg"
+                icon="arrow"
                 data-track="contact_click"
                 data-track-method="telegram"
                 data-track-location="hero"
               >
                 Talk to our team
               </ButtonLink>
-              <ButtonLink href="#solutions" variant="secondary" size="lg" icon={<ArrowDown aria-hidden className="size-4 transition-transform duration-200 group-hover:translate-y-0.5" />}>
-                Explore solutions
+              <ButtonLink href={routes.consult("cloud-call-center")} variant="secondary" size="lg" icon={null}>
+                Request a consultation
               </ButtonLink>
             </div>
-            <dl
-              className="enter mt-12 grid max-w-[34rem] divide-y divide-white/10 border-t border-white/10 sm:mt-14 sm:grid-cols-3 sm:divide-y-0 sm:pt-6"
-              style={{ ["--d" as string]: 3 }}
+            <p
+              className="enter mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[0.72rem] tracking-[0.06em] text-muted uppercase"
+              style={{ ["--d" as string]: 2 }}
             >
-              {[
-                ["Since 2017", "Operating in Cambodia"],
-                ["Khmer · English", "Support languages"],
-                ["Nationwide", "On-site installation"],
-              ].map(([k, v], i) => (
-                <div
-                  key={k}
-                  className={`flex items-baseline justify-between gap-4 py-3.5 sm:block sm:py-0 ${
-                    i ? "sm:border-l sm:border-white/10 sm:pl-6" : "sm:pr-4"
-                  }`}
-                >
-                  <dt className="font-medium tracking-tight text-white">{k}</dt>
-                  <dd className="text-[0.85rem] leading-snug text-ink-400 sm:mt-1 sm:text-[0.8rem]">{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-          {/* Decorative; too small to read on phones, so it starts at the sm breakpoint. */}
-          <div className="enter hidden sm:block lg:col-span-5" style={{ ["--d" as string]: 1 }}>
-            <HeroTopology className="mx-auto w-full max-w-[600px] lg:max-w-none" tilt />
+              <span className="inline-flex items-center gap-2 text-accent-700">
+                <span className="status-dot size-1.5 rounded-full bg-accent-500" />
+                3CX Gold Partner
+              </span>
+              <span>Since {company.operatingSince}</span>
+              <span>Phnom Penh · Siem Reap</span>
+            </p>
           </div>
         </div>
+        {/* Decorative scene: below the text on tablets, bleeding off the right edge on desktop. */}
+        <HeroScene className="relative hidden h-[520px] border-t border-line md:block lg:absolute lg:inset-y-0 lg:right-0 lg:left-[58%] lg:h-auto lg:border-t-0 xl:left-[57%]" />
+      </section>
 
-        {/* Partner programs */}
-        <div className="relative border-t border-white/[0.07] bg-ink-950/60">
-          <div className="container-site grid grid-cols-1 gap-6 py-8 lg:grid-cols-12 lg:items-center lg:gap-10">
-            <p className="text-eyebrow text-ink-400 lg:col-span-2">Partners &amp; platforms</p>
-            <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 lg:col-span-10 lg:grid-cols-7">
-              {company.partners.map((p, i) => (
-                <li key={p.vendor} data-reveal style={{ ["--i" as string]: i }}>
-                  <span className="block text-[1.05rem] font-semibold tracking-tight text-white">{p.vendor}</span>
-                  <span className="mt-1 block text-[0.78rem] leading-snug text-ink-400">{p.relationship}</span>
-                </li>
-              ))}
-            </ul>
+      {/* Partners --------------------------------------------------------- */}
+      <section aria-labelledby="partners-strip-title" className="border-b border-line py-16 lg:py-20">
+        <div className="container-site">
+          <h2 id="partners-strip-title" className="text-eyebrow text-center text-muted">
+            Partners &amp; platforms we deploy
+          </h2>
+          <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:grid-cols-7">
+            {company.partners.map((p, i) => (
+              <li key={p.vendor} data-reveal style={{ ["--i" as string]: i }} className="border-b border-line pb-4 text-center">
+                <span className="block text-[1.3rem] tracking-[-0.03em] text-ink-950">{p.vendor}</span>
+                <span className="mt-1 block font-mono text-[0.66rem] tracking-[0.05em] text-muted uppercase">{p.relationship}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-center">
+            <DocLink href={`${routes.about}#partners`}>About our partnerships</DocLink>
+          </p>
+        </div>
+      </section>
+
+      {/* How we work ------------------------------------------------------ */}
+      <section aria-labelledby="approach-title" className="py-24 lg:py-32">
+        <div className="container-site">
+          <SectionHeader id="approach-title" title="Survey, install, support. Done.">
+            The engineers who design your environment are the same people who answer when something needs attention.
+          </SectionHeader>
+          <div className="mt-16 lg:mt-20">
+            <ProcessSteps steps={HOW_WE_WORK} />
           </div>
         </div>
       </section>
 
-      {/* Core platforms: 3CX + Bitrix24 ---------------------------------- */}
-      {threecx && bitrix && <CorePlatforms threecx={threecx} bitrix={bitrix} />}
+      <PlatformBand />
 
-      {/* Solutions -------------------------------------------------------- */}
-      <section id="solutions" aria-labelledby="solutions-title" className="py-24 lg:py-32">
+      {/* Solutions bento -------------------------------------------------- */}
+      <section id="solutions" aria-labelledby="solutions-title" className="scroll-mt-24 py-24 lg:py-32">
         <div className="container-site">
-          <SectionHeader
-            eyebrow="Solutions"
-            index="01"
-            id="solutions-title"
-            title="One accountable team for the systems your business runs on."
-          >
-            3CX phone system, Bitrix24 CRM, security, email and hosting, licensed, deployed and supported locally. One
-            number to call instead of a different vendor for each.
-          </SectionHeader>
+          <div className="max-w-4xl" data-reveal="blur">
+            <h2 id="solutions-title" className="text-headline text-ink-950">
+              Calls, customers and IT, with{" "}
+              <span className="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-clip-text text-transparent">
+                one local team
+              </span>
+            </h2>
+          </div>
 
-          <div className="mt-16 divide-y divide-line border-y border-line lg:mt-20">
-            {company.solutionGroups.map((g, gi) => {
-              const items = services.filter((s) => s.group === g.key);
-              return (
-                <div key={g.key} className="grid gap-8 py-10 lg:grid-cols-12 lg:gap-10 lg:py-14">
-                  <div className="lg:col-span-3" data-reveal>
-                    <p className="text-xs font-semibold tracking-[0.08em] text-ink-500 tabular-nums">
-                      0{gi + 1} / 0{company.solutionGroups.length}
-                    </p>
-                    <h3 className="mt-3 text-2xl font-semibold tracking-tight text-ink-950">{g.name}</h3>
-                    <p className="mt-3 max-w-xs leading-relaxed text-muted">{g.need}</p>
-                  </div>
-                  <div className={`grid gap-4 sm:grid-cols-2 lg:col-span-9 ${items.length >= 3 ? "xl:grid-cols-3" : ""}`}>
-                    {items.map((s, i) => (
-                      <ServiceCard key={s.slug} service={s} index={i} wide={items.length === 1} />
-                    ))}
+          <div className="mt-16 grid border-t border-l border-line md:grid-cols-2">
+            {/* Coloured service list */}
+            <div className={`${cell} overflow-hidden`} data-reveal>
+              <p className="text-[clamp(1.6rem,1.15rem+1.5vw,2.3rem)] leading-[1.18] tracking-[-0.028em] text-ink-950">
+                Local support for{" "}
+                {WORDS.map((w, i) => (
+                  <span key={w.slug}>
+                    <Link
+                      href={routes.service(w.slug)}
+                      style={{ color: w.color }}
+                      className="decoration-[0.06em] underline-offset-[0.12em] hover:underline"
+                    >
+                      {w.label}
+                    </Link>
+                    {i < WORDS.length - 2 ? ", " : i === WORDS.length - 2 ? " and " : "."}
+                  </span>
+                ))}
+              </p>
+            </div>
+
+            {/* 3CX + Bitrix24 */}
+            {bitrix && (
+              <div className={cell} data-reveal style={{ ["--i" as string]: 1 }}>
+                <Eyebrow>Core platforms</Eyebrow>
+                <h3 className="text-title mt-5 text-ink-950">3CX and Bitrix24, connected.</h3>
+                <p className="mt-4 max-w-md leading-relaxed text-muted">{bitrix.summary}</p>
+                <Checks items={bitrix.highlights} />
+                <div className="mt-8">
+                  <DocLink href={routes.service(bitrix.slug)}>3CX + Bitrix24 integration</DocLink>
+                </div>
+              </div>
+            )}
+
+            {/* Cloud call center */}
+            {threecx && (
+              <div className={`${cell} grid gap-12 overflow-hidden md:col-span-2 lg:grid-cols-2`}>
+                <div data-reveal>
+                  <Eyebrow>3CX Gold Partner</Eyebrow>
+                  <h3 className="text-title mt-5 max-w-[16ch] text-ink-950">Cloud call centers that answer every channel.</h3>
+                  <p className="mt-4 max-w-md leading-relaxed text-muted">{threecx.summary}</p>
+                  <Checks items={threecx.highlights} />
+                  <div className="mt-8">
+                    <DocLink href={routes.service(threecx.slug)}>3CX Cloud Call Center</DocLink>
                   </div>
                 </div>
-              );
-            })}
+                <div className="relative -mx-8 -mb-8 flex items-center bg-gradient-to-br from-white via-paper-2 to-brand-50 p-8 sm:-mx-12 sm:-mb-12 sm:p-12 lg:-my-14 lg:-mr-14 lg:ml-0 lg:p-14">
+                  <CallFlow />
+                </div>
+              </div>
+            )}
+
+            {/* Security and cloud */}
+            {security && (
+              <div className={cell} data-reveal>
+                <Eyebrow>Protect</Eyebrow>
+                <h3 className="text-title mt-5 text-ink-950">{security.name}</h3>
+                <p className="mt-4 max-w-md leading-relaxed text-muted">{security.need}</p>
+                <ServiceLinks items={inGroup("security")} />
+              </div>
+            )}
+            {cloud && (
+              <div className={cell} data-reveal style={{ ["--i" as string]: 1 }}>
+                <Eyebrow>Run</Eyebrow>
+                <h3 className="text-title mt-5 text-ink-950">{cloud.name}</h3>
+                <p className="mt-4 max-w-md leading-relaxed text-muted">{cloud.need}</p>
+                <ServiceLinks items={inGroup("cloud")} />
+              </div>
+            )}
+
+            {/* Managed IT */}
+            {managed && maint && (
+              <div className={`${cell} grid gap-10 overflow-hidden md:col-span-2 lg:grid-cols-2`}>
+                <div data-reveal>
+                  <Eyebrow>Maintain</Eyebrow>
+                  <h3 className="text-title mt-5 max-w-[18ch] text-ink-950">{managed.need}</h3>
+                  <p className="mt-4 max-w-md leading-relaxed text-muted">{maint.summary}</p>
+                  <div className="mt-8">
+                    <DocLink href={routes.service(maint.slug)}>IT Maintenance</DocLink>
+                  </div>
+                </div>
+                <div
+                  className="relative self-center border border-line bg-white p-6 font-mono text-[0.8rem] text-ink-700"
+                  data-reveal
+                  style={{ ["--i" as string]: 1 }}
+                >
+                  <p className="text-[0.68rem] tracking-[0.08em] text-ink-500 uppercase">Preventive maintenance</p>
+                  <ul className="mt-4 space-y-2.5">
+                    {maint.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-2.5">
+                        <Check aria-hidden className="mt-0.5 size-3.5 shrink-0 text-accent-600" strokeWidth={2.5} />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                  <PixelBlock pattern="c" className="absolute -top-px -right-px h-[23px] w-[46px]" />
+                </div>
+              </div>
+            )}
           </div>
+        </div>
+      </section>
+
+      {/* Quote ------------------------------------------------------------ */}
+      <section aria-labelledby="quote-title" className="relative border-y border-line">
+        <h2 id="quote-title" className="sr-only">
+          How we work with customers
+        </h2>
+        <div aria-hidden className="bg-cells h-[92px] border-b border-line bg-[position:center_top] [mask-image:linear-gradient(to_bottom,transparent,black)]" />
+        <div className="container-site">
+          <div className="border-x border-line px-6 py-14 sm:px-12 lg:px-16 lg:py-20">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-6 lg:grid-cols-4">
+              {[
+                ...company.serviceAreas.map((a) => ({ icon: <MapPin aria-hidden className="size-4" />, name: a.name, note: a.note })),
+                { icon: <Languages aria-hidden className="size-4" />, name: "Khmer · English", note: "Support languages" },
+              ].map((t, i) => (
+                <li
+                  key={t.name}
+                  className={`border-b pb-4 ${i === 0 ? "border-ink-950" : "border-line"}`}
+                  data-reveal
+                  style={{ ["--i" as string]: i }}
+                >
+                  <span className={`flex items-center gap-2 ${i === 0 ? "text-ink-950" : "text-muted"}`}>
+                    <span className="text-brand-600">{t.icon}</span>
+                    {t.name}
+                  </span>
+                  <span className="mt-1 block font-mono text-[0.66rem] tracking-[0.05em] text-muted uppercase">{t.note}</span>
+                </li>
+              ))}
+            </ul>
+            <figure className="mt-14" data-reveal="blur">
+              <blockquote>
+                <p className="max-w-4xl text-[clamp(1.4rem,1.1rem+1.1vw,2rem)] leading-[1.3] tracking-[-0.02em] text-ink-950">
+                  &ldquo;We believe trust can only be achieved through communication and experienced support. That&rsquo;s
+                  why you talk to engineers directly, in Khmer or English.&rdquo;
+                </p>
+              </blockquote>
+              <figcaption className="mt-8 font-mono text-[0.75rem] tracking-[0.06em] uppercase">
+                <span className="mark-mono">KHCOLO · In Cambodia since {company.operatingSince}</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div aria-hidden className="bg-cells h-[92px] border-t border-line bg-[position:center_top] [mask-image:linear-gradient(to_top,transparent,black)]" />
+      </section>
+
+      {/* What to expect --------------------------------------------------- */}
+      <section aria-labelledby="expect-title" className="py-24 lg:py-32">
+        <div className="container-site">
+          <SectionHeader id="expect-title" title="An IT partner that’s close to home">
+            Ten services and the hardware behind them, from one team that already knows your setup.
+          </SectionHeader>
+          <ul className="mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+            {expectations.map((e, i) => (
+              <li key={e.title} data-reveal style={{ ["--i" as string]: i % 4 } as CSSProperties}>
+                <span className="flex size-9 items-center justify-center bg-brand-50 text-brand-700">
+                  <ServiceIcon name={e.icon} className="size-[18px]" />
+                </span>
+                <h3 className="mt-5 flex flex-wrap items-center gap-2 text-[1.15rem] tracking-[-0.015em] text-ink-950">
+                  {e.title}
+                  {i === 0 && (
+                    <span className="border border-brand-600/50 px-1.5 py-0.5 font-mono text-[0.6rem] tracking-[0.06em] text-brand-700 uppercase">
+                      Since {company.operatingSince}
+                    </span>
+                  )}
+                </h3>
+                <p className="mt-2 text-[0.95rem] leading-relaxed text-muted">{e.body}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
       {/* Hardware --------------------------------------------------------- */}
-      <section aria-labelledby="hardware-title" className="surface-dark bg-grain relative overflow-hidden bg-ink-900 py-24 lg:py-32">
-        <div aria-hidden className="bg-blueprint absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
+      <section aria-labelledby="hardware-title" className="relative border-t border-line py-24 lg:py-32">
+        <div
+          aria-hidden
+          className="bg-cells absolute top-0 right-0 hidden h-[276px] w-[460px] bg-[position:right_-1px_top_-1px] [mask-image:linear-gradient(to_bottom_left,black_30%,transparent_75%)] lg:block"
+        />
         <div className="container-site relative">
-          <SectionHeader
-            tone="dark"
-            eyebrow="Hardware"
-            index="02"
-            id="hardware-title"
-            title="Phones, gateways and PBX appliances, supplied and set up."
-          >
+          <SectionHeader id="hardware-title" title="Phones, gateways and PBX appliances, supplied and set up">
             The equipment we install every day, provisioned and supported end to end. There&rsquo;s no online checkout:
             send your requirements and we&rsquo;ll confirm price and availability.
           </SectionHeader>
@@ -221,91 +410,18 @@ export default async function HomePage() {
               );
             })}
           </div>
-          <div className="mt-10" data-reveal>
-            <ButtonLink href={routes.products} variant="secondary">
+          <div className="mt-10 flex flex-wrap gap-3" data-reveal>
+            <ButtonLink href={routes.products} icon="arrow">
               Browse all {products.length} products
+            </ButtonLink>
+            <ButtonLink href={`${routes.contact}?type=quote#inquiry`} variant="secondary" icon={null}>
+              Send your requirements
             </ButtonLink>
           </div>
         </div>
       </section>
 
-      {/* How we work ------------------------------------------------------ */}
-      <section aria-labelledby="approach-title" className="py-24 lg:py-32">
-        <div className="container-site">
-          <SectionHeader eyebrow="How we work" index="03" id="approach-title" title="From the first survey to ongoing support.">
-            The engineers who design your environment are the same people who answer when something needs attention. No
-            handoffs between vendors.
-          </SectionHeader>
-          <div className="mt-16 lg:mt-20">
-            <ProcessSteps steps={HOW_WE_WORK} />
-          </div>
-        </div>
-      </section>
-
-      {/* Company ---------------------------------------------------------- */}
-      <section aria-labelledby="about-title" className="pb-24 lg:pb-32">
-        <div className="container-site">
-          <div className="grid overflow-hidden rounded-[1.75rem] border border-line bg-white shadow-[var(--shadow-card)] lg:grid-cols-12">
-            <div className="p-7 sm:p-12 lg:col-span-7 lg:p-16" data-reveal>
-              <Eyebrow index="04">About KHCOLO</Eyebrow>
-              <h2 id="about-title" className="text-title mt-5 text-ink-950">
-                The full stack, under one roof.
-              </h2>
-              <p className="text-lede mt-6 max-w-2xl text-muted">{company.description}</p>
-              <ul className="mt-10 grid gap-x-10 gap-y-7 sm:grid-cols-2">
-                {company.principles.map((p) => (
-                  <li key={p.title} className="border-t border-line pt-5">
-                    <h3 className="font-semibold tracking-tight text-ink-950">{p.title}</h3>
-                    <p className="mt-1.5 text-[0.95rem] leading-relaxed text-muted">{p.body}</p>
-                  </li>
-                ))}
-              </ul>
-              <ButtonLink href={routes.about} variant="outline" className="mt-10">
-                More about KHCOLO
-              </ButtonLink>
-            </div>
-            <div className="surface-dark bg-grain relative bg-ink-950 p-7 text-white sm:p-12 lg:col-span-5 lg:p-14" data-reveal style={{ ["--i" as string]: 1 }}>
-              <div aria-hidden className="bg-blueprint absolute inset-0 opacity-60 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
-              <div className="relative flex h-full flex-col gap-9">
-              <dl className="space-y-9">
-                <div>
-                  <dt className="text-eyebrow text-ink-400">Operating since</dt>
-                  <dd className="mt-3 text-7xl leading-none font-semibold tracking-[-0.04em] text-brand-300 tabular-nums">{company.operatingSince}</dd>
-                </div>
-                <div className="border-t border-white/10 pt-7">
-                  <dt className="text-eyebrow text-ink-400">Where we work</dt>
-                  <dd className="mt-3 space-y-1.5">
-                    {company.serviceAreas.map((a) => (
-                      <p key={a.name} className="flex items-baseline justify-between gap-4">
-                        <span className="text-lg font-medium">{a.name}</span>
-                        <span className="text-sm text-ink-400">{a.note}</span>
-                      </p>
-                    ))}
-                  </dd>
-                </div>
-                <div className="border-t border-white/10 pt-7">
-                  <dt className="text-eyebrow text-ink-400">Support languages</dt>
-                  <dd className="mt-3 flex items-baseline gap-6 text-lg font-medium">
-                    <span>
-                      <span lang="km">ខ្មែរ</span> <span className="text-ink-400">Khmer</span>
-                    </span>
-                    <span>English</span>
-                  </dd>
-                </div>
-              </dl>
-                <blockquote className="mt-auto border-t border-white/10 pt-7">
-                  <span aria-hidden className="block text-5xl leading-none font-semibold text-accent-400">&ldquo;</span>
-                  <p className="mt-1 text-xl leading-snug font-medium tracking-[-0.015em] text-white">
-                    We believe trust can only be achieved through communication and experienced support.
-                  </p>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ContactBand company={company} />
+      <ContactBand company={company} title="Start with a conversation." />
     </>
   );
 }

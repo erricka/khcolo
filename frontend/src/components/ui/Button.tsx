@@ -1,37 +1,92 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
-import type { ComponentProps, ReactNode } from "react";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
+import type { ComponentProps, CSSProperties, ReactNode } from "react";
 
+/**
+ * Square buttons in the Render manner.
+ *
+ *   primary    black, with a blue block at the right edge that wipes across on hover
+ *   secondary  white with a black hairline border; fills black on hover
+ *   outline    alias of secondary
+ *   dark       black; fills blue on hover, no resting block
+ *   ghost      text only
+ */
 type Variant = "primary" | "secondary" | "ghost" | "dark" | "outline";
-type Size = "md" | "lg";
+type Size = "sm" | "md" | "lg";
 
 const base =
-  "group relative inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-[-0.01em] whitespace-nowrap " +
-  "transition-[background-color,color,border-color,box-shadow,transform] duration-200 ease-[var(--ease-out-quart)] " +
+  "btn-wipe group relative inline-flex items-stretch justify-center overflow-hidden font-normal tracking-[-0.01em] whitespace-nowrap " +
+  "transition-[color,border-color,transform] duration-200 ease-[var(--ease-out-quart)] " +
   "active:translate-y-px active:duration-75 disabled:pointer-events-none disabled:opacity-50";
 
-const variants: Record<Variant, string> = {
-  primary:
-    "btn-sheen overflow-hidden bg-brand-500 text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.22),0_1px_2px_rgb(5_11_29/0.3)] hover:bg-brand-600 hover:shadow-[inset_0_1px_0_rgb(255_255_255/0.25),0_10px_28px_-10px_rgb(61_104_242/0.75)]",
-  secondary:
-    "border border-white/18 bg-white/[0.04] text-white hover:border-white/35 hover:bg-white/[0.09]",
-  ghost: "text-current hover:bg-current/[0.06]",
-  dark: "bg-ink-900 text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.08)] hover:bg-ink-800 hover:shadow-[0_10px_24px_-12px_rgb(5_11_29/0.6)]",
-  outline: "border border-ink-900/20 bg-white/60 text-ink-900 hover:border-ink-900/45 hover:bg-white",
+const variants: Record<Variant, { cls: string; fill: string | null }> = {
+  primary: { cls: "bg-ink-950 text-white", fill: "bg-brand-600" },
+  dark: { cls: "bg-ink-950 text-white", fill: "bg-brand-600" },
+  secondary: { cls: "border border-ink-950 bg-white text-ink-950", fill: "bg-ink-950" },
+  outline: { cls: "border border-ink-950 bg-white text-ink-950", fill: "bg-ink-950" },
+  ghost: { cls: "text-current hover:text-brand-700", fill: null },
 };
 
-const sizes: Record<Size, string> = {
-  md: "h-11 px-5 text-[0.95rem]",
-  lg: "h-13 px-6 text-base",
+const sizes: Record<Size, { h: string; label: string; block: string; blockPx: number }> = {
+  sm: { h: "h-9 text-[0.88rem]", label: "px-3.5", block: "w-8", blockPx: 32 },
+  md: { h: "h-11 text-[0.95rem]", label: "px-5", block: "w-10", blockPx: 40 },
+  lg: { h: "h-12 text-base", label: "px-6", block: "w-11", blockPx: 44 },
 };
 
-type Common = { variant?: Variant; size?: Size; icon?: "arrow" | "external" | ReactNode | null; className?: string; children: ReactNode };
+type Common = {
+  variant?: Variant;
+  size?: Size;
+  icon?: "arrow" | "external" | ReactNode | null;
+  className?: string;
+  children: ReactNode;
+};
 
-function Icon({ icon }: { icon: Common["icon"] }) {
+function iconNode(icon: Common["icon"]) {
   if (icon === null) return null;
-  if (icon === "external") return <ArrowUpRight aria-hidden className="arrow-nudge arrow-nudge-diag size-4 shrink-0" />;
-  if (icon === "arrow" || icon === undefined) return <ArrowRight aria-hidden className="arrow-nudge size-4 shrink-0" />;
+  if (icon === "external")
+    return (
+      <ArrowUpRight
+        aria-hidden
+        className="size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-px group-hover:-translate-y-px"
+      />
+    );
+  if (icon === "arrow" || icon === undefined)
+    return <ChevronRight aria-hidden className="size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" />;
   return <>{icon}</>;
+}
+
+function Content({ size, icon, hasBlock, children }: { size: Size; icon: ReactNode; hasBlock: boolean; children: ReactNode }) {
+  const s = sizes[size];
+  return (
+    <>
+      <span className={`relative flex items-center ${s.label} ${icon && !hasBlock ? "pr-3.5" : ""}`}>{children}</span>
+      {icon && <span className={`relative flex items-center justify-center ${hasBlock ? s.block : "pr-4"}`}>{icon}</span>}
+    </>
+  );
+}
+
+/** The fill layer repeats the label in the hover colour, so text and fill wipe in together. */
+function Inner({ variant, size, icon, children }: { variant: Variant; size: Size; icon: ReactNode; children: ReactNode }) {
+  const v = variants[variant];
+  const hasBlock = variant === "primary" && icon !== null;
+  return (
+    <>
+      <Content size={size} icon={icon} hasBlock={hasBlock}>
+        {children}
+      </Content>
+      {v.fill && (
+        <span aria-hidden className={`btn-fill flex items-stretch justify-center text-white ${v.fill}`}>
+          <Content size={size} icon={icon} hasBlock={hasBlock}>
+            {children}
+          </Content>
+        </span>
+      )}
+    </>
+  );
+}
+
+function blockStyle(variant: Variant, size: Size, icon: ReactNode): CSSProperties | undefined {
+  return variant === "primary" && icon !== null ? ({ ["--btn-block" as string]: `${sizes[size].blockPx}px` } as CSSProperties) : undefined;
 }
 
 export function ButtonLink({
@@ -42,23 +97,34 @@ export function ButtonLink({
   className = "",
   children,
   external,
+  style,
   ...rest
 }: Common & { href: string; external?: boolean } & Omit<ComponentProps<"a">, "href" | "children">) {
-  const cls = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
+  const cls = `${base} ${variants[variant].cls} ${sizes[size].h} ${className}`;
   if (external || /^(https?:|tel:|mailto:)/.test(href)) {
     const isWeb = /^https?:/.test(href);
+    const node = iconNode(icon ?? (isWeb ? "external" : "arrow"));
     return (
-      <a href={href} className={cls} {...(isWeb ? { target: "_blank", rel: "noopener noreferrer" } : {})} {...rest}>
-        {children}
-        <Icon icon={icon ?? (isWeb ? "external" : null)} />
-        {isWeb && <span className="sr-only"> (opens in a new tab)</span>}
+      <a
+        href={href}
+        className={cls}
+        style={{ ...blockStyle(variant, size, node), ...style }}
+        {...(isWeb ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...rest}
+      >
+        <Inner variant={variant} size={size} icon={node}>
+          {children}
+          {isWeb && <span className="sr-only"> (opens in a new tab)</span>}
+        </Inner>
       </a>
     );
   }
+  const node = iconNode(icon);
   return (
-    <Link href={href} className={cls} {...rest}>
-      {children}
-      <Icon icon={icon} />
+    <Link href={href} className={cls} style={{ ...blockStyle(variant, size, node), ...style }} {...rest}>
+      <Inner variant={variant} size={size} icon={node}>
+        {children}
+      </Inner>
     </Link>
   );
 }
@@ -69,12 +135,19 @@ export function Button({
   icon = null,
   className = "",
   children,
+  style,
   ...rest
 }: Common & Omit<ComponentProps<"button">, "children">) {
+  const node = iconNode(icon);
   return (
-    <button className={`${base} ${variants[variant]} ${sizes[size]} ${className}`} {...rest}>
-      {children}
-      <Icon icon={icon} />
+    <button
+      className={`${base} ${variants[variant].cls} ${sizes[size].h} ${className}`}
+      style={{ ...blockStyle(variant, size, node), ...style }}
+      {...rest}
+    >
+      <Inner variant={variant} size={size} icon={node}>
+        {children}
+      </Inner>
     </button>
   );
 }

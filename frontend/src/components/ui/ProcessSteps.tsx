@@ -1,26 +1,18 @@
-/** Numbered steps joined by a line that draws across when the row enters view. */
+/** Numbered blue squares joined by a hairline that draws across when the row enters view. */
 export function ProcessSteps({ steps, tone = "light" }: { steps: { title: string; body: string }[]; tone?: "light" | "dark" }) {
-  const dark = tone === "dark";
-  const cols = steps.length >= 5 ? "lg:grid-cols-5" : "lg:grid-cols-4";
+  void tone;
+  const cols = steps.length >= 5 ? "lg:grid-cols-5" : steps.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4";
   return (
     <div className="relative">
-      <div
-        aria-hidden
-        data-reveal-line
-        className={`absolute top-[1.15rem] right-0 left-0 hidden h-px lg:block ${dark ? "bg-white/15" : "bg-ink-900/15"}`}
-      />
+      <div aria-hidden data-reveal-line className="absolute top-[0.8rem] right-0 left-0 hidden h-px bg-line-strong lg:block" />
       <ol className={`relative grid gap-10 sm:grid-cols-2 lg:gap-8 ${cols}`}>
         {steps.map((step, i) => (
           <li key={step.title} data-reveal style={{ ["--i" as string]: i }} className="relative">
-            <span
-              className={`relative z-10 flex size-[2.3rem] items-center justify-center rounded-full border text-[0.8rem] font-semibold tabular-nums ${
-                dark ? "border-brand-300/40 bg-ink-900 text-brand-300" : "border-brand-700/25 bg-paper text-brand-700"
-              }`}
-            >
-              {String(i + 1).padStart(2, "0")}
+            <span className="relative z-10 flex size-[1.6rem] items-center justify-center bg-brand-600 font-mono text-[0.8rem] text-white tabular-nums">
+              {i + 1}
             </span>
-            <h3 className={`mt-5 text-lg font-semibold tracking-tight ${dark ? "text-white" : "text-ink-950"}`}>{step.title}</h3>
-            <p className={`mt-2 leading-relaxed ${dark ? "text-ink-300" : "text-muted"}`}>{step.body}</p>
+            <h3 className="mt-6 text-[1.4rem] leading-tight tracking-[-0.022em] text-ink-950">{step.title}</h3>
+            <p className="mt-3 leading-relaxed text-muted">{step.body}</p>
           </li>
         ))}
       </ol>

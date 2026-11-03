@@ -1,0 +1,52 @@
+[
+  {
+    "path": "/",
+    "title": "IT Solutions & Support in Cambodia — KHCOLO",
+    "description": "KHCOLO plans, installs and supports 3CX phone systems, Bitrix24 CRM, cybersecurity, backup, hosting and IT maintenance for businesses across Cambodia.",
+    "h1": "IT solutions and local support for Cambodian businesses",
+    "schemaType": "WebSite, Organization",
+    "indexable": true,
+    "sourceUrl": "https://khcolo.com/",
+    "updatedAt": "2026-11-03"
+  },
+  {
+    "path": "/about-us/",
+    "title": "About KHCOLO — Cambodia IT & Telecom Solutions",
+    "description": "KHCOLO is a Cambodia-based IT and telecom partner operating since 2017: communications, security, cloud and support from one local team, in Khmer or English.",
+    "h1": "About KHCOLO",
+    "schemaType": "AboutPage",
+    "indexable": true,
+    "sourceUrl": "https://khcolo.com/about-us/",
+    "updatedAt": "2026-11-03"
+  },
+  {
+    "path": "/contact-us/",
+    "title": "Contact KHCOLO — IT Sales & Support Cambodia",
+    "description": "Talk to KHCOLO about phone systems, CRM, security, hosting or IT support. Message us on Telegram, call +855 12 200 259 or send an inquiry online.",
+    "h1": "Talk to KHCOLO's team",
+    "schemaType": "ContactPage",
+    "indexable": true,
+    "sourceUrl": "https://khcolo.com/contact-us/",
+    "updatedAt": "2026-11-03"
+  },
+  {
+    "path": "/products/",
+    "title": "IP Phones, VoIP Gateways & IP PBX in Cambodia — KHCOLO",
+    "description": "Browse the business telephony hardware KHCOLO supplies in Cambodia: Yealink IP phones, Grandstream and Yeastar gateways and Yeastar IP PBX appliances.",
+    "h1": "Business telephony hardware",
+    "schemaType": "CollectionPage",
+    "indexable": true,
+    "sourceUrl": null,
+    "updatedAt": "2026-11-03"
+  },
+  {
+    "path": "/privacy-policy/",
+    "title": "Privacy Notice — KHCOLO",
+    "description": "How KHCOLO handles the information you send through the inquiry form on this website: what we collect, why, who can see it and how to ask us to delete it.",
+    "h1": "Privacy notice",
+    "schemaType": "WebPage",
+    "indexable": true,
+    "sourceUrl": null,
+    "updatedAt": "2026-11-03"
+  }
+]

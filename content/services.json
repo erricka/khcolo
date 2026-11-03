@@ -1,0 +1,678 @@
+[
+  {
+    "slug": "cloud-call-center",
+    "group": "communications",
+    "position": 1,
+    "name": "3CX Phone Systems & Cloud Call Center",
+    "shortName": "3CX Cloud Call Center",
+    "icon": "phone",
+    "summary": "Calls, video, WhatsApp and website chat on one 3CX platform, hosted and supported locally.",
+    "h1": "3CX phone systems and cloud call centers in Cambodia",
+    "intro": "We supply, deploy, host and support 3CX for Cambodian businesses: one platform for calls, video, messaging and contact-center work, set up by local engineers and looked after once it's live.",
+    "seo": {
+      "title": "3CX Phone Systems & Cloud Call Center Cambodia — KHCOLO",
+      "description": "KHCOLO supplies, hosts and supports 3CX phone systems in Cambodia: calls, video, WhatsApp, live chat and CRM integration, in the cloud or on-site."
+    },
+    "highlights": [
+      "Hosted by KHCOLO, in your own cloud, or on-premise",
+      "Annual licensing sized by simultaneous calls",
+      "Works with Yealink, Cisco and Fanvil IP phones",
+      "Option to keep your existing numbers, planned with you"
+    ],
+    "overview": {
+      "heading": "Every customer conversation in one system",
+      "body": [
+        "When calls, chat and messaging live in separate tools, customers wait and your team loses context. 3CX brings voice, video, WhatsApp, website chat and SMS into one platform, with queues, reporting and CRM integration built around it.",
+        "Your staff can answer from a desk phone, the desktop app or a mobile device. We choose the deployment, size the licence, connect your SIP trunk and stay on for support."
+      ]
+    },
+    "capabilities": [
+      { "title": "Channels", "items": ["Voice calls", "Video calls", "WhatsApp", "Website live chat", "SMS"] },
+      { "title": "Contact center", "items": ["Call queues", "Reporting", "Wallboards", "Presence"] },
+      { "title": "Access and integration", "items": ["Desktop apps", "Mobile apps", "CRM integration", "Existing-number retention"] },
+      { "title": "Browser conferencing", "items": ["Scheduling", "Whiteboards", "Polls", "Streaming"] },
+      { "title": "Administration", "items": ["Automated updates", "Automated backups", "SIP trunk choice"] }
+    ],
+    "capabilitiesNote": "Included features depend on the current 3CX edition, licence size and deployment. We confirm them in your quote.",
+    "options": [
+      {
+        "heading": "Choose where your phone system runs",
+        "layout": "cards",
+        "cards": [
+          { "title": "Hosted by KHCOLO", "body": "We host and manage the system for you. Nothing to install on site beyond phones and network." },
+          { "title": "Your cloud", "body": "Deploy into your own cloud account. AWS, Tencent Cloud and Alibaba Cloud are all supported options." },
+          { "title": "On-premise", "body": "Run 3CX on hardware at your office when you need the system on your own network." }
+        ],
+        "note": "3CX is licensed annually, sized by the number of simultaneous calls. We help you pick a SIP trunk and the right licence size."
+      }
+    ],
+    "process": [
+      { "title": "Assess", "body": "Map your call flows, numbers, users and the channels customers use today." },
+      { "title": "Design and license", "body": "Choose hosting, SIP trunk and licence size, and plan any number migration." },
+      { "title": "Deploy", "body": "Configure queues, extensions and integrations, then provision phones and apps." },
+      { "title": "Train and support", "body": "Hand over to your team with training, then stay on for updates and support." }
+    ],
+    "faqs": [
+      { "q": "Can we keep our existing phone numbers?", "a": "In many cases, yes. Number retention depends on your current carrier and SIP trunk, so we confirm the approach and timing during planning before anything is switched over." },
+      { "q": "Which desk phones work with 3CX?", "a": "3CX works with IP phones from vendors including Yealink, Cisco and Fanvil. We supply Yealink phones locally and can check whether equipment you already own can be reused." },
+      { "q": "How is 3CX licensed?", "a": "3CX uses an annual licence sized by the number of simultaneous calls. Editions and included features change over time, so we confirm the current options in your quote." }
+    ],
+    "related": ["3cx-bitrix24-integration", "voice-communication", "it-maintenance"],
+    "relatedCategories": ["ip-phone", "ip-pbx", "voip-gateway"],
+    "sourceUrl": "https://khcolo.com/cloud-call-center/",
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Omitted pending confirmation: savings of up to 80%, 250 video participants, free or unlimited conferencing, included-feature claims.",
+        "\"Zero-downtime number migration\" rewritten as a planned, carrier-dependent option.",
+        "Demo chat messages, agent counts and system-status panels from the old page are not reproduced as data."
+      ]
+    }
+  },
+  {
+    "slug": "3cx-bitrix24-integration",
+    "group": "communications",
+    "position": 2,
+    "name": "Bitrix24 CRM & 3CX Integration",
+    "shortName": "Bitrix24 CRM",
+    "icon": "crm",
+    "summary": "CRM, projects and collaboration in one workspace, connected to your 3CX phone system.",
+    "h1": "Bitrix24 CRM implementation and 3CX integration",
+    "intro": "Bitrix24 puts CRM, projects, collaboration and contact-center tools in one workspace. We implement it locally, shape it around how your team sells and serves, and connect it to your 3CX phone system.",
+    "seo": {
+      "title": "Bitrix24 CRM & 3CX Integration Cambodia — KHCOLO",
+      "description": "Bitrix24 CRM implemented locally by KHCOLO and connected to 3CX: sales pipelines, tasks, projects, HR tools and a contact center in one workspace."
+    },
+    "highlights": [
+      "Local implementation and training",
+      "Connected to your 3CX phone system",
+      "CRM, projects, HR and contact center together",
+      "Integrates with WhatsApp, Telegram, Xero, Zoom and more"
+    ],
+    "overview": {
+      "heading": "One workspace for sales, service and teamwork",
+      "body": [
+        "Sales notes in spreadsheets, tasks in chat threads and calls with no record make it hard to see where a customer stands. Bitrix24 keeps leads, deals, conversations and tasks in one place.",
+        "Connected to 3CX, your phone system and your customer records work together. We configure pipelines, fields and automation to match your process, not a generic template."
+      ]
+    },
+    "capabilities": [
+      { "title": "CRM and sales", "items": ["Lead capture", "Lead scoring", "Sales automation", "Quotations", "Invoicing", "Marketing", "Analytics"] },
+      { "title": "Projects and tasks", "items": ["Recurring task templates", "Task dependencies", "Workload planning", "Kanban boards", "Gantt charts", "Time tracking"] },
+      { "title": "Collaboration", "items": ["Video calls with recording and backgrounds", "Chat", "Files and documents", "Calendars", "Worktime tracking"] },
+      { "title": "Contact center", "items": ["Telephony", "Call routing", "Tracking", "Chatbots", "Saved replies", "Web forms"] },
+      { "title": "HR and automation", "items": ["Attendance", "Employee directory", "Reports", "Workflows"] }
+    ],
+    "capabilitiesNote": "Available tools, user limits and pricing depend on the Bitrix24 plan. We confirm the current plan details with you.",
+    "options": [
+      {
+        "heading": "Connects to the tools you already use",
+        "layout": "tags",
+        "tags": ["WhatsApp", "Telegram", "PayPal", "Stripe", "QuickBooks", "Xero", "Zapier", "Zoom", "Office 365", "Mailchimp", "Instagram", "Dropbox", "Miro", "Twilio", "RingCentral"]
+      }
+    ],
+    "process": [
+      { "title": "Discovery", "body": "Walk through how leads arrive, how deals close and where work gets stuck." },
+      { "title": "Configuration", "body": "Set up pipelines, fields, automation rules and permissions." },
+      { "title": "3CX integration", "body": "Connect telephony so calls and customer records work together." },
+      { "title": "Training and support", "body": "Train each team on its own workflow, then support the rollout." }
+    ],
+    "faqs": [],
+    "related": ["cloud-call-center", "voice-communication", "it-maintenance"],
+    "relatedCategories": ["ip-phone"],
+    "sourceUrl": "https://khcolo.com/3cx-bitrix24-integration/",
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Omitted pending confirmation: 12M+ organizations, 35+ tools, 18 languages, 48 video participants, unlimited users, flat-fee and free-plan wording.",
+        "Removed unsupported comparative claim (\"better than 99% of alternatives\").",
+        "Pipeline counts, employee names and time-clock figures on the old page were UI illustrations and are not reproduced."
+      ]
+    }
+  },
+  {
+    "slug": "voice-communication",
+    "group": "communications",
+    "position": 3,
+    "name": "Yealink Video Conferencing",
+    "shortName": "Video Conferencing",
+    "icon": "video",
+    "summary": "Yealink desk and meeting-room video, surveyed, installed and calibrated by our engineers.",
+    "h1": "Video conferencing systems for Cambodian businesses",
+    "intro": "From a single desk to a divisible boardroom, we help you choose the right Yealink equipment, install it properly and train your team, with local support and warranty handling afterwards.",
+    "seo": {
+      "title": "Yealink Video Conferencing Cambodia — KHCOLO",
+      "description": "Yealink meeting room systems for Cambodian offices: room survey, selection, cabling, installation, calibration, staff training and local support."
+    },
+    "highlights": [
+      "Microsoft Teams Rooms and Zoom Rooms options",
+      "Google Meet via BYOD/USB or app",
+      "Integration with 3CX",
+      "Room survey through to staff training"
+    ],
+    "overview": {
+      "heading": "Meeting rooms people can actually start on time",
+      "body": [
+        "A meeting room only earns its keep if people can join quickly and hear each other clearly. We survey the room, recommend equipment sized to it, and handle cabling, installation and calibration.",
+        "Rooms can run Microsoft Teams Rooms or Zoom Rooms natively, use Google Meet through BYOD/USB or the app, and connect with your 3CX phone system."
+      ]
+    },
+    "capabilities": [
+      { "title": "Platforms", "items": ["Microsoft Teams Rooms", "Zoom Rooms", "Google Meet via BYOD/USB or app", "3CX integration"] },
+      { "title": "Our work", "items": ["Room survey", "System selection", "Cabling", "Installation", "Calibration", "Staff training", "Warranty handling", "Local support"] }
+    ],
+    "capabilitiesNote": "",
+    "options": [
+      {
+        "heading": "Equipment by room size",
+        "intro": "A starting point from our Yealink line-up. We confirm the right bundle after surveying the room.",
+        "layout": "table",
+        "columns": ["Setting", "Capacity", "Yealink models", "What's included"],
+        "rows": [
+          ["Individual desk", "1", "UVC20 / UVC30 webcams, CP700 / CP900 speakerphones, WH66 / BH76 headsets", "Personal video and audio for hybrid work"],
+          ["Focus room", "2–4", "MeetingBar A10", "Integrated camera, microphone and speaker; native Teams/Zoom or USB BYOD"],
+          ["Small room", "4–6", "MeetingBar A20", "All-in-one MeetingBar for small rooms"],
+          ["Medium room", "Up to 10", "MeetingBar A40 / MVC S40", "Dual 4K tracking cameras, optional S40 touch panel, wireless sharing"],
+          ["Large room", "Up to 15", "MVC S50 / MeetingBar A50 bundle", "Three cameras, mini-PC, touch panel, wireless microphone and room sensor"],
+          ["Boardroom", "Up to 20", "MVC S80", "Multiple cameras and microphone arrays"],
+          ["Large or divisible room", "20+", "MVC S90 / MVC940", "Multiple cameras, microphone arrays, multiple displays and remote management"]
+        ],
+        "note": "Capacities are guidance from our published line-up. Exact bundles, platform certifications and demo availability are confirmed when we quote."
+      }
+    ],
+    "process": [
+      { "title": "Room survey", "body": "Measure the room, seating, displays, acoustics and network." },
+      { "title": "Selection", "body": "Recommend equipment and platform for the room and how you meet." },
+      { "title": "Install and calibrate", "body": "Cabling, mounting, camera framing and audio calibration." },
+      { "title": "Train and support", "body": "Show staff how to start meetings, then handle support and warranty." }
+    ],
+    "faqs": [
+      { "q": "Can we use Google Meet in our meeting room?", "a": "Yes. Google Meet can be used through BYOD/USB mode or the app, depending on the system. Microsoft Teams Rooms and Zoom Rooms are available as native options." },
+      { "q": "Do you install the equipment as well as supply it?", "a": "Yes. Our work covers the room survey, system selection, cabling, installation, calibration and staff training, followed by local support and warranty handling." }
+    ],
+    "related": ["cloud-call-center", "3cx-bitrix24-integration", "it-maintenance"],
+    "relatedCategories": ["ip-phone"],
+    "sourceUrl": "https://khcolo.com/voice-communication/",
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Confirm exact bundles, Teams/Zoom certifications, room capacities and demo availability before publication.",
+        "Line-up places S80 at up to 20 seats and S90/MVC940 at 20+ or divisible rooms; confirm.",
+        "MeetingBar A20 row has no published feature list; generic description used."
+      ]
+    }
+  },
+  {
+    "slug": "eset-antivirus",
+    "group": "security",
+    "position": 4,
+    "name": "ESET Endpoint Security",
+    "shortName": "ESET Antivirus",
+    "icon": "shield",
+    "summary": "Local ESET licensing and business endpoint protection managed through ESET PROTECT.",
+    "h1": "ESET antivirus and business endpoint protection",
+    "intro": "We handle ESET licensing, activation and renewals locally, and deploy business protection through the ESET PROTECT console, so every endpoint is covered and managed from one place.",
+    "seo": {
+      "title": "ESET Antivirus & Endpoint Security Cambodia — KHCOLO",
+      "description": "Local ESET licensing, activation and renewals, plus business endpoint protection deployed and managed through ESET PROTECT by KHCOLO in Cambodia."
+    },
+    "highlights": [
+      "Local licensing, activation and renewals",
+      "Central management with ESET PROTECT",
+      "Business tiers: Entry, Advanced, Complete",
+      "Works with Acronis backup and our hosting"
+    ],
+    "overview": {
+      "heading": "Protection you can see and manage",
+      "body": [
+        "Antivirus installed machine by machine is hard to keep current across a whole office. ESET PROTECT gives your business one console for deployment and policy, and we take care of the licences, renewals and setup.",
+        "ESET pairs well with Acronis backup and our hosting and security services when you want layered protection rather than a single product."
+      ]
+    },
+    "capabilities": [
+      { "title": "Licensing and setup", "items": ["Local licensing", "Activation", "Renewals", "Business deployment through ESET PROTECT"] },
+      { "title": "Protection areas across ESET products", "items": ["Malware detection", "Firewall and network protection", "Safe banking", "Password management", "Encryption", "Sandboxing", "VPN", "Identity monitoring", "Ransomware protection"] },
+      { "title": "Platforms", "items": ["Windows 10 / 11 and later", "macOS 13 and later", "Android 9 and later"] }
+    ],
+    "capabilitiesNote": "Features vary by product and plan. We confirm the current feature matrix for the tier you choose.",
+    "options": [
+      {
+        "heading": "Business tiers",
+        "layout": "cards",
+        "cards": [
+          { "title": "ESET PROTECT Entry", "body": "Endpoint and file-server protection with central management." },
+          { "title": "ESET PROTECT Advanced", "body": "Everything in Entry, plus full-disk encryption and sandboxing." },
+          { "title": "ESET PROTECT Complete", "body": "Everything in Advanced, plus mail-server and cloud-application protection." }
+        ]
+      },
+      {
+        "heading": "Home and small-office products",
+        "layout": "tags",
+        "tags": ["ESET NOD32 Antivirus", "ESET Internet Security", "ESET Smart Security Premium", "ESET Security Ultimate"]
+      }
+    ],
+    "process": [
+      { "title": "Review", "body": "Count endpoints and servers and agree what needs protecting." },
+      { "title": "License and deploy", "body": "Activate licences and roll out agents through ESET PROTECT." },
+      { "title": "Configure policy", "body": "Set protection policies per device group." },
+      { "title": "Renew and support", "body": "Track renewals and help when something is flagged." }
+    ],
+    "faqs": [
+      { "q": "Which ESET business tier do we need?", "a": "It depends on what you need to protect. PROTECT Entry covers endpoints and file servers with central management, Advanced adds disk encryption and sandboxing, and Complete adds mail-server and cloud-application protection. We recommend a tier after reviewing your environment." },
+      { "q": "Can you renew a licence we bought elsewhere?", "a": "We handle ESET licensing, activation and renewals locally. Send us your current licence details and we'll confirm the renewal options." }
+    ],
+    "related": ["acronis-cyber-protect-cloud", "web-security", "it-maintenance"],
+    "relatedCategories": [],
+    "sourceUrl": "https://khcolo.com/eset-antivirus/",
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Home product feature lists on the old page were ambiguous; features are listed across products, not assigned to a plan.",
+        "Omitted pending confirmation: 16 protection layers, 11 years of performance recognition, 100+ VB100 awards, 30+ years, a billion users, \"award-winning\".",
+        "The \"100% threats blocked\" panel was a demo and is not reproduced."
+      ]
+    }
+  },
+  {
+    "slug": "web-security",
+    "group": "security",
+    "position": 5,
+    "name": "SSL/TLS Certificates",
+    "shortName": "SSL/TLS Certificates",
+    "icon": "lock",
+    "summary": "Certificate selection, validation, installation and renewal for websites and mail servers.",
+    "h1": "SSL/TLS certificate installation and renewal",
+    "intro": "TLS encrypts data travelling between your visitors and your server. We help you choose the right certificate, then handle the CSR, validation, installation and renewals for your websites and mail servers.",
+    "seo": {
+      "title": "SSL/TLS Certificates in Cambodia — KHCOLO",
+      "description": "SSL/TLS certificates for websites and mail servers: selection, CSR preparation, validation, installation, renewal and reissues, handled by KHCOLO."
+    },
+    "highlights": [
+      "RapidSSL, GoGetSSL and GeoTrust certificates",
+      "CSR, validation and installation handled",
+      "Websites and mail servers",
+      "Renewals and reissues tracked for you"
+    ],
+    "overview": {
+      "heading": "Certificates without the admin",
+      "body": [
+        "Certificates expire, validation emails get missed, and a badly installed chain can take a site or mail server offline. We manage the whole lifecycle so renewals happen before anything breaks.",
+        "A certificate protects data in transit. It's one important layer of web security, not a guarantee against every attack, so we'll also point out anything else worth fixing while we're there."
+      ]
+    },
+    "capabilities": [
+      { "title": "Certificate lifecycle", "items": ["Certificate selection", "CSR preparation", "Domain or business validation", "Installation", "Renewal", "Reissues"] },
+      { "title": "Where we install", "items": ["Websites", "Mail servers"] }
+    ],
+    "capabilitiesNote": "",
+    "options": [
+      {
+        "heading": "Certificates we supply",
+        "layout": "table",
+        "columns": ["Certificate", "Validation", "Highlights", "Stated warranty"],
+        "rows": [
+          ["RapidSSL Standard", "Domain validation", "Typically issued in minutes; covers www and non-www; free reissues", "US$10,000"],
+          ["GoGetSSL Secure Domain", "Domain", "Single, subdomain or wildcard coverage; RSA or ECC keys; TrulyTrust scan", "US$50,000"],
+          ["GeoTrust True BusinessID", "Business validation (DigiCert)", "Company identity in the certificate; dynamic site seal; unlimited server licensing; typically 1–3 days", "US$1,250,000"]
+        ],
+        "note": "Issuance times, features and warranty amounts are as stated by the certificate authorities and can change. Warranties are provided by the issuer under its own terms; we confirm current details before purchase."
+      }
+    ],
+    "process": [
+      { "title": "Choose", "body": "Match validation level and coverage to the site or mail server." },
+      { "title": "Validate", "body": "Prepare the CSR and complete domain or business validation." },
+      { "title": "Install", "body": "Install the certificate and full chain, then test the connection." },
+      { "title": "Renew", "body": "Track expiry and handle renewals and reissues." }
+    ],
+    "faqs": [
+      { "q": "Will an SSL certificate stop my website being hacked?", "a": "No. TLS encrypts data in transit between the browser and your server. It's an important layer, but it doesn't fix vulnerable software or weak passwords, so combine it with updates, backups and endpoint protection." },
+      { "q": "What's the difference between domain and business validation?", "a": "Domain validation confirms you control the domain and is usually issued quickly. Business validation also verifies your company, and its details are included in the certificate. It takes longer, typically one to three days." }
+    ],
+    "related": ["cloud-services", "eset-antivirus", "zimbra"],
+    "relatedCategories": [],
+    "sourceUrl": "https://khcolo.com/web-security/",
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Omitted pending confirmation: \"up to 256-bit encryption\" and \"99.6% compatibility\".",
+        "Confirm validation times and warranty terms for all three certificates.",
+        "GoGetSSL Secure Domain validation level was not stated on the source page; shown as \"Domain\" based on product name. Confirm.",
+        "Avoid implying every browser shows a padlock, that business validation changes the address bar, or that SSL alone improves rankings."
+      ]
+    }
+  },
+  {
+    "slug": "acronis-cyber-protect-cloud",
+    "group": "security",
+    "position": 6,
+    "name": "Acronis Cyber Protect Cloud",
+    "shortName": "Acronis Backup",
+    "icon": "backup",
+    "summary": "Backup, recovery and cyber protection for servers, PCs, VMs and cloud workloads.",
+    "h1": "Acronis business backup and cyber protection",
+    "intro": "Acronis Cyber Protect Cloud brings backup, recovery, security and management together for physical, virtual and cloud workloads. We configure the schedules, storage and alerts, and help you test that recovery actually works.",
+    "seo": {
+      "title": "Acronis Backup & Cyber Protection Cambodia — KHCOLO",
+      "description": "Acronis Cyber Protect Cloud from KHCOLO: backup, recovery and cyber protection for physical, virtual and cloud workloads, configured and supported locally."
+    },
+    "highlights": [
+      "Physical, virtual and cloud workloads",
+      "Image, file and encrypted backups",
+      "Malware scanning and vulnerability reports",
+      "Schedules, storage and alerts set up for you"
+    ],
+    "overview": {
+      "heading": "Backups you can actually restore",
+      "body": [
+        "A backup only matters on the day you need to restore it. Acronis combines image and file backup with malware scanning and disaster-recovery testing in a single agent and console.",
+        "We set up schedules, storage locations and alerts so problems surface early. No backup system can promise zero data loss; good design and regular restore tests are what reduce the risk."
+      ]
+    },
+    "capabilities": [
+      { "title": "Backup and recovery", "items": ["Disk and system images", "File-level recovery", "Restore to different hardware", "Disk cloning", "Encrypted backups", "Backup validation", "Resumable replication", "Web restore with password-protected sharing"] },
+      { "title": "Cyber protection", "items": ["Malware scanning", "Behavioral detection", "Web filtering", "Vulnerability reporting"] },
+      { "title": "Management", "items": ["Automated policies", "Disaster-recovery testing", "Secure file sharing", "Notarization and e-signing"] }
+    ],
+    "capabilitiesNote": "Capabilities depend on the Acronis edition and add-ons. We confirm what's included before you commit.",
+    "options": [
+      {
+        "heading": "Flexible licensing",
+        "layout": "cards",
+        "cards": [
+          { "title": "Per workload", "body": "Licensed per protected machine or workload, suited to a known, stable set of servers and PCs." },
+          { "title": "Consumption-based", "body": "Billed on usage, suited to environments that grow or change month to month." }
+        ]
+      }
+    ],
+    "process": [
+      { "title": "Inventory", "body": "List the machines, VMs and data that must be recoverable." },
+      { "title": "Design", "body": "Agree schedules, retention and where backups are stored." },
+      { "title": "Configure", "body": "Deploy agents, policies and alerts." },
+      { "title": "Test", "body": "Run restore and disaster-recovery tests, then review regularly." }
+    ],
+    "faqs": [],
+    "related": ["eset-antivirus", "proxmoxve", "it-maintenance"],
+    "relatedCategories": [],
+    "sourceUrl": "https://khcolo.com/acronis-cyber-protect-cloud/",
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Confirm current capabilities and licensing models.",
+        "Backup timestamps, blocked-attack counts and green status indicators on the old page were demo content; not reproduced."
+      ]
+    }
+  },
+  {
+    "slug": "cloud-services",
+    "group": "cloud",
+    "position": 7,
+    "name": "Web Hosting & Managed Cloud VPS",
+    "shortName": "Hosting & Cloud VPS",
+    "icon": "cloud",
+    "summary": "Shared hosting and managed cloud VPS, with migration, backups and local support.",
+    "h1": "Web hosting and managed cloud VPS in Cambodia",
+    "intro": "Shared hosting for websites and email, and managed cloud VPS when you need dedicated resources. Both are backed by a local team that handles migration, backups and support.",
+    "seo": {
+      "title": "Web Hosting & Managed Cloud VPS Cambodia — KHCOLO",
+      "description": "Shared web hosting and managed cloud VPS from KHCOLO: SSD/NVMe storage, backups, WordPress tools, email, WAF and CDN options, migration and local support."
+    },
+    "highlights": [
+      "Shared hosting and managed cloud VPS",
+      "SSD/NVMe storage and scheduled backups",
+      "WAF and CDN options",
+      "Website migration and local support"
+    ],
+    "overview": {
+      "heading": "Hosting with someone you can call",
+      "body": [
+        "When a site slows down or a mailbox stops working, you want someone who already knows your setup. We host, migrate and support websites, mailboxes and servers.",
+        "Start on shared hosting and move to a managed cloud VPS with a dedicated IP and root access when you need more control."
+      ]
+    },
+    "capabilities": [
+      { "title": "Platform", "items": ["Admin, user and email interfaces", "Custom branding", "WordPress staging and updates", "HTTP API and CLI", "Physical or virtual servers"] },
+      { "title": "Security and performance", "items": ["Web application firewall (WAF)", "CDN", "Malware scanning", "SShield security"] },
+      { "title": "Support", "items": ["Local support", "Website migration", "Backup recovery"] }
+    ],
+    "capabilitiesNote": "",
+    "options": [
+      {
+        "heading": "Two ways to host",
+        "layout": "cards",
+        "cards": [
+          { "title": "Shared hosting", "meta": "Websites and email", "items": ["SSD/NVMe storage", "Scheduled backups", "WordPress installation", "Business mailboxes", "Malware scanning", "Domain and SSL options; ask about current first-year offers"] },
+          { "title": "Managed cloud VPS", "meta": "Dedicated resources", "items": ["Dedicated IP address", "Root access and full customization", "SPanel control panel", "SShield security", "OpenLiteSpeed with LiteSpeed Cache", "Optional managed support"] }
+        ],
+        "note": "Backup frequency, included promotions and management scope differ by plan and are confirmed in your quote."
+      }
+    ],
+    "process": [
+      { "title": "Review", "body": "Look at your current site, email and traffic." },
+      { "title": "Recommend", "body": "Shared hosting or VPS, sized to what you run." },
+      { "title": "Migrate", "body": "Move sites and mailboxes with a planned cut-over." },
+      { "title": "Support", "body": "Backups, updates and help from a local team." }
+    ],
+    "faqs": [
+      { "q": "Can you move our existing website and email?", "a": "Yes, migration is part of our hosting service. We review your current setup first and confirm the scope, timing and any costs before we start." }
+    ],
+    "related": ["web-security", "zimbra", "proxmoxve"],
+    "relatedCategories": [],
+    "sourceUrl": "https://khcolo.com/cloud-services/",
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Old page mentions both daily backups and weekly shared-hosting backups; clarify per plan. New page says \"scheduled backups\".",
+        "Confirm first-year domain/SSL promotions, free migration, management scope and the 99.9% uptime guarantee before using them.",
+        "Omitted: \"15 seconds average\", 3.4s to 0.9s speed figures and WAF percentages (no measurement methodology)."
+      ]
+    }
+  },
+  {
+    "slug": "proxmoxve",
+    "group": "cloud",
+    "position": 8,
+    "name": "Proxmox VE Virtualization",
+    "shortName": "Proxmox VE",
+    "icon": "server",
+    "summary": "Design, deployment, migration and support for Proxmox VE servers and clusters.",
+    "h1": "Proxmox virtualization deployment and support",
+    "intro": "Proxmox VE runs KVM virtual machines and LXC containers on a Debian foundation. We design, deploy, migrate and support single-node and clustered environments for Cambodian businesses.",
+    "seo": {
+      "title": "Proxmox VE Deployment & Support Cambodia — KHCOLO",
+      "description": "Proxmox VE design, deployment, migration and support for single servers and clusters: KVM VMs, LXC containers, high availability, storage and backup."
+    },
+    "highlights": [
+      "Single-node and clustered deployments",
+      "KVM virtual machines and LXC containers",
+      "HA failover and live migration",
+      "Proxmox Backup Server integration"
+    ],
+    "overview": {
+      "heading": "Infrastructure you own and understand",
+      "body": [
+        "Consolidating servers onto a well-designed virtualization platform makes them easier to manage, but clustering, storage and backup need careful planning.",
+        "We size the hardware, design networking and storage, migrate your workloads and stay on for support, with documentation your own team can follow."
+      ]
+    },
+    "capabilities": [
+      { "title": "Compute and management", "items": ["KVM virtual machines", "LXC containers", "Debian foundation", "Web administration", "CLI and API access", "Multi-node management"] },
+      { "title": "Clustering and availability", "items": ["Corosync cluster communication", "pmxcfs cluster file system", "High-availability failover", "Live migration"] },
+      { "title": "Networking", "items": ["VLANs", "QinQ", "VXLAN", "BGP/EVPN", "Distributed firewall"] },
+      { "title": "Storage", "items": ["Local directories", "LVM", "iSCSI", "NFS", "SMB/CIFS", "ZFS", "Ceph RBD / CephFS", "GlusterFS"] },
+      { "title": "Backup and recovery", "items": ["Scheduled vzdump jobs", "Proxmox Backup Server integration", "Incremental, deduplicated, encrypted backups", "Live restore", "File-level recovery"] }
+    ],
+    "capabilitiesNote": "Some storage, networking and firewall features depend on the Proxmox VE version and hardware. We confirm what applies to your design.",
+    "options": [
+      {
+        "heading": "Deployment patterns",
+        "layout": "cards",
+        "cards": [
+          { "title": "Single node", "body": "One host for consolidating workloads, with scheduled backups and room to grow into a cluster." },
+          { "title": "Cluster", "body": "Multiple nodes with shared or replicated storage for HA failover and live migration." },
+          { "title": "Migration", "body": "Move existing servers and VMs onto Proxmox VE with a planned, tested cut-over." }
+        ]
+      }
+    ],
+    "process": [
+      { "title": "Assess", "body": "Inventory workloads, performance needs and existing hardware." },
+      { "title": "Design", "body": "Plan nodes, networking, storage and backup." },
+      { "title": "Deploy and migrate", "body": "Build the platform and move workloads across." },
+      { "title": "Test and support", "body": "Test failover and restore, then provide ongoing support." }
+    ],
+    "faqs": [
+      { "q": "Does live migration cause downtime?", "a": "Live migration moves a running VM between nodes with minimal interruption, but the result depends on storage, network and workload. We plan migrations and test them so the behaviour is known before you rely on it." },
+      { "q": "Is high availability automatic?", "a": "Proxmox VE can restart VMs on another node when one fails, but only on a properly sized cluster with quorum and fencing in place. We design and test HA as part of the deployment." }
+    ],
+    "related": ["cloud-services", "acronis-cyber-protect-cloud", "it-maintenance"],
+    "relatedCategories": [],
+    "sourceUrl": "https://khcolo.com/proxmoxve/",
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Replaced absolute \"0ms\" migration and zero-configuration HA promises with qualified wording.",
+        "Version-dependent storage, firewall and mobile-management claims need confirmation.",
+        "Old link to https://khcolo.com/proxmox-backup-server returned 404 during review. Link removed; no empty page created.",
+        "Sample cluster and VM names on the old page were illustrative and are not reproduced."
+      ]
+    }
+  },
+  {
+    "slug": "zimbra",
+    "group": "cloud",
+    "position": 9,
+    "name": "Zimbra Business Email",
+    "shortName": "Zimbra Email",
+    "icon": "mail",
+    "summary": "Private business email and collaboration, deployed, tuned and upgraded by our engineers.",
+    "h1": "Zimbra business email deployment and support",
+    "intro": "Zimbra gives organizations private email and collaboration they can run on infrastructure they control. We deploy it, tune it, upgrade it, and review its security and capacity.",
+    "seo": {
+      "title": "Zimbra Business Email & Support Cambodia — KHCOLO",
+      "description": "Private Zimbra business email and collaboration in Cambodia: deployment, configuration tuning, upgrades, capacity testing and security review by KHCOLO."
+    },
+    "highlights": [
+      "On-premise or in-country hosting",
+      "TLS/HTTPS, smart-card and SSO options",
+      "Configuration tuning and upgrades",
+      "Performance, capacity and security review"
+    ],
+    "overview": {
+      "heading": "Email that stays under your control",
+      "body": [
+        "Some organizations need to know exactly where their email lives and who can reach it. Zimbra can run on-premise or in-country, with TLS/HTTPS, smart-card authentication and single sign-on.",
+        "Alongside deployment, we offer the professional services that keep a mail platform healthy as it grows: tuning, upgrades, capacity testing and security review."
+      ]
+    },
+    "capabilities": [
+      { "title": "Platform", "items": ["Private business email", "Collaboration and calendars", "On-premise control", "Backups", "Responsive web access", "Custom branding"] },
+      { "title": "Security and control", "items": ["In-country hosting option", "Source visibility", "TLS/HTTPS", "Smart-card authentication", "Single sign-on (SSO)", "APIs and Zimlets"] },
+      { "title": "Integrations", "items": ["Slack", "Dropbox", "Zoom"] }
+    ],
+    "capabilitiesNote": "",
+    "options": [
+      {
+        "heading": "Professional services",
+        "layout": "cards",
+        "cards": [
+          { "title": "Configuration tuning", "body": "We examine logs, usage and concurrency, protocols, mailbox, database and message sizes, ports, patches, calendars, storage and mail flow." },
+          { "title": "Upgrades", "body": "Assessment, planning, feature guidance, software updates, verification and handover." },
+          { "title": "Performance and capacity", "body": "Usage profiling, server metrics and load testing to show how far your platform can grow." },
+          { "title": "Security review", "body": "A review of your deployment's security configuration, with practical recommendations." }
+        ],
+        "note": "Subscription and perpetual licensing are available, with support and renewals. Current editions and terms are confirmed in your quote."
+      }
+    ],
+    "process": [
+      { "title": "Assess", "body": "Review mailboxes, mail flow, storage and current version." },
+      { "title": "Plan", "body": "Agree hosting, licensing, migration or upgrade path." },
+      { "title": "Deploy or upgrade", "body": "Carry out the work with verification at each step." },
+      { "title": "Hand over", "body": "Document the platform and support it afterwards." }
+    ],
+    "faqs": [],
+    "related": ["cloud-services", "web-security", "it-maintenance"],
+    "relatedCategories": [],
+    "sourceUrl": "https://khcolo.com/zimbra/",
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Brazilian and European government examples on the old page are not KHCOLO customers; not reproduced.",
+        "The 3,500–10,000 employee paragraph appears to be third-party testimonial material; not reproduced.",
+        "Version references calling 8.8/9 \"latest\", open-source/licensing descriptions and reinstatement terms are historical; not reproduced until confirmed."
+      ]
+    }
+  },
+  {
+    "slug": "it-maintenance",
+    "group": "managed-it",
+    "position": 10,
+    "name": "IT Maintenance & Managed IT",
+    "shortName": "IT Maintenance",
+    "icon": "wrench",
+    "summary": "Outsourced or supplementary support for servers, PCs and networks.",
+    "h1": "IT maintenance and managed support in Cambodia",
+    "intro": "Use us as your IT department, or as backup for the team you already have. We look after servers, PCs and networks with preventive checks, backups, security reviews and clear monthly reporting.",
+    "seo": {
+      "title": "IT Maintenance & Managed IT Cambodia — KHCOLO",
+      "description": "Outsourced or supplementary IT support for servers, PCs and networks in Cambodia: preventive maintenance, backups, security reviews, reporting and IT policies."
+    },
+    "highlights": [
+      "Servers, PCs and networks",
+      "Preventive maintenance and reporting",
+      "Backup, restore and security review",
+      "Documentation and IT policies"
+    ],
+    "overview": {
+      "heading": "Prevent problems instead of chasing them",
+      "body": [
+        "A lot of IT disruption starts with something nobody checked: a full disk, a failed backup, a missed update. Scheduled preventive maintenance catches these early.",
+        "Monthly reporting and proper documentation give you a record of what's been done and a clear picture of what needs attention next."
+      ]
+    },
+    "capabilities": [
+      { "title": "What we cover", "items": ["Strategic consulting", "Software maintenance", "Preventive checks", "Security and performance review", "Backup and restore", "Proactive issue prevention"] },
+      { "title": "What you receive", "items": ["Reporting", "Documentation", "IT policies", "Action plan"] },
+      { "title": "Systems", "items": ["Servers", "PCs", "Networks"] }
+    ],
+    "capabilitiesNote": "",
+    "options": [
+      {
+        "heading": "Published plans",
+        "layout": "cards",
+        "cards": [
+          { "title": "PT-Premium", "meta": "Remote and on-site", "items": ["Unlimited remote support", "10 on-site visits per month", "Preventive maintenance twice a month", "Consultation", "Monthly reporting", "Documentation", "IT policy setup"] },
+          { "title": "KC-FT-Standard", "meta": "One standby technician", "items": ["One standby technical-support person", "Preventive maintenance plan", "Consultation", "Reporting", "IT policies", "Action plan", "Documentation"] },
+          { "title": "KC-FT-Standard", "meta": "Two standby technicians", "items": ["Two standby technical-support people", "Preventive maintenance plan", "Consultation", "Reporting", "IT policies", "Action plan", "Documentation"] }
+        ],
+        "note": "Pricing, service hours, visit rules and staffing arrangements are confirmed in your proposal."
+      }
+    ],
+    "process": [
+      { "title": "Audit", "body": "Document servers, PCs, network and current risks." },
+      { "title": "Plan", "body": "Agree the plan, visit schedule and reporting." },
+      { "title": "Maintain", "body": "Preventive checks, updates, backups and reviews." },
+      { "title": "Report", "body": "Monthly reporting and an updated action plan." }
+    ],
+    "faqs": [],
+    "related": ["eset-antivirus", "acronis-cyber-protect-cloud", "proxmoxve"],
+    "relatedCategories": [],
+    "sourceUrl": "https://khcolo.com/it-maintenance/",
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Two different staffing packages are both named KC-FT-Standard on the old page. Displayed with a staffing qualifier (\"One/Two standby technicians\") pending the owner's naming decision; no plan has been renamed.",
+        "Confirm service hours, visit rules, staffing arrangements and pricing. No prices published.",
+        "24/7 coverage not stated pending confirmation of which contracts include it."
+      ]
+    }
+  }
+]

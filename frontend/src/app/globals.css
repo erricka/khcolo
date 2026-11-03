@@ -1,0 +1,566 @@
+@import "tailwindcss";
+
+/* --------------------------------------------------------------------------
+   Design tokens
+   -------------------------------------------------------------------------- */
+
+@theme {
+  --font-sans: var(--font-inter), var(--font-noto-khmer), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-khmer: var(--font-noto-khmer), var(--font-inter), sans-serif;
+
+  /* Deep navy for dark surfaces and text, taken toward the logo's navy */
+  --color-ink-950: #050b1d;
+  --color-ink-900: #08122b;
+  --color-ink-850: #0c1834;
+  --color-ink-800: #111f40;
+  --color-ink-700: #1b2d55;
+  --color-ink-600: #2a3f6b;
+  --color-ink-500: #4a5d84;
+  --color-ink-400: #7d8cab;
+  --color-ink-300: #a7b3cc;
+  --color-ink-200: #cfd7e6;
+  --color-ink-100: #e7ecf4;
+
+  /* Cool neutral content surfaces */
+  --color-paper: #f4f6fa;
+  --color-paper-2: #eaeef5;
+  --color-paper-3: #dfe5ef;
+  --color-line: #d9dfe9;
+  --color-line-strong: #c3ccda;
+  --color-body: #13203a;
+  --color-muted: #536079;
+
+  /* KHCOLO blue, from the globe in the logo */
+  --color-brand-50: #eef3ff;
+  --color-brand-100: #dbe5ff;
+  --color-brand-200: #b8cbff;
+  --color-brand-300: #8eabff;
+  --color-brand-400: #5f86fb;
+  --color-brand-500: #3d68f2;
+  --color-brand-600: #2f55e0;
+  --color-brand-700: #2443b8;
+  --color-brand-800: #1f3790;
+  --color-brand-900: #1b2e6e;
+
+  /* Green, used sparingly: status, confirmation, small highlights */
+  --color-accent-50: #ecfdf5;
+  --color-accent-100: #d1fae5;
+  --color-accent-200: #a7f3d0;
+  --color-accent-300: #6ee7b7;
+  --color-accent-400: #34d399;
+  --color-accent-500: #10b981;
+  --color-accent-600: #059669;
+  --color-accent-700: #047857;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --shadow-card: 0 1px 2px rgb(8 18 43 / 0.04), 0 2px 8px -2px rgb(8 18 43 / 0.06);
+  --shadow-lift: 0 2px 4px rgb(8 18 43 / 0.04), 0 18px 36px -18px rgb(24 45 120 / 0.3);
+  --shadow-panel: 0 30px 60px -30px rgb(2 6 18 / 0.7), 0 0 0 1px rgb(255 255 255 / 0.06);
+}
+
+:root {
+  --header-h: 72px;
+
+  /* Motion tokens shared by CSS and the reveal observer */
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-reveal: 520ms;
+  --reveal-distance: 16px;
+  --stagger: 70ms;
+
+  --focus-ring: var(--color-brand-600);
+  color-scheme: light;
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: calc(var(--header-h) + 64px);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss03";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--color-brand-200);
+    color: var(--color-ink-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  .surface-dark {
+    --focus-ring: var(--color-brand-300);
+    color-scheme: dark;
+  }
+
+  [lang="km"] {
+    font-family: var(--font-khmer);
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Type scale
+   -------------------------------------------------------------------------- */
+
+@utility text-display {
+  font-size: clamp(2.6rem, 1.4rem + 4.6vw, 5.1rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+@utility text-display-sm {
+  font-size: clamp(2.45rem, 1.45rem + 3.3vw, 4.35rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+@utility text-headline {
+  font-size: clamp(2.2rem, 1.35rem + 3vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.032em;
+  font-weight: 600;
+}
+
+@utility text-title {
+  font-size: clamp(1.85rem, 1.3rem + 1.9vw, 2.85rem);
+  line-height: 1.1;
+  letter-spacing: -0.028em;
+  font-weight: 600;
+}
+
+@utility text-lede {
+  font-size: clamp(1.075rem, 1rem + 0.35vw, 1.25rem);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+
+@utility text-eyebrow {
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@utility container-site {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Surfaces and texture
+   -------------------------------------------------------------------------- */
+
+@utility bg-grain {
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+}
+
+@utility bg-blueprint {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@utility bg-blueprint-light {
+  background-image:
+    linear-gradient(to right, rgb(8 18 43 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(8 18 43 / 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Product photos are shot on white; multiply lets them sit on any light panel. */
+@utility photo-multiply {
+  mix-blend-mode: multiply;
+}
+
+/* --------------------------------------------------------------------------
+   Motion
+   -------------------------------------------------------------------------- */
+
+/* Hero entrance runs on CSS alone so it never waits for JavaScript. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility enter {
+  animation: rise 640ms var(--ease-out-expo) both;
+  animation-delay: calc(var(--d, 0) * 85ms + 80ms);
+}
+
+/* Section reveal. Only hidden once JS has marked the document as able to reveal;
+   a fail-safe in the layout removes the class if the observer never starts. */
+html.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-distance), 0);
+  transition:
+    opacity var(--dur-reveal) var(--ease-out-quart),
+    transform calc(var(--dur-reveal) + 80ms) var(--ease-out-expo);
+  transition-delay: calc(min(var(--i, 0), 6) * var(--stagger));
+}
+
+html.js-reveal [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Headings resolve from a soft blur as they rise */
+html.js-reveal [data-reveal="blur"] {
+  filter: blur(8px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-out-quart),
+    transform calc(var(--dur-reveal) + 80ms) var(--ease-out-expo),
+    filter calc(var(--dur-reveal) + 200ms) var(--ease-out-quart);
+}
+
+html.js-reveal [data-reveal="blur"].is-revealed {
+  filter: none;
+}
+
+/* Lines that draw across when their section enters */
+html.js-reveal [data-reveal-line] {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1100ms var(--ease-out-expo) 120ms;
+}
+
+html.js-reveal [data-reveal-line].is-revealed {
+  transform: scaleX(1);
+}
+
+/* Hero topology diagram (src/components/home/HeroTopology.tsx) */
+.topo-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: topo-draw 1400ms var(--ease-out-expo) both; }
+.topo-flow { opacity: 0; animation: topo-fade 800ms ease-out both, topo-flow 2.8s linear infinite; }
+.topo-node { animation: topo-in 700ms var(--ease-out-expo) both; transform-box: fill-box; transform-origin: center; }
+.topo-spin { animation: topo-spin 60s linear infinite; }
+.topo-ring { animation: topo-ring 3.6s var(--ease-out-quart) 1.8s infinite; }
+.topo-blink { animation: topo-blink 2.4s ease-in-out infinite; }
+@keyframes topo-draw { to { stroke-dashoffset: 0; } }
+@keyframes topo-fade { to { opacity: 1; } }
+@keyframes topo-flow { to { stroke-dashoffset: -56; } }
+@keyframes topo-in { from { opacity: 0; transform: translateY(8px) scale(0.97); } to { opacity: 1; transform: none; } }
+@keyframes topo-spin { to { transform: rotate(360deg); } }
+@keyframes topo-ring { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.7); opacity: 0; } }
+@keyframes topo-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+/* Decorative SVG loops pause when off screen */
+[data-paused="true"] * {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --reveal-distance: 0px;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  html.js-reveal [data-reveal-line] {
+    transform: none;
+  }
+
+  .motion-decor,
+  .scroll-progress {
+    display: none !important;
+  }
+
+  .tilt-stage {
+    transform: none !important;
+  }
+
+  .btn-sheen::after {
+    display: none;
+  }
+
+  html.js-reveal [data-reveal="blur"] {
+    filter: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Interaction details
+   -------------------------------------------------------------------------- */
+
+/* Pointer spotlight: a soft glow and a lit border that follow the cursor.
+   Coordinates come from components/motion/Spotlight.tsx; touch devices skip it. */
+[data-spotlight] {
+  isolation: isolate;
+  --spot: rgb(61 104 242 / 0.08);
+  --spot-border: rgb(47 85 224 / 0.55);
+}
+
+[data-spotlight="dark"] {
+  --spot: rgb(95 134 251 / 0.13);
+  --spot-border: rgb(142 171 255 / 0.6);
+}
+
+[data-spotlight]::before,
+[data-spotlight]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 360ms var(--ease-out-quart);
+}
+
+[data-spotlight]::before {
+  z-index: -1;
+  background: radial-gradient(440px circle at var(--mx, 50%) var(--my, 50%), var(--spot), transparent 45%);
+}
+
+[data-spotlight]::after {
+  padding: 1px;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), var(--spot-border), transparent 65%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [data-spotlight]:hover::before,
+  [data-spotlight]:hover::after {
+    opacity: 1;
+  }
+}
+
+/* Light sweep across primary buttons */
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 30%, rgb(255 255 255 / 0.55) 48%, transparent 66%);
+  transform: translateX(-130%);
+  transition: transform 750ms var(--ease-out-quart);
+}
+
+@media (hover: hover) {
+  .btn-sheen:hover::after {
+    transform: translateX(130%);
+  }
+}
+
+/* Hand-drawn underline in the hero heading */
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.draw-underline {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-line 1100ms var(--ease-in-out-soft) 650ms forwards;
+}
+
+/* Reading progress, driven by the scroll position itself (no JavaScript) */
+.scroll-progress {
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  @keyframes progress-grow {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .scroll-progress {
+    display: block;
+    transform-origin: 0 50%;
+    animation: progress-grow linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+/* Slow drift for large background glows */
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-6%, 5%, 0) scale(1.08);
+  }
+}
+
+.glow-drift {
+  animation: drift 16s ease-in-out infinite alternate;
+}
+
+/* Product photo settles into place (scale only, so it never delays LCP) */
+@keyframes settle {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.photo-settle {
+  animation: settle 1400ms var(--ease-out-expo) both;
+}
+
+/* Gentle 3D tilt for the hero diagram; values set by PauseOffscreen */
+.tilt-stage {
+  transform: perspective(1400px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 900ms var(--ease-out-quart);
+  will-change: transform;
+}
+
+/* --------------------------------------------------------------------------
+   Components that are easier to express in CSS
+   -------------------------------------------------------------------------- */
+
+/* Arrow nudge used by buttons and links */
+.arrow-nudge {
+  transition: transform var(--dur-fast) var(--ease-out-quart);
+}
+.group:hover .arrow-nudge,
+.group:focus-visible .arrow-nudge {
+  transform: translateX(3px);
+}
+.group:hover .arrow-nudge-diag,
+.group:focus-visible .arrow-nudge-diag {
+  transform: translate(2px, -2px);
+}
+
+/* Link underline that grows from the left */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--dur-base) var(--ease-out-quart);
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* Responsive table: real <table> on wide screens, stacked rows on phones */
+@media (width < 48rem) {
+  .table-stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .table-stack tr {
+    display: block;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .table-stack td,
+  .table-stack th[scope="row"] {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.75rem;
+    padding: 0.3rem 0 !important;
+    border: 0 !important;
+    text-align: left;
+  }
+  .table-stack td::before,
+  .table-stack th[scope="row"]::before {
+    content: attr(data-label);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    padding-top: 0.2rem;
+  }
+}
+
+/* Hide visually, keep for assistive tech */
+.sr-only-focusable:not(:focus):not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

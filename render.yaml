@@ -1,0 +1,98 @@
+# Render Blueprint: PostgreSQL + private FastAPI service + Next.js website.
+# Deploy: Render dashboard → New → Blueprint → pick this repository.
+# See docs/deployment.md#render for costs, the free-tier option and going live.
+
+databases:
+  - name: khcolo-db
+    databaseName: khcolo
+    user: khcolo
+    plan: basic-256mb
+    region: singapore
+    postgresMajorVersion: "16"
+    # No public access; only services in this account can connect.
+    ipAllowList: []
+
+services:
+  # FastAPI content + inquiry API. A private service has no public URL:
+  # only the website reaches it, over Render's private network.
+  - type: pserv
+    name: khcolo-api
+    runtime: python
+    region: singapore
+    plan: starter
+    branch: main
+    buildFilter:
+      paths: ["backend/**", "content/**"]
+    buildCommand: cd backend && pip install -r requirements.txt
+    preDeployCommand: cd backend && alembic upgrade head && python -m app.seed
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: PORT
+        value: "10000"
+      - key: ENVIRONMENT
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: khcolo-db
+          property: connectionString
+      - key: ADMIN_API_TOKEN
+        generateValue: true
+      - key: IP_HASH_SALT
+        generateValue: true
+      - key: REVALIDATE_SECRET
+        generateValue: true
+      # Only the website can reach this service, so its X-Forwarded-For is trusted.
+      - key: TRUST_PROXY_HEADERS
+        value: "true"
+      - key: FRONTEND_REVALIDATE_URL
+        fromService:
+          type: web
+          name: khcolo-web
+          property: hostport
+      # Optional inquiry alerts; fill in on the dashboard when ready.
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+
+  # Next.js website (server-rendered with incremental static regeneration).
+  - type: web
+    name: khcolo-web
+    runtime: node
+    region: singapore
+    plan: starter
+    branch: main
+    buildFilter:
+      paths: ["frontend/**", "content/**"]
+    # Pages are pre-rendered from /content at build time (the API may still be
+    # deploying), then refresh from the API at runtime.
+    buildCommand: >-
+      cd frontend && npm ci &&
+      KHCOLO_API_URL= npm run build &&
+      cp -r .next/static .next/standalone/.next/static &&
+      cp -r public .next/standalone/public
+    startCommand: cd frontend/.next/standalone && HOSTNAME=0.0.0.0 KHCOLO_CONTENT_DIR=../../../content node server.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      # Staging until launch: robots.txt blocks crawling and pages send noindex.
+      # Set to "production" (then redeploy) on launch day.
+      - key: SITE_ENV
+        value: development
+      - key: NEXT_PUBLIC_SITE_URL
+        value: https://khcolo.com
+      - key: KHCOLO_API_URL
+        fromService:
+          type: pserv
+          name: khcolo-api
+          property: hostport
+      - key: REVALIDATE_SECRET
+        fromService:
+          type: pserv
+          name: khcolo-api
+          envVarKey: REVALIDATE_SECRET
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"

@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/product/yealink-sip-t46u-ip-phone-2/",
+      "destination": "/product/yealink-sip-t46u-ip-phone/",
+      "permanent": true,
+      "note": "Duplicate T46U listing. Both listings carried the same specification set."
+    }
+  ],
+  "gone": [
+    { "path": "/feed/", "note": "WordPress RSS feed; the new site has no blog." },
+    { "path": "/comments/feed/", "note": "WordPress comments feed." }
+  ]
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "ip-phone",
+    "position": 1,
+    "name": "IP Phones",
+    "singular": "IP phone",
+    "h1": "IP phones for Cambodian businesses",
+    "summary": "Yealink desk, executive, touchscreen, video and DECT cordless phones.",
+    "intro": "Yealink desk, executive, touchscreen, video and cordless phones for 3CX and other IP-PBX platforms. We supply, provision and support them locally, with accessories where you need them.",
+    "facetLabel": "Phone type",
+    "seo": {
+      "title": "Yealink IP Phones in Cambodia — KHCOLO",
+      "description": "Yealink desk, executive, touchscreen, video and DECT cordless IP phones supplied and provisioned by KHCOLO in Cambodia. Compare specs and request a quote."
+    },
+    "sourceUrl": "https://khcolo.com/product-category/ip-phone/",
+    "relatedServices": ["cloud-call-center", "voice-communication"],
+    "updatedAt": "2026-11-03"
+  },
+  {
+    "slug": "voip-gateway",
+    "position": 2,
+    "name": "VoIP Gateways",
+    "singular": "VoIP gateway",
+    "h1": "VoIP gateways for business communications",
+    "summary": "Analog FXS/FXO and GSM, LTE and WCDMA gateways for IP phone systems.",
+    "intro": "Gateways connect analog phones, fax machines, PSTN lines and SIM cards to your IP phone system. Choose from Grandstream and Yeastar analog gateways and multi-channel cellular gateways.",
+    "facetLabel": "Gateway type",
+    "seo": {
+      "title": "VoIP Gateways in Cambodia — KHCOLO",
+      "description": "Analog FXS/FXO, GSM, LTE and WCDMA VoIP gateways from Grandstream, Yeastar and the UC2000 series. Connect phones, fax and SIM lines to your IP system."
+    },
+    "sourceUrl": "https://khcolo.com/product-category/voip-gateway/",
+    "relatedServices": ["cloud-call-center", "it-maintenance"],
+    "updatedAt": "2026-11-03"
+  },
+  {
+    "slug": "ip-pbx",
+    "position": 3,
+    "name": "IP PBX",
+    "singular": "IP PBX",
+    "h1": "Business IP PBX appliances",
+    "summary": "Yeastar P-Series and S-Series phone system appliances for 20 to 500 users.",
+    "intro": "On-premise phone system appliances from Yeastar's P-Series and S-Series, from a 20-user small-office PBX to modular systems for several hundred users with analog, cellular and E1/T1 trunks.",
+    "facetLabel": "Series",
+    "seo": {
+      "title": "Yeastar IP PBX Systems Cambodia — KHCOLO",
+      "description": "Yeastar P-Series and S-Series IP PBX appliances for 20 to 500 users. Compare users, concurrent calls, analog, cellular and E1/T1 capacity, then get a quote."
+    },
+    "sourceUrl": "https://khcolo.com/product-category/ip-pbx/",
+    "relatedServices": ["cloud-call-center", "it-maintenance"],
+    "updatedAt": "2026-11-03"
+  }
+]

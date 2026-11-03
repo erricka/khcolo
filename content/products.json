@@ -1,0 +1,2152 @@
+[
+  {
+    "slug": "yealink-sip-t21-e2",
+    "category": "ip-phone",
+    "position": 1,
+    "brand": "Yealink",
+    "model": "SIP-T21 E2",
+    "name": "Yealink SIP-T21 E2",
+    "variant": "Also listed as SIP-T21P E2",
+    "type": "Entry-level IP phone",
+    "facet": "Desk phone",
+    "summary": "An entry-level desk phone with HD audio, two SIP accounts and OpenVPN support, for general office use on any IP-PBX.",
+    "keySpecs": [
+      "2 SIP accounts",
+      "10/100 Ethernet",
+      "Monochrome display"
+    ],
+    "specs": [
+      {
+        "label": "Positioning",
+        "value": "Entry level"
+      },
+      {
+        "label": "Audio",
+        "value": "HD audio"
+      },
+      {
+        "label": "SIP accounts",
+        "value": "2"
+      },
+      {
+        "label": "Network",
+        "value": "10/100 Ethernet"
+      },
+      {
+        "label": "PoE",
+        "value": "Optional"
+      },
+      {
+        "label": "Display",
+        "value": "Monochrome"
+      },
+      {
+        "label": "VPN",
+        "value": "OpenVPN"
+      },
+      {
+        "label": "Compatibility",
+        "value": "IP-PBX platforms"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yealink-sip-t21-e2.webp",
+      "alt": "Yealink SIP-T21 E2 desk phone with monochrome display",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/T21E-left-light-on.jpg"
+    },
+    "seo": {
+      "title": "Yealink SIP-T21 E2 in Cambodia — KHCOLO",
+      "description": "Yealink SIP-T21 E2 (T21P E2) entry-level IP phone with HD audio, two SIP accounts, optional PoE and OpenVPN. Supplied and configured by KHCOLO in Cambodia."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yealink-sip-t21-e2/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Legacy model: confirm current availability."
+      ]
+    }
+  },
+  {
+    "slug": "yealink-sip-t27g",
+    "category": "ip-phone",
+    "position": 2,
+    "brand": "Yealink",
+    "model": "SIP-T27G",
+    "name": "Yealink SIP-T27G",
+    "type": "Admin IP phone",
+    "facet": "Desk phone",
+    "summary": "A Gigabit admin phone with six SIP accounts, eight direct-dial keys and a backlit graphic display.",
+    "keySpecs": [
+      "6 SIP accounts",
+      "Gigabit + PoE",
+      "8 DSS keys"
+    ],
+    "specs": [
+      {
+        "label": "Positioning",
+        "value": "Admin phone"
+      },
+      {
+        "label": "Audio",
+        "value": "HD audio"
+      },
+      {
+        "label": "SIP accounts",
+        "value": "6"
+      },
+      {
+        "label": "Network",
+        "value": "Gigabit Ethernet"
+      },
+      {
+        "label": "PoE",
+        "value": "Yes"
+      },
+      {
+        "label": "Direct-dial (DSS) keys",
+        "value": "8"
+      },
+      {
+        "label": "Display",
+        "value": "Backlit graphic display"
+      },
+      {
+        "label": "VPN",
+        "value": "OpenVPN"
+      },
+      {
+        "label": "Compatibility",
+        "value": "IP-PBX platforms"
+      }
+    ],
+    "accessories": [
+      "EX20",
+      "WF40",
+      "BT40"
+    ],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yealink-sip-t27g.webp",
+      "alt": "Yealink SIP-T27G desk phone with backlit graphic display",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/T27P-left-light-on.jpg"
+    },
+    "seo": {
+      "title": "Yealink SIP-T27G in Cambodia — KHCOLO",
+      "description": "Yealink SIP-T27G admin IP phone: six SIP accounts, Gigabit Ethernet with PoE, eight DSS keys and a backlit display. Supplied and provisioned by KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yealink-sip-t27g/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Product image filename references T27P; confirm photo matches T27G.",
+        "Legacy model: confirm current availability."
+      ]
+    }
+  },
+  {
+    "slug": "yealink-sip-t29g",
+    "category": "ip-phone",
+    "position": 3,
+    "brand": "Yealink",
+    "model": "SIP-T29G",
+    "name": "Yealink SIP-T29G",
+    "type": "Admin IP phone",
+    "facet": "Desk phone",
+    "summary": "A Gigabit admin phone with 16 SIP accounts, ten direct-dial keys and a color display.",
+    "keySpecs": [
+      "16 SIP accounts",
+      "Gigabit + PoE",
+      "Color display"
+    ],
+    "specs": [
+      {
+        "label": "Positioning",
+        "value": "Admin phone"
+      },
+      {
+        "label": "Audio",
+        "value": "HD audio"
+      },
+      {
+        "label": "SIP accounts",
+        "value": "16"
+      },
+      {
+        "label": "Network",
+        "value": "Gigabit Ethernet"
+      },
+      {
+        "label": "PoE",
+        "value": "Yes"
+      },
+      {
+        "label": "Direct-dial (DSS) keys",
+        "value": "10"
+      },
+      {
+        "label": "Display",
+        "value": "Color"
+      },
+      {
+        "label": "VPN",
+        "value": "OpenVPN"
+      },
+      {
+        "label": "Compatibility",
+        "value": "IP-PBX platforms"
+      }
+    ],
+    "accessories": [
+      "EX20",
+      "WF40",
+      "BT40"
+    ],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yealink-sip-t29g.webp",
+      "alt": "Yealink SIP-T29G desk phone with color display",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/T29G-left-light-on.jpg"
+    },
+    "seo": {
+      "title": "Yealink SIP-T29G in Cambodia — KHCOLO",
+      "description": "Yealink SIP-T29G admin IP phone with 16 SIP accounts, Gigabit Ethernet and PoE, ten DSS keys and a color display. Request a quote from KHCOLO in Cambodia."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yealink-sip-t29g/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Legacy model: confirm current availability."
+      ]
+    }
+  },
+  {
+    "slug": "yealink-sip-t30-sip-t30p-ip-phone",
+    "category": "ip-phone",
+    "position": 4,
+    "brand": "Yealink",
+    "model": "SIP-T30 / T30P",
+    "name": "Yealink SIP-T30 / T30P",
+    "variant": "T30P adds PoE",
+    "type": "Entry-level IP phone",
+    "facet": "Desk phone",
+    "summary": "A compact single-line phone for reception desks, shared areas and light users. The T30P variant adds PoE.",
+    "keySpecs": [
+      "1 SIP account",
+      "10/100 Ethernet",
+      "PoE on T30P"
+    ],
+    "specs": [
+      {
+        "label": "Positioning",
+        "value": "Entry level"
+      },
+      {
+        "label": "SIP accounts",
+        "value": "1"
+      },
+      {
+        "label": "Network",
+        "value": "10/100 Ethernet"
+      },
+      {
+        "label": "PoE",
+        "value": "T30P variant"
+      },
+      {
+        "label": "Display",
+        "value": "Monochrome"
+      },
+      {
+        "label": "VPN",
+        "value": "OpenVPN"
+      },
+      {
+        "label": "Compatibility",
+        "value": "IP-PBX platforms"
+      }
+    ],
+    "accessories": [
+      "EHS35"
+    ],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yealink-sip-t30-sip-t30p-ip-phone.webp",
+      "alt": "Yealink SIP-T30P single-line desk phone",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/t30-3.jpg"
+    },
+    "seo": {
+      "title": "Yealink SIP-T30 / T30P in Cambodia — KHCOLO",
+      "description": "Yealink SIP-T30 and T30P entry-level IP phones: one SIP account, 10/100 Ethernet, PoE on the T30P and a monochrome display. Supplied by KHCOLO in Cambodia."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yealink-sip-t30-sip-t30p-ip-phone/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "OpenVPN support is as stated on the source page; confirm against current manufacturer data."
+      ]
+    }
+  },
+  {
+    "slug": "yealink-sip-t46u-ip-phone",
+    "category": "ip-phone",
+    "position": 5,
+    "brand": "Yealink",
+    "model": "SIP-T46U",
+    "name": "Yealink SIP-T46U",
+    "type": "Executive IP phone",
+    "facet": "Desk phone",
+    "summary": "An executive phone with 16 SIP accounts, ten direct-dial keys, a color display and Gigabit Ethernet, supported on 3CX.",
+    "keySpecs": [
+      "16 SIP accounts",
+      "Gigabit + PoE",
+      "3CX supported"
+    ],
+    "specs": [
+      {
+        "label": "Positioning",
+        "value": "Executive phone"
+      },
+      {
+        "label": "Audio",
+        "value": "HD audio"
+      },
+      {
+        "label": "SIP accounts",
+        "value": "16"
+      },
+      {
+        "label": "Network",
+        "value": "Gigabit Ethernet"
+      },
+      {
+        "label": "PoE",
+        "value": "Yes"
+      },
+      {
+        "label": "Direct-dial (DSS) keys",
+        "value": "10"
+      },
+      {
+        "label": "Display",
+        "value": "Color"
+      },
+      {
+        "label": "VPN",
+        "value": "OpenVPN"
+      },
+      {
+        "label": "Compatibility",
+        "value": "SIP-PBX platforms, including 3CX"
+      }
+    ],
+    "accessories": [
+      "EX43",
+      "WF40",
+      "BT40",
+      "Wall bracket",
+      "Power supply"
+    ],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yealink-sip-t46u-ip-phone.webp",
+      "alt": "Yealink SIP-T46U executive desk phone with color display",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/SIP-T46U-2.jpg"
+    },
+    "seo": {
+      "title": "Yealink SIP-T46U in Cambodia — KHCOLO",
+      "description": "Yealink SIP-T46U executive IP phone with 16 SIP accounts, Gigabit Ethernet and PoE, ten DSS keys and a color display. 3CX supported. Quotes from KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yealink-sip-t46u-ip-phone/",
+      "https://khcolo.com/product/yealink-sip-t46u-ip-phone-2/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Two listings described the T46U. This page is canonical; /product/yealink-sip-t46u-ip-phone-2/ permanently redirects here. Both source listings carried the same specification set.",
+        "Source states 3CX certification; shown publicly as \"3CX supported\" until certification status is confirmed."
+      ]
+    }
+  },
+  {
+    "slug": "yealink-sip-t48u-ip-phone",
+    "category": "ip-phone",
+    "position": 6,
+    "brand": "Yealink",
+    "model": "SIP-T48U",
+    "name": "Yealink SIP-T48U",
+    "type": "Reception and operator IP phone",
+    "facet": "Touchscreen",
+    "summary": "A reception and operator phone with a 7-inch color touchscreen, Opus support and 16 SIP accounts.",
+    "keySpecs": [
+      "7\" touchscreen",
+      "16 SIP accounts",
+      "Gigabit + PoE"
+    ],
+    "specs": [
+      {
+        "label": "Positioning",
+        "value": "Reception / operator phone"
+      },
+      {
+        "label": "Audio",
+        "value": "HD audio, Opus codec"
+      },
+      {
+        "label": "SIP accounts",
+        "value": "16"
+      },
+      {
+        "label": "Network",
+        "value": "Gigabit Ethernet"
+      },
+      {
+        "label": "PoE",
+        "value": "Yes"
+      },
+      {
+        "label": "Display",
+        "value": "7-inch color touchscreen, 480 × 272"
+      },
+      {
+        "label": "VPN",
+        "value": "OpenVPN"
+      },
+      {
+        "label": "Compatibility",
+        "value": "SIP-PBX platforms, including 3CX"
+      }
+    ],
+    "accessories": [
+      "EXP43",
+      "WF40",
+      "BT40",
+      "Wall bracket",
+      "5V / 2A power supply"
+    ],
+    "publicNotes": [
+      "Programmable key count is confirmed with your quote."
+    ],
+    "image": {
+      "src": "/images/products/yealink-sip-t48u-ip-phone.webp",
+      "alt": "Yealink SIP-T48U phone with 7-inch color touchscreen",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/SIP-T48U-2.jpg"
+    },
+    "seo": {
+      "title": "Yealink SIP-T48U in Cambodia — KHCOLO",
+      "description": "Yealink SIP-T48U reception IP phone with a 7-inch color touchscreen, HD and Opus audio, 16 SIP accounts, Gigabit and PoE. Supplied in Cambodia by KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yealink-sip-t48u-ip-phone/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Source conflict: quick list says 23 direct-dial keys; description says 29 transfer keys. Key count withheld from public page until confirmed.",
+        "Source states 3CX certification; shown as \"including 3CX\" until confirmed."
+      ]
+    }
+  },
+  {
+    "slug": "yealink-sip-t58-video-ip-phone",
+    "category": "ip-phone",
+    "position": 7,
+    "brand": "Yealink",
+    "model": "SIP-T58",
+    "name": "Yealink SIP-T58 video phone",
+    "type": "Executive video IP phone",
+    "facet": "Video",
+    "summary": "An executive video phone with a color touchscreen, 27 direct-dial keys and an optional USB camera.",
+    "keySpecs": [
+      "Color touchscreen",
+      "27 DSS keys",
+      "USB camera option"
+    ],
+    "specs": [
+      {
+        "label": "Positioning",
+        "value": "Executive video phone"
+      },
+      {
+        "label": "Audio",
+        "value": "HD audio"
+      },
+      {
+        "label": "SIP accounts",
+        "value": "16"
+      },
+      {
+        "label": "Network",
+        "value": "Gigabit Ethernet"
+      },
+      {
+        "label": "PoE",
+        "value": "Yes"
+      },
+      {
+        "label": "Direct-dial (DSS) keys",
+        "value": "27"
+      },
+      {
+        "label": "Display",
+        "value": "Color touchscreen"
+      },
+      {
+        "label": "VPN",
+        "value": "OpenVPN"
+      },
+      {
+        "label": "Compatibility",
+        "value": "IP-PBX platforms"
+      }
+    ],
+    "accessories": [
+      "EX50",
+      "USB camera"
+    ],
+    "publicNotes": [
+      "Exact variant (SIP-T58 or T58A) is confirmed with your quote."
+    ],
+    "image": {
+      "src": "/images/products/yealink-sip-t58-video-ip-phone.webp",
+      "alt": "Yealink SIP-T58 video phone with color touchscreen",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/T58-left-light-on.jpg"
+    },
+    "seo": {
+      "title": "Yealink SIP-T58 Video Phone in Cambodia — KHCOLO",
+      "description": "Yealink SIP-T58 executive video IP phone with a color touchscreen, 16 SIP accounts, 27 DSS keys, Gigabit and PoE, plus USB camera option. Quotes from KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yealink-sip-t58-video-ip-phone/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Page body references T58A; confirm exact variant supplied.",
+        "Accessory listed as \"EX50\"; confirm model code (possibly EXP50)."
+      ]
+    }
+  },
+  {
+    "slug": "yealink-w56h-cordless-ip-phone",
+    "category": "ip-phone",
+    "position": 8,
+    "brand": "Yealink",
+    "model": "W56H",
+    "name": "Yealink W56H cordless handset",
+    "type": "DECT cordless handset",
+    "facet": "Cordless",
+    "summary": "An additional cordless handset for a Yealink DECT system. Supplied without a base station, with a spare battery.",
+    "keySpecs": [
+      "Handset only",
+      "30 h talk time",
+      "2.4\" color screen"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Cordless handset (no base station)"
+      },
+      {
+        "label": "Audio",
+        "value": "HD audio"
+      },
+      {
+        "label": "Talk / standby time",
+        "value": "Up to 30 h / 400 h (stated)"
+      },
+      {
+        "label": "Range",
+        "value": "Up to 50 m indoor / 300 m outdoor (stated)"
+      },
+      {
+        "label": "Screen",
+        "value": "2.4-inch, 240 × 320"
+      },
+      {
+        "label": "In the box",
+        "value": "Spare battery"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [
+      "Needs a compatible Yealink DECT base station. We confirm compatibility with your base before supply."
+    ],
+    "image": {
+      "src": "/images/products/yealink-w56h-cordless-ip-phone.webp",
+      "alt": "Yealink W56H cordless DECT handset in its charging cradle",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/w56h-1.jpg"
+    },
+    "seo": {
+      "title": "Yealink W56H Cordless Handset in Cambodia — KHCOLO",
+      "description": "Yealink W56H DECT cordless handset with HD audio, a 2.4-inch screen and stated 30-hour talk time. Handset only; base compatibility checked by KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yealink-w56h-cordless-ip-phone/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Source conflict: quick list names W56P compatibility; description references the W60P base. Public page says \"compatible Yealink DECT base\" until clarified."
+      ]
+    }
+  },
+  {
+    "slug": "yealink-w60p-cordless-ip-phone-incl-basestation",
+    "category": "ip-phone",
+    "position": 9,
+    "brand": "Yealink",
+    "model": "W60P",
+    "name": "Yealink W60P with base station",
+    "type": "DECT cordless IP phone set",
+    "facet": "Cordless",
+    "summary": "A cordless IP phone set with base station and handset. Add up to seven more W56H handsets as your team grows.",
+    "keySpecs": [
+      "Base + handset",
+      "Up to 7 extra handsets",
+      "30 h talk time"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Cordless set with base station"
+      },
+      {
+        "label": "Expansion",
+        "value": "Up to seven additional W56H handsets"
+      },
+      {
+        "label": "Audio",
+        "value": "HD audio"
+      },
+      {
+        "label": "Talk / standby time",
+        "value": "Up to 30 h / 400 h (stated)"
+      },
+      {
+        "label": "Range",
+        "value": "Up to 50 m indoor / 300 m outdoor (stated)"
+      },
+      {
+        "label": "Screen",
+        "value": "2.4-inch color"
+      },
+      {
+        "label": "In the box",
+        "value": "Spare battery"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yealink-w60p-cordless-ip-phone-incl-basestation.webp",
+      "alt": "Yealink W60P DECT base station with W56H cordless handset",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/w60p-1.jpg"
+    },
+    "seo": {
+      "title": "Yealink W60P Cordless IP Phone in Cambodia — KHCOLO",
+      "description": "Yealink W60P DECT cordless IP phone with base station, HD audio and a 2.4-inch color screen. Expand with up to seven W56H handsets. Quotes from KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yealink-w60p-cordless-ip-phone-incl-basestation/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Range and battery figures are as stated on the source page; confirm against current manufacturer data."
+      ]
+    }
+  },
+  {
+    "slug": "grandstream-ht813-hybrid-ata-with-fxs-and-fxo-ports",
+    "category": "voip-gateway",
+    "position": 1,
+    "brand": "Grandstream",
+    "model": "HT813",
+    "name": "Grandstream HT813",
+    "type": "Hybrid analog telephone adapter",
+    "facet": "Analog",
+    "summary": "A hybrid ATA with one FXS and one FXO port. Keeps an analog phone working on the PSTN line if the power fails.",
+    "keySpecs": [
+      "1 FXS + 1 FXO",
+      "T.38 fax",
+      "Power-failure lifeline"
+    ],
+    "specs": [
+      {
+        "label": "Ports",
+        "value": "1 × FXS, 1 × FXO"
+      },
+      {
+        "label": "SIP profiles",
+        "value": "2"
+      },
+      {
+        "label": "Network",
+        "value": "Dual 100 Mbps (LAN / WAN)"
+      },
+      {
+        "label": "Calling",
+        "value": "Three-way calls per port"
+      },
+      {
+        "label": "Provisioning",
+        "value": "TR-069"
+      },
+      {
+        "label": "Fax",
+        "value": "T.38"
+      },
+      {
+        "label": "Security",
+        "value": "AES encryption, unique per-unit certificate"
+      },
+      {
+        "label": "Lifeline",
+        "value": "FXS-to-FXO relay on power failure"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/grandstream-ht813-hybrid-ata-with-fxs-and-fxo-ports.webp",
+      "alt": "Grandstream HT813 hybrid analog telephone adapter",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/ht813.jpg"
+    },
+    "seo": {
+      "title": "Grandstream HT813 in Cambodia — KHCOLO",
+      "description": "Grandstream HT813 hybrid ATA with one FXS and one FXO port, two SIP profiles, T.38 fax, TR-069 and a power-failure lifeline. Supplied in Cambodia by KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/grandstream-ht813-hybrid-ata-with-fxs-and-fxo-ports/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": []
+    }
+  },
+  {
+    "slug": "grandstream-ht818-8-port-voip-gateway",
+    "category": "voip-gateway",
+    "position": 2,
+    "brand": "Grandstream",
+    "model": "HT818",
+    "name": "Grandstream HT818",
+    "type": "8-port analog VoIP gateway",
+    "facet": "Analog",
+    "summary": "An eight-port FXS gateway for connecting analog phones and fax machines to an IP phone system.",
+    "keySpecs": [
+      "8 FXS ports",
+      "Dual Gigabit",
+      "T.38 fax"
+    ],
+    "specs": [
+      {
+        "label": "Ports",
+        "value": "8 × FXS"
+      },
+      {
+        "label": "Network",
+        "value": "Dual Gigabit"
+      },
+      {
+        "label": "Calling",
+        "value": "Three-way calls per port"
+      },
+      {
+        "label": "Audio",
+        "value": "Wideband codec"
+      },
+      {
+        "label": "Provisioning",
+        "value": "TR-069"
+      },
+      {
+        "label": "Fax",
+        "value": "T.38"
+      },
+      {
+        "label": "Security",
+        "value": "AES encryption"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/grandstream-ht818-8-port-voip-gateway.webp",
+      "alt": "Grandstream HT818 eight-port VoIP gateway",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/screen_shot_2017-12-29_at_5.13.33_pm.png"
+    },
+    "seo": {
+      "title": "Grandstream HT818 in Cambodia — KHCOLO",
+      "description": "Grandstream HT818 eight-port FXS VoIP gateway with dual Gigabit ports, AES encryption, TR-069, wideband audio and T.38 fax. Request a quote from KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/grandstream-ht818-8-port-voip-gateway/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Product image is a screenshot file; replace with a clean product photo if available."
+      ]
+    }
+  },
+  {
+    "slug": "uc2000-ve",
+    "category": "voip-gateway",
+    "position": 3,
+    "brand": null,
+    "series": "UC2000",
+    "model": "UC2000-VE",
+    "name": "UC2000-VE cellular gateway",
+    "type": "4/8-channel GSM/3G/4G VoIP gateway",
+    "facet": "Cellular",
+    "summary": "A four- or eight-channel cellular gateway with VoLTE, hot-swap SIM slots and an SMS API.",
+    "keySpecs": [
+      "4 or 8 channels",
+      "LTE + VoLTE",
+      "SMS API"
+    ],
+    "specs": [
+      {
+        "label": "Channels",
+        "value": "4 or 8"
+      },
+      {
+        "label": "Networks",
+        "value": "GSM / WCDMA / LTE, VoLTE"
+      },
+      {
+        "label": "SIM",
+        "value": "Hot-swappable"
+      },
+      {
+        "label": "Interoperability",
+        "value": "VoIP platforms"
+      },
+      {
+        "label": "Mobility",
+        "value": "Mobile extension"
+      },
+      {
+        "label": "SMS",
+        "value": "Send, receive and SMS API"
+      },
+      {
+        "label": "Call control",
+        "value": "Credit limits, Auto CLIP"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/uc2000-ve.webp",
+      "alt": "UC2000-VE cellular VoIP gateway, rear panel with antennas",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/07/UC2000-VE_B.png"
+    },
+    "seo": {
+      "title": "UC2000-VE Cellular Gateway in Cambodia — KHCOLO",
+      "description": "UC2000-VE four- or eight-channel GSM, WCDMA and LTE VoIP gateway with VoLTE, hot-swap SIM, SMS API, credit limits and Auto CLIP. Quotes from KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/uc2000-ve/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Manufacturer not stated on the source page. Confirm brand before adding it to product markup."
+      ]
+    }
+  },
+  {
+    "slug": "uc2000-vf-gsm-voip-gateway",
+    "category": "voip-gateway",
+    "position": 4,
+    "brand": null,
+    "series": "UC2000",
+    "model": "UC2000-VF",
+    "name": "UC2000-VF cellular gateway",
+    "type": "16-channel GSM/3G/4G VoIP gateway",
+    "facet": "Cellular",
+    "summary": "A 16-channel cellular gateway with VoLTE, hot-swap SIM slots and an SMS API, for higher call volumes.",
+    "keySpecs": [
+      "16 channels",
+      "LTE + VoLTE",
+      "SMS API"
+    ],
+    "specs": [
+      {
+        "label": "Channels",
+        "value": "16"
+      },
+      {
+        "label": "Networks",
+        "value": "GSM / WCDMA / LTE, VoLTE"
+      },
+      {
+        "label": "SIM",
+        "value": "Hot-swappable"
+      },
+      {
+        "label": "Interoperability",
+        "value": "VoIP platforms"
+      },
+      {
+        "label": "Mobility",
+        "value": "Mobile extension"
+      },
+      {
+        "label": "SMS",
+        "value": "Send, receive and SMS API"
+      },
+      {
+        "label": "Call control",
+        "value": "Credit limits, Auto CLIP"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/uc2000-vf-gsm-voip-gateway.webp",
+      "alt": "UC2000-VF 16-channel cellular VoIP gateway, rack-mount chassis",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/07/16t-2.png"
+    },
+    "seo": {
+      "title": "UC2000-VF Cellular Gateway in Cambodia — KHCOLO",
+      "description": "UC2000-VF 16-channel GSM, WCDMA and LTE VoIP gateway with VoLTE, hot-swap SIM, SMS API, credit limits and Auto CLIP. Supplied and configured by KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/uc2000-vf-gsm-voip-gateway/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Manufacturer not stated on the source page. Confirm brand."
+      ]
+    }
+  },
+  {
+    "slug": "uc2000-vg-gsm-voip-gateway",
+    "category": "voip-gateway",
+    "position": 5,
+    "brand": null,
+    "series": "UC2000",
+    "model": "UC2000-VG",
+    "name": "UC2000-VG cellular gateway",
+    "type": "32-channel GSM/3G/4G VoIP gateway",
+    "facet": "Cellular",
+    "summary": "A 32-channel cellular gateway with VoLTE, hot-swap SIM slots and an SMS API, for contact centers and large sites.",
+    "keySpecs": [
+      "32 channels",
+      "LTE + VoLTE",
+      "SMS API"
+    ],
+    "specs": [
+      {
+        "label": "Channels",
+        "value": "32"
+      },
+      {
+        "label": "Networks",
+        "value": "GSM / WCDMA / LTE, VoLTE"
+      },
+      {
+        "label": "SIM",
+        "value": "Hot-swappable"
+      },
+      {
+        "label": "Interoperability",
+        "value": "VoIP platforms"
+      },
+      {
+        "label": "Mobility",
+        "value": "Mobile extension"
+      },
+      {
+        "label": "SMS",
+        "value": "Send, receive and SMS API"
+      },
+      {
+        "label": "Call control",
+        "value": "Credit limits, Auto CLIP"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/uc2000-vg-gsm-voip-gateway.webp",
+      "alt": "UC2000-VG 32-channel cellular VoIP gateway, rack-mount chassis",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/07/UC2000-VG_F.png"
+    },
+    "seo": {
+      "title": "UC2000-VG Cellular Gateway in Cambodia — KHCOLO",
+      "description": "UC2000-VG 32-channel GSM, WCDMA and LTE VoIP gateway with VoLTE, hot-swap SIM, SMS API, credit limits and Auto CLIP. Request a quote from KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/uc2000-vg-gsm-voip-gateway/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Old product page was classified as Uncategorized while listed under gateways; now classified as a VoIP gateway.",
+        "Manufacturer not stated on the source page. Confirm brand."
+      ]
+    }
+  },
+  {
+    "slug": "yeastar-neogate-ta1600",
+    "category": "voip-gateway",
+    "position": 6,
+    "brand": "Yeastar",
+    "model": "NeoGate TA1600",
+    "name": "Yeastar NeoGate TA1600",
+    "type": "Analog VoIP gateway",
+    "facet": "Analog",
+    "summary": "A NeoGate analog gateway for connecting traditional phones and fax machines to IP telephony, managed from a browser.",
+    "keySpecs": [
+      "SIP / IAX2",
+      "T.38 fax",
+      "Echo cancellation"
+    ],
+    "specs": [
+      {
+        "label": "Protocols",
+        "value": "SIP, IAX2"
+      },
+      {
+        "label": "Routing",
+        "value": "Configurable call rules"
+      },
+      {
+        "label": "Fax",
+        "value": "T.38"
+      },
+      {
+        "label": "Codecs",
+        "value": "Standard voice codecs"
+      },
+      {
+        "label": "Echo cancellation",
+        "value": "32 / 64 / 128 ms"
+      },
+      {
+        "label": "Management",
+        "value": "Web browser"
+      },
+      {
+        "label": "Ports",
+        "value": "Confirmed with your quote"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-neogate-ta1600.webp",
+      "alt": "Yeastar NeoGate TA1600 analog VoIP gateway",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/ta1600.png"
+    },
+    "seo": {
+      "title": "Yeastar NeoGate TA1600 in Cambodia — KHCOLO",
+      "description": "Yeastar NeoGate TA1600 analog VoIP gateway with SIP and IAX2, configurable call rules, T.38 fax, echo cancellation and browser management. From KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-neogate-ta1600/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Port count not stated in the reviewed text. Not inferred from model number; confirm."
+      ]
+    }
+  },
+  {
+    "slug": "yeastar-neogate-ta2400",
+    "category": "voip-gateway",
+    "position": 7,
+    "brand": "Yeastar",
+    "model": "NeoGate TA2400",
+    "name": "Yeastar NeoGate TA2400",
+    "type": "Analog VoIP gateway",
+    "facet": "Analog",
+    "summary": "A rack-mount NeoGate analog gateway for larger analog estates, with configurable routing and browser management.",
+    "keySpecs": [
+      "SIP / IAX2",
+      "T.38 fax",
+      "Echo cancellation"
+    ],
+    "specs": [
+      {
+        "label": "Protocols",
+        "value": "SIP, IAX2"
+      },
+      {
+        "label": "Routing",
+        "value": "Configurable call rules"
+      },
+      {
+        "label": "Fax",
+        "value": "T.38"
+      },
+      {
+        "label": "Codecs",
+        "value": "Standard voice codecs"
+      },
+      {
+        "label": "Echo cancellation",
+        "value": "32 / 64 / 128 ms"
+      },
+      {
+        "label": "Management",
+        "value": "Web browser"
+      },
+      {
+        "label": "Ports",
+        "value": "Confirmed with your quote"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-neogate-ta2400.webp",
+      "alt": "Yeastar NeoGate TA2400 rack-mount analog VoIP gateway",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/ta2400.png"
+    },
+    "seo": {
+      "title": "Yeastar NeoGate TA2400 in Cambodia — KHCOLO",
+      "description": "Yeastar NeoGate TA2400 analog VoIP gateway with SIP and IAX2, call rules, T.38 fax, 32/64/128 ms echo cancellation and web management. Quotes from KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-neogate-ta2400/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Port count not stated in the reviewed text; confirm."
+      ]
+    }
+  },
+  {
+    "slug": "yeastar-neogate-ta3200",
+    "category": "voip-gateway",
+    "position": 8,
+    "brand": "Yeastar",
+    "model": "NeoGate TA3200",
+    "name": "Yeastar NeoGate TA3200",
+    "type": "32-port analog VoIP gateway",
+    "facet": "Analog",
+    "summary": "A 32-port FXS gateway for connecting large numbers of traditional phones to IP telephony.",
+    "keySpecs": [
+      "32 FXS ports",
+      "SIP / IAX2",
+      "T.38 fax"
+    ],
+    "specs": [
+      {
+        "label": "Ports",
+        "value": "32 × FXS"
+      },
+      {
+        "label": "Protocols",
+        "value": "SIP, IAX2"
+      },
+      {
+        "label": "Routing",
+        "value": "Configurable call rules"
+      },
+      {
+        "label": "Fax",
+        "value": "T.38"
+      },
+      {
+        "label": "Codecs",
+        "value": "Standard voice codecs"
+      },
+      {
+        "label": "Echo cancellation",
+        "value": "32 / 64 / 128 ms"
+      },
+      {
+        "label": "Management",
+        "value": "Web browser"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-neogate-ta3200.webp",
+      "alt": "Yeastar NeoGate TA3200 32-port analog VoIP gateway",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/ta3200.png"
+    },
+    "seo": {
+      "title": "Yeastar NeoGate TA3200 in Cambodia — KHCOLO",
+      "description": "Yeastar NeoGate TA3200 32-port FXS gateway connecting traditional phones to IP telephony, with SIP/IAX2, T.38 fax and web management. Supplied by KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-neogate-ta3200/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": []
+    }
+  },
+  {
+    "slug": "yeastar-neogate-ta400",
+    "category": "voip-gateway",
+    "position": 9,
+    "brand": "Yeastar",
+    "model": "NeoGate TA400",
+    "name": "Yeastar NeoGate TA400",
+    "type": "Analog VoIP gateway",
+    "facet": "Analog",
+    "summary": "A compact NeoGate analog gateway for small offices, with the same routing, fax and management features as the larger models.",
+    "keySpecs": [
+      "SIP / IAX2",
+      "T.38 fax",
+      "Compact desktop"
+    ],
+    "specs": [
+      {
+        "label": "Protocols",
+        "value": "SIP, IAX2"
+      },
+      {
+        "label": "Routing",
+        "value": "Configurable call rules"
+      },
+      {
+        "label": "Fax",
+        "value": "T.38"
+      },
+      {
+        "label": "Codecs",
+        "value": "Standard voice codecs"
+      },
+      {
+        "label": "Echo cancellation",
+        "value": "32 / 64 / 128 ms"
+      },
+      {
+        "label": "Management",
+        "value": "Web browser"
+      },
+      {
+        "label": "Ports",
+        "value": "Confirmed with your quote"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-neogate-ta400.webp",
+      "alt": "Yeastar NeoGate TA400 compact analog VoIP gateway, standing upright",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/ta400_1.png"
+    },
+    "seo": {
+      "title": "Yeastar NeoGate TA400 in Cambodia — KHCOLO",
+      "description": "Yeastar NeoGate TA400 compact analog VoIP gateway with SIP and IAX2, call rules, T.38 fax, echo cancellation and browser management. Quotes from KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-neogate-ta400/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Port count not stated in the reviewed text; confirm."
+      ]
+    }
+  },
+  {
+    "slug": "yeastar-neogate-ta800",
+    "category": "voip-gateway",
+    "position": 10,
+    "brand": "Yeastar",
+    "model": "NeoGate TA800",
+    "name": "Yeastar NeoGate TA800",
+    "type": "Analog VoIP gateway",
+    "facet": "Analog",
+    "summary": "A desktop NeoGate analog gateway for small and mid-sized offices, with configurable routing and T.38 fax.",
+    "keySpecs": [
+      "SIP / IAX2",
+      "T.38 fax",
+      "Echo cancellation"
+    ],
+    "specs": [
+      {
+        "label": "Protocols",
+        "value": "SIP, IAX2"
+      },
+      {
+        "label": "Routing",
+        "value": "Configurable call rules"
+      },
+      {
+        "label": "Fax",
+        "value": "T.38"
+      },
+      {
+        "label": "Codecs",
+        "value": "Standard voice codecs"
+      },
+      {
+        "label": "Echo cancellation",
+        "value": "32 / 64 / 128 ms"
+      },
+      {
+        "label": "Management",
+        "value": "Web browser"
+      },
+      {
+        "label": "Ports",
+        "value": "Confirmed with your quote"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-neogate-ta800.webp",
+      "alt": "Yeastar NeoGate TA800 analog VoIP gateway, rear ports",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/ta800_back.png"
+    },
+    "seo": {
+      "title": "Yeastar NeoGate TA800 in Cambodia — KHCOLO",
+      "description": "Yeastar NeoGate TA800 analog VoIP gateway with SIP and IAX2, configurable call rules, T.38 fax and web-based management. Supplied and configured by KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-neogate-ta800/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Port count not stated in the reviewed text; confirm rather than inferring from model number."
+      ]
+    }
+  },
+  {
+    "slug": "yeastar-neogate-tg200-2-gsm-gateway",
+    "category": "voip-gateway",
+    "position": 11,
+    "brand": "Yeastar",
+    "model": "NeoGate TG200",
+    "name": "Yeastar NeoGate TG200",
+    "type": "2-channel GSM gateway",
+    "facet": "Cellular",
+    "summary": "A two-channel GSM gateway that adds mobile lines to your IP phone system, with a built-in DHCP server, VLAN and firewall.",
+    "keySpecs": [
+      "2 GSM channels",
+      "Quad-band",
+      "External antenna"
+    ],
+    "specs": [
+      {
+        "label": "Channels",
+        "value": "2 × GSM"
+      },
+      {
+        "label": "Bands",
+        "value": "850 / 900 / 1800 / 1900 MHz"
+      },
+      {
+        "label": "Antenna",
+        "value": "External"
+      },
+      {
+        "label": "Protocol",
+        "value": "SIP (RFC 3261), UDP"
+      },
+      {
+        "label": "DTMF",
+        "value": "RFC 2833, SIP INFO, in-band"
+      },
+      {
+        "label": "Codecs",
+        "value": "G.711, G.726, G.729A, GSM, Speex"
+      },
+      {
+        "label": "Network",
+        "value": "1 × 10/100 LAN; DHCP server, VLAN, firewall"
+      },
+      {
+        "label": "Power",
+        "value": "DC 12 V / 1 A (AC 100–240 V input)"
+      },
+      {
+        "label": "Dimensions",
+        "value": "175 × 125 × 31 mm"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-neogate-tg200-2-gsm-gateway.webp",
+      "alt": "Yeastar NeoGate TG200 GSM gateway with two antennas",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/Yeastar-Neogate-TG200-2-GSM-Gateway.png"
+    },
+    "seo": {
+      "title": "Yeastar NeoGate TG200 in Cambodia — KHCOLO",
+      "description": "Yeastar NeoGate TG200 two-channel quad-band GSM gateway with external antenna, SIP, G.711/G.729A codecs, DHCP, VLAN and firewall. Quotes from KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-neogate-tg200-2-gsm-gateway/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Confirm GSM availability for intended Cambodian carriers."
+      ]
+    }
+  },
+  {
+    "slug": "yeastar-neogate-tg400-gsm-gateway",
+    "category": "voip-gateway",
+    "position": 12,
+    "brand": "Yeastar",
+    "model": "NeoGate TG400",
+    "name": "Yeastar NeoGate TG400",
+    "type": "GSM gateway",
+    "facet": "Cellular",
+    "summary": "A quad-band GSM gateway with SIP and IAX2, TLS/SRTP and OpenVPN for secure mobile trunking.",
+    "keySpecs": [
+      "Quad-band GSM",
+      "TLS / SRTP",
+      "OpenVPN"
+    ],
+    "specs": [
+      {
+        "label": "Channels",
+        "value": "Confirmed with your quote"
+      },
+      {
+        "label": "Bands",
+        "value": "Quad-band GSM"
+      },
+      {
+        "label": "Antenna",
+        "value": "External"
+      },
+      {
+        "label": "Protocols",
+        "value": "SIP, IAX2"
+      },
+      {
+        "label": "Transport",
+        "value": "UDP, TCP, TLS, SRTP"
+      },
+      {
+        "label": "Codecs",
+        "value": "G.711, G.726, G.729A, GSM, Speex"
+      },
+      {
+        "label": "Network",
+        "value": "10/100 LAN; static IP, DHCP, firewall, VLAN, DDNS, QoS, OpenVPN"
+      },
+      {
+        "label": "Power",
+        "value": "DC 12 V / 1 A"
+      },
+      {
+        "label": "Dimensions",
+        "value": "110 × 70 × 24 mm (stated)"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-neogate-tg400-gsm-gateway.webp",
+      "alt": "Yeastar NeoGate TG400 GSM gateway with four antennas",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/Yeastar-Neogate-TG400-GSM-Gateway.jpg"
+    },
+    "seo": {
+      "title": "Yeastar NeoGate TG400 in Cambodia — KHCOLO",
+      "description": "Yeastar NeoGate TG400 quad-band GSM gateway with SIP and IAX2, TLS and SRTP, VLAN, QoS and OpenVPN. Supplied, configured and supported by KHCOLO in Cambodia."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-neogate-tg400-gsm-gateway/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Source says one GSM channel, which conflicts with the model (product photo shows four antennas). Channel count withheld until confirmed.",
+        "Stated dimensions (110 × 70 × 24 mm) look small for this unit; confirm."
+      ]
+    }
+  },
+  {
+    "slug": "yeastar-neogate-tg800-gsm-gateway",
+    "category": "voip-gateway",
+    "position": 13,
+    "brand": "Yeastar",
+    "model": "NeoGate TG800",
+    "name": "Yeastar NeoGate TG800",
+    "type": "8-channel GSM gateway",
+    "facet": "Cellular",
+    "summary": "An eight-channel quad-band GSM gateway for adding several mobile lines to a busy phone system.",
+    "keySpecs": [
+      "8 GSM channels",
+      "Quad-band",
+      "TLS / SRTP"
+    ],
+    "specs": [
+      {
+        "label": "Channels",
+        "value": "8 × GSM"
+      },
+      {
+        "label": "Bands",
+        "value": "Quad-band"
+      },
+      {
+        "label": "Antenna",
+        "value": "External"
+      },
+      {
+        "label": "Protocols",
+        "value": "SIP, IAX2"
+      },
+      {
+        "label": "Transport",
+        "value": "UDP, TCP, TLS, SRTP"
+      },
+      {
+        "label": "Codecs",
+        "value": "G.711, G.726, G.729A, GSM, Speex"
+      },
+      {
+        "label": "Network",
+        "value": "10/100 LAN"
+      },
+      {
+        "label": "Power",
+        "value": "AC 100–240 V, 50/60 Hz, 1.5 A max"
+      },
+      {
+        "label": "Dimensions",
+        "value": "340 × 210 × 44 mm"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-neogate-tg800-gsm-gateway.webp",
+      "alt": "Yeastar NeoGate TG800 GSM gateway with eight antennas",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/yeastar-TG800-gsm-gateway-view1.png"
+    },
+    "seo": {
+      "title": "Yeastar NeoGate TG800 in Cambodia — KHCOLO",
+      "description": "Yeastar NeoGate TG800 eight-channel quad-band GSM gateway with SIP and IAX2, TLS and SRTP and external antennas. Request a quote from KHCOLO in Cambodia."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-neogate-tg800-gsm-gateway/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Old description incorrectly refers to the TG400; corrected here."
+      ]
+    }
+  },
+  {
+    "slug": "yeastar-tg800wm-wcdma-umts-gateway",
+    "category": "voip-gateway",
+    "position": 14,
+    "brand": "Yeastar",
+    "model": "NeoGate TG800WM",
+    "name": "Yeastar NeoGate TG800WM",
+    "type": "8-channel WCDMA/UMTS gateway",
+    "facet": "Cellular",
+    "summary": "An eight-channel WCDMA gateway with G.168 echo cancellation, packet capture and call allow/block lists.",
+    "keySpecs": [
+      "8 WCDMA channels",
+      "G.168 echo cancel",
+      "Packet capture"
+    ],
+    "specs": [
+      {
+        "label": "Channels",
+        "value": "8 × WCDMA"
+      },
+      {
+        "label": "Bands",
+        "value": "850 / 1900 MHz"
+      },
+      {
+        "label": "Transport",
+        "value": "UDP, TCP, TLS, SRTP"
+      },
+      {
+        "label": "Codecs",
+        "value": "G.711, G.722, G.726, G.729A, ADPCM, Speex"
+      },
+      {
+        "label": "Echo cancellation",
+        "value": "G.168"
+      },
+      {
+        "label": "Network",
+        "value": "1 × 10/100 Ethernet"
+      },
+      {
+        "label": "Management",
+        "value": "FTP, TFTP, HTTP, SSH"
+      },
+      {
+        "label": "Call features",
+        "value": "Transfer, waiting, status, allow/block lists, packet capture"
+      },
+      {
+        "label": "In the box",
+        "value": "DC 12 V / 1 A adapter, warranty card, short antenna"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [
+      "Network band compatibility with your Cambodian carrier is checked before supply."
+    ],
+    "image": {
+      "src": "/images/products/yeastar-tg800wm-wcdma-umts-gateway.webp",
+      "alt": "Yeastar NeoGate TG800WM WCDMA gateway with eight antennas",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/tg800wm.jpg"
+    },
+    "seo": {
+      "title": "Yeastar NeoGate TG800WM in Cambodia — KHCOLO",
+      "description": "Yeastar NeoGate TG800WM eight-channel WCDMA/UMTS gateway with TLS and SRTP, G.168 echo cancellation and packet capture. Band compatibility checked by KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-tg800wm-wcdma-umts-gateway/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "Source lists 850/1900 MHz and names AT&T; Cambodian carrier compatibility must be confirmed. AT&T reference removed.",
+        "Source codec list included \"WCDMA\" as a codec; omitted as likely an error (possibly AMR). Confirm."
+      ]
+    }
+  },
+  {
+    "slug": "p-series-pbx-p550",
+    "category": "ip-pbx",
+    "position": 1,
+    "brand": "Yeastar",
+    "model": "P550",
+    "name": "Yeastar P550",
+    "type": "P-Series IP PBX appliance",
+    "facet": "P-Series",
+    "summary": "A P-Series appliance for up to 50 users and 25 concurrent calls, with analog, BRI and cellular expansion.",
+    "keySpecs": [
+      "50 users",
+      "25 concurrent calls",
+      "Up to 4 cellular"
+    ],
+    "specs": [
+      {
+        "label": "Users",
+        "value": "50"
+      },
+      {
+        "label": "Concurrent calls",
+        "value": "25"
+      },
+      {
+        "label": "FXS ports",
+        "value": "Up to 8"
+      },
+      {
+        "label": "FXO / BRI ports",
+        "value": "Up to 8"
+      },
+      {
+        "label": "Cellular (GSM/3G/4G)",
+        "value": "Up to 4"
+      },
+      {
+        "label": "E1/T1/J1",
+        "value": "Not available"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/p-series-pbx-p550.webp",
+      "alt": "Yeastar P550 IP PBX appliance",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/07/YeastarP550-1.jpg"
+    },
+    "seo": {
+      "title": "Yeastar P550 IP PBX in Cambodia — KHCOLO",
+      "description": "Yeastar P550 P-Series IP PBX for up to 50 users and 25 concurrent calls, with up to eight FXS, eight FXO/BRI and four cellular ports. Quotes from KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/p-series-pbx-p550/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": []
+    }
+  },
+  {
+    "slug": "p-series-pbx-p560",
+    "category": "ip-pbx",
+    "position": 2,
+    "brand": "Yeastar",
+    "model": "P560",
+    "name": "Yeastar P560",
+    "type": "P-Series IP PBX appliance",
+    "facet": "P-Series",
+    "summary": "A P-Series appliance for 100 users, expandable to 200, with an E1/T1/J1 option for digital trunks.",
+    "keySpecs": [
+      "100–200 users",
+      "30–60 calls",
+      "1 × E1/T1/J1"
+    ],
+    "specs": [
+      {
+        "label": "Users",
+        "value": "100 (up to 200)"
+      },
+      {
+        "label": "Concurrent calls",
+        "value": "30 (up to 60)"
+      },
+      {
+        "label": "FXS ports",
+        "value": "Up to 8"
+      },
+      {
+        "label": "FXO / BRI ports",
+        "value": "Up to 8"
+      },
+      {
+        "label": "Cellular (GSM/3G/4G)",
+        "value": "Up to 4"
+      },
+      {
+        "label": "E1/T1/J1",
+        "value": "Up to 1"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/p-series-pbx-p560.webp",
+      "alt": "Yeastar P560 IP PBX appliance",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/07/YeastarP560.jpg"
+    },
+    "seo": {
+      "title": "Yeastar P560 IP PBX in Cambodia — KHCOLO",
+      "description": "Yeastar P560 P-Series IP PBX for 100 users (up to 200) and 30 concurrent calls (up to 60), with analog, BRI, cellular and one E1/T1/J1. From KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/p-series-pbx-p560/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": []
+    }
+  },
+  {
+    "slug": "p-series-pbx-p570",
+    "category": "ip-pbx",
+    "position": 3,
+    "brand": "Yeastar",
+    "model": "P570",
+    "name": "Yeastar P570",
+    "type": "P-Series IP PBX appliance",
+    "facet": "P-Series",
+    "summary": "The largest P-Series appliance: 300 users, expandable to 500, with up to two E1/T1/J1 trunks.",
+    "keySpecs": [
+      "300–500 users",
+      "60–120 calls",
+      "2 × E1/T1/J1"
+    ],
+    "specs": [
+      {
+        "label": "Users",
+        "value": "300 (up to 500)"
+      },
+      {
+        "label": "Concurrent calls",
+        "value": "60 (up to 120)"
+      },
+      {
+        "label": "FXS ports",
+        "value": "Up to 16"
+      },
+      {
+        "label": "FXO / BRI ports",
+        "value": "Up to 16"
+      },
+      {
+        "label": "Cellular (GSM/3G/4G)",
+        "value": "Up to 6"
+      },
+      {
+        "label": "E1/T1/J1",
+        "value": "Up to 2"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/p-series-pbx-p570.webp",
+      "alt": "Yeastar P570 IP PBX appliance",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/07/YeastarP570.jpg"
+    },
+    "seo": {
+      "title": "Yeastar P570 IP PBX in Cambodia — KHCOLO",
+      "description": "Yeastar P570 P-Series IP PBX for 300 users (up to 500) and 60 concurrent calls (up to 120), with 16 FXS, 16 FXO/BRI and two E1/T1/J1. Quotes from KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/p-series-pbx-p570/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": []
+    }
+  },
+  {
+    "slug": "yeastar-s20",
+    "category": "ip-pbx",
+    "position": 4,
+    "brand": "Yeastar",
+    "model": "S20",
+    "name": "Yeastar S20",
+    "type": "S-Series IP PBX appliance",
+    "facet": "S-Series",
+    "summary": "A standalone small-business PBX for up to 20 users, with analog, BRI and cellular trunk options.",
+    "keySpecs": [
+      "20 users",
+      "10 concurrent calls",
+      "20 VoIP trunks"
+    ],
+    "specs": [
+      {
+        "label": "Users",
+        "value": "20"
+      },
+      {
+        "label": "Concurrent calls",
+        "value": "10"
+      },
+      {
+        "label": "Analog / BRI ports",
+        "value": "Up to 4 FXS / FXO / BRI"
+      },
+      {
+        "label": "Cellular (GSM/3G/4G)",
+        "value": "Up to 1"
+      },
+      {
+        "label": "VoIP trunks",
+        "value": "20"
+      },
+      {
+        "label": "Form factor",
+        "value": "Standalone, small business"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-s20.webp",
+      "alt": "Yeastar S20 desktop IP PBX",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/YeastarS20.jpg"
+    },
+    "seo": {
+      "title": "Yeastar S20 IP PBX in Cambodia — KHCOLO",
+      "description": "Yeastar S20 small-business IP PBX for 20 users and 10 concurrent calls, with up to four analog/BRI ports, one cellular module and 20 VoIP trunks. From KHCOLO."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-s20/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "S-Series: confirm current availability of legacy models."
+      ]
+    }
+  },
+  {
+    "slug": "yeastar-s50",
+    "category": "ip-pbx",
+    "position": 5,
+    "brand": "Yeastar",
+    "model": "S50",
+    "name": "Yeastar S50",
+    "type": "S-Series IP PBX appliance",
+    "facet": "S-Series",
+    "summary": "A rack-mountable PBX for up to 50 users, with eight analog or BRI ports and four cellular modules.",
+    "keySpecs": [
+      "50 users",
+      "25 concurrent calls",
+      "Rack-mountable"
+    ],
+    "specs": [
+      {
+        "label": "Users",
+        "value": "50"
+      },
+      {
+        "label": "Concurrent calls",
+        "value": "25"
+      },
+      {
+        "label": "Analog / BRI ports",
+        "value": "Up to 8 FXS / FXO / BRI"
+      },
+      {
+        "label": "Cellular (GSM/3G/4G)",
+        "value": "Up to 4"
+      },
+      {
+        "label": "VoIP trunks",
+        "value": "50"
+      },
+      {
+        "label": "Form factor",
+        "value": "Rack-mountable"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-s50.webp",
+      "alt": "Yeastar S50 rack-mountable IP PBX",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/YeastarS50.jpg"
+    },
+    "seo": {
+      "title": "Yeastar S50 IP PBX in Cambodia — KHCOLO",
+      "description": "Yeastar S50 rack-mountable IP PBX for 50 users and 25 concurrent calls, with up to eight analog/BRI ports, four cellular modules and 50 VoIP trunks."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-s50/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "S-Series: confirm current availability of legacy models."
+      ]
+    }
+  },
+  {
+    "slug": "yeastar-s100",
+    "category": "ip-pbx",
+    "position": 6,
+    "brand": "Yeastar",
+    "model": "S100",
+    "name": "Yeastar S100",
+    "type": "S-Series IP PBX appliance",
+    "facet": "S-Series",
+    "summary": "A modular, quad-core PBX for 100 users, expandable to 200, with up to two E1/T1/PRI trunks.",
+    "keySpecs": [
+      "100–200 users",
+      "30–60 calls",
+      "2 × E1/T1/PRI"
+    ],
+    "specs": [
+      {
+        "label": "Users",
+        "value": "100 (up to 200)"
+      },
+      {
+        "label": "Concurrent calls",
+        "value": "30 (up to 60)"
+      },
+      {
+        "label": "Analog / BRI ports",
+        "value": "Up to 16 FXS / FXO / BRI"
+      },
+      {
+        "label": "Cellular (GSM/CDMA/3G/4G)",
+        "value": "Up to 6"
+      },
+      {
+        "label": "E1/T1/PRI",
+        "value": "Up to 2"
+      },
+      {
+        "label": "Form factor",
+        "value": "Modular, quad-core"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-s100.webp",
+      "alt": "Yeastar S100 modular IP PBX",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/YeastarS100.jpg"
+    },
+    "seo": {
+      "title": "Yeastar S100 IP PBX in Cambodia — KHCOLO",
+      "description": "Yeastar S100 modular quad-core IP PBX for 100 users (up to 200) and 30 concurrent calls (up to 60), with 16 analog/BRI ports and two E1/T1/PRI trunks."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-s100/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "S-Series: confirm current availability of legacy models."
+      ]
+    }
+  },
+  {
+    "slug": "yeastar-s300",
+    "category": "ip-pbx",
+    "position": 7,
+    "brand": "Yeastar",
+    "model": "S300",
+    "name": "Yeastar S300",
+    "type": "S-Series IP PBX appliance",
+    "facet": "S-Series",
+    "summary": "A scalable unified-communications PBX for 300 users, expandable to 500, with up to three E1/T1/PRI trunks.",
+    "keySpecs": [
+      "300–500 users",
+      "60–120 calls",
+      "3 × E1/T1/PRI"
+    ],
+    "specs": [
+      {
+        "label": "Users",
+        "value": "300 (up to 500)"
+      },
+      {
+        "label": "Concurrent calls",
+        "value": "60 (up to 120)"
+      },
+      {
+        "label": "Analog / BRI ports",
+        "value": "Up to 24 FXS / FXO / BRI"
+      },
+      {
+        "label": "Cellular (GSM/CDMA/3G/4G)",
+        "value": "Up to 6"
+      },
+      {
+        "label": "E1/T1/PRI",
+        "value": "Up to 3"
+      },
+      {
+        "label": "Form factor",
+        "value": "Scalable unified communications"
+      }
+    ],
+    "accessories": [],
+    "publicNotes": [],
+    "image": {
+      "src": "/images/products/yeastar-s300.webp",
+      "alt": "Yeastar S300 IP PBX appliance",
+      "width": 800,
+      "height": 800,
+      "sourceUrl": "https://khcolo.com/wp-content/uploads/2023/05/YeastarS300.jpg"
+    },
+    "seo": {
+      "title": "Yeastar S300 IP PBX in Cambodia — KHCOLO",
+      "description": "Yeastar S300 IP PBX for 300 users (up to 500) and 60 concurrent calls (up to 120), with 24 analog/BRI ports, six cellular modules and three E1/T1/PRI trunks."
+    },
+    "sourceUrls": [
+      "https://khcolo.com/product/yeastar-s300/"
+    ],
+    "updatedAt": "2026-11-03",
+    "review": {
+      "status": "needs_review",
+      "notes": [
+        "S-Series: confirm current availability of legacy models."
+      ]
+    }
+  }
+]

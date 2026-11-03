@@ -177,3 +177,14 @@ def test_internal_key_locks_the_api(client, monkeypatch):
     assert client.get("/api/v1/services").status_code == 404
     assert client.get("/api/v1/services", headers={"x-internal-key": "wrong"}).status_code == 404
     assert client.get("/api/v1/services", headers={"x-internal-key": "shared-secret"}).status_code == 200
+
+
+def test_client_ip_header_is_used_when_trusted(client, valid_inquiry, monkeypatch):
+    settings = get_settings()
+    monkeypatch.setattr(settings, "trust_proxy_headers", True)
+    headers = {"x-client-ip": "203.0.113.50", "x-forwarded-for": "203.0.113.50, 10.0.0.9"}
+    assert client.post("/api/v1/inquiries", json=valid_inquiry, headers=headers).status_code == 201
+    import hashlib, hmac
+    expected = hmac.new(settings.ip_hash_salt.encode(), b"203.0.113.50", hashlib.sha256).hexdigest()
+    with engine.connect() as conn:
+        assert conn.execute(text("select ip_hash from inquiries")).scalar() == expected

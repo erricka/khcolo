@@ -29,6 +29,11 @@ def require_admin(
 
 def client_ip(request: Request, settings: Settings) -> str:
     if settings.trust_proxy_headers:
+        # Set by the website's server-side inquiry route. Only trusted together with
+        # TRUST_PROXY_HEADERS (and, on a public API, the internal key check).
+        direct = request.headers.get("x-client-ip")
+        if direct:
+            return direct.strip()
         forwarded = request.headers.get("x-forwarded-for")
         if forwarded:
             return forwarded.split(",")[0].strip()

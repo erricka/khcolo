@@ -33,6 +33,8 @@ export async function POST(request: Request) {
       headers: apiHeaders({
         "content-type": "application/json",
         "x-forwarded-for": clientIp,
+        // A dedicated header survives any proxy between the site and the API.
+        "x-client-ip": clientIp,
         "user-agent": request.headers.get("user-agent") ?? "",
       }),
       body,

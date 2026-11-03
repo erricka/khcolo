@@ -169,3 +169,11 @@ def test_platform_urls_are_normalised():
     assert s.database_url == "postgresql+psycopg://u:p@db-host/khcolo"
     assert s.frontend_revalidate_url == "http://khcolo-web:10000/api/revalidate/"
     assert Settings(database_url="postgres://u:p@h/db").database_url.startswith("postgresql+psycopg://")
+
+
+def test_internal_key_locks_the_api(client, monkeypatch):
+    monkeypatch.setattr(get_settings(), "internal_api_key", "shared-secret")
+    assert client.get("/api/v1/health").status_code == 200
+    assert client.get("/api/v1/services").status_code == 404
+    assert client.get("/api/v1/services", headers={"x-internal-key": "wrong"}).status_code == 404
+    assert client.get("/api/v1/services", headers={"x-internal-key": "shared-secret"}).status_code == 200

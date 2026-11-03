@@ -43,6 +43,8 @@ services:
         generateValue: true
       - key: REVALIDATE_SECRET
         generateValue: true
+      - key: INTERNAL_API_KEY
+        generateValue: true
       # Only the website can reach this service, so its X-Forwarded-For is trusted.
       - key: TRUST_PROXY_HEADERS
         value: "true"
@@ -94,5 +96,10 @@ services:
           type: pserv
           name: khcolo-api
           envVarKey: REVALIDATE_SECRET
+      - key: INTERNAL_API_KEY
+        fromService:
+          type: pserv
+          name: khcolo-api
+          envVarKey: INTERNAL_API_KEY
       - key: NEXT_TELEMETRY_DISABLED
         value: "1"

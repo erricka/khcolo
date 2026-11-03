@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { cache } from "react";
 
-import { apiBaseUrl } from "./api-url";
+import { apiBaseUrl, apiHeaders } from "./api-url";
 import type { Category, Company, PageMeta, Product, Service } from "./types";
 
 /**
@@ -22,6 +22,7 @@ export const REVALIDATE_SECONDS = 3600;
 
 async function api<T>(endpoint: string): Promise<T | null> {
   const res = await fetch(`${API_URL}/api/v1${endpoint}`, {
+    headers: apiHeaders(),
     next: { revalidate: REVALIDATE_SECONDS, tags: ["content"] },
   });
   if (res.status === 404) return null;

@@ -20,6 +20,11 @@ class Settings(BaseSettings):
     # Admin API. Leave unset to disable every /admin endpoint.
     admin_api_token: str | None = None
 
+    # When set, every /api request (except the health check) must carry this value in
+    # X-Internal-Key. Use it whenever the API has a public URL but only the website
+    # should call it (e.g. Render web services).
+    internal_api_key: str | None = None
+
     # Comma-separated list. Only needed if the browser calls the API cross-origin;
     # the Next.js site proxies /api/v1 so production normally leaves this empty.
     cors_origins: str = ""

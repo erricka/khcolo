@@ -11,7 +11,8 @@ async function loadRedirectRows(): Promise<RedirectRow[]> {
   const raw = process.env.KHCOLO_API_URL?.trim();
   const api = raw ? (raw.includes("://") ? raw : `http://${raw}`).replace(/\/$/, "") : undefined;
   if (api) {
-    const res = await fetch(`${api}/api/v1/redirects`);
+    const key = process.env.INTERNAL_API_KEY;
+    const res = await fetch(`${api}/api/v1/redirects`, { headers: key ? { "x-internal-key": key } : {} });
     if (!res.ok) throw new Error(`Could not load redirects from ${api} (HTTP ${res.status})`);
     return res.json();
   }

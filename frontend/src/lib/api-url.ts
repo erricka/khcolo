@@ -8,3 +8,9 @@ export function apiBaseUrl(): string | undefined {
   const withScheme = raw.includes("://") ? raw : `http://${raw}`;
   return withScheme.replace(/\/$/, "");
 }
+
+/** Headers for server-to-server calls; includes the shared key when the API requires one. */
+export function apiHeaders(extra: Record<string, string> = {}): Record<string, string> {
+  const key = process.env.INTERNAL_API_KEY;
+  return key ? { ...extra, "x-internal-key": key } : extra;
+}

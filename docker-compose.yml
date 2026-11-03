@@ -50,6 +50,7 @@ services:
     environment:
       KHCOLO_API_URL: http://api:8000
       REVALIDATE_SECRET: ${REVALIDATE_SECRET:?set REVALIDATE_SECRET in .env}
+      INTERNAL_API_KEY: ${INTERNAL_API_KEY:-}
       SITE_ENV: ${SITE_ENV:-development}
       CANONICAL_HOST: ${CANONICAL_HOST:-}
       ENFORCE_HTTPS: ${ENFORCE_HTTPS:-false}

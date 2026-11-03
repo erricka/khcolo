@@ -1,4 +1,5 @@
 import logging
+import secrets
 
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
@@ -42,6 +43,11 @@ async def validation_error(request: Request, exc: RequestValidationError):
 
 @app.middleware("http")
 async def guard_and_headers(request: Request, call_next):
+    key = get_settings().internal_api_key
+    if key and request.url.path.startswith("/api/") and request.url.path != "/api/v1/health":
+        if not secrets.compare_digest(request.headers.get("x-internal-key", ""), key):
+            # Look like nothing is here rather than advertising a locked door.
+            return JSONResponse({"detail": "Not Found"}, status_code=404, headers={"X-Robots-Tag": "noindex"})
     if request.method in {"POST", "PUT", "PATCH"}:
         length = request.headers.get("content-length")
         if length and length.isdigit() and int(length) > MAX_BODY_BYTES:

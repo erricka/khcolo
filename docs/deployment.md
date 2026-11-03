@@ -129,6 +129,7 @@ Do **not** publish port 8000 or 5432.
 | `KHCOLO_API_URL` | build + run | FastAPI base URL from the server's point of view, e.g. `http://api:8000` or a bare `host:port`. When unset, pages are built from `/content`. |
 | `KHCOLO_CONTENT_DIR` | run | Location of `/content` when the API is not used (the Docker image sets it). |
 | `REVALIDATE_SECRET` | run | Must match the API's value; protects `/api/revalidate/`. |
+| `INTERNAL_API_KEY` | build + run | Sent as `X-Internal-Key` on every API call. Must match the API's value when it requires one. |
 | `CANONICAL_HOST` | run | Redirect any other host (e.g. `www.`) here with 308. Leave empty locally. |
 | `ENFORCE_HTTPS` | build + run | `true` redirects `http` to `https` (from `X-Forwarded-Proto`) and sends HSTS. |
 
@@ -139,6 +140,7 @@ Do **not** publish port 8000 or 5432.
 | `DATABASE_URL` | `postgresql+psycopg://user:pass@host:5432/db` (plain `postgres://` / `postgresql://` URLs from hosting platforms are accepted) |
 | `ENVIRONMENT` | `production` hides `/api/docs` and the OpenAPI schema. |
 | `ADMIN_API_TOKEN` | Bearer token for `/api/v1/admin/*`. Unset = admin API disabled. |
+| `INTERNAL_API_KEY` | When set, every `/api` request except `/api/v1/health` needs `X-Internal-Key`; others get 404. Set it whenever the API has a public URL. |
 | `TRUST_PROXY_HEADERS` | `true` only when the API is reachable solely through the Next.js server. |
 | `IP_HASH_SALT` | Salt for the one-way IP hash used in rate limiting. |
 | `INQUIRY_RATE_LIMIT`, `INQUIRY_RATE_WINDOW_MINUTES`, `INQUIRY_GLOBAL_HOURLY_LIMIT` | Abuse limits (defaults 5 per 10 minutes per client, 120 per hour overall). |

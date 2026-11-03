@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { apiBaseUrl } from "@/lib/api-url";
+import { apiBaseUrl, apiHeaders } from "@/lib/api-url";
 
 /**
  * Forwards the contact form to the FastAPI service. Keeping this hop on the
@@ -30,14 +30,15 @@ export async function POST(request: Request) {
   try {
     upstream = await fetch(`${api}/api/v1/inquiries`, {
       method: "POST",
-      headers: {
+      headers: apiHeaders({
         "content-type": "application/json",
         "x-forwarded-for": clientIp,
         "user-agent": request.headers.get("user-agent") ?? "",
-      },
+      }),
       body,
       cache: "no-store",
-      signal: AbortSignal.timeout(15_000),
+      // Generous: an API on a sleeping free-tier instance can take ~a minute to wake.
+      signal: AbortSignal.timeout(75_000),
     });
   } catch {
     return NextResponse.json({ detail: "The inquiry service is unavailable." }, { status: 502 });

@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 import { Breadcrumbs, type Crumb } from "./Breadcrumbs";
 
-/** Dark hero used by every inner page so the fixed header always sits on navy. */
+/** Light hero used by every inner page: white, a faint blueprint grid and a soft blue glow. */
 export function PageHero({
   crumbs,
   eyebrow,
@@ -23,14 +23,14 @@ export function PageHero({
   compact?: boolean;
 }) {
   return (
-    <section className="surface-dark bg-grain relative overflow-hidden bg-ink-950 text-white">
+    <section className="relative overflow-hidden border-b border-line bg-white">
       <div
         aria-hidden
-        className="bg-blueprint absolute inset-0 [mask-image:radial-gradient(ellipse_60%_80%_at_85%_10%,black_10%,transparent_70%)]"
+        className="bg-blueprint-light absolute inset-0 [mask-image:radial-gradient(ellipse_60%_80%_at_85%_10%,black_10%,transparent_70%)]"
       />
       <div
         aria-hidden
-        className="absolute top-[-22rem] right-[-14rem] size-[48rem] rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.28),transparent)]"
+        className="absolute top-[-22rem] right-[-14rem] size-[48rem] rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.12),transparent)]"
       />
       <div
         className={`container-site relative pt-[calc(var(--header-h)+2.5rem)] ${compact ? "pb-14 lg:pb-16" : "pb-16 lg:pb-24"}`}
@@ -43,10 +43,10 @@ export function PageHero({
                 {eyebrow}
               </div>
             )}
-            <h1 className={`${compact ? "text-headline" : "text-display-sm"} mt-6 max-w-[20ch] text-white`}>{title}</h1>
+            <h1 className={`${compact ? "text-headline" : "text-display-sm"} mt-6 max-w-[20ch] text-ink-950`}>{title}</h1>
             {/* No entrance animation on the lede: it is often the LCP element. */}
             {lede && (
-              <div className="text-lede mt-7 max-w-2xl text-ink-300">
+              <div className="text-lede mt-7 max-w-2xl text-muted">
                 {lede}
               </div>
             )}

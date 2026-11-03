@@ -74,7 +74,7 @@ export default async function ServicePage({ params }: Props) {
           { name: service.shortName, path: routes.service(service.slug) },
         ]}
         eyebrow={
-          <Eyebrow tone="dark">
+          <Eyebrow>
             <span className="inline-flex items-center gap-2.5">
               <ServiceIcon name={service.icon} className="size-4" />
               {group?.name}
@@ -100,19 +100,19 @@ export default async function ServicePage({ params }: Props) {
           </>
         }
         aside={
-          <div className="rounded-2xl border border-white/[0.09] bg-white/[0.03] p-7 backdrop-blur-sm">
-            <p className="text-eyebrow text-ink-400">At a glance</p>
+          <div className="rounded-2xl border border-line bg-white p-7 shadow-[var(--shadow-lift)]">
+            <p className="text-eyebrow text-muted">At a glance</p>
             <ul className="mt-5 space-y-3.5">
               {service.highlights.map((h) => (
-                <li key={h} className="flex gap-3 text-[0.98rem] leading-snug text-ink-100">
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-300">
+                <li key={h} className="flex gap-3 text-[0.98rem] leading-snug text-ink-900">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-700">
                     <Check aria-hidden className="size-3" strokeWidth={2.5} />
                   </span>
                   {h}
                 </li>
               ))}
             </ul>
-            <p className="mt-7 border-t border-white/[0.08] pt-5 text-sm leading-relaxed text-ink-400">
+            <p className="mt-7 border-t border-line pt-5 text-sm leading-relaxed text-muted">
               Local support for Phnom Penh, Siem Reap and on-site installations across Cambodia, in Khmer or English.
             </p>
           </div>
@@ -190,14 +190,14 @@ export default async function ServicePage({ params }: Props) {
       )}
 
       {/* Process */}
-      <section id="how-we-work" aria-labelledby="process-title" className="surface-dark bg-grain relative scroll-mt-32 overflow-hidden bg-ink-900 py-20 lg:py-28">
-        <div aria-hidden className="bg-blueprint absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_80%)]" />
+      <section id="how-we-work" aria-labelledby="process-title" className="relative scroll-mt-32 overflow-hidden border-y border-line bg-gradient-to-b from-brand-50/70 to-white py-20 lg:py-28">
+        <div aria-hidden className="bg-blueprint-light absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_80%)]" />
         <div className="container-site relative">
-          <SectionHeader tone="dark" eyebrow="How we work" index={service.options.length ? "04" : "03"} id="process-title" title="Implementation and support">
+          <SectionHeader eyebrow="How we work" index={service.options.length ? "04" : "03"} id="process-title" title="Implementation and support">
             Planned with you, delivered by local engineers, and supported after go-live.
           </SectionHeader>
           <div className="mt-16">
-            <ProcessSteps steps={service.process} tone="dark" />
+            <ProcessSteps steps={service.process} />
           </div>
         </div>
       </section>

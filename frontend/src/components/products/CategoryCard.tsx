@@ -12,7 +12,7 @@ export function CategoryCard({
   sample,
   brands,
   index = 0,
-  tone = "dark",
+  tone = "light",
 }: {
   category: Category;
   hero: Product | undefined;

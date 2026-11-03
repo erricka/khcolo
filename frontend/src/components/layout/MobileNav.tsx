@@ -60,7 +60,7 @@ export function MobileNav({ nav, open, onClose }: { nav: NavData; open: boolean;
             type="button"
             tabIndex={-1}
             aria-hidden
-            className="absolute inset-0 bg-ink-950/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-ink-950/30 backdrop-blur-sm"
             onClick={onClose}
           />
           <m.div
@@ -73,16 +73,16 @@ export function MobileNav({ nav, open, onClose }: { nav: NavData; open: boolean;
             animate={{ x: 0 }}
             exit={{ x: "100%", transition: { duration: 0.24, ease: [0.65, 0, 0.35, 1] } }}
             transition={{ duration: 0.42, ease }}
-            className="surface-dark bg-grain absolute inset-y-0 right-0 flex w-full max-w-md flex-col overflow-y-auto bg-ink-950 text-white"
+            className="absolute inset-y-0 right-0 flex w-full max-w-md flex-col overflow-y-auto bg-white text-ink-950 shadow-[-30px_0_60px_-30px_rgb(8_18_43/0.3)]"
           >
             <div className="flex h-[var(--header-h)] shrink-0 items-center justify-between px-4 sm:px-6">
-              <Link href="/" className="text-white" aria-label="KHCOLO home">
-                <Logo title={null} className="h-[22px] w-auto" />
+              <Link href="/" aria-label="KHCOLO home">
+                <Logo title={null} id="logo-mobile" className="h-[25px] w-auto" />
               </Link>
               <button
                 type="button"
                 onClick={onClose}
-                className="-mr-2 inline-flex size-11 items-center justify-center rounded-full hover:bg-white/10"
+                className="-mr-2 inline-flex size-11 items-center justify-center rounded-full hover:bg-ink-950/5"
                 aria-label="Close menu"
               >
                 <X aria-hidden className="size-5" />
@@ -90,15 +90,15 @@ export function MobileNav({ nav, open, onClose }: { nav: NavData; open: boolean;
             </div>
 
             <nav aria-label="Mobile" className="flex-1 px-4 pb-8 sm:px-6">
-              <ul className="divide-y divide-white/[0.08] border-y border-white/[0.08]">
+              <ul className="divide-y divide-line border-y border-line">
                 <Disclosure label="Solutions" id="m-solutions" open={section === "solutions"} onToggle={() => setSection(section === "solutions" ? null : "solutions")}>
                   {nav.groups.map((g) => (
                     <div key={g.key} className="pb-3">
-                      <p className="text-eyebrow pt-3 pb-2 text-brand-300">{g.name}</p>
+                      <p className="text-eyebrow pt-3 pb-2 text-brand-600">{g.name}</p>
                       <ul>
                         {g.services.map((s) => (
                           <li key={s.slug}>
-                            <Link href={routes.service(s.slug)} className="block rounded-lg py-2.5 text-ink-100 hover:text-white">
+                            <Link href={routes.service(s.slug)} className="block rounded-lg py-2.5 text-ink-700 hover:text-ink-950">
                               {s.name}
                             </Link>
                           </li>
@@ -111,14 +111,14 @@ export function MobileNav({ nav, open, onClose }: { nav: NavData; open: boolean;
                   <ul className="pb-3">
                     {nav.categories.map((c) => (
                       <li key={c.slug}>
-                        <Link href={routes.category(c.slug)} className="flex items-baseline justify-between rounded-lg py-2.5 text-ink-100 hover:text-white">
+                        <Link href={routes.category(c.slug)} className="flex items-baseline justify-between rounded-lg py-2.5 text-ink-700 hover:text-ink-950">
                           {c.name}
-                          <span className="text-xs text-ink-400 tabular-nums">{c.count}</span>
+                          <span className="text-xs text-muted tabular-nums">{c.count}</span>
                         </Link>
                       </li>
                     ))}
                     <li>
-                      <Link href={routes.products} className="block py-2.5 text-brand-300">
+                      <Link href={routes.products} className="block py-2.5 text-brand-700">
                         All products
                       </Link>
                     </li>
@@ -137,7 +137,7 @@ export function MobileNav({ nav, open, onClose }: { nav: NavData; open: boolean;
               </ul>
             </nav>
 
-            <div className="space-y-2 border-t border-white/[0.08] p-4 sm:p-6">
+            <div className="space-y-2 border-t border-line bg-paper/60 p-4 sm:p-6">
               <a
                 href={nav.telegram}
                 target="_blank"
@@ -153,21 +153,21 @@ export function MobileNav({ nav, open, onClose }: { nav: NavData; open: boolean;
               <div className="grid grid-cols-2 gap-2">
                 <a
                   href={`tel:${nav.phone.tel}`}
-                  className="flex h-12 items-center justify-center gap-2 rounded-full border border-white/15 text-sm"
+                  className="flex h-12 items-center justify-center gap-2 rounded-full border border-ink-900/15 bg-white text-sm"
                   data-track="contact_click"
                   data-track-method="phone"
                   data-track-location="mobile_nav"
                 >
-                  <Phone aria-hidden className="size-4 text-brand-300" /> Call
+                  <Phone aria-hidden className="size-4 text-brand-600" /> Call
                 </a>
                 <a
                   href="mailto:support@khcolo.com"
-                  className="flex h-12 items-center justify-center gap-2 rounded-full border border-white/15 text-sm"
+                  className="flex h-12 items-center justify-center gap-2 rounded-full border border-ink-900/15 bg-white text-sm"
                   data-track="contact_click"
                   data-track-method="email"
                   data-track-location="mobile_nav"
                 >
-                  <Mail aria-hidden className="size-4 text-brand-300" /> Email
+                  <Mail aria-hidden className="size-4 text-brand-600" /> Email
                 </a>
               </div>
             </div>

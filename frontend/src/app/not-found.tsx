@@ -18,12 +18,12 @@ const LINKS = [
 
 export default function NotFound() {
   return (
-    <section className="surface-dark bg-grain relative min-h-[80vh] overflow-hidden bg-ink-950 text-white">
-      <div aria-hidden className="bg-blueprint absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+    <section className="relative min-h-[80vh] overflow-hidden bg-white">
+      <div aria-hidden className="bg-blueprint-light absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
       <div className="container-site relative pt-[calc(var(--header-h)+5rem)] pb-24">
-        <p className="text-eyebrow text-brand-300">Error 404</p>
-        <h1 className="text-display-sm mt-6 max-w-[16ch]">This page isn&rsquo;t here.</h1>
-        <p className="text-lede mt-6 max-w-xl text-ink-300">
+        <p className="text-eyebrow text-brand-600">Error 404</p>
+        <h1 className="text-display-sm mt-6 max-w-[16ch] text-ink-950">This page isn&rsquo;t here.</h1>
+        <p className="text-lede mt-6 max-w-xl text-muted">
           The link may be old or the page may have moved during our redesign. These are good places to continue:
         </p>
         <ul className="mt-12 grid max-w-4xl gap-3 md:grid-cols-3">
@@ -31,13 +31,13 @@ export default function NotFound() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="group flex h-full flex-col rounded-2xl border border-white/[0.09] bg-white/[0.03] p-6 transition-[border-color,background-color] hover:border-brand-300/40 hover:bg-white/[0.06]"
+                className="group flex h-full flex-col rounded-2xl border border-line bg-white p-6 shadow-[var(--shadow-card)] transition-[border-color,box-shadow] hover:border-brand-600/30 hover:shadow-[var(--shadow-lift)]"
               >
-                <span className="flex items-center justify-between font-medium">
+                <span className="flex items-center justify-between font-medium text-ink-950">
                   {l.label}
-                  <ArrowRight aria-hidden className="arrow-nudge size-4 text-brand-300" />
+                  <ArrowRight aria-hidden className="arrow-nudge size-4 text-brand-600" />
                 </span>
-                <span className="mt-2 text-sm leading-relaxed text-ink-400">{l.body}</span>
+                <span className="mt-2 text-sm leading-relaxed text-muted">{l.body}</span>
               </Link>
             </li>
           ))}

@@ -66,15 +66,22 @@ export function HeroTopology({ className = "", tilt = false }: { className?: str
       <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full overflow-visible" focusable="false">
         <defs>
           <radialGradient id="topo-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#3d68f2" stopOpacity="0.34" />
-            <stop offset="60%" stopColor="#3d68f2" stopOpacity="0.06" />
+            <stop offset="0%" stopColor="#3d68f2" stopOpacity="0.16" />
+            <stop offset="60%" stopColor="#3d68f2" stopOpacity="0.04" />
             <stop offset="100%" stopColor="#3d68f2" stopOpacity="0" />
           </radialGradient>
           <radialGradient id="topo-pulse" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#eef3ff" stopOpacity="1" />
-            <stop offset="45%" stopColor="#8eabff" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#8eabff" stopOpacity="0" />
+            <stop offset="0%" stopColor="#2f55e0" stopOpacity="1" />
+            <stop offset="45%" stopColor="#5f86fb" stopOpacity="0.55" />
+            <stop offset="100%" stopColor="#5f86fb" stopOpacity="0" />
           </radialGradient>
+          <linearGradient id="topo-globe" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#3d56ff" />
+            <stop offset="0.47" stopColor="#2f48fb" />
+            <stop offset="0.53" stopColor="#0b24ee" />
+            <stop offset="1" stopColor="#0017d8" />
+          </linearGradient>
+
           {paths.map((d, i) => (
             <path key={i} id={`topo-path-${i}`} d={d} />
           ))}
@@ -82,10 +89,10 @@ export function HeroTopology({ className = "", tilt = false }: { className?: str
 
         {/* Orbit and rings */}
         <circle cx={CX} cy={CY} r={210} fill="url(#topo-glow)" />
-        <ellipse cx={CX} cy={CY} rx={RX} ry={RY} fill="none" stroke="rgb(255 255 255 / 0.07)" strokeDasharray="2 6" />
-        <circle cx={CX} cy={CY} r={150} fill="none" stroke="rgb(255 255 255 / 0.05)" />
+        <ellipse cx={CX} cy={CY} rx={RX} ry={RY} fill="none" stroke="rgb(8 18 43 / 0.14)" strokeDasharray="2 6" />
+        <circle cx={CX} cy={CY} r={150} fill="none" stroke="rgb(8 18 43 / 0.07)" />
         <g className="topo-spin" style={{ transformOrigin: `${CX}px ${CY}px` }}>
-          <circle cx={CX} cy={CY} r={88} fill="none" stroke="rgb(142 171 255 / 0.4)" strokeDasharray="1 7" strokeLinecap="round" strokeWidth={1.4} />
+          <circle cx={CX} cy={CY} r={88} fill="none" stroke="rgb(47 85 224 / 0.45)" strokeDasharray="1 7" strokeLinecap="round" strokeWidth={1.4} />
         </g>
 
         {/* Connections: base line draws in, then a slow dashed flow */}
@@ -95,7 +102,7 @@ export function HeroTopology({ className = "", tilt = false }: { className?: str
               d={d}
               pathLength={1}
               fill="none"
-              stroke="rgb(142 171 255 / 0.3)"
+              stroke="rgb(47 85 224 / 0.28)"
               strokeWidth={1.2}
               className="topo-draw"
               style={{ animationDelay: `${300 + i * 70}ms` }}
@@ -103,7 +110,7 @@ export function HeroTopology({ className = "", tilt = false }: { className?: str
             <path
               d={d}
               fill="none"
-              stroke="rgb(184 203 255 / 0.6)"
+              stroke="rgb(47 85 224 / 0.6)"
               strokeWidth={1.2}
               strokeDasharray="2 12"
               strokeLinecap="round"
@@ -127,15 +134,15 @@ export function HeroTopology({ className = "", tilt = false }: { className?: str
 
         {/* Hub */}
         <g className="topo-node" style={{ animationDelay: "120ms" }}>
-          <circle cx={CX} cy={CY} r={56} fill="#0c1834" stroke="rgb(142 171 255 / 0.5)" strokeWidth={1.2} />
-          <circle cx={CX} cy={CY} r={56} fill="none" stroke="rgb(142 171 255 / 0.55)" className="topo-ring motion-decor" style={{ transformOrigin: `${CX}px ${CY}px` }} />
+          <circle cx={CX} cy={CY} r={56} fill="#ffffff" stroke="rgb(47 85 224 / 0.3)" strokeWidth={1.2} />
+          <circle cx={CX} cy={CY} r={56} fill="none" stroke="rgb(47 85 224 / 0.45)" className="topo-ring motion-decor" style={{ transformOrigin: `${CX}px ${CY}px` }} />
           {/* Globe, after the "O" in the KHCOLO wordmark */}
           <g transform={`translate(${CX} ${CY})`}>
-            <circle r={25} fill="#5f86fb" />
-            <path d="M-25 -10 Q0 -17 25 -10 M-25 0 L25 0 M-25 10 Q0 17 25 10 M0 -25 L0 25" stroke="#0c1834" strokeWidth={2.6} fill="none" />
+            <circle r={25} fill="url(#topo-globe)" />
+            <path d="M-25 -10 Q0 -17 25 -10 M-25 0 L25 0 M-25 10 Q0 17 25 10 M0 -25 L0 25" stroke="#ffffff" strokeWidth={2.6} fill="none" />
           </g>
-          <rect x={CX - 62} y={CY + 70} width={124} height={22} rx={11} fill="#070f24" stroke="rgb(255 255 255 / 0.08)" />
-          <text x={CX} y={CY + 84.5} textAnchor="middle" fill="#a7b3cc" fontSize={9.5} letterSpacing="0.16em" style={{ fontFamily: "var(--font-mono)" }}>
+          <rect x={CX - 62} y={CY + 70} width={124} height={22} rx={11} fill="#eef3ff" stroke="rgb(47 85 224 / 0.18)" />
+          <text x={CX} y={CY + 84.5} textAnchor="middle" fill="#2443b8" fontSize={9.5} letterSpacing="0.16em" style={{ fontFamily: "var(--font-mono)" }}>
             ONE LOCAL TEAM
           </text>
         </g>
@@ -147,16 +154,16 @@ export function HeroTopology({ className = "", tilt = false }: { className?: str
           return (
             <g key={n.label} transform={`translate(${(p.x - CARD_W / 2).toFixed(1)} ${(p.y - CARD_H / 2).toFixed(1)})`}>
               <g className="topo-node" style={{ animationDelay: `${520 + i * 75}ms` }}>
-                <rect width={CARD_W} height={CARD_H} rx={12} fill="#0c1834" stroke="rgb(255 255 255 / 0.09)" />
-                <rect x={10} y={11} width={28} height={28} rx={8} fill="rgb(95 134 251 / 0.12)" stroke="rgb(142 171 255 / 0.25)" />
-                <Icon x={17} y={18} width={14} height={14} color="#8eabff" strokeWidth={1.8} />
-                <text x={48} y={23} fill="#ffffff" fontSize={12.5} fontWeight={500} style={{ fontFamily: "var(--font-sans)" }}>
+                <rect width={CARD_W} height={CARD_H} rx={12} fill="#ffffff" stroke="#c9d3e6" />
+                <rect x={10} y={11} width={28} height={28} rx={8} fill="#eef3ff" stroke="rgb(47 85 224 / 0.15)" />
+                <Icon x={17} y={18} width={14} height={14} color="#2f55e0" strokeWidth={1.8} />
+                <text x={48} y={23} fill="#08122b" fontSize={12.5} fontWeight={500} style={{ fontFamily: "var(--font-sans)" }}>
                   {n.label}
                 </text>
-                <text x={48} y={37} fill="#7d8cab" fontSize={9} letterSpacing="0.12em" style={{ fontFamily: "var(--font-mono)" }}>
+                <text x={48} y={37} fill="#536079" fontSize={9} letterSpacing="0.12em" style={{ fontFamily: "var(--font-mono)" }}>
                   {n.sub.toUpperCase()}
                 </text>
-                <circle cx={CARD_W - 11} cy={11} r={2.2} fill={i % 2 ? "#34d399" : "#8eabff"} className={i % 2 ? "topo-blink motion-decor" : undefined} style={{ animationDelay: `${i * 0.4}s` }} />
+                <circle cx={CARD_W - 11} cy={11} r={2.2} fill={i % 2 ? "#10b981" : "#5f86fb"} className={i % 2 ? "topo-blink motion-decor" : undefined} style={{ animationDelay: `${i * 0.4}s` }} />
               </g>
             </g>
           );

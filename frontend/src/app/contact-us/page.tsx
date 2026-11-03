@@ -85,7 +85,7 @@ export default async function ContactPage() {
           { name: "Home", path: "/" },
           { name: "Contact", path: PATH },
         ]}
-        eyebrow={<Eyebrow tone="dark">Contact</Eyebrow>}
+        eyebrow={<Eyebrow>Contact</Eyebrow>}
         title={page.h1}
         lede={
           <p>
@@ -105,22 +105,22 @@ export default async function ContactPage() {
                   data-track="contact_click"
                   data-track-method={m.method}
                   data-track-location="contact_page"
-                  data-spotlight="dark"
+                  data-spotlight
                   className={`group relative flex h-full flex-col rounded-2xl border p-5 transition-[background-color,border-color,translate] duration-200 hover:-translate-y-[3px] ${
                     m.primary
-                      ? "border-brand-300/40 bg-brand-300/[0.08] hover:border-brand-300/70 hover:bg-brand-300/[0.12]"
-                      : "border-white/[0.09] bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.06]"
+                      ? "border-brand-600/20 bg-brand-50 hover:border-brand-600/40 hover:shadow-[var(--shadow-lift)]"
+                      : "border-line bg-white shadow-[var(--shadow-card)] hover:border-brand-600/30 hover:shadow-[var(--shadow-lift)]"
                   }`}
                 >
                   <span className="flex items-center justify-between">
-                    <span className="text-eyebrow text-ink-400">{m.label}</span>
-                    <span className={m.primary ? "text-brand-300" : "text-ink-300"}>{m.icon}</span>
+                    <span className="text-eyebrow text-muted">{m.label}</span>
+                    <span className={m.primary ? "text-brand-600" : "text-ink-500"}>{m.icon}</span>
                   </span>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-[1.02rem] font-medium text-white tabular-nums">
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-[1.02rem] font-medium text-ink-950 tabular-nums">
                     {m.value}
                     {external && <ArrowUpRight aria-hidden className="arrow-nudge arrow-nudge-diag size-4 text-ink-400" />}
                   </span>
-                  <span className="mt-1 text-sm text-ink-400">{m.note}</span>
+                  <span className="mt-1 text-sm text-muted">{m.note}</span>
                   {external && <span className="sr-only">(opens in a new tab)</span>}
                 </a>
               </li>

@@ -66,9 +66,36 @@ Configure Telegram or email alerts (above) so nobody has to poll.
 
 **Cheaper or free.** Render's free web services sleep after 15 minutes idle (the first visit then
 takes up to a minute), free databases expire after 30 days, and private services are not available
-on the free plan. For a business site, keep the paid plans. If you must start free: change both
-services to `type: web` and `plan: free`, set `KHCOLO_API_URL` on the website to the API's public
-`https://khcolo-api.onrender.com`, and set `TRUST_PROXY_HEADERS=false` on the API.
+on the free plan. For a business site, keep the paid plans.
+
+### The free-tier setup currently running
+
+The staging site was created on Render's free tier (Singapore) with three resources:
+
+| Resource | URL / ID | Notes |
+| --- | --- | --- |
+| `khcolo-db` | `dpg-dbkmhvrncjis73eolau0-a` | Free PostgreSQL 16. **Expires 3 Dec 2026** unless upgraded. |
+| `khcolo-api` | `https://khcolo-api.onrender.com` | Public web service, locked with `INTERNAL_API_KEY`: every `/api` call except `/api/v1/health` returns 404 without the key. |
+| `khcolo-web` | `https://khcolo-web.onrender.com` | The website, `SITE_ENV=development` (not indexed). |
+
+How it differs from the Blueprint:
+
+- The API is a public web service (free plans have no private services), so the website sends
+  `X-Internal-Key` on every call and the visitor IP in `X-Client-IP`. Both services share
+  `INTERNAL_API_KEY` and `REVALIDATE_SECRET`; change them together if you rotate them.
+- Migrations and seeding run in the API's start command (free plans have no pre-deploy step).
+- Both services sleep when idle. The inquiry form waits up to 75 seconds for the API to wake.
+
+**Upgrading to always-on:** in the Render dashboard change `khcolo-web` and `khcolo-api` to
+**Starter** and `khcolo-db` to **Basic** (before it expires). Nothing else changes. Alternatively,
+delete the three free resources and apply `render.yaml` as a Blueprint for the private-API setup.
+
+**Reading inquiries on the free setup:** from the API service's **Shell** tab:
+
+```bash
+curl -s -H "X-Internal-Key: $INTERNAL_API_KEY" -H "Authorization: Bearer $ADMIN_API_TOKEN" \
+  "http://localhost:$PORT/api/v1/admin/inquiries?status=new"
+```
 
 ## Single server with Docker Compose
 

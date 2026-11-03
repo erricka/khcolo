@@ -12,7 +12,7 @@ export function Eyebrow({
   tone?: "light" | "dark";
   className?: string;
 }) {
-  const color = tone === "dark" ? "text-brand-300" : "text-brand-600";
+  const color = tone === "dark" ? "text-brand-300" : "text-brand-700";
   const rule = tone === "dark" ? "bg-white/20" : "bg-ink-900/20";
   return (
     <p className={`text-eyebrow flex items-center gap-3 ${color} ${className}`}>

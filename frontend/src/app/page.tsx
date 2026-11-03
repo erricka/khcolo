@@ -45,31 +45,31 @@ export default async function HomePage() {
       <JsonLd data={[organizationLd(company), websiteLd()]} />
 
       {/* Hero ------------------------------------------------------------ */}
-      <section className="relative overflow-hidden bg-white">
+      <section className="surface-dark bg-grain relative overflow-hidden bg-ink-950 text-white">
         <div
           aria-hidden
-          className="bg-blueprint-light absolute inset-0 [mask-image:radial-gradient(ellipse_65%_70%_at_72%_42%,black_20%,transparent_75%)]"
+          className="bg-blueprint absolute inset-0 [mask-image:radial-gradient(ellipse_65%_70%_at_72%_42%,black_20%,transparent_75%)]"
         />
         <div
           aria-hidden
-          className="absolute top-[-18rem] right-[-12rem] size-[52rem] rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.13),transparent)]"
+          className="absolute top-[-18rem] right-[-12rem] size-[52rem] rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.3),transparent)]"
         />
         <div
           aria-hidden
-          className="absolute bottom-[-20rem] left-[-14rem] size-[40rem] rounded-full bg-[radial-gradient(closest-side,rgb(16_185_129/0.07),transparent)]"
+          className="absolute bottom-[-20rem] left-[-14rem] size-[40rem] rounded-full bg-[radial-gradient(closest-side,rgb(16_185_129/0.08),transparent)]"
         />
         <div className="container-site relative grid items-center gap-10 pt-[calc(var(--header-h)+3.5rem)] pb-14 lg:grid-cols-12 lg:gap-6 lg:pt-[calc(var(--header-h)+4.5rem)] lg:pb-20">
           <div className="lg:col-span-7">
-            <p className="enter text-eyebrow flex items-center gap-3 text-brand-600" style={{ ["--d" as string]: 0 }}>
+            <p className="enter text-eyebrow flex items-center gap-3 text-brand-300" style={{ ["--d" as string]: 0 }}>
               <span className="relative flex size-2">
-                <span className="motion-decor absolute inline-flex size-full animate-ping rounded-full bg-accent-500 opacity-50" />
-                <span className="relative inline-flex size-2 rounded-full bg-accent-500" />
+                <span className="motion-decor absolute inline-flex size-full animate-ping rounded-full bg-accent-400 opacity-50" />
+                <span className="relative inline-flex size-2 rounded-full bg-accent-400" />
               </span>
               3CX · Bitrix24 · IT support in Cambodia
             </p>
-            <h1 className="text-display mt-7 max-w-[17ch] text-[clamp(2.5rem,1.2rem+3.9vw,4.35rem)] text-ink-950">
+            <h1 className="text-display mt-7 max-w-[17ch] text-[clamp(2.5rem,1.2rem+3.9vw,4.35rem)] text-white">
               3CX, Bitrix24 and{" "}
-              <em className="relative inline-block bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text not-italic text-transparent">
+              <em className="relative inline-block bg-gradient-to-r from-brand-300 to-brand-200 bg-clip-text not-italic text-transparent">
                 local IT support
                 <svg
                   aria-hidden
@@ -84,14 +84,14 @@ export default async function HomePage() {
                     stroke="currentColor"
                     strokeWidth={2.6}
                     strokeLinecap="round"
-                    className="draw-underline text-accent-500"
+                    className="draw-underline text-accent-400"
                   />
                 </svg>
               </em>{" "}
               for
               Cambodian businesses
             </h1>
-            <p className="text-lede mt-7 max-w-[34rem] text-muted">
+            <p className="text-lede mt-7 max-w-[34rem] text-ink-300">
               3CX phone systems, Bitrix24 CRM, cybersecurity, backup, hosting and IT maintenance, planned, installed and
               supported by one local team, in Khmer or English.
             </p>
@@ -110,7 +110,7 @@ export default async function HomePage() {
               </ButtonLink>
             </div>
             <dl
-              className="enter mt-12 grid max-w-[34rem] divide-y divide-line border-t border-line sm:mt-14 sm:grid-cols-3 sm:divide-y-0 sm:pt-6"
+              className="enter mt-12 grid max-w-[34rem] divide-y divide-white/10 border-t border-white/10 sm:mt-14 sm:grid-cols-3 sm:divide-y-0 sm:pt-6"
               style={{ ["--d" as string]: 3 }}
             >
               {[
@@ -121,11 +121,11 @@ export default async function HomePage() {
                 <div
                   key={k}
                   className={`flex items-baseline justify-between gap-4 py-3.5 sm:block sm:py-0 ${
-                    i ? "sm:border-l sm:border-line sm:pl-6" : "sm:pr-4"
+                    i ? "sm:border-l sm:border-white/10 sm:pl-6" : "sm:pr-4"
                   }`}
                 >
-                  <dt className="font-medium tracking-tight text-ink-950">{k}</dt>
-                  <dd className="text-[0.85rem] leading-snug text-muted sm:mt-1 sm:text-[0.8rem]">{v}</dd>
+                  <dt className="font-medium tracking-tight text-white">{k}</dt>
+                  <dd className="text-[0.85rem] leading-snug text-ink-400 sm:mt-1 sm:text-[0.8rem]">{v}</dd>
                 </div>
               ))}
             </dl>
@@ -137,14 +137,14 @@ export default async function HomePage() {
         </div>
 
         {/* Partner programs */}
-        <div className="relative border-y border-line bg-paper/70">
+        <div className="relative border-t border-white/[0.07] bg-ink-950/60">
           <div className="container-site grid grid-cols-1 gap-6 py-8 lg:grid-cols-12 lg:items-center lg:gap-10">
-            <p className="text-eyebrow text-muted lg:col-span-2">Partners &amp; platforms</p>
+            <p className="text-eyebrow text-ink-400 lg:col-span-2">Partners &amp; platforms</p>
             <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 lg:col-span-10 lg:grid-cols-7">
               {company.partners.map((p, i) => (
                 <li key={p.vendor} data-reveal style={{ ["--i" as string]: i }}>
-                  <span className="block text-[1.05rem] font-semibold tracking-tight text-ink-950">{p.vendor}</span>
-                  <span className="mt-1 block text-[0.78rem] leading-snug text-muted">{p.relationship}</span>
+                  <span className="block text-[1.05rem] font-semibold tracking-tight text-white">{p.vendor}</span>
+                  <span className="mt-1 block text-[0.78rem] leading-snug text-ink-400">{p.relationship}</span>
                 </li>
               ))}
             </ul>
@@ -193,10 +193,11 @@ export default async function HomePage() {
       </section>
 
       {/* Hardware --------------------------------------------------------- */}
-      <section aria-labelledby="hardware-title" className="relative overflow-hidden border-y border-line bg-paper/60 py-24 lg:py-32">
-        <div aria-hidden className="bg-blueprint-light absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
+      <section aria-labelledby="hardware-title" className="surface-dark bg-grain relative overflow-hidden bg-ink-900 py-24 lg:py-32">
+        <div aria-hidden className="bg-blueprint absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_70%)]" />
         <div className="container-site relative">
           <SectionHeader
+            tone="dark"
             eyebrow="Hardware"
             index="02"
             id="hardware-title"
@@ -221,7 +222,7 @@ export default async function HomePage() {
             })}
           </div>
           <div className="mt-10" data-reveal>
-            <ButtonLink href={routes.products} variant="dark">
+            <ButtonLink href={routes.products} variant="secondary">
               Browse all {products.length} products
             </ButtonLink>
           </div>
@@ -263,38 +264,38 @@ export default async function HomePage() {
                 More about KHCOLO
               </ButtonLink>
             </div>
-            <div className="relative border-t border-line bg-gradient-to-b from-brand-50 to-white p-7 sm:p-12 lg:col-span-5 lg:border-t-0 lg:border-l lg:p-14" data-reveal style={{ ["--i" as string]: 1 }}>
-              <div aria-hidden className="bg-blueprint-light absolute inset-0 opacity-70 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
+            <div className="surface-dark bg-grain relative bg-ink-950 p-7 text-white sm:p-12 lg:col-span-5 lg:p-14" data-reveal style={{ ["--i" as string]: 1 }}>
+              <div aria-hidden className="bg-blueprint absolute inset-0 opacity-60 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
               <div className="relative flex h-full flex-col gap-9">
               <dl className="space-y-9">
                 <div>
-                  <dt className="text-eyebrow text-muted">Operating since</dt>
-                  <dd className="mt-3 text-7xl leading-none font-semibold tracking-[-0.04em] text-brand-600 tabular-nums">{company.operatingSince}</dd>
+                  <dt className="text-eyebrow text-ink-400">Operating since</dt>
+                  <dd className="mt-3 text-7xl leading-none font-semibold tracking-[-0.04em] text-brand-300 tabular-nums">{company.operatingSince}</dd>
                 </div>
-                <div className="border-t border-brand-600/10 pt-7">
-                  <dt className="text-eyebrow text-muted">Where we work</dt>
+                <div className="border-t border-white/10 pt-7">
+                  <dt className="text-eyebrow text-ink-400">Where we work</dt>
                   <dd className="mt-3 space-y-1.5">
                     {company.serviceAreas.map((a) => (
                       <p key={a.name} className="flex items-baseline justify-between gap-4">
-                        <span className="text-lg font-medium text-ink-950">{a.name}</span>
-                        <span className="text-sm text-muted">{a.note}</span>
+                        <span className="text-lg font-medium">{a.name}</span>
+                        <span className="text-sm text-ink-400">{a.note}</span>
                       </p>
                     ))}
                   </dd>
                 </div>
-                <div className="border-t border-brand-600/10 pt-7">
-                  <dt className="text-eyebrow text-muted">Support languages</dt>
-                  <dd className="mt-3 flex items-baseline gap-6 text-lg font-medium text-ink-950">
+                <div className="border-t border-white/10 pt-7">
+                  <dt className="text-eyebrow text-ink-400">Support languages</dt>
+                  <dd className="mt-3 flex items-baseline gap-6 text-lg font-medium">
                     <span>
-                      <span lang="km">ខ្មែរ</span> <span className="text-muted">Khmer</span>
+                      <span lang="km">ខ្មែរ</span> <span className="text-ink-400">Khmer</span>
                     </span>
                     <span>English</span>
                   </dd>
                 </div>
               </dl>
-                <blockquote className="mt-auto border-t border-brand-600/10 pt-7">
-                  <span aria-hidden className="block text-5xl leading-none font-semibold text-accent-500">&ldquo;</span>
-                  <p className="mt-1 text-xl leading-snug font-medium tracking-[-0.015em] text-ink-950">
+                <blockquote className="mt-auto border-t border-white/10 pt-7">
+                  <span aria-hidden className="block text-5xl leading-none font-semibold text-accent-400">&ldquo;</span>
+                  <p className="mt-1 text-xl leading-snug font-medium tracking-[-0.015em] text-white">
                     We believe trust can only be achieved through communication and experienced support.
                   </p>
                 </blockquote>

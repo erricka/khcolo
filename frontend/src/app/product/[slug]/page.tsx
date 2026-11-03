@@ -54,10 +54,10 @@ export default async function ProductPage({ params }: Props) {
     <>
       <JsonLd data={productLd(product, category)} />
 
-      <section className="relative overflow-hidden border-b border-line bg-white">
+      <section className="surface-dark bg-grain relative overflow-hidden bg-ink-950 text-white">
         <div
           aria-hidden
-          className="absolute top-[-20rem] left-[-10rem] size-[46rem] rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.1),transparent)]"
+          className="absolute top-[-20rem] left-[-10rem] size-[46rem] rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.22),transparent)]"
         />
         <div className="container-site relative pt-[calc(var(--header-h)+2.5rem)] pb-16 lg:pb-24">
           <Breadcrumbs
@@ -72,7 +72,7 @@ export default async function ProductPage({ params }: Props) {
             <div className="lg:col-span-6">
               <div
                 data-spotlight
-                className="bg-blueprint-light relative aspect-square overflow-hidden rounded-[1.75rem] bg-paper shadow-[var(--shadow-lift)] ring-1 ring-line">
+                className="bg-blueprint-light relative aspect-square overflow-hidden rounded-[1.75rem] bg-paper shadow-[0_40px_80px_-40px_rgb(0_0_0/0.8)] ring-1 ring-white/10">
                 {product.image && (
                   <Image
                     src={product.image.src}
@@ -91,21 +91,21 @@ export default async function ProductPage({ params }: Props) {
             </div>
             <div className="lg:col-span-6">
               <div className="enter" style={{ ["--d" as string]: 0 }}>
-                <Eyebrow>{brandLabel(product)}</Eyebrow>
+                <Eyebrow tone="dark">{brandLabel(product)}</Eyebrow>
               </div>
-              <h1 className="mt-5 text-ink-950">
+              <h1 className="mt-5 text-white">
                 <span className="text-headline block">{product.name}</span>{" "}
-                <span className="mt-3 block text-lg font-normal tracking-normal text-muted">
+                <span className="mt-3 block text-lg font-normal tracking-normal text-ink-300">
                   {product.type}
-                  {product.variant && <span className="text-ink-500"> · {product.variant}</span>}
+                  {product.variant && <span className="text-ink-400"> · {product.variant}</span>}
                 </span>
               </h1>
-              <p className="text-lede mt-6 max-w-xl text-muted">
+              <p className="text-lede mt-6 max-w-xl text-ink-200">
                 {product.summary}
               </p>
-              <ul className="enter mt-8 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-line bg-line" style={{ ["--d" as string]: 2 }}>
+              <ul className="enter mt-8 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/[0.09] bg-white/[0.06]" style={{ ["--d" as string]: 2 }}>
                 {product.keySpecs.map((s) => (
-                  <li key={s} className="bg-white px-4 py-4 text-[0.92rem] leading-snug font-medium text-ink-900">
+                  <li key={s} className="bg-ink-950/80 px-4 py-4 text-[0.92rem] leading-snug font-medium text-white">
                     {s}
                   </li>
                 ))}
@@ -131,7 +131,7 @@ export default async function ProductPage({ params }: Props) {
                   Ask on Telegram
                 </ButtonLink>
               </div>
-              <p className="enter mt-6 text-sm text-muted" style={{ ["--d" as string]: 3 }}>
+              <p className="enter mt-6 text-sm text-ink-400" style={{ ["--d" as string]: 3 }}>
                 Price and availability confirmed on quotation. Supplied, provisioned and supported by our team.
               </p>
             </div>

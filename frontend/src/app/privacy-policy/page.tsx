@@ -80,7 +80,7 @@ export default async function PrivacyPage() {
           { name: "Home", path: "/" },
           { name: "Privacy notice", path: PATH },
         ]}
-        eyebrow={<Eyebrow>Last updated {updated}</Eyebrow>}
+        eyebrow={<Eyebrow tone="dark">Last updated {updated}</Eyebrow>}
         title={page.h1}
         lede={<p>How we handle the information you send through this website.</p>}
       />

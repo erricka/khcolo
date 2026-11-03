@@ -17,26 +17,24 @@ export function ContactBand({
   location?: string;
 }) {
   return (
-    <section aria-labelledby="contact-band-title" className="py-20 lg:py-28">
-      <div className="container-site">
-      <div className="relative overflow-hidden rounded-[1.75rem] border border-brand-600/10 bg-gradient-to-br from-brand-50 via-white to-white shadow-[var(--shadow-card)]">
-      <div aria-hidden className="bg-blueprint-light absolute inset-0 [mask-image:radial-gradient(ellipse_at_80%_20%,black,transparent_65%)]" />
+    <section aria-labelledby="contact-band-title" className="surface-dark bg-grain relative overflow-hidden bg-ink-900">
+      <div aria-hidden className="bg-blueprint absolute inset-0 [mask-image:radial-gradient(ellipse_at_80%_20%,black,transparent_65%)]" />
       <div
         aria-hidden
-        className="glow-drift absolute -top-40 -right-40 size-[38rem] rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.14),transparent)]"
+        className="glow-drift absolute -top-40 -right-40 size-[38rem] rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.32),transparent)]"
       />
-      <div className="relative grid gap-12 px-6 py-16 sm:px-12 lg:grid-cols-12 lg:items-end lg:px-16 lg:py-20">
+      <div className="container-site relative grid gap-12 py-24 lg:grid-cols-12 lg:items-end lg:py-32">
         <div className="lg:col-span-7" data-reveal>
-          <p className="flex items-baseline gap-4 text-muted">
-            <span lang="km" className="text-2xl text-brand-600">
+          <p className="flex items-baseline gap-4 text-ink-300">
+            <span lang="km" className="text-2xl text-brand-300">
               សួស្តី
             </span>
             <span className="text-eyebrow">Hello — Khmer or English</span>
           </p>
-          <h2 id="contact-band-title" className="text-headline mt-6 text-ink-950">
+          <h2 id="contact-band-title" className="text-headline mt-6 text-white">
             {title}
           </h2>
-          <p className="text-lede mt-6 max-w-xl text-muted">{body}</p>
+          <p className="text-lede mt-6 max-w-xl text-ink-300">{body}</p>
         </div>
         <div className="lg:col-span-5" data-reveal style={{ ["--i" as string]: 1 }}>
           <div className="flex flex-wrap gap-3 lg:justify-end">
@@ -53,31 +51,29 @@ export function ContactBand({
               Send an inquiry
             </ButtonLink>
           </div>
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-[0.95rem] text-ink-700 tabular-nums lg:justify-end">
+          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-[0.95rem] text-ink-200 tabular-nums lg:justify-end">
             <a
               href={`tel:${company.phones[0].tel}`}
-              className="link-underline inline-flex items-center gap-2 hover:text-ink-950"
+              className="link-underline inline-flex items-center gap-2 hover:text-white"
               data-track="contact_click"
               data-track-method="phone"
               data-track-location={location}
             >
-              <Phone aria-hidden className="size-3.5 text-brand-600" />
+              <Phone aria-hidden className="size-3.5 text-brand-300" />
               {company.phones[0].display}
             </a>
             <a
               href={`mailto:${company.email}`}
-              className="link-underline inline-flex items-center gap-2 hover:text-ink-950"
+              className="link-underline inline-flex items-center gap-2 hover:text-white"
               data-track="contact_click"
               data-track-method="email"
               data-track-location={location}
             >
-              <Mail aria-hidden className="size-3.5 text-brand-600" />
+              <Mail aria-hidden className="size-3.5 text-brand-300" />
               {company.email}
             </a>
           </div>
         </div>
-      </div>
-      </div>
       </div>
     </section>
   );

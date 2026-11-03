@@ -73,22 +73,22 @@ export function SiteFooter({ company, services, categories }: { company: Company
   ];
 
   return (
-    <footer className="relative overflow-hidden border-t border-line bg-white text-ink-700">
+    <footer className="surface-dark relative overflow-hidden bg-ink-950 text-ink-300">
       {/* Brand accent along the top edge */}
       <div aria-hidden className="h-px bg-gradient-to-r from-transparent via-brand-500 to-accent-400/70" />
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-48 left-1/2 h-72 w-[60rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.07),transparent)]"
+        className="pointer-events-none absolute -top-48 left-1/2 h-72 w-[60rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(61_104_242/0.14),transparent)]"
       />
 
       <div className="container-site relative pt-16 pb-8 lg:pt-20">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-10">
           {/* Brand and contact */}
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-block" aria-label="KHCOLO home">
-              <Logo title={null} id="logo-footer" className="h-8 w-auto" />
+            <Link href="/" className="inline-block text-white" aria-label="KHCOLO home">
+              <Logo title={null} className="h-8 w-auto" />
             </Link>
-            <p className="mt-5 max-w-sm leading-relaxed text-muted">
+            <p className="mt-5 max-w-sm leading-relaxed text-ink-300">
               3CX phone systems, Bitrix24 CRM, security, cloud and IT support for businesses across Cambodia, from one
               local team.
             </p>
@@ -102,14 +102,14 @@ export function SiteFooter({ company, services, categories }: { company: Company
                     data-track="contact_click"
                     data-track-method={c.method}
                     data-track-location="footer"
-                    className="group flex items-center gap-3 rounded-xl border border-line bg-paper/50 px-3 py-3 transition-colors hover:border-brand-600/30 hover:bg-white"
+                    className="group flex items-center gap-3 rounded-xl border border-white/[0.07] bg-white/[0.02] px-3 py-3 transition-colors hover:border-brand-400/40 hover:bg-white/[0.05]"
                   >
-                    <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-100">
+                    <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-500/15 text-brand-300 transition-colors group-hover:bg-brand-500/25">
                       {c.icon}
                     </span>
                     <span className="min-w-0">
-                      <span className="block text-[0.7rem] font-semibold tracking-[0.08em] text-muted uppercase">{c.label}</span>
-                      <span className="mt-0.5 block truncate text-[0.92rem] font-medium text-ink-950 tabular-nums">{c.value}</span>
+                      <span className="block text-[0.7rem] font-semibold tracking-[0.08em] text-ink-400 uppercase">{c.label}</span>
+                      <span className="mt-0.5 block truncate text-[0.92rem] font-medium text-white tabular-nums">{c.value}</span>
                     </span>
                     {c.external && <span className="sr-only">(opens in a new tab)</span>}
                   </a>
@@ -125,7 +125,7 @@ export function SiteFooter({ company, services, categories }: { company: Company
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`KHCOLO on ${s.name} (opens in a new tab)`}
-                    className="flex size-10 items-center justify-center rounded-full border border-line text-ink-600 transition-colors hover:border-brand-600/40 hover:bg-brand-50 hover:text-brand-700"
+                    className="flex size-10 items-center justify-center rounded-full border border-white/10 text-ink-300 transition-colors hover:border-brand-400/50 hover:bg-white/[0.04] hover:text-white"
                   >
                     <SocialIcon name={s.name} />
                   </a>
@@ -140,11 +140,11 @@ export function SiteFooter({ company, services, categories }: { company: Company
               <div key={ci} className="space-y-10">
                 {col.map((g) => (
                   <div key={g.title}>
-                    <p className="text-eyebrow text-brand-600">{g.title}</p>
+                    <p className="text-eyebrow text-brand-300">{g.title}</p>
                     <ul className="mt-4 space-y-2.5 text-[0.94rem]">
                       {g.links.map((l) => (
                         <li key={l.href}>
-                          <Link href={l.href} className="link-underline text-ink-700 transition-colors hover:text-ink-950">
+                          <Link href={l.href} className="link-underline text-ink-200 transition-colors hover:text-white">
                             {l.label}
                           </Link>
                         </li>
@@ -158,21 +158,21 @@ export function SiteFooter({ company, services, categories }: { company: Company
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 flex flex-col gap-5 border-t border-line pt-7 text-sm lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-col gap-1.5 text-muted sm:flex-row sm:items-center sm:gap-3">
+        <div className="mt-16 flex flex-col gap-5 border-t border-white/[0.08] pt-7 text-sm lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-1.5 text-ink-400 sm:flex-row sm:items-center sm:gap-3">
             <span>© {year} KHCOLO. All rights reserved.</span>
-            <span aria-hidden className="hidden text-ink-300 sm:inline">
+            <span aria-hidden className="hidden text-ink-600 sm:inline">
               ·
             </span>
             <span>Prices and availability confirmed on quotation.</span>
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-            <span className="text-muted">
+            <span className="text-ink-400">
               Phnom Penh · Siem Reap · <span lang="km">ខ្មែរ</span> / English
             </span>
             <a
               href="#main"
-              className="group inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 py-2 text-ink-700 transition-colors hover:border-brand-600/40 hover:text-ink-950"
+              className="group inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3.5 py-2 text-ink-200 transition-colors hover:border-brand-400/50 hover:text-white"
             >
               <ArrowUp aria-hidden className="size-3.5 transition-transform duration-200 group-hover:-translate-y-0.5" />
               Back to top

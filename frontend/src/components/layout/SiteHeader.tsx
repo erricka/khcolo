@@ -50,18 +50,18 @@ export function SiteHeader({ nav }: { nav: NavData }) {
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50 h-[var(--header-h)]"
+      className="surface-dark fixed inset-x-0 top-0 z-50 h-[var(--header-h)]"
       data-scrolled={scrolled}
     >
       <div
         aria-hidden
         className={`absolute inset-0 border-b transition-[background-color,border-color,backdrop-filter] duration-300 ${
-          solid ? "border-line bg-white/85 shadow-[0_10px_30px_-24px_rgb(8_18_43/0.35)] backdrop-blur-xl backdrop-saturate-150" : "border-transparent bg-transparent"
+          solid ? "border-white/[0.08] bg-ink-950/85 backdrop-blur-xl backdrop-saturate-150" : "border-transparent bg-transparent"
         }`}
       />
       <div className="container-site relative flex h-full items-center gap-8">
-        <Link href="/" className="-m-2 flex shrink-0 items-center rounded-md p-2" aria-label="KHCOLO home">
-          <Logo title={null} id="logo-header" className="h-[25px] w-auto sm:h-[27px]" />
+        <Link href="/" className="-m-2 flex shrink-0 items-center rounded-md p-2 text-white" aria-label="KHCOLO home">
+          <Logo title={null} className="h-[22px] w-auto sm:h-6" />
         </Link>
 
         <nav aria-label="Main" className="hidden lg:block">
@@ -96,12 +96,12 @@ export function SiteHeader({ nav }: { nav: NavData }) {
         <div className="ml-auto flex items-center gap-3">
           <a
             href={`tel:${nav.phone.tel}`}
-            className="hidden items-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-ink-700 tabular-nums transition-colors hover:text-ink-950 xl:flex"
+            className="hidden items-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-ink-200 tabular-nums transition-colors hover:text-white xl:flex"
             data-track="contact_click"
             data-track-method="phone"
             data-track-location="header"
           >
-            <Phone aria-hidden className="size-3.5 text-brand-600" strokeWidth={1.8} />
+            <Phone aria-hidden className="size-3.5 text-brand-300" strokeWidth={1.8} />
             {nav.phone.display}
           </a>
           <div className="hidden sm:block">
@@ -116,7 +116,7 @@ export function SiteHeader({ nav }: { nav: NavData }) {
           </div>
           <button
             type="button"
-            className="-mr-2 inline-flex size-11 items-center justify-center rounded-full text-ink-950 transition-colors hover:bg-ink-950/5 lg:hidden"
+            className="-mr-2 inline-flex size-11 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 lg:hidden"
             aria-label="Open menu"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
@@ -139,11 +139,11 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
         href={href}
         aria-current={active ? "page" : undefined}
         className={`relative inline-flex h-10 items-center rounded-full px-4 transition-colors ${
-          active ? "text-ink-950" : "text-ink-600 hover:text-ink-950"
+          active ? "text-white" : "text-ink-200 hover:text-white"
         }`}
       >
         {children}
-        {active && <span aria-hidden className="absolute inset-x-4 -bottom-0.5 h-0.5 rounded-full bg-brand-500" />}
+        {active && <span aria-hidden className="absolute inset-x-4 -bottom-0.5 h-px bg-brand-300" />}
       </Link>
     </li>
   );
@@ -217,15 +217,15 @@ function DesktopMenu({
           setOpen((prev) => (prev === id ? null : id));
         }}
         className={`relative inline-flex h-10 items-center gap-1.5 rounded-full px-4 transition-colors ${
-          open || active ? "text-ink-950" : "text-ink-600 hover:text-ink-950"
+          open || active ? "text-white" : "text-ink-200 hover:text-white"
         }`}
       >
         {label}
         <ChevronDown
           aria-hidden
-          className={`size-3.5 text-ink-400 transition-transform duration-200 ${open ? "rotate-180 text-brand-600" : ""}`}
+          className={`size-3.5 text-ink-400 transition-transform duration-200 ${open ? "rotate-180 text-brand-300" : ""}`}
         />
-        {active && <span aria-hidden className="absolute inset-x-4 -bottom-0.5 h-0.5 rounded-full bg-brand-500" />}
+        {active && <span aria-hidden className="absolute inset-x-4 -bottom-0.5 h-px bg-brand-300" />}
       </button>
       <AnimatePresence>
         {open && (
@@ -237,7 +237,7 @@ function DesktopMenu({
             transition={{ duration: 0.22, ease: [0.25, 1, 0.5, 1] }}
             className="absolute inset-x-4 top-[calc(100%-6px)] sm:inset-x-6 lg:inset-x-10"
           >
-            <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-[0_30px_60px_-30px_rgb(8_18_43/0.35),0_2px_6px_-2px_rgb(8_18_43/0.06)]">
+            <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-ink-900/[0.97] shadow-[var(--shadow-panel)] backdrop-blur-xl">
               {children}
             </div>
           </m.div>
@@ -256,22 +256,22 @@ function SolutionsPanel({ nav }: { nav: NavData }) {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.32, delay: 0.04 + gi * 0.045, ease: [0.16, 1, 0.3, 1] }}
-          className="border-r border-line p-6"
+          className="border-r border-white/[0.06] p-6"
         >
-          <p className="text-eyebrow tracking-[0.1em] whitespace-nowrap text-brand-600">{group.name}</p>
+          <p className="text-eyebrow tracking-[0.1em] whitespace-nowrap text-brand-300">{group.name}</p>
           <ul className="mt-5 space-y-1">
             {group.services.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={routes.service(s.slug)}
-                  className="group -mx-3 flex gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-paper"
+                  className="group -mx-3 flex gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-white/[0.05]"
                 >
-                  <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-brand-600/10 bg-brand-50 text-brand-600 transition-colors group-hover:border-brand-600/30 group-hover:bg-white">
+                  <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-brand-300 transition-colors group-hover:border-brand-300/40">
                     <ServiceIcon name={s.icon} className="size-4" />
                   </span>
                   <span>
-                    <span className="block text-[0.94rem] font-medium text-ink-950">{s.name}</span>
-                    <span className="mt-1 line-clamp-2 block text-[0.82rem] leading-snug text-muted">{s.summary}</span>
+                    <span className="block text-[0.94rem] font-medium text-white">{s.name}</span>
+                    <span className="mt-1 line-clamp-2 block text-[0.82rem] leading-snug text-ink-400">{s.summary}</span>
                   </span>
                 </Link>
               </li>
@@ -279,26 +279,26 @@ function SolutionsPanel({ nav }: { nav: NavData }) {
           </ul>
         </m.div>
       ))}
-      <div className="relative flex flex-col justify-between overflow-hidden bg-gradient-to-b from-brand-50 to-white p-6">
+      <div className="relative flex flex-col justify-between overflow-hidden bg-gradient-to-b from-brand-500/[0.12] to-transparent p-6">
         <div>
-          <p className="text-eyebrow text-muted">Not sure where to start?</p>
-          <p className="mt-4 text-lg leading-snug font-medium text-ink-950">
+          <p className="text-eyebrow text-ink-400">Not sure where to start?</p>
+          <p className="mt-4 text-lg leading-snug font-medium text-white">
             Tell us what you run today. We&rsquo;ll suggest what fits.
           </p>
           <a
             href={`tel:${nav.phone.tel}`}
-            className="mt-6 flex items-center gap-2 text-sm font-medium text-ink-700 tabular-nums hover:text-ink-950"
+            className="mt-6 flex items-center gap-2 text-sm font-medium text-ink-200 tabular-nums hover:text-white"
             data-track="contact_click"
             data-track-method="phone"
             data-track-location="mega_menu"
           >
-            <Phone aria-hidden className="size-3.5 text-brand-600" />
+            <Phone aria-hidden className="size-3.5 text-brand-300" />
             {nav.phone.display}
           </a>
         </div>
         <Link
           href={routes.contact}
-          className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-brand-700 hover:text-brand-800"
+          className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-brand-300 hover:text-brand-200"
         >
           Talk to our team
           <ArrowRight aria-hidden className="arrow-nudge size-4" />
@@ -317,11 +317,11 @@ function ProductsPanel({ nav }: { nav: NavData }) {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.32, delay: 0.04 + ci * 0.05, ease: [0.16, 1, 0.3, 1] }}
-          className="border-r border-line"
+          className="border-r border-white/[0.06]"
         >
           <Link
             href={routes.category(c.slug)}
-            className="group block h-full p-5 transition-colors hover:bg-paper"
+            className="group block h-full p-5 transition-colors hover:bg-white/[0.03]"
           >
             <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-paper">
               {c.image && (
@@ -335,23 +335,23 @@ function ProductsPanel({ nav }: { nav: NavData }) {
               )}
             </div>
             <div className="mt-4 flex items-baseline justify-between gap-3">
-              <span className="font-medium text-ink-950">{c.name}</span>
-              <span className="text-xs text-muted tabular-nums">{c.count} models</span>
+              <span className="font-medium text-white">{c.name}</span>
+              <span className="text-xs text-ink-400 tabular-nums">{c.count} models</span>
             </div>
-            <p className="mt-1.5 text-[0.82rem] leading-snug text-muted">{c.summary}</p>
+            <p className="mt-1.5 text-[0.82rem] leading-snug text-ink-400">{c.summary}</p>
           </Link>
         </m.div>
       ))}
       <div className="flex flex-col justify-between p-6">
         <div>
-          <p className="text-eyebrow text-muted">Hardware</p>
-          <p className="mt-4 leading-snug text-ink-700">
+          <p className="text-eyebrow text-ink-400">Hardware</p>
+          <p className="mt-4 leading-snug text-ink-200">
             No online checkout. Send us your requirements and we&rsquo;ll confirm price and availability.
           </p>
         </div>
         <Link
           href={routes.products}
-          className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-brand-700 hover:text-brand-800"
+          className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-brand-300 hover:text-brand-200"
         >
           Browse all products
           <ArrowRight aria-hidden className="arrow-nudge size-4" />

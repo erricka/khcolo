@@ -63,20 +63,20 @@ export default async function CategoryPage({ params }: Props) {
           { name: "Products", path: routes.products },
           { name: category.name, path: routes.category(category.slug) },
         ]}
-        eyebrow={<Eyebrow>{category.name}</Eyebrow>}
+        eyebrow={<Eyebrow tone="dark">{category.name}</Eyebrow>}
         title={category.h1}
         lede={<p>{category.intro}</p>}
         aside={
-          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line shadow-[var(--shadow-lift)]">
+          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/[0.09] bg-white/[0.06]">
             {[
               ["Models listed", String(products.length)],
               ["Brands", brands.join(", ")],
               ["Pricing", "On request"],
               ["Setup", "Provisioned for you"],
             ].map(([k, v]) => (
-              <div key={k} className="bg-white p-5">
-                <dt className="text-eyebrow text-muted">{k}</dt>
-                <dd className="mt-2.5 text-[1.05rem] font-medium tracking-tight text-ink-950">{v}</dd>
+              <div key={k} className="bg-ink-950/80 p-5">
+                <dt className="text-eyebrow text-ink-400">{k}</dt>
+                <dd className="mt-2.5 text-[1.05rem] font-medium tracking-tight text-white">{v}</dd>
               </div>
             ))}
           </dl>

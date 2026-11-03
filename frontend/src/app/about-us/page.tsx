@@ -32,11 +32,11 @@ export default async function AboutPage() {
           { name: "Home", path: "/" },
           { name: "About", path: PATH },
         ]}
-        eyebrow={<Eyebrow>Since {company.operatingSince}</Eyebrow>}
+        eyebrow={<Eyebrow tone="dark">Since {company.operatingSince}</Eyebrow>}
         title={page.h1}
         lede={
           <>
-            <p className="text-[clamp(1.5rem,1.2rem+1.2vw,2.15rem)] leading-tight font-semibold tracking-[-0.025em] text-brand-600">
+            <p className="text-[clamp(1.5rem,1.2rem+1.2vw,2.15rem)] leading-tight font-semibold tracking-[-0.025em] text-brand-300">
               The full stack, under one roof.
             </p>
             <p className="mt-6">
@@ -47,7 +47,7 @@ export default async function AboutPage() {
           </>
         }
         aside={
-          <dl className="divide-y divide-line rounded-2xl border border-line bg-white px-7 shadow-[var(--shadow-lift)]">
+          <dl className="divide-y divide-white/[0.08] rounded-2xl border border-white/[0.09] bg-white/[0.03] px-7">
             {[
               ["Operating since", String(company.operatingSince)],
               ["Service areas", company.serviceAreas.map((a) => a.name).join(" · ")],
@@ -55,8 +55,8 @@ export default async function AboutPage() {
               ["Contact", company.email],
             ].map(([k, v]) => (
               <div key={k} className="flex flex-col gap-1.5 py-5">
-                <dt className="text-eyebrow text-muted">{k}</dt>
-                <dd className="text-[1.05rem] text-ink-950">{v}</dd>
+                <dt className="text-eyebrow text-ink-400">{k}</dt>
+                <dd className="text-[1.05rem] text-white">{v}</dd>
               </div>
             ))}
           </dl>
@@ -124,23 +124,23 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section aria-labelledby="principles-title" className="relative overflow-hidden border-y border-line bg-gradient-to-b from-brand-50/70 to-white py-20 lg:py-28">
-        <div aria-hidden className="bg-blueprint-light absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_80%)]" />
+      <section aria-labelledby="principles-title" className="surface-dark bg-grain relative overflow-hidden bg-ink-900 py-20 lg:py-28">
+        <div aria-hidden className="bg-blueprint absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_80%)]" />
         <div className="container-site relative">
-          <SectionHeader eyebrow="How we work" index="03" id="principles-title" title="What you can expect from us." />
-          <ul className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line shadow-[var(--shadow-card)] md:grid-cols-2 lg:grid-cols-4">
+          <SectionHeader tone="dark" eyebrow="How we work" index="03" id="principles-title" title="What you can expect from us." />
+          <ul className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08] md:grid-cols-2 lg:grid-cols-4">
             {company.principles.map((p, i) => (
-              <li key={p.title} data-reveal style={{ ["--i" as string]: i }} className="bg-white p-7 lg:p-8">
-                <span className="text-xs font-semibold text-brand-600 tabular-nums">0{i + 1}</span>
-                <h3 className="mt-8 text-lg font-semibold tracking-tight text-ink-950">{p.title}</h3>
-                <p className="mt-2 leading-relaxed text-muted">{p.body}</p>
+              <li key={p.title} data-reveal style={{ ["--i" as string]: i }} className="bg-ink-900 p-7 lg:p-8">
+                <span className="text-xs font-semibold text-brand-300 tabular-nums">0{i + 1}</span>
+                <h3 className="mt-8 text-lg font-semibold tracking-tight text-white">{p.title}</h3>
+                <p className="mt-2 leading-relaxed text-ink-300">{p.body}</p>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section id="partners" aria-labelledby="partners-title" className="scroll-mt-28 py-20 lg:py-28">
+      <section aria-labelledby="partners-title" className="py-20 lg:py-28">
         <div className="container-site">
           <SectionHeader eyebrow="Partners & platforms" index="04" id="partners-title" title="The vendors behind what we deploy.">
             Each relationship applies to that vendor and its products only.

@@ -94,7 +94,7 @@
   }
 
   body {
-    background: #ffffff;
+    background: var(--color-paper);
     color: var(--color-body);
     font-family: var(--font-sans);
     font-feature-settings: "cv11", "ss03";

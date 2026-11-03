@@ -14,7 +14,7 @@ const variants: Record<Variant, string> = {
   primary:
     "btn-sheen overflow-hidden bg-brand-500 text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.22),0_1px_2px_rgb(5_11_29/0.3)] hover:bg-brand-600 hover:shadow-[inset_0_1px_0_rgb(255_255_255/0.25),0_10px_28px_-10px_rgb(61_104_242/0.75)]",
   secondary:
-    "border border-ink-900/15 bg-white text-ink-900 shadow-[var(--shadow-card)] hover:border-brand-600/40 hover:text-brand-700",
+    "border border-white/18 bg-white/[0.04] text-white hover:border-white/35 hover:bg-white/[0.09]",
   ghost: "text-current hover:bg-current/[0.06]",
   dark: "bg-ink-900 text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.08)] hover:bg-ink-800 hover:shadow-[0_10px_24px_-12px_rgb(5_11_29/0.6)]",
   outline: "border border-ink-900/20 bg-white/60 text-ink-900 hover:border-ink-900/45 hover:bg-white",

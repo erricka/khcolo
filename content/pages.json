@@ -1,9 +1,9 @@
 [
   {
     "path": "/",
-    "title": "IT Solutions & Support in Cambodia — KHCOLO",
-    "description": "KHCOLO plans, installs and supports 3CX phone systems, Bitrix24 CRM, cybersecurity, backup, hosting and IT maintenance for businesses across Cambodia.",
-    "h1": "IT solutions and local support for Cambodian businesses",
+    "title": "3CX, Bitrix24 & IT Support in Cambodia — KHCOLO",
+    "description": "KHCOLO installs and supports 3CX phone systems and Bitrix24 CRM in Cambodia, plus cybersecurity, backup, hosting and IT maintenance from one local team.",
+    "h1": "3CX, Bitrix24 and local IT support for Cambodian businesses",
     "schemaType": "WebSite, Organization",
     "indexable": true,
     "sourceUrl": "https://khcolo.com/",
@@ -12,7 +12,7 @@
   {
     "path": "/about-us/",
     "title": "About KHCOLO — Cambodia IT & Telecom Solutions",
-    "description": "KHCOLO is a Cambodia-based IT and telecom partner operating since 2017: communications, security, cloud and support from one local team, in Khmer or English.",
+    "description": "KHCOLO is a Cambodia-based IT and telecom partner since 2017: 3CX phone systems, Bitrix24 CRM, security, cloud and support from one local team.",
     "h1": "About KHCOLO",
     "schemaType": "AboutPage",
     "indexable": true,
@@ -22,7 +22,7 @@
   {
     "path": "/contact-us/",
     "title": "Contact KHCOLO — IT Sales & Support Cambodia",
-    "description": "Talk to KHCOLO about phone systems, CRM, security, hosting or IT support. Message us on Telegram, call +855 12 200 259 or send an inquiry online.",
+    "description": "Talk to KHCOLO about 3CX phone systems, Bitrix24 CRM, security, hosting or IT support. Message us on Telegram, call +855 12 200 259 or send an inquiry.",
     "h1": "Talk to KHCOLO's team",
     "schemaType": "ContactPage",
     "indexable": true,

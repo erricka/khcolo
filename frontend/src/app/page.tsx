@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowDown } from "lucide-react";
 
+import { CorePlatforms } from "@/components/home/CorePlatforms";
 import { HeroTopology } from "@/components/home/HeroTopology";
 import { CategoryCard } from "@/components/products/CategoryCard";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -10,14 +11,14 @@ import { ContactBand } from "@/components/ui/ContactBand";
 import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { Eyebrow, SectionHeader } from "@/components/ui/Section";
 import { getCategories, getCompany, getPage, getProducts, getServices } from "@/lib/content";
-import { organizationLd, pageMetadata, websiteLd } from "@/lib/seo";
+import { CORE_KEYWORDS, organizationLd, pageMetadata, websiteLd } from "@/lib/seo";
 import { brandLabel, CATEGORY_HERO_PRODUCT, routes } from "@/lib/site";
 
 export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getPage("/");
-  return pageMetadata({ title: page.title, description: page.description, path: "/" });
+  return pageMetadata({ title: page.title, description: page.description, path: "/", keywords: CORE_KEYWORDS });
 }
 
 const HOW_WE_WORK = [
@@ -36,6 +37,8 @@ export default async function HomePage() {
     getCategories(),
     getProducts(),
   ]);
+  const threecx = services.find((s) => s.slug === "cloud-call-center");
+  const bitrix = services.find((s) => s.slug === "3cx-bitrix24-integration");
 
   return (
     <>
@@ -56,18 +59,18 @@ export default async function HomePage() {
           className="absolute bottom-[-20rem] left-[-14rem] size-[40rem] rounded-full bg-[radial-gradient(closest-side,rgb(16_185_129/0.08),transparent)]"
         />
         <div className="container-site relative grid items-center gap-10 pt-[calc(var(--header-h)+3.5rem)] pb-14 lg:grid-cols-12 lg:gap-6 lg:pt-[calc(var(--header-h)+4.5rem)] lg:pb-20">
-          <div className="lg:col-span-6 xl:col-span-6">
+          <div className="lg:col-span-7">
             <p className="enter text-eyebrow flex items-center gap-3 text-brand-300" style={{ ["--d" as string]: 0 }}>
               <span className="relative flex size-2">
                 <span className="motion-decor absolute inline-flex size-full animate-ping rounded-full bg-accent-400 opacity-50" />
                 <span className="relative inline-flex size-2 rounded-full bg-accent-400" />
               </span>
-              IT &amp; telecom · Cambodia
+              3CX · Bitrix24 · IT support in Cambodia
             </p>
-            <h1 className="text-display mt-7 max-w-[13ch] text-white">
-              IT solutions and{" "}
+            <h1 className="text-display mt-7 max-w-[17ch] text-[clamp(2.5rem,1.2rem+3.9vw,4.35rem)] text-white">
+              3CX, Bitrix24 and{" "}
               <em className="relative inline-block bg-gradient-to-r from-brand-300 to-brand-200 bg-clip-text not-italic text-transparent">
-                local support
+                local IT support
                 <svg
                   aria-hidden
                   viewBox="0 0 300 14"
@@ -89,8 +92,8 @@ export default async function HomePage() {
               Cambodian businesses
             </h1>
             <p className="text-lede mt-7 max-w-[34rem] text-ink-300">
-              Phone systems, CRM, cybersecurity, backup, hosting and IT maintenance, planned, installed and supported by
-              one local team, in Khmer or English.
+              3CX phone systems, Bitrix24 CRM, cybersecurity, backup, hosting and IT maintenance, planned, installed and
+              supported by one local team, in Khmer or English.
             </p>
             <div className="enter mt-9 flex flex-wrap gap-3" style={{ ["--d" as string]: 2 }}>
               <ButtonLink
@@ -128,7 +131,7 @@ export default async function HomePage() {
             </dl>
           </div>
           {/* Decorative; too small to read on phones, so it starts at the sm breakpoint. */}
-          <div className="enter hidden sm:block lg:col-span-6" style={{ ["--d" as string]: 1 }}>
+          <div className="enter hidden sm:block lg:col-span-5" style={{ ["--d" as string]: 1 }}>
             <HeroTopology className="mx-auto w-full max-w-[600px] lg:max-w-none" tilt />
           </div>
         </div>
@@ -136,8 +139,8 @@ export default async function HomePage() {
         {/* Partner programs */}
         <div className="relative border-t border-white/[0.07] bg-ink-950/60">
           <div className="container-site grid grid-cols-1 gap-6 py-8 lg:grid-cols-12 lg:items-center lg:gap-10">
-            <p className="text-eyebrow text-ink-400 lg:col-span-2">Partner programs</p>
-            <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:col-span-10 lg:grid-cols-6">
+            <p className="text-eyebrow text-ink-400 lg:col-span-2">Partners &amp; platforms</p>
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 lg:col-span-10 lg:grid-cols-7">
               {company.partners.map((p, i) => (
                 <li key={p.vendor} data-reveal style={{ ["--i" as string]: i }}>
                   <span className="block text-[1.05rem] font-semibold tracking-tight text-white">{p.vendor}</span>
@@ -149,6 +152,9 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Core platforms: 3CX + Bitrix24 ---------------------------------- */}
+      {threecx && bitrix && <CorePlatforms threecx={threecx} bitrix={bitrix} />}
+
       {/* Solutions -------------------------------------------------------- */}
       <section id="solutions" aria-labelledby="solutions-title" className="py-24 lg:py-32">
         <div className="container-site">
@@ -158,8 +164,8 @@ export default async function HomePage() {
             id="solutions-title"
             title="One accountable team for the systems your business runs on."
           >
-            Phone system, CRM, security, email and hosting, licensed, deployed and supported locally. One number to call
-            instead of a different vendor for each.
+            3CX phone system, Bitrix24 CRM, security, email and hosting, licensed, deployed and supported locally. One
+            number to call instead of a different vendor for each.
           </SectionHeader>
 
           <div className="mt-16 divide-y divide-line border-y border-line lg:mt-20">

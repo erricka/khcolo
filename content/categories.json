@@ -10,10 +10,13 @@
     "facetLabel": "Phone type",
     "seo": {
       "title": "Yealink IP Phones in Cambodia — KHCOLO",
-      "description": "Yealink desk, executive, touchscreen, video and DECT cordless IP phones supplied and provisioned by KHCOLO in Cambodia. Compare specs and request a quote."
+      "description": "Yealink desk, executive, video and DECT cordless IP phones for 3CX, supplied and provisioned by KHCOLO in Cambodia. Compare specs and request a quote."
     },
     "sourceUrl": "https://khcolo.com/product-category/ip-phone/",
-    "relatedServices": ["cloud-call-center", "voice-communication"],
+    "relatedServices": [
+      "cloud-call-center",
+      "voice-communication"
+    ],
     "updatedAt": "2026-11-03"
   },
   {
@@ -30,7 +33,10 @@
       "description": "Analog FXS/FXO, GSM, LTE and WCDMA VoIP gateways from Grandstream, Yeastar and the UC2000 series. Connect phones, fax and SIM lines to your IP system."
     },
     "sourceUrl": "https://khcolo.com/product-category/voip-gateway/",
-    "relatedServices": ["cloud-call-center", "it-maintenance"],
+    "relatedServices": [
+      "cloud-call-center",
+      "it-maintenance"
+    ],
     "updatedAt": "2026-11-03"
   },
   {
@@ -47,7 +53,10 @@
       "description": "Yeastar P-Series and S-Series IP PBX appliances for 20 to 500 users. Compare users, concurrent calls, analog, cellular and E1/T1 capacity, then get a quote."
     },
     "sourceUrl": "https://khcolo.com/product-category/ip-pbx/",
-    "relatedServices": ["cloud-call-center", "it-maintenance"],
+    "relatedServices": [
+      "cloud-call-center",
+      "it-maintenance"
+    ],
     "updatedAt": "2026-11-03"
   }
 ]

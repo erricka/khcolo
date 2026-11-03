@@ -142,7 +142,7 @@ export default async function AboutPage() {
 
       <section aria-labelledby="partners-title" className="py-20 lg:py-28">
         <div className="container-site">
-          <SectionHeader eyebrow="Partner programs" index="04" id="partners-title" title="The vendors behind what we deploy.">
+          <SectionHeader eyebrow="Partners & platforms" index="04" id="partners-title" title="The vendors behind what we deploy.">
             Each relationship applies to that vendor and its products only.
           </SectionHeader>
           <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

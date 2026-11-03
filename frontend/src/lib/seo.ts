@@ -7,21 +7,53 @@ const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 
 type ShareImage = { url: string; width: number; height: number; alt: string };
-type MetaInput = { title: string; description: string; path: string; noindex?: boolean; image?: ShareImage };
+type MetaInput = {
+  title: string;
+  description: string;
+  path: string;
+  noindex?: boolean;
+  image?: ShareImage;
+  keywords?: string[];
+};
+
+/** Search phrases for the pages built around KHCOLO's core platforms. */
+export const CORE_KEYWORDS = [
+  "3CX Cambodia",
+  "3CX phone system Cambodia",
+  "3CX Gold Partner Cambodia",
+  "Bitrix24 Cambodia",
+  "Bitrix24 CRM Cambodia",
+  "3CX Bitrix24 integration",
+  "cloud call center Cambodia",
+  "IT support Cambodia",
+  "Phnom Penh IT company",
+];
+
+/** Platform brands behind each service, used in Service structured data. */
+const SERVICE_BRANDS: Record<string, string[]> = {
+  "cloud-call-center": ["3CX"],
+  "3cx-bitrix24-integration": ["Bitrix24", "3CX"],
+  "voice-communication": ["Yealink"],
+  "eset-antivirus": ["ESET"],
+  "acronis-cyber-protect-cloud": ["Acronis"],
+  "proxmoxve": ["Proxmox"],
+  "zimbra": ["Zimbra"],
+};
 
 export const DEFAULT_SHARE_IMAGE: ShareImage = {
   url: "/og/khcolo-share.png",
   width: 1200,
   height: 630,
-  alt: "KHCOLO: IT solutions and local support for Cambodian businesses",
+  alt: "KHCOLO: 3CX, Bitrix24 and local IT support for Cambodian businesses",
 };
 
 /** One place that sets title, description, canonical and share metadata for a route. */
-export function pageMetadata({ title, description, path, noindex, image = DEFAULT_SHARE_IMAGE }: MetaInput): Metadata {
+export function pageMetadata({ title, description, path, noindex, image = DEFAULT_SHARE_IMAGE, keywords }: MetaInput): Metadata {
   const url = absoluteUrl(path);
   return {
     title: { absolute: title },
     description,
+    ...(keywords?.length ? { keywords } : {}),
     alternates: { canonical: url },
     openGraph: { title, description, url, siteName: "KHCOLO", locale: "en_US", type: "website", images: [image] },
     twitter: { card: "summary_large_image", title, description, images: [image.url] },
@@ -45,6 +77,7 @@ export function organizationLd(company: Company) {
     email: company.email,
     telephone: company.phones[0]?.tel,
     areaServed: { "@type": "Country", name: "Cambodia" },
+    ...(company.knowsAbout?.length ? { knowsAbout: company.knowsAbout } : {}),
     knowsLanguage: company.languages.map((l) => l.code),
     contactPoint: [
       {
@@ -105,6 +138,9 @@ export function serviceLd(service: Service, groupName: string) {
     url,
     provider: { "@id": ORG_ID },
     areaServed: { "@type": "Country", name: "Cambodia" },
+    ...(SERVICE_BRANDS[service.slug]
+      ? { brand: SERVICE_BRANDS[service.slug].map((name) => ({ "@type": "Brand", name })) }
+      : {}),
   };
 }
 

@@ -15,7 +15,7 @@ import { Eyebrow, SectionHeader } from "@/components/ui/Section";
 import { SectionNav } from "@/components/ui/SectionNav";
 import { ServiceIcon } from "@/components/ui/ServiceIcon";
 import { getCategories, getCompany, getService, getServices } from "@/lib/content";
-import { pageMetadata, serviceLd } from "@/lib/seo";
+import { CORE_KEYWORDS, pageMetadata, serviceLd } from "@/lib/seo";
 import { routes } from "@/lib/site";
 
 export const revalidate = 3600;
@@ -30,7 +30,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = await getService(slug);
   if (!service) return {};
-  return pageMetadata({ title: service.seo.title, description: service.seo.description, path: routes.service(slug) });
+  const core = slug === "cloud-call-center" || slug === "3cx-bitrix24-integration";
+  return pageMetadata({
+    title: service.seo.title,
+    description: service.seo.description,
+    path: routes.service(slug),
+    keywords: core ? CORE_KEYWORDS.slice(0, 6) : undefined,
+  });
 }
 
 export default async function ServicePage({ params }: Props) {

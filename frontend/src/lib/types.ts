@@ -22,6 +22,7 @@ export type Company = {
   partners: { vendor: string; relationship: string; scope: string }[];
   principles: { title: string; body: string }[];
   solutionGroups: SolutionGroup[];
+  knowsAbout?: string[];
   updatedAt: string;
 };
 

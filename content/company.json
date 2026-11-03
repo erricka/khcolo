@@ -1,43 +1,119 @@
 {
   "brand": "KHCOLO",
   "siteUrl": "https://khcolo.com",
-  "tagline": "IT solutions and local support for Cambodian businesses",
+  "tagline": "3CX, Bitrix24 and IT support for Cambodian businesses",
   "positioning": "One local provider for communications, CRM, cybersecurity, hosting, infrastructure, hardware and support.",
-  "description": "KHCOLO is a Cambodia-based IT and telecom partner. We license, deploy and support phone systems, CRM, cybersecurity, backup, hosting and IT maintenance for businesses across Cambodia.",
+  "description": "KHCOLO is a Cambodia-based IT and telecom partner. We license, deploy and support 3CX phone systems, Bitrix24 CRM, cybersecurity, backup, hosting and IT maintenance for businesses across Cambodia.",
   "operatingSince": 2017,
   "serviceAreas": [
-    { "name": "Phnom Penh", "note": "Service area" },
-    { "name": "Siem Reap", "note": "Service area" },
-    { "name": "Across Cambodia", "note": "On-site installation" }
+    {
+      "name": "Phnom Penh",
+      "note": "Service area"
+    },
+    {
+      "name": "Siem Reap",
+      "note": "Service area"
+    },
+    {
+      "name": "Across Cambodia",
+      "note": "On-site installation"
+    }
   ],
   "languages": [
-    { "code": "km", "name": "Khmer", "native": "ខ្មែរ" },
-    { "code": "en", "name": "English", "native": "English" }
+    {
+      "code": "km",
+      "name": "Khmer",
+      "native": "ខ្មែរ"
+    },
+    {
+      "code": "en",
+      "name": "English",
+      "native": "English"
+    }
   ],
   "email": "support@khcolo.com",
   "phones": [
-    { "display": "+855 12 200 259", "tel": "+85512200259" },
-    { "display": "+855 16 200 259", "tel": "+85516200259" }
+    {
+      "display": "+855 12 200 259",
+      "tel": "+85512200259"
+    },
+    {
+      "display": "+855 16 200 259",
+      "tel": "+85516200259"
+    }
   ],
-  "telegram": { "handle": "@salekhcolo", "url": "https://t.me/salekhcolo" },
+  "telegram": {
+    "handle": "@salekhcolo",
+    "url": "https://t.me/salekhcolo"
+  },
   "socials": [
-    { "name": "Facebook", "url": "https://facebook.com/khcolo" },
-    { "name": "Instagram", "url": "https://instagram.com/khcolo_it_technology/" },
-    { "name": "Telegram", "url": "https://t.me/salekhcolo" }
+    {
+      "name": "Facebook",
+      "url": "https://facebook.com/khcolo"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com/khcolo_it_technology/"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/salekhcolo"
+    }
   ],
   "partners": [
-    { "vendor": "3CX", "relationship": "Gold Partner", "scope": "Hosted and on-premise phone systems, call centers and omnichannel deployment." },
-    { "vendor": "Yeastar", "relationship": "Certified Reseller", "scope": "Cloud and appliance PBX systems and gateways." },
-    { "vendor": "Yealink", "relationship": "Authorized Reseller", "scope": "IP phones, video conferencing and headsets." },
-    { "vendor": "cPanel", "relationship": "Hosting Partner", "scope": "Managed web hosting and server administration." },
-    { "vendor": "ESET", "relationship": "Reseller", "scope": "Endpoint security licensing, activation and renewals." },
-    { "vendor": "Acronis", "relationship": "Cyber Protect Cloud services", "scope": "Backup, recovery and cyber protection." }
+    {
+      "vendor": "3CX",
+      "relationship": "Gold Partner",
+      "scope": "Hosted and on-premise phone systems, call centers and omnichannel deployment."
+    },
+    {
+      "vendor": "Bitrix24",
+      "relationship": "CRM implementation",
+      "scope": "CRM, projects and contact-center workspace, implemented locally and connected to 3CX."
+    },
+    {
+      "vendor": "Yeastar",
+      "relationship": "Certified Reseller",
+      "scope": "Cloud and appliance PBX systems and gateways."
+    },
+    {
+      "vendor": "Yealink",
+      "relationship": "Authorized Reseller",
+      "scope": "IP phones, video conferencing and headsets."
+    },
+    {
+      "vendor": "cPanel",
+      "relationship": "Hosting Partner",
+      "scope": "Managed web hosting and server administration."
+    },
+    {
+      "vendor": "ESET",
+      "relationship": "Reseller",
+      "scope": "Endpoint security licensing, activation and renewals."
+    },
+    {
+      "vendor": "Acronis",
+      "relationship": "Cyber Protect Cloud services",
+      "scope": "Backup, recovery and cyber protection."
+    }
   ],
   "principles": [
-    { "title": "Local engineers", "body": "You talk to engineers based in Cambodia, in Khmer or English, not an overseas ticket queue." },
-    { "title": "Implementation and ongoing support", "body": "The team that designs your environment is the team that answers when something needs attention." },
-    { "title": "Coordinated services", "body": "Phone system, CRM, security, email and hosting from one provider, so there are no handoffs between vendors." },
-    { "title": "Proactive maintenance", "body": "Preventive checks and reporting catch problems early instead of waiting for them to become outages." }
+    {
+      "title": "Local engineers",
+      "body": "You talk to engineers based in Cambodia, in Khmer or English, not an overseas ticket queue."
+    },
+    {
+      "title": "Implementation and ongoing support",
+      "body": "The team that designs your environment is the team that answers when something needs attention."
+    },
+    {
+      "title": "Coordinated services",
+      "body": "Phone system, CRM, security, email and hosting from one provider, so there are no handoffs between vendors."
+    },
+    {
+      "title": "Proactive maintenance",
+      "body": "Preventive checks and reporting catch problems early instead of waiting for them to become outages."
+    }
   ],
   "solutionGroups": [
     {
@@ -68,12 +144,33 @@
   "updatedAt": "2026-11-03",
   "review": {
     "status": "needs_review",
-    "sourceUrls": ["https://khcolo.com/", "https://khcolo.com/about-us/", "https://khcolo.com/contact-us/"],
+    "sourceUrls": [
+      "https://khcolo.com/",
+      "https://khcolo.com/about-us/",
+      "https://khcolo.com/contact-us/"
+    ],
     "notes": [
       "Partner relationships are as published on the About page (3CX Gold Partner, Yeastar Certified Reseller, Yealink Authorized Reseller, cPanel Hosting Partner) plus ESET reseller and Acronis services described elsewhere. Confirm each status before launch.",
       "24/7 support is advertised on the current site. It is not used on the new site until the owner confirms which contracts and services it covers.",
       "No street address, office hours or map coordinates were published. LocalBusiness markup is deliberately omitted until confirmed.",
-      "Logo used is the white version published on khcolo.com (logo-Khcolo-w.png), cleaned and vectorized. Owner to supply original vector artwork if available."
+      "Logo used is the white version published on khcolo.com (logo-Khcolo-w.png), cleaned and vectorized. Owner to supply original vector artwork if available.",
+      "Bitrix24 appears in the partner strip as \"CRM implementation\" (what KHCOLO does). If KHCOLO holds an official Bitrix24 partner status, update the wording to that exact tier."
     ]
-  }
+  },
+  "knowsAbout": [
+    "3CX phone systems",
+    "Bitrix24 CRM",
+    "3CX and Bitrix24 integration",
+    "Cloud call centers",
+    "VoIP",
+    "Yealink IP phones and video conferencing",
+    "Yeastar IP PBX",
+    "ESET endpoint security",
+    "Acronis Cyber Protect Cloud",
+    "SSL/TLS certificates",
+    "Proxmox VE virtualization",
+    "Zimbra business email",
+    "Web hosting",
+    "IT maintenance"
+  ]
 }

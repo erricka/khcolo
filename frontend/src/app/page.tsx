@@ -27,11 +27,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const HOW_WE_WORK = [
-  { title: "Survey", body: "We look at what you run today: rooms, users, numbers, servers and the risks around them." },
-  { title: "Design and quote", body: "A clear recommendation covering licensing, hardware and the work involved." },
-  { title: "Install and configure", body: "Cabling, setup, migration and calibration, carried out by local engineers." },
-  { title: "Train and hand over", body: "Your staff learn the system and you receive documentation for it." },
-  { title: "Support and maintain", body: "Renewals, updates, preventive checks and help when something needs attention." },
+  { title: "Survey", body: "Tell us what you run today. For meeting rooms, we measure the room, lighting and network first." },
+  { title: "Recommend", body: "We recommend the right solution for your business and go through features and pricing with you." },
+  { title: "Install and set up", body: "Local engineers handle the setup, including cabling, mounting and on-site installation." },
+  { title: "Support", body: "Licensing, renewals and local support from the same team that designed your setup." },
 ];
 
 /** The coloured service list. Every colour keeps at least 3:1 contrast on white at this size. */
@@ -109,8 +108,8 @@ export default async function HomePage() {
     ...company.principles.map((p, i) => ({ ...p, icon: ["engineer", "wrench", "layers", "radar"][i] ?? "server" })),
     { title: "Khmer or English", body: "Talk to engineers directly in the language your team prefers, from planning through support.", icon: "languages" },
     { title: "On site across Cambodia", body: "Service and on-site installation for businesses across Cambodia.", icon: "map" },
-    { title: "Written quotes", body: "Current options, licensing and pricing are confirmed in writing before any work starts.", icon: "file" },
-    { title: "Training and handover", body: "Your staff learn the system and you receive documentation for what we set up.", icon: "book" },
+    { title: "Hardware too", body: "VoIP gateways, IP phones and IP PBX appliances from the brands we install every day.", icon: "server" },
+    { title: "Scales with you", body: "As your business grows, so do your technology needs. KHCOLO is the IT partner that scales with you.", icon: "cloud" },
   ];
 
   return (
@@ -344,8 +343,8 @@ export default async function HomePage() {
             <figure className="mt-14" data-reveal="blur">
               <blockquote>
                 <p className="max-w-4xl text-[clamp(1.4rem,1.1rem+1.1vw,2rem)] leading-[1.3] tracking-[-0.02em] text-ink-950">
-                  &ldquo;We believe trust can only be achieved through communication and experienced support. That&rsquo;s
-                  why you talk to engineers directly, in Khmer or English.&rdquo;
+                  &ldquo;Trust, built through communication and support. Talk to a local engineer directly, in Khmer or
+                  English, with no overseas ticket queue.&rdquo;
                 </p>
               </blockquote>
               <figcaption className="mt-8 font-mono text-[0.75rem] tracking-[0.06em] uppercase">

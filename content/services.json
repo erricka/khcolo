@@ -50,7 +50,7 @@
       { "title": "Assess", "body": "Map your call flows, numbers, users and the channels customers use today." },
       { "title": "Design and license", "body": "Choose where it runs and the licence size, and plan the connection to your telecom operator's lines." },
       { "title": "Deploy", "body": "Configure queues, extensions and integrations, then provision phones and apps." },
-      { "title": "Train and support", "body": "Hand over to your team with training, then stay on for updates and support." }
+      { "title": "Support", "body": "Stay on for updates and local support once the system is live." }
     ],
     "faqs": [
       { "q": "Can we keep our existing phone numbers?", "a": "Your phone numbers and lines are provided by your licensed telecom operator, not by KHCOLO. In many cases your operator can connect them to 3CX through a SIP trunk. We work with your operator to confirm the approach and timing before anything is switched over." },
@@ -85,7 +85,7 @@
       "description": "Bitrix24 CRM implemented locally by KHCOLO and connected to 3CX: sales pipelines, tasks, projects, HR tools and a contact center in one workspace."
     },
     "highlights": [
-      "Local implementation and training",
+      "Local implementation and support",
       "Connected to your 3CX phone system",
       "CRM, projects, HR and contact center together",
       "Integrates with WhatsApp, Telegram, Xero, Zoom and more"
@@ -116,7 +116,7 @@
       { "title": "Discovery", "body": "Walk through how leads arrive, how deals close and where work gets stuck." },
       { "title": "Configuration", "body": "Set up pipelines, fields, automation rules and permissions." },
       { "title": "3CX integration", "body": "Connect telephony so calls and customer records work together." },
-      { "title": "Training and support", "body": "Train each team on its own workflow, then support the rollout." }
+      { "title": "Support", "body": "Support your team through the rollout and afterwards." }
     ],
     "faqs": [],
     "related": ["cloud-call-center", "voice-communication", "it-maintenance"],
@@ -223,13 +223,13 @@
       "Local licensing, activation and renewals",
       "Central management with ESET PROTECT",
       "Business tiers: Entry, Advanced, Complete",
-      "Works alongside our hosting and IT maintenance"
+      "Works alongside our hosting and SSL services"
     ],
     "overview": {
       "heading": "Protection you can see and manage",
       "body": [
         "Antivirus installed machine by machine is hard to keep current across a whole office. ESET PROTECT gives your business one console for deployment and policy, and we take care of the licences, renewals and setup.",
-        "ESET pairs well with our hosting, SSL and IT maintenance services when you want layered protection rather than a single product."
+        "ESET pairs well with our hosting and SSL services when you want layered protection rather than a single product."
       ]
     },
     "capabilities": [
@@ -257,7 +257,7 @@
     "process": [
       { "title": "Review", "body": "Count endpoints and servers and agree what needs protecting." },
       { "title": "License and deploy", "body": "Activate licences and roll out agents through ESET PROTECT." },
-      { "title": "Configure policy", "body": "Set protection policies per device group." },
+      { "title": "Manage", "body": "Manage protection across your devices from one ESET PROTECT console." },
       { "title": "Renew and support", "body": "Track renewals and help when something is flagged." }
     ],
     "faqs": [
@@ -419,12 +419,12 @@
     "name": "Proxmox VE Virtualization",
     "shortName": "Proxmox VE",
     "icon": "server",
-    "summary": "Design, deployment, migration and support for Proxmox VE servers and clusters.",
+    "summary": "Design, deployment, clustering and support for Proxmox VE servers.",
     "h1": "Proxmox virtualization deployment and support",
-    "intro": "Proxmox VE runs KVM virtual machines and LXC containers on a Debian foundation. We design, deploy, migrate and support single-node and clustered environments for Cambodian businesses.",
+    "intro": "Proxmox VE runs KVM virtual machines and LXC containers on a Debian foundation. We design, deploy and support single-node and clustered environments for Cambodian businesses.",
     "seo": {
       "title": "Proxmox VE Deployment & Support Cambodia — KHCOLO",
-      "description": "Proxmox VE design, deployment, migration and support for single servers and clusters: KVM VMs, LXC containers, high availability, storage and backup."
+      "description": "Proxmox VE design, deployment and support in Cambodia for single servers and clusters: KVM VMs, LXC containers, high availability, storage and backup."
     },
     "highlights": [
       "Single-node and clustered deployments",
@@ -436,7 +436,7 @@
       "heading": "Infrastructure you own and understand",
       "body": [
         "Consolidating servers onto a well-designed virtualization platform makes them easier to manage, but clustering, storage and backup need careful planning.",
-        "We size the hardware, design networking and storage, migrate your workloads and stay on for support, with documentation your own team can follow."
+        "We design networking, storage and backup, deploy the cluster and stay on for support."
       ]
     },
     "capabilities": [
@@ -454,14 +454,14 @@
         "cards": [
           { "title": "Single node", "body": "One host for consolidating workloads, with scheduled backups and room to grow into a cluster." },
           { "title": "Cluster", "body": "Multiple nodes with shared or replicated storage for HA failover and live migration." },
-          { "title": "Migration", "body": "Move existing servers and VMs onto Proxmox VE with a planned, tested cut-over." }
+          { "title": "Backup", "body": "Proxmox Backup Server for incremental, deduplicated and encrypted backups, deployed and managed with your cluster." }
         ]
       }
     ],
     "process": [
       { "title": "Assess", "body": "Inventory workloads, performance needs and existing hardware." },
       { "title": "Design", "body": "Plan nodes, networking, storage and backup." },
-      { "title": "Deploy and migrate", "body": "Build the platform and move workloads across." },
+      { "title": "Deploy", "body": "Build the platform and set up backups." },
       { "title": "Test and support", "body": "Test failover and restore, then provide ongoing support." }
     ],
     "faqs": [

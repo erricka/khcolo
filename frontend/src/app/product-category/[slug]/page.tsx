@@ -136,7 +136,7 @@ export default async function CategoryPage({ params }: Props) {
       <ContactBand
         company={company}
         title="Need a quote or a recommendation?"
-        body="Tell us how many users, lines and sites you have. We’ll recommend models, confirm availability and send a written quote."
+        body="Tell us how many users, lines and sites you have. We’ll recommend models and confirm availability and pricing with you."
         location={`category_${category.slug}_band`}
       />
     </>

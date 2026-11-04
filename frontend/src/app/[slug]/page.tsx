@@ -269,7 +269,7 @@ export default async function ServicePage({ params }: Props) {
       <ContactBand
         company={company}
         title={`Talk to us about ${service.shortName}.`}
-        body="Tell us what you run today and what you need. We reply in Khmer or English and confirm current options, licensing and pricing in a written quote."
+        body="Tell us what you run today and what you need. We reply in Khmer or English and go through the options, licensing and pricing with you."
         location={`service_${service.slug}_band`}
       />
     </>

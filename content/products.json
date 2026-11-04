@@ -246,7 +246,7 @@
     "variant": "T30P adds PoE",
     "type": "Entry-level IP phone",
     "facet": "Desk phone",
-    "summary": "A compact single-line phone for reception desks, shared areas and light users. The T30P variant adds PoE.",
+    "summary": "An entry-level phone with one SIP account. The T30P variant adds PoE.",
     "keySpecs": [
       "1 SIP account",
       "10/100 Ethernet",
@@ -984,7 +984,7 @@
     "name": "UC2000-VG cellular gateway",
     "type": "32-channel GSM/3G/4G VoIP gateway",
     "facet": "Cellular",
-    "summary": "A 32-channel cellular gateway with VoLTE, hot-swap SIM slots and an SMS API, for contact centers and large sites.",
+    "summary": "A 32-channel cellular gateway with VoLTE, hot-swap SIM slots and an SMS API.",
     "keySpecs": [
       "32 channels",
       "LTE + VoLTE",
@@ -1123,7 +1123,7 @@
     "name": "Yeastar NeoGate TA2400",
     "type": "Analog VoIP gateway",
     "facet": "Analog",
-    "summary": "A rack-mount NeoGate analog gateway for larger analog estates, with configurable routing and browser management.",
+    "summary": "A NeoGate analog gateway with flexible calling rules, T.38 fax and browser management.",
     "keySpecs": [
       "SIP / IAX2",
       "T.38 fax",
@@ -1259,11 +1259,11 @@
     "name": "Yeastar NeoGate TA400",
     "type": "Analog VoIP gateway",
     "facet": "Analog",
-    "summary": "A compact NeoGate analog gateway for small offices, with the same routing, fax and management features as the larger models.",
+    "summary": "A NeoGate analog gateway with SIP and IAX2, flexible calling rules and T.38 fax.",
     "keySpecs": [
       "SIP / IAX2",
       "T.38 fax",
-      "Compact desktop"
+      "Echo cancellation"
     ],
     "specs": [
       {
@@ -1306,7 +1306,7 @@
     },
     "seo": {
       "title": "Yeastar NeoGate TA400 in Cambodia — KHCOLO",
-      "description": "Yeastar NeoGate TA400 compact analog VoIP gateway with SIP and IAX2, call rules, T.38 fax, echo cancellation and browser management. Quotes from KHCOLO."
+      "description": "Yeastar NeoGate TA400 analog VoIP gateway with SIP and IAX2, call rules, T.38 fax, echo cancellation and browser management. Quotes from KHCOLO."
     },
     "sourceUrls": [
       "https://khcolo.com/product/yeastar-neogate-ta400/"
@@ -1328,7 +1328,7 @@
     "name": "Yeastar NeoGate TA800",
     "type": "Analog VoIP gateway",
     "facet": "Analog",
-    "summary": "A desktop NeoGate analog gateway for small and mid-sized offices, with configurable routing and T.38 fax.",
+    "summary": "A NeoGate analog gateway with flexible calling rules, reliable T.38 fax and web-based management.",
     "keySpecs": [
       "SIP / IAX2",
       "T.38 fax",

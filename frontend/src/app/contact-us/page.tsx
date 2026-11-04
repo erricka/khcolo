@@ -89,7 +89,7 @@ export default async function ContactPage() {
         title={page.h1}
         lede={
           <p>
-            Tell us what you run today and what you need. Message us directly or send the form below, and an engineer will
+            Tell us what you run today and what you need. Message us directly or send the form below, and our team will
             reply in Khmer or English.
           </p>
         }
@@ -157,7 +157,7 @@ export default async function ContactPage() {
               <ol className="mt-6 space-y-6">
                 {[
                   ["We read your request", "Every request goes to our sales and support team."],
-                  ["An engineer gets in touch", "By your preferred channel, in Khmer or English."],
+                  ["We get in touch", "By your preferred channel, in Khmer or English."],
                   ["We agree next steps", "A quote, a call, or a time for a consultation or site visit."],
                 ].map(([title, body], i) => (
                   <li key={title} className="flex gap-4">

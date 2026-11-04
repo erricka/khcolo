@@ -81,8 +81,8 @@ export default async function AboutPage() {
               instead of a different vendor for each system.
             </p>
             <p className="leading-relaxed text-muted">
-              We believe trust can only be achieved through communication and experienced support. That&rsquo;s why you
-              talk to engineers directly, in Khmer or English.
+              Trust is built through communication and support. That&rsquo;s why you talk to a local engineer directly,
+              in Khmer or English, with no overseas ticket queue.
             </p>
           </div>
         </div>

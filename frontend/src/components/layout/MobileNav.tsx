@@ -91,7 +91,7 @@ export function MobileNav({ nav, open, onClose }: { nav: NavData; open: boolean;
 
             <nav aria-label="Mobile" className="flex-1 px-4 pb-8 sm:px-6">
               <ul className="divide-y divide-line border-b border-line">
-                <Disclosure label="Solutions" id="m-solutions" open={section === "solutions"} onToggle={() => setSection(section === "solutions" ? null : "solutions")}>
+                <Disclosure label="Services" id="m-solutions" open={section === "solutions"} onToggle={() => setSection(section === "solutions" ? null : "solutions")}>
                   {nav.groups.map((g) => (
                     <div key={g.key} className="pb-3">
                       <p className="text-eyebrow pt-3 pb-2 text-muted">{g.name}</p>
@@ -107,6 +107,7 @@ export function MobileNav({ nav, open, onClose }: { nav: NavData; open: boolean;
                     </div>
                   ))}
                 </Disclosure>
+                {nav.categories.length > 0 && (
                 <Disclosure label="Products" id="m-products" open={section === "products"} onToggle={() => setSection(section === "products" ? null : "products")}>
                   <ul className="pb-3">
                     {nav.categories.map((c) => (
@@ -124,6 +125,7 @@ export function MobileNav({ nav, open, onClose }: { nav: NavData; open: boolean;
                     </li>
                   </ul>
                 </Disclosure>
+                )}
                 <li>
                   <Link href={routes.about} className="flex h-16 items-center text-xl tracking-tight">
                     About

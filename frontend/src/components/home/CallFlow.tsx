@@ -1,11 +1,11 @@
 import type { CSSProperties } from "react";
 
 /**
- * How a conversation moves through a 3CX contact center into Bitrix24.
- * Every label comes from the 3CX and Bitrix24 service capabilities.
+ * An example of how a conversation can move through 3CX into Bitrix24.
+ * Every label comes from the 3CX and Bitrix24 service capabilities; it is not live data.
  */
 const STEPS = [
-  { label: "Channels", value: "Calls · Video · WhatsApp · Live chat · SMS" },
+  { label: "Channels", value: "Calls · Video · WhatsApp · Live chat" },
   { label: "3CX", value: "Call queues" },
   { label: "Agents", value: "Presence · Wallboards" },
   { label: "Bitrix24", value: "Lead capture · Tasks · Reporting" },
@@ -21,10 +21,7 @@ export function CallFlow() {
               <p className="font-mono text-[0.64rem] tracking-[0.08em] text-ink-500 uppercase">{s.label}</p>
               <p className="mt-1 text-[0.92rem] text-ink-900">{s.value}</p>
               {i === 0 && (
-                <span className="absolute top-3 right-3 flex items-center gap-1.5 font-mono text-[0.62rem] text-accent-700 uppercase">
-                  <span className="status-dot size-1.5 rounded-full bg-accent-500" />
-                  Live
-                </span>
+                <span className="absolute top-3 right-3 font-mono text-[0.62rem] text-ink-500 uppercase">Example</span>
               )}
             </div>
             {i < STEPS.length - 1 && (

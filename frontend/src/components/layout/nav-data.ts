@@ -19,14 +19,17 @@ export type NavData = {
 
 export function buildNavData(company: Company, services: Service[], categories: Category[], products: Product[]): NavData {
   return {
-    groups: company.solutionGroups.map((g) => ({
-      key: g.key,
-      name: g.name,
-      summary: g.summary,
-      services: services
-        .filter((s) => s.group === g.key)
-        .map((s) => ({ slug: s.slug, name: s.shortName, summary: s.summary, icon: s.icon })),
-    })),
+    // Only groups with at least one public service appear in navigation.
+    groups: company.solutionGroups
+      .map((g) => ({
+        key: g.key,
+        name: g.name,
+        summary: g.summary,
+        services: services
+          .filter((s) => s.group === g.key)
+          .map((s) => ({ slug: s.slug, name: s.shortName, summary: s.summary, icon: s.icon })),
+      }))
+      .filter((g) => g.services.length > 0),
     categories: categories.map((c) => {
       const hero = products.find((p) => p.slug === CATEGORY_HERO_PRODUCT[c.slug]) ?? products.find((p) => p.category === c.slug);
       return {

@@ -22,6 +22,7 @@ export function SiteHeader({ nav }: { nav: NavData }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState<MenuKey | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const allServices = nav.groups.flatMap((g) => g.services);
 
   // Close everything on navigation.
   useEffect(() => {
@@ -52,14 +53,14 @@ export function SiteHeader({ nav }: { nav: NavData }) {
       <div className="border-b border-brand-100 bg-brand-50 text-ink-900">
         <div className="container-site flex min-h-9 flex-wrap items-center justify-center gap-x-3 gap-y-1 py-1.5 text-center text-[0.86rem] leading-snug">
           <p>
-            <span className="hidden sm:inline">Moving your phones to 3CX? We plan the switch with your telecom operator.</span>
-            <span className="sm:hidden">Moving to 3CX? We plan the switch with you.</span>
+            <span className="hidden sm:inline">Planning a move to 3CX? We configure it to work with your own authorized provider.</span>
+            <span className="sm:hidden">Planning a move to 3CX?</span>
           </p>
           <Link
             href={routes.consult("cloud-call-center")}
             className="inline-flex h-6 items-center border border-brand-600/50 bg-white/70 px-2 text-[0.8rem] text-brand-700 transition-colors hover:border-brand-700 hover:bg-white"
           >
-            Plan your move
+            Talk to us
           </Link>
         </div>
       </div>
@@ -80,24 +81,35 @@ export function SiteHeader({ nav }: { nav: NavData }) {
 
           <nav aria-label="Main" className="hidden lg:block">
             <ul className="flex items-center text-[0.95rem]">
-              <DesktopMenu
-                id="solutions"
-                label="Solutions"
-                open={open === "solutions"}
-                setOpen={setOpen}
-                active={nav.groups.some((g) => g.services.some((s) => pathname === routes.service(s.slug)))}
-              >
-                <SolutionsPanel nav={nav} />
-              </DesktopMenu>
-              <DesktopMenu
-                id="products"
-                label="Products"
-                open={open === "products"}
-                setOpen={setOpen}
-                active={pathname.startsWith("/product")}
-              >
-                <ProductsPanel nav={nav} />
-              </DesktopMenu>
+              {/* A short service list gets direct links; a longer one gets the mega menu. */}
+              {allServices.length <= 3 ? (
+                allServices.map((s) => (
+                  <NavLink key={s.slug} href={routes.service(s.slug)} active={pathname === routes.service(s.slug)}>
+                    {s.name}
+                  </NavLink>
+                ))
+              ) : (
+                <DesktopMenu
+                  id="solutions"
+                  label="Solutions"
+                  open={open === "solutions"}
+                  setOpen={setOpen}
+                  active={allServices.some((s) => pathname === routes.service(s.slug))}
+                >
+                  <SolutionsPanel nav={nav} />
+                </DesktopMenu>
+              )}
+              {nav.categories.length > 0 && (
+                <DesktopMenu
+                  id="products"
+                  label="Products"
+                  open={open === "products"}
+                  setOpen={setOpen}
+                  active={pathname.startsWith("/product")}
+                >
+                  <ProductsPanel nav={nav} />
+                </DesktopMenu>
+              )}
               <NavLink href={routes.about} active={pathname === routes.about}>
                 About
               </NavLink>

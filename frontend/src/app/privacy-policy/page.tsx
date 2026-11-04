@@ -26,22 +26,23 @@ export default async function PrivacyPage() {
       title: "What we collect",
       body: (
         <>
-          <p>When you send the inquiry form we collect what you enter: your name, company, email address and/or phone number, preferred contact method, the topic and product you chose, and your message.</p>
+          <p>When you send the inquiry form we collect what you enter: your name, company, email address and/or phone number, preferred contact method, the type of request and topic you chose, and your message.</p>
           <p>To protect the form from abuse we also store a one-way hash of your IP address and your browser&rsquo;s user-agent string. We cannot recover your IP address from the hash.</p>
         </>
       ),
     },
     {
       title: "Why we use it",
-      body: <p>Only to reply to your request: answering questions, preparing quotes and arranging consultations or site visits. We do not sell your details or add you to marketing lists from this form.</p>,
+      body: <p>Only to reply to your request: answering questions, preparing quotes and arranging consultations. We do not sell your details or add you to marketing lists from this form.</p>,
     },
     {
       title: "Who can see it",
       body: (
         <p>
-          Inquiries are stored in our own database and are visible only to KHCOLO staff who handle sales and support. If we
-          enable notifications, a copy of your request is sent to our team&rsquo;s internal email or Telegram so we can
-          respond quickly.
+          Inquiries are stored in the website&rsquo;s database, which runs with a third-party hosting provider, and are
+          meant to be seen only by KHCOLO staff who handle sales and support. If notifications are turned on, your name,
+          company, email address, phone number and message are also sent to our team&rsquo;s email or Telegram so we can
+          respond quickly. Telegram and email providers handle those copies under their own terms.
         </p>
       ),
     },
@@ -51,7 +52,7 @@ export default async function PrivacyPage() {
     },
     {
       title: "How long we keep it",
-      body: <p>We keep inquiries for as long as we need them to respond and maintain normal business records. You can ask us to delete your inquiry at any time.</p>,
+      body: <p>Inquiries are not deleted automatically. We keep them for as long as we need them to respond and keep normal business records, and you can ask us to delete yours at any time.</p>,
     },
     {
       title: "Your choices",

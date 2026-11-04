@@ -1,5 +1,7 @@
 # Website wording review against Cambodian law
 
+> **Superseded in part (4 Nov 2026):** the legal recheck narrowed the public site to 3CX configuration and Bitrix24 CRM. Where this document differs, follow `docs/legal-recheck-2026-11-04.md`.
+
 Reviewed on 4 November 2026 for the live design (https://khcolo-web.onrender.com). This is a
 plain-language risk review of the website's wording by an AI assistant, not legal advice. Before
 launch, ask a Cambodian lawyer or the relevant ministry to confirm the points marked **Confirm**.

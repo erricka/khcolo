@@ -19,14 +19,12 @@ type MetaInput = {
 /** Search phrases for the pages built around KHCOLO's core platforms. */
 export const CORE_KEYWORDS = [
   "3CX Cambodia",
-  "3CX phone system Cambodia",
-  "3CX Gold Partner Cambodia",
+  "3CX phone system configuration",
   "Bitrix24 Cambodia",
   "Bitrix24 CRM Cambodia",
   "3CX Bitrix24 integration",
-  "cloud call center Cambodia",
-  "IT support Cambodia",
-  "IT company Cambodia",
+  "3CX Phnom Penh",
+  "Bitrix24 Phnom Penh",
 ];
 
 /** Platform brands behind each service, used in Service structured data. */
@@ -42,7 +40,7 @@ export const DEFAULT_SHARE_IMAGE: ShareImage = {
   url: "/og/khcolo-share.png",
   width: 1200,
   height: 630,
-  alt: "KHCOLO: 3CX, Bitrix24 and local IT support for Cambodian businesses",
+  alt: "KHCOLO: 3CX phone system configuration and Bitrix24 CRM workflows",
 };
 
 /** One place that sets title, description, canonical and share metadata for a route. */
@@ -74,7 +72,7 @@ export function organizationLd(company: Company) {
     description: company.description,
     email: company.email,
     telephone: company.phones[0]?.tel,
-    areaServed: { "@type": "Country", name: "Cambodia" },
+    areaServed: company.serviceAreas.map((a) => ({ "@type": "City", name: a.name })),
     ...(company.knowsAbout?.length ? { knowsAbout: company.knowsAbout } : {}),
     knowsLanguage: company.languages.map((l) => l.code),
     contactPoint: [
@@ -83,7 +81,6 @@ export function organizationLd(company: Company) {
         contactType: "sales",
         telephone: company.phones[0]?.tel,
         availableLanguage: company.languages.map((l) => l.name),
-        areaServed: "KH",
       },
       {
         "@type": "ContactPoint",
@@ -91,7 +88,6 @@ export function organizationLd(company: Company) {
         email: company.email,
         telephone: company.phones[1]?.tel,
         availableLanguage: company.languages.map((l) => l.name),
-        areaServed: "KH",
       },
     ],
     sameAs: company.socials.map((s) => s.url),
@@ -123,7 +119,7 @@ export function breadcrumbLd(items: { name: string; path: string }[]) {
   };
 }
 
-export function serviceLd(service: Service, groupName: string) {
+export function serviceLd(service: Service, groupName: string, areas: string[] = ["Phnom Penh", "Siem Reap"]) {
   const url = absoluteUrl(routes.service(service.slug));
   return {
     "@context": "https://schema.org",
@@ -135,7 +131,7 @@ export function serviceLd(service: Service, groupName: string) {
     description: service.seo.description,
     url,
     provider: { "@id": ORG_ID },
-    areaServed: { "@type": "Country", name: "Cambodia" },
+    areaServed: areas.map((name) => ({ "@type": "City", name })),
     ...(SERVICE_BRANDS[service.slug]
       ? { brand: SERVICE_BRANDS[service.slug].map((name) => ({ "@type": "Brand", name })) }
       : {}),

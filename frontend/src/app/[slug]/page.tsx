@@ -66,7 +66,7 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={serviceLd(service, group?.name ?? "")} />
+      <JsonLd data={serviceLd(service, group?.name ?? "", company.serviceAreas.map((a) => a.name))} />
 
       <PageHero
         crumbs={[
@@ -114,7 +114,7 @@ export default async function ServicePage({ params }: Props) {
               ))}
             </ul>
             <p className="mt-7 border-t border-line pt-5 text-sm leading-relaxed text-muted">
-              Local support across Cambodia, including on-site installation, in Khmer or English.
+              Projects in Phnom Penh and Siem Reap by agreement, with local support in Khmer or English. Calls, phone numbers and connectivity are supplied separately by your authorized provider.
             </p>
           </div>
         }

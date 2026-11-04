@@ -1,5 +1,7 @@
 # Content verification against khcolo.com
 
+> **Superseded in part (4 Nov 2026):** the legal recheck narrowed the public site to 3CX configuration and Bitrix24 CRM. Where this document differs, follow `docs/legal-recheck-2026-11-04.md`.
+
 Checked on 4 November 2026 for the live design (https://khcolo-web.onrender.com).
 
 ## How it was checked

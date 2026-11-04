@@ -431,7 +431,7 @@
       },
       {
         "label": "Display",
-        "value": "7-inch color touchscreen, 480 × 272"
+        "value": "7-inch color touchscreen, 800 × 480"
       },
       {
         "label": "VPN",
@@ -471,7 +471,8 @@
       "status": "needs_review",
       "notes": [
         "Source conflict: quick list says 23 direct-dial keys; description says 29 transfer keys. Key count withheld from public page until confirmed.",
-        "Source states 3CX certification; shown as \"including 3CX\" until confirmed."
+        "Source states 3CX certification; shown as \"including 3CX\" until confirmed.",
+        "Archived (not public) since 4 Nov 2026. Display resolution corrected to 800 × 480 per review; the old khcolo.com page said 480 × 272. Confirm against the current Yealink datasheet before any reuse."
       ]
     }
   },
@@ -567,7 +568,7 @@
     "name": "Yealink W56H cordless handset",
     "type": "DECT cordless handset",
     "facet": "Cordless",
-    "summary": "An additional cordless handset for a Yealink DECT system. Supplied without a base station, with a spare battery.",
+    "summary": "An additional cordless handset for a Yealink DECT system, supplied without a base station.",
     "keySpecs": [
       "Handset only",
       "30 h talk time",
@@ -593,13 +594,11 @@
       {
         "label": "Screen",
         "value": "2.4-inch, 240 × 320"
-      },
-      {
-        "label": "In the box",
-        "value": "Spare battery"
       }
     ],
-    "accessories": [],
+    "accessories": [
+      "Spare battery (optional, sold separately)"
+    ],
     "publicNotes": [
       "Needs a compatible Yealink DECT base station. We confirm compatibility with your base before supply."
     ],
@@ -621,7 +620,8 @@
     "review": {
       "status": "needs_review",
       "notes": [
-        "Source conflict: quick list names W56P compatibility; description references the W60P base. Public page says \"compatible Yealink DECT base\" until clarified."
+        "Source conflict: quick list names W56P compatibility; description references the W60P base. Public page says \"compatible Yealink DECT base\" until clarified.",
+        "Archived (not public) since 4 Nov 2026. The spare battery is an optional accessory, not included; corrected from \"In the box\"."
       ]
     }
   },
@@ -664,13 +664,11 @@
       {
         "label": "Screen",
         "value": "2.4-inch color"
-      },
-      {
-        "label": "In the box",
-        "value": "Spare battery"
       }
     ],
-    "accessories": [],
+    "accessories": [
+      "Spare battery (optional, sold separately)"
+    ],
     "publicNotes": [],
     "image": {
       "src": "/images/products/yealink-w60p-cordless-ip-phone-incl-basestation.webp",
@@ -690,7 +688,8 @@
     "review": {
       "status": "needs_review",
       "notes": [
-        "Range and battery figures are as stated on the source page; confirm against current manufacturer data."
+        "Range and battery figures are as stated on the source page; confirm against current manufacturer data.",
+        "Archived (not public) since 4 Nov 2026. The spare battery is an optional accessory, not included; corrected from \"In the box\"."
       ]
     }
   },
@@ -1515,7 +1514,7 @@
       },
       {
         "label": "Dimensions",
-        "value": "110 × 70 × 24 mm (stated)"
+        "value": "Confirmed with your quote"
       }
     ],
     "accessories": [],
@@ -1539,7 +1538,8 @@
       "status": "needs_review",
       "notes": [
         "Source says one GSM channel, which conflicts with the model (product photo shows four antennas). Channel count withheld until confirmed.",
-        "Stated dimensions (110 × 70 × 24 mm) look small for this unit; confirm."
+        "Stated dimensions (110 × 70 × 24 mm) look small for this unit; confirm.",
+        "Archived (not public) since 4 Nov 2026. Dimensions and variant are ambiguous on the old page (110 × 70 × 24 mm and one channel do not match the four-antenna unit pictured); withheld until confirmed from the manufacturer and the exact stock revision."
       ]
     }
   },

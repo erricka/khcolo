@@ -37,19 +37,18 @@ export default async function AboutPage() {
         lede={
           <>
             <p className="text-[clamp(1.5rem,1.2rem+1.2vw,2.15rem)] leading-tight tracking-[-0.025em] text-brand-700">
-              The full stack, under one roof.
+              Phone system and CRM, under one roof.
             </p>
             <p className="mt-6">
-              KHCOLO is a Cambodia-based IT solutions company. Phone systems, CRM, cybersecurity, hosting and cloud
-              infrastructure, deployed and supported by one local team, with no handoffs between vendors when something
-              needs fixing.
+              KHCOLO is a Cambodia-based IT solutions company. We configure 3CX phone systems and implement Bitrix24 CRM
+              workflows, supported by one local team, so there is one point of contact for both.
             </p>
           </>
         }
         aside={
           <dl className="divide-y divide-line border border-line bg-white px-7">
             {[
-              ["Service area", "Cambodia, with on-site installation"],
+              ["Project areas", `${company.serviceAreas.map((a) => a.name).join(" and ")}, by agreement`],
               ["Support languages", "Khmer · English"],
               ["Contact", company.email],
             ].map(([k, v]) => (
@@ -67,18 +66,18 @@ export default async function AboutPage() {
           <div className="lg:col-span-5" data-reveal>
             <Eyebrow index="01">Who we are</Eyebrow>
             <h2 id="story-title" className="text-title mt-5 text-ink-950">
-              Built so you can grow without worrying about IT.
+              Built so your team can focus on customers.
             </h2>
           </div>
           <div className="space-y-6 lg:col-span-6 lg:col-start-7" data-reveal style={{ ["--i" as string]: 1 }}>
             <p className="text-lede text-ink-900">
-              Whether it&rsquo;s a call center going live, a server migration or a laptop that won&rsquo;t boot before a
-              client meeting, the team that designed your environment is the one that answers the phone.
+              Whether it&rsquo;s a call queue going live or a sales pipeline that needs a new stage, the team that
+              designed your setup is the one that answers.
             </p>
             <p className="leading-relaxed text-muted">
-              We hold ourselves to that standard on every engagement, from a single SSL certificate to a full multi-branch
-              phone system rollout. We license, deploy and support each part locally, so you have one point of contact
-              instead of a different vendor for each system.
+              We hold ourselves to that standard on every engagement, from a single office to a multi-branch 3CX rollout.
+              We configure 3CX and Bitrix24 to work together and support both locally. Calls, phone numbers and
+              connectivity are supplied separately by your authorized provider.
             </p>
             <p className="leading-relaxed text-muted">
               Trust is built through communication and support. That&rsquo;s why you talk to a local engineer directly,
@@ -90,11 +89,11 @@ export default async function AboutPage() {
 
       <section aria-labelledby="what-title" className="border-t border-line bg-paper-2/50 py-20 lg:py-28">
         <div className="container-site">
-          <SectionHeader eyebrow="What we do" index="02" id="what-title" title="Four areas, one team.">
-            Every service links to its own page with capabilities, options and how we deliver it.
+          <SectionHeader eyebrow="What we do" index="02" id="what-title" title="Phone system and CRM, one team.">
+            Each service links to its own page with capabilities, options and how we deliver it.
           </SectionHeader>
           <div className="mt-14 grid gap-4 md:grid-cols-2">
-            {company.solutionGroups.map((g, i) => (
+            {company.solutionGroups.filter((g) => services.some((s) => s.group === g.key)).map((g, i) => (
               <div
                 key={g.key}
                 data-reveal
@@ -126,7 +125,7 @@ export default async function AboutPage() {
       <section aria-labelledby="principles-title" className="bg-tint relative overflow-hidden border-y border-brand-100 py-20 lg:py-28">
         <div className="container-site relative">
           <SectionHeader eyebrow="How we work" index="03" id="principles-title" title="What you can expect from us." />
-          <ul className="mt-14 grid border-t border-l border-brand-200/70 md:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-14 grid border-t border-l border-brand-200/70 md:grid-cols-3">
             {company.principles.map((p, i) => (
               <li key={p.title} data-reveal style={{ ["--i" as string]: i }} className="border-r border-b border-brand-200/70 bg-white/70 p-7 lg:p-8">
                 <span className="flex size-6 items-center justify-center bg-brand-600 font-mono text-[0.72rem] text-white tabular-nums">{i + 1}</span>
@@ -140,10 +139,10 @@ export default async function AboutPage() {
 
       <section id="partners" aria-labelledby="partners-title" className="scroll-mt-24 py-20 lg:py-28">
         <div className="container-site">
-          <SectionHeader eyebrow="Partners & platforms" index="04" id="partners-title" title="The vendors behind what we deploy.">
-            Each relationship applies to that vendor and its products only.
+          <SectionHeader eyebrow="Platforms" index="04" id="partners-title" title="The platforms we configure.">
+            3CX and Bitrix24 are products of their own vendors. We configure and support them for your business.
           </SectionHeader>
-          <ul className="mt-14 grid border-t border-l border-line sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-14 grid border-t border-l border-line sm:grid-cols-2">
             {company.partners.map((p, i) => (
               <li
                 key={p.vendor}
@@ -162,7 +161,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <ContactBand company={company} title="Trust, built through communication." body="Tell us about your business and what you run today. We’ll take it from there." location="about_band" />
+      <ContactBand company={company} title="Trust, built through communication." body="Tell us how calls and sales work in your business today. We’ll take it from there." location="about_band" />
     </>
   );
 }

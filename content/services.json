@@ -3,35 +3,35 @@
     "slug": "cloud-call-center",
     "group": "communications",
     "position": 1,
-    "name": "3CX Phone Systems & Cloud Call Center",
-    "shortName": "3CX Cloud Call Center",
+    "name": "3CX Phone System Configuration",
+    "shortName": "3CX Phone System",
     "icon": "phone",
-    "summary": "Calls, video, WhatsApp and website chat on one 3CX platform, hosted and supported locally.",
-    "h1": "3CX phone systems and cloud call centers in Cambodia",
-    "intro": "We supply, deploy, host and support 3CX for Cambodian businesses: one platform for calls, video, messaging and contact-center work, set up by local engineers and looked after once it's live.",
+    "summary": "3CX configured for calls, video, WhatsApp and website chat in one place, and supported locally.",
+    "h1": "3CX phone system configuration for Cambodian businesses",
+    "intro": "We deploy, configure and support 3CX for businesses in Phnom Penh and Siem Reap: calls, video, messaging and contact-center queues on one platform. Calls, phone numbers and connectivity are supplied separately by your authorized provider.",
     "seo": {
-      "title": "3CX Phone Systems & Cloud Call Center Cambodia — KHCOLO",
-      "description": "KHCOLO supplies, hosts and supports 3CX phone systems in Cambodia: calls, video, WhatsApp, live chat and CRM integration, in the cloud or on-site."
+      "title": "3CX Phone System Configuration Cambodia — KHCOLO",
+      "description": "KHCOLO configures and supports 3CX in Cambodia: calls, video, WhatsApp, live chat and Bitrix24 CRM integration, in your own cloud account or on-premise."
     },
     "highlights": [
-      "On a managed cloud server, your own cloud, or on-premise",
+      "Deployed in your own cloud account or on-premise",
       "Annual licensing sized by simultaneous calls",
-      "Works with Yealink, Cisco and Fanvil IP phones",
-      "Works with lines and numbers from your licensed telecom operator"
+      "Works with IP phones you already own, including Yealink, Cisco and Fanvil",
+      "Calls, numbers and connectivity supplied by your authorized provider"
     ],
     "overview": {
       "heading": "Every customer conversation in one system",
       "body": [
         "When calls, chat and messaging live in separate tools, customers wait and your team loses context. 3CX brings voice, video, WhatsApp, website chat and SMS into one platform, with queues, reporting and CRM integration built around it.",
-        "Your staff can answer from a desk phone, the desktop app or a mobile device. We choose the deployment, size the licence, connect the SIP trunk from your telecom operator and stay on for support."
+        "Your staff can answer from a desk phone, the desktop app or a mobile device. We choose the deployment, size the licence, configure the connection to your provider's SIP trunk and stay on for support."
       ]
     },
     "capabilities": [
       { "title": "Channels", "items": ["Voice calls", "Video calls", "WhatsApp", "Website live chat", "SMS"] },
       { "title": "Contact center", "items": ["Call queues", "Reporting", "Wallboards", "Presence"] },
-      { "title": "Access and integration", "items": ["Desktop apps", "Mobile apps", "CRM integration", "Works with your existing operator lines"] },
+      { "title": "Access and integration", "items": ["Desktop apps", "Mobile apps", "CRM integration", "Works with lines from your authorized provider"] },
       { "title": "Browser conferencing", "items": ["Scheduling", "Whiteboards", "Polls", "Streaming"] },
-      { "title": "Administration", "items": ["Automated updates", "Automated backups", "SIP trunk choice"] }
+      { "title": "Administration", "items": ["Automated updates", "Automated backups", "Connects to your provider's SIP trunk"] }
     ],
     "capabilitiesNote": "Included features depend on the current 3CX edition, licence size and deployment. We confirm them in your quote.",
     "options": [
@@ -39,26 +39,25 @@
         "heading": "Choose where your phone system runs",
         "layout": "cards",
         "cards": [
-          { "title": "Managed cloud server", "body": "We run and manage the 3CX software on a cloud server for you. Nothing to install on site beyond phones and network." },
           { "title": "Your cloud", "body": "Deploy into your own cloud account. AWS, Tencent Cloud and Alibaba Cloud are all supported options." },
           { "title": "On-premise", "body": "Run 3CX on hardware at your office when you need the system on your own network." }
         ],
-        "note": "3CX is licensed annually, sized by the number of simultaneous calls. Phone lines and numbers come from your licensed telecom operator; we help you size the licence and connect their SIP trunk."
+        "note": "3CX is licensed annually, sized by the number of simultaneous calls. Calls, phone numbers and connectivity come from your authorized provider; we help you size the licence and configure the connection."
       }
     ],
     "process": [
       { "title": "Assess", "body": "Map your call flows, numbers, users and the channels customers use today." },
-      { "title": "Design and license", "body": "Choose where it runs and the licence size, and plan the connection to your telecom operator's lines." },
-      { "title": "Deploy", "body": "Configure queues, extensions and integrations, then provision phones and apps." },
+      { "title": "Design and license", "body": "Choose where it runs and the licence size, and plan the connection to your provider's lines." },
+      { "title": "Deploy", "body": "Configure queues, extensions and integrations, then set up the apps and the phones you already have." },
       { "title": "Support", "body": "Stay on for updates and local support once the system is live." }
     ],
     "faqs": [
-      { "q": "Can we keep our existing phone numbers?", "a": "Your phone numbers and lines are provided by your licensed telecom operator, not by KHCOLO. In many cases your operator can connect them to 3CX through a SIP trunk. We work with your operator to confirm the approach and timing before anything is switched over." },
-      { "q": "Which desk phones work with 3CX?", "a": "3CX works with IP phones from vendors including Yealink, Cisco and Fanvil. We supply Yealink phones locally and can check whether equipment you already own can be reused." },
+      { "q": "Can we keep our existing phone numbers?", "a": "Your phone numbers and lines are supplied by your authorized provider, not by KHCOLO. In many cases your provider can connect them to 3CX through a SIP trunk. Ask your provider to confirm what they support; we plan the 3CX configuration around it." },
+      { "q": "Which desk phones work with 3CX?", "a": "3CX works with IP phones from vendors including Yealink, Cisco and Fanvil. We can check whether the phones you already own can be used." },
       { "q": "How is 3CX licensed?", "a": "3CX uses an annual licence sized by the number of simultaneous calls. Editions and included features change over time, so we confirm the current options in your quote." }
     ],
-    "related": ["3cx-bitrix24-integration", "voice-communication", "it-maintenance"],
-    "relatedCategories": ["ip-phone", "ip-pbx", "voip-gateway"],
+    "related": ["3cx-bitrix24-integration"],
+    "relatedCategories": [],
     "sourceUrl": "https://khcolo.com/cloud-call-center/",
     "updatedAt": "2026-11-03",
     "review": {
@@ -66,7 +65,8 @@
       "notes": [
         "Omitted pending confirmation: savings of up to 80%, 250 video participants, free or unlimited conferencing, included-feature claims.",
         "\"Zero-downtime number migration\" rewritten as a planned, carrier-dependent option.",
-        "Demo chat messages, agent counts and system-status panels from the old page are not reproduced as data."
+        "Demo chat messages, agent counts and system-status panels from the old page are not reproduced as data.",
+        "Legal recheck (4 Nov 2026): no hosted option, no hardware supply; calls, numbers and connectivity described as supplied separately by the customer's authorized provider. Whether 3CX configuration and licence resale need any TRC/MPTC permission is an open question for local counsel."
       ]
     }
   },
@@ -101,7 +101,7 @@
       { "title": "CRM and sales", "items": ["Lead capture", "Lead scoring", "Sales automation", "Quotations", "Invoicing", "Marketing", "Analytics"] },
       { "title": "Projects and tasks", "items": ["Recurring task templates", "Task dependencies", "Workload planning", "Kanban boards", "Gantt charts", "Time tracking"] },
       { "title": "Collaboration", "items": ["Video calls with recording and backgrounds", "Chat", "Files and documents", "Calendars", "Worktime tracking"] },
-      { "title": "Contact center", "items": ["Telephony", "Call routing", "Tracking", "Chatbots", "Saved replies", "Web forms"] },
+      { "title": "Contact center", "items": ["Telephony through your 3CX system", "Call routing", "Tracking", "Chatbots", "Saved replies", "Web forms"] },
       { "title": "HR and automation", "items": ["Attendance", "Employee directory", "Reports", "Workflows"] }
     ],
     "capabilitiesNote": "Available tools, user limits and pricing depend on the Bitrix24 plan. We confirm the current plan details with you.",
@@ -109,7 +109,7 @@
       {
         "heading": "Connects to the tools you already use",
         "layout": "tags",
-        "tags": ["WhatsApp", "Telegram", "PayPal", "Stripe", "QuickBooks", "Xero", "Zapier", "Zoom", "Office 365", "Mailchimp", "Instagram", "Dropbox", "Miro", "Twilio", "RingCentral"]
+        "tags": ["WhatsApp", "Telegram", "PayPal", "Stripe", "QuickBooks", "Xero", "Zapier", "Zoom", "Office 365", "Mailchimp", "Instagram", "Dropbox", "Miro"]
       }
     ],
     "process": [
@@ -119,8 +119,8 @@
       { "title": "Support", "body": "Support your team through the rollout and afterwards." }
     ],
     "faqs": [],
-    "related": ["cloud-call-center", "voice-communication", "it-maintenance"],
-    "relatedCategories": ["ip-phone"],
+    "related": ["cloud-call-center"],
+    "relatedCategories": [],
     "sourceUrl": "https://khcolo.com/3cx-bitrix24-integration/",
     "updatedAt": "2026-11-03",
     "review": {
@@ -201,7 +201,8 @@
       "notes": [
         "Confirm exact bundles, Teams/Zoom certifications, room capacities and demo availability before publication.",
         "Line-up places S80 at up to 20 seats and S90/MVC940 at 20+ or divisible rooms; confirm.",
-        "MeetingBar A20 row has no published feature list; generic description used."
+        "MeetingBar A20 row has no published feature list; generic description used.",
+        "Not public: hidden by content/publication.json during the legal recheck (4 Nov 2026); the URL answers 410."
       ]
     }
   },
@@ -234,7 +235,7 @@
     },
     "capabilities": [
       { "title": "Licensing and setup", "items": ["Local licensing", "Activation", "Renewals", "Business deployment through ESET PROTECT"] },
-      { "title": "Protection areas across ESET products", "items": ["Malware detection", "Firewall and network protection", "Safe banking", "Password management", "Encryption", "Sandboxing", "VPN", "Identity monitoring", "Ransomware protection"] },
+      { "title": "Protection areas across ESET products", "items": ["Malware detection", "Firewall and network protection", "Safe banking", "Encryption", "Sandboxing", "VPN", "Identity monitoring", "Ransomware protection"] },
       { "title": "Platforms", "items": ["Windows 10 / 11 and later", "macOS 13 and later", "Android 9 and later"] }
     ],
     "capabilitiesNote": "Features vary by product and plan. We confirm the current feature matrix for the tier you choose.",
@@ -273,7 +274,9 @@
       "notes": [
         "Home product feature lists on the old page were ambiguous; features are listed across products, not assigned to a plan.",
         "Omitted pending confirmation: 16 protection layers, 11 years of performance recognition, 100+ VB100 awards, 30+ years, a billion users, \"award-winning\".",
-        "The \"100% threats blocked\" panel was a demo and is not reproduced."
+        "The \"100% threats blocked\" panel was a demo and is not reproduced.",
+        "ESET Password Manager has ended new sales; removed from the protection areas. Recheck every ESET plan feature against ESET's current matrix before any reuse.",
+        "Not public: hidden by content/publication.json during the legal recheck (4 Nov 2026); the URL answers 410."
       ]
     }
   },
@@ -342,7 +345,8 @@
         "Omitted pending confirmation: \"up to 256-bit encryption\" and \"99.6% compatibility\".",
         "Confirm validation times and warranty terms for all three certificates.",
         "GoGetSSL Secure Domain validation level was not stated on the source page; shown as \"Domain\" based on product name. Confirm.",
-        "Avoid implying every browser shows a padlock, that business validation changes the address bar, or that SSL alone improves rankings."
+        "Avoid implying every browser shows a padlock, that business validation changes the address bar, or that SSL alone improves rankings.",
+        "Not public: hidden by content/publication.json during the legal recheck (4 Nov 2026); the URL answers 410."
       ]
     }
   },
@@ -408,7 +412,8 @@
       "notes": [
         "Old page mentions both daily backups and weekly shared-hosting backups; clarify per plan. New page says \"scheduled backups\".",
         "Confirm first-year domain/SSL promotions, free migration, management scope and the 99.9% uptime guarantee before using them.",
-        "Omitted: \"15 seconds average\", 3.4s to 0.9s speed figures and WAF percentages (no measurement methodology)."
+        "Omitted: \"15 seconds average\", 3.4s to 0.9s speed figures and WAF percentages (no measurement methodology).",
+        "Not public: hidden by content/publication.json during the legal recheck (4 Nov 2026); the URL answers 410."
       ]
     }
   },
@@ -443,7 +448,7 @@
       { "title": "Compute and management", "items": ["KVM virtual machines", "LXC containers", "Debian foundation", "Web administration", "CLI and API access", "Multi-node management"] },
       { "title": "Clustering and availability", "items": ["Corosync cluster communication", "pmxcfs cluster file system", "High-availability failover", "Live migration"] },
       { "title": "Networking", "items": ["VLANs", "QinQ", "VXLAN", "BGP/EVPN", "Distributed firewall"] },
-      { "title": "Storage", "items": ["Local directories", "LVM", "iSCSI", "NFS", "SMB/CIFS", "ZFS", "Ceph RBD / CephFS", "GlusterFS"] },
+      { "title": "Storage", "items": ["Local directories", "LVM", "iSCSI", "NFS", "SMB/CIFS", "ZFS", "Ceph RBD / CephFS"] },
       { "title": "Backup and recovery", "items": ["Scheduled vzdump jobs", "Proxmox Backup Server integration", "Incremental, deduplicated, encrypted backups", "Live restore", "File-level recovery"] }
     ],
     "capabilitiesNote": "Some storage, networking and firewall features depend on the Proxmox VE version and hardware. We confirm what applies to your design.",
@@ -478,7 +483,9 @@
         "Replaced absolute \"0ms\" migration and zero-configuration HA promises with qualified wording.",
         "Version-dependent storage, firewall and mobile-management claims need confirmation.",
         "Old link to https://khcolo.com/proxmox-backup-server returned 404 during review. Link removed; no empty page created.",
-        "Sample cluster and VM names on the old page were illustrative and are not reproduced."
+        "Sample cluster and VM names on the old page were illustrative and are not reproduced.",
+        "Proxmox VE 9 removed native GlusterFS storage support; GlusterFS removed from the storage list. Recheck against the current Proxmox VE release before any reuse.",
+        "Not public: hidden by content/publication.json during the legal recheck (4 Nov 2026); the URL answers 410."
       ]
     }
   },
@@ -543,7 +550,8 @@
       "notes": [
         "Two different staffing packages are both named KC-FT-Standard on the old page. Displayed with a staffing qualifier (\"One/Two standby technicians\") pending the owner's naming decision; no plan has been renamed.",
         "Confirm service hours, visit rules, staffing arrangements and pricing. No prices published.",
-        "24/7 coverage not stated pending confirmation of which contracts include it."
+        "24/7 coverage not stated pending confirmation of which contracts include it.",
+        "Not public: hidden by content/publication.json during the legal recheck (4 Nov 2026); the URL answers 410."
       ]
     }
   }

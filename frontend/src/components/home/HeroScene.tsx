@@ -1,4 +1,4 @@
-import { Check, Loader2, Phone } from "lucide-react";
+import { Loader2, Phone } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
 
 import { ServiceIcon } from "@/components/ui/ServiceIcon";
@@ -8,8 +8,9 @@ import { PauseOffscreen } from "./PauseOffscreen";
 
 /**
  * Hero illustration in the Render manner: a hairline cell grid with a dark
- * "incoming call" chip, a connector that draws into a panel of the systems we
- * run for a business, and blue pixel blocks on the grid. Labels only, no figures.
+ * "incoming call" chip, a connector that draws into an example 3CX and Bitrix24
+ * setup, and blue pixel blocks on the grid. It is labelled as an example and
+ * shows no figures, so it cannot be read as live customer data.
  */
 
 const CELL = 92;
@@ -18,10 +19,10 @@ type Status = { kind: "live" | "ok" | "busy"; label: string };
 type Card = { icon: string; name: string; status: Status; charts: [string, string]; next: [string, string]; seed: number };
 
 const CARDS: Card[] = [
-  { icon: "phone", name: "3CX Phone System", status: { kind: "live", label: "Live" }, charts: ["Calls", "Queues"], next: ["Wallboards", "Presence"], seed: 3 },
-  { icon: "crm", name: "Bitrix24 CRM", status: { kind: "ok", label: "Synced" }, charts: ["Leads", "Deals"], next: ["Tasks", "Workflows"], seed: 7 },
-  { icon: "shield", name: "ESET Endpoint", status: { kind: "ok", label: "Protected" }, charts: ["Devices", "Updates"], next: ["Policies", "Reports"], seed: 11 },
-  { icon: "cloud", name: "Cloud VPS", status: { kind: "busy", label: "Backing up" }, charts: ["CPU", "Storage"], next: ["Websites", "Backups"], seed: 5 },
+  { icon: "phone", name: "3CX call queues", status: { kind: "ok", label: "Example" }, charts: ["Calls", "Queues"], next: ["Wallboards", "Presence"], seed: 3 },
+  { icon: "phone", name: "3CX live chat", status: { kind: "ok", label: "Example" }, charts: ["Website chat", "WhatsApp"], next: ["Agents", "Reports"], seed: 11 },
+  { icon: "crm", name: "Bitrix24 CRM", status: { kind: "ok", label: "Example" }, charts: ["Leads", "Deals"], next: ["Pipelines", "Workflows"], seed: 7 },
+  { icon: "crm", name: "Bitrix24 tasks", status: { kind: "ok", label: "Example" }, charts: ["Tasks", "Projects"], next: ["Calendars", "Reports"], seed: 5 },
 ];
 
 /** Deterministic wave whose last point equals its first, so two copies tile seamlessly. */
@@ -69,12 +70,7 @@ function StatusChip({ status }: { status: Status }) {
         {status.label}
       </span>
     );
-  return (
-    <span className="flex items-center gap-1 text-[0.7rem] text-accent-700">
-      <Check className="size-3" strokeWidth={2.5} />
-      {status.label}
-    </span>
-  );
+  return <span className="font-mono text-[0.62rem] tracking-[0.06em] text-ink-500 uppercase">{status.label}</span>;
 }
 
 function Metric({ label, children }: { label: string; children?: ReactNode }) {
@@ -157,7 +153,10 @@ export function HeroScene({ className = "" }: { className?: string }) {
           className="enter absolute border border-line bg-paper-2/95 p-4 backdrop-blur-[1px]"
           style={{ left: CELL, top: CELL * 2, width: 560, ["--d" as string]: 3 } as CSSProperties}
         >
-          <p className="font-mono text-[0.72rem] tracking-[0.08em] text-ink-500 uppercase">Your business</p>
+          <p className="flex items-center justify-between font-mono text-[0.72rem] tracking-[0.08em] text-ink-500 uppercase">
+            <span>Example setup</span>
+            <span className="border border-line bg-white px-1.5 py-0.5 text-[0.62rem]">Illustration · not live data</span>
+          </p>
           <div className="mt-3 grid grid-cols-2 gap-3">
             {CARDS.map((c, i) => (
               <ServicePanelCard key={c.name} card={c} i={i} />

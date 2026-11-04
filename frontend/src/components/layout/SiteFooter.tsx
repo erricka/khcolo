@@ -43,29 +43,21 @@ export function SiteFooter({ company, services, categories }: { company: Company
     },
   ];
 
+  // Service groups that have public services, then company links.
+  const serviceGroups: Group[] = company.solutionGroups
+    .map((g) => ({ title: groupName(g.key), links: group(g.key) }))
+    .filter((g) => g.links.length > 0);
   const columns: Group[][] = [
-    [{ title: groupName("communications"), links: group("communications") }],
-    [{ title: groupName("security"), links: group("security") }],
-    [
-      { title: groupName("cloud"), links: group("cloud") },
-      { title: groupName("managed-it"), links: group("managed-it") },
-    ],
-    [
-      {
-        title: "Products",
-        links: [
-          ...categories.map((c) => ({ href: routes.category(c.slug), label: c.name })),
-          { href: routes.products, label: "All products" },
-        ],
-      },
-    ],
+    serviceGroups.length === 1 ? [{ ...serviceGroups[0], title: "Services" }] : serviceGroups,
+    ...(categories.length
+      ? [[{ title: "Products", links: [...categories.map((c) => ({ href: routes.category(c.slug), label: c.name })), { href: routes.products, label: "All products" }] }]]
+      : []),
     [
       {
         title: "Company",
         links: [
           { href: routes.about, label: "About KHCOLO" },
           { href: routes.contact, label: "Contact" },
-          { href: `${routes.contact}#inquiry`, label: "Request a quote" },
           { href: routes.privacy, label: "Privacy notice" },
         ],
       },
@@ -82,11 +74,11 @@ export function SiteFooter({ company, services, categories }: { company: Company
               <Logo title={null} id="logo-footer" className="h-8 w-auto" />
             </Link>
             <p className="mt-5 max-w-sm leading-relaxed text-muted">
-              3CX phone systems, Bitrix24 CRM, security, cloud and IT support for businesses across Cambodia, from one
-              local team.
+              3CX phone system configuration and Bitrix24 CRM workflows for Cambodian businesses, from one local
+              team.
             </p>
             <p className="mt-4 font-mono text-[0.7rem] leading-relaxed tracking-[0.05em] text-muted uppercase">
-              Serving businesses across Cambodia
+              Phnom Penh · Siem Reap · Projects by agreement
             </p>
             <ul className="mt-7 divide-y divide-line border-y border-line">
               {contacts.map((c) => (
@@ -114,7 +106,7 @@ export function SiteFooter({ company, services, categories }: { company: Company
           </div>
 
           {/* Site map */}
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-5">
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-7 lg:col-start-6">
             {columns.map((col, ci) => (
               <div key={ci} className="space-y-9">
                 {col.map((g) => (
@@ -178,7 +170,7 @@ export function SiteFooter({ company, services, categories }: { company: Company
           <div className="mt-5 flex flex-col gap-1.5 text-muted lg:flex-row lg:flex-wrap lg:gap-x-6">
             <span>© {year} KHCOLO. All rights reserved.</span>
             <span>Prices and availability confirmed on quotation.</span>
-            <span>Phone lines and numbers are provided by licensed telecom operators.</span>
+            <span>Calls, phone numbers and connectivity are supplied separately by each customer&rsquo;s authorized provider.</span>
           </div>
         </div>
       </div>

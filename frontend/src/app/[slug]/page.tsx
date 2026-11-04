@@ -114,7 +114,7 @@ export default async function ServicePage({ params }: Props) {
               ))}
             </ul>
             <p className="mt-7 border-t border-line pt-5 text-sm leading-relaxed text-muted">
-              Local support for Phnom Penh, Siem Reap and on-site installations across Cambodia, in Khmer or English.
+              Local support across Cambodia, including on-site installation, in Khmer or English.
             </p>
           </div>
         }

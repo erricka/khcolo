@@ -3,7 +3,6 @@ import {
   DatabaseBackup,
   Headset,
   Lock,
-  Mail,
   MessagesSquare,
   Phone,
   Router,
@@ -16,7 +15,7 @@ import type { CSSProperties, ReactNode } from "react";
 
 import { ButtonLink } from "@/components/ui/Button";
 
-const MARKS = ["3CX", "Bitrix24", "Yealink", "Yeastar", "ESET", "Acronis", "cPanel", "Proxmox", "Zimbra"];
+const MARKS = ["3CX", "Bitrix24", "Yealink", "Yeastar", "ESET", "cPanel", "Proxmox"];
 const ic = "size-6";
 const ICONS: { node: ReactNode; label: string }[] = [
   { node: <Phone className={ic} strokeWidth={1.7} />, label: "Phone systems" },
@@ -28,7 +27,6 @@ const ICONS: { node: ReactNode; label: string }[] = [
   { node: <DatabaseBackup className={ic} strokeWidth={1.7} />, label: "Backup" },
   { node: <Cloud className={ic} strokeWidth={1.7} />, label: "Cloud VPS" },
   { node: <Server className={ic} strokeWidth={1.7} />, label: "Servers" },
-  { node: <Mail className={ic} strokeWidth={1.7} />, label: "Email" },
   { node: <Router className={ic} strokeWidth={1.7} />, label: "Gateways" },
   { node: <Wrench className={ic} strokeWidth={1.7} />, label: "Maintenance" },
 ];
@@ -68,20 +66,23 @@ export function PlatformBand() {
           aria-label="Platforms we support"
           role="group"
         >
-          <Row dur={46}>
-            {MARKS.map((m) => (
+          <Row dur={84}>
+            {/* Listed twice so one copy is always wider than the band; the repeat is hidden from screen readers. */}
+            {[...MARKS, ...MARKS].map((m, i) => (
               <span
-                key={m}
+                key={`${m}-${i}`}
+                aria-hidden={i >= MARKS.length || undefined}
                 className="flex h-[68px] min-w-[68px] shrink-0 items-center justify-center bg-brand-600 px-5 text-[1.05rem] font-semibold tracking-[-0.025em] text-white"
               >
                 {m}
               </span>
             ))}
           </Row>
-          <Row dur={54} reverse>
-            {ICONS.map((t) => (
+          <Row dur={100} reverse>
+            {[...ICONS, ...ICONS].map((t, i) => (
               <span
-                key={t.label}
+                key={`${t.label}-${i}`}
+                aria-hidden={i >= ICONS.length || undefined}
                 title={t.label}
                 className="flex size-[68px] shrink-0 items-center justify-center bg-brand-600 text-white"
               >

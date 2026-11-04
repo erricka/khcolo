@@ -1,6 +1,6 @@
 # khcolo.com
 
-The rebuilt website for KHCOLO, a Cambodian IT and telecom company: phone systems, CRM,
+The rebuilt website for KHCOLO, a Cambodian IT solutions company: phone systems, CRM,
 cybersecurity, backup, hosting and IT maintenance, plus a quote-only hardware catalog.
 
 | Layer | Stack |

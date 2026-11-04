@@ -32,7 +32,7 @@ export default async function AboutPage() {
           { name: "Home", path: "/" },
           { name: "About", path: PATH },
         ]}
-        eyebrow={<Eyebrow>Since {company.operatingSince}</Eyebrow>}
+        eyebrow={<Eyebrow>About us</Eyebrow>}
         title={page.h1}
         lede={
           <>
@@ -40,7 +40,7 @@ export default async function AboutPage() {
               The full stack, under one roof.
             </p>
             <p className="mt-6">
-              KHCOLO is a Cambodia-based IT and telecom partner. Phone systems, CRM, cybersecurity, hosting and cloud
+              KHCOLO is a Cambodia-based IT solutions company. Phone systems, CRM, cybersecurity, hosting and cloud
               infrastructure, deployed and supported by one local team, with no handoffs between vendors when something
               needs fixing.
             </p>
@@ -49,8 +49,7 @@ export default async function AboutPage() {
         aside={
           <dl className="divide-y divide-line border border-line bg-white px-7">
             {[
-              ["Operating since", String(company.operatingSince)],
-              ["Service areas", company.serviceAreas.map((a) => a.name).join(" · ")],
+              ["Service area", "Cambodia, with on-site installation"],
               ["Support languages", "Khmer · English"],
               ["Contact", company.email],
             ].map(([k, v]) => (

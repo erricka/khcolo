@@ -5,10 +5,28 @@
       "destination": "/product/yealink-sip-t46u-ip-phone/",
       "permanent": true,
       "note": "Duplicate T46U listing. Both listings carried the same specification set."
+    },
+    {
+      "source": "/acronis-cyber-protect-cloud/",
+      "destination": "/it-maintenance/",
+      "permanent": true,
+      "note": "Acronis is no longer offered (Nov 2026). IT Maintenance covers backup and restore."
+    },
+    {
+      "source": "/zimbra/",
+      "destination": "/cloud-services/",
+      "permanent": true,
+      "note": "Zimbra is no longer offered (Nov 2026). Hosting & Cloud VPS is the nearest service."
     }
   ],
   "gone": [
-    { "path": "/feed/", "note": "WordPress RSS feed; the new site has no blog." },
-    { "path": "/comments/feed/", "note": "WordPress comments feed." }
+    {
+      "path": "/feed/",
+      "note": "WordPress RSS feed; the new site has no blog."
+    },
+    {
+      "path": "/comments/feed/",
+      "note": "WordPress comments feed."
+    }
   ]
 }

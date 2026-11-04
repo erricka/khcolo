@@ -28,7 +28,11 @@ curl -X POST -H "Authorization: Bearer $ADMIN_API_TOKEN" http://127.0.0.1:8000/a
 ```
 
 `--overwrite` resets every content row to the files, including anything changed through the admin
-API. Without it, the seed only adds what is missing.
+API, and unpublishes services, categories and products that are no longer in the files (their old
+URLs should get a redirect in `redirects.json`). Without it, the seed only adds what is missing.
+
+On Render, where you can't run the command by hand on the free plan, set `SEED_OVERWRITE=1` on
+`khcolo-api`, let it redeploy once, then delete the variable so later deploys go back to insert-only.
 
 Guidelines that keep the site trustworthy and searchable:
 
@@ -60,11 +64,11 @@ curl -X PATCH -H "$AUTH" -H 'content-type: application/json' "$API/admin/product
      -d '{"specs":[{"label":"Channels","value":"4 × GSM"}, ...], "reviewStatus":"approved", "reviewNotes":[]}'
 
 # Change a service summary
-curl -X PATCH -H "$AUTH" -H 'content-type: application/json' "$API/admin/services/zimbra" \
+curl -X PATCH -H "$AUTH" -H 'content-type: application/json' "$API/admin/services/proxmoxve" \
      -d '{"summary":"..."}'
 
 # Hide a page (it disappears from navigation, sitemap and returns 404)
-curl -X PATCH -H "$AUTH" -H 'content-type: application/json' "$API/admin/services/zimbra" -d '{"isPublished":false}'
+curl -X PATCH -H "$AUTH" -H 'content-type: application/json' "$API/admin/services/proxmoxve" -d '{"isPublished":false}'
 ```
 
 Each content edit triggers the site's revalidation webhook, so the updated page, related pages and

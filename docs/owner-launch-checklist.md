@@ -50,11 +50,11 @@ Local ranking depends mostly on relevance, distance and prominence, and the prof
 than anything on the website for "near me" searches.
 
 - [ ] Claim or verify the profile with the exact business name **KHCOLO**.
-- [ ] Choose accurate categories (for example "Computer support and services", "Telecommunications
-      service provider", "Website hosting service"; pick what truly applies).
+- [ ] Choose accurate categories (for example "Computer support and services", "Website hosting
+      service"; pick what truly applies). Avoid telecom categories: KHCOLO is not registered with TRC
+      or MPTC.
 - [ ] Location: if customers visit an office, add the real address. If you only serve customers at
-      their premises, hide the address and set **service areas** (Phnom Penh, Siem Reap, others you
-      genuinely serve). Do not add addresses that aren't real offices.
+      their premises, hide the address and set the **service area** to Cambodia, as on the website. Do not add addresses that aren't real offices.
 - [ ] Hours: office hours only. Describe any 24/7 technical support in the description, and only
       if contracts include it.
 - [ ] Phone `+855 12 200 259`, website `https://khcolo.com/`, Telegram link in the description.

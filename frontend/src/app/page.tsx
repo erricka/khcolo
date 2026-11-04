@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Check, Languages, MapPin } from "lucide-react";
+import { ArrowRight, Check, HardHat, Languages, MapPin, Wrench } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
 
 import { CallFlow } from "@/components/home/CallFlow";
@@ -41,10 +41,8 @@ const WORDS: { slug: string; label: string; color: string }[] = [
   { slug: "voice-communication", label: "video conferencing", color: "#0284c7" },
   { slug: "eset-antivirus", label: "ESET antivirus", color: "#6366f1" },
   { slug: "web-security", label: "SSL certificates", color: "#0d9488" },
-  { slug: "acronis-cyber-protect-cloud", label: "Acronis backup", color: "var(--color-brand-500)" },
   { slug: "cloud-services", label: "cloud VPS hosting", color: "var(--color-accent-700)" },
   { slug: "proxmoxve", label: "Proxmox servers", color: "#0369a1" },
-  { slug: "zimbra", label: "Zimbra email", color: "#4f46e5" },
   { slug: "it-maintenance", label: "IT maintenance", color: "var(--color-brand-700)" },
 ];
 
@@ -110,7 +108,7 @@ export default async function HomePage() {
   const expectations = [
     ...company.principles.map((p, i) => ({ ...p, icon: ["engineer", "wrench", "layers", "radar"][i] ?? "server" })),
     { title: "Khmer or English", body: "Talk to engineers directly in the language your team prefers, from planning through support.", icon: "languages" },
-    { title: "On site across Cambodia", body: "Service in Phnom Penh and Siem Reap, with on-site installation across the country.", icon: "map" },
+    { title: "On site across Cambodia", body: "Service and on-site installation for businesses across Cambodia.", icon: "map" },
     { title: "Written quotes", body: "Current options, licensing and pricing are confirmed in writing before any work starts.", icon: "file" },
     { title: "Training and handover", body: "Your staff learn the system and you receive documentation for what we set up.", icon: "book" },
   ];
@@ -131,7 +129,7 @@ export default async function HomePage() {
               />
             </h1>
             <p className="text-lede mt-8 max-w-[33rem] text-muted">
-              3CX phone systems, Bitrix24 CRM, cybersecurity, backup, hosting and IT maintenance, planned, installed and
+              3CX phone systems, Bitrix24 CRM, cybersecurity, hosting and IT maintenance, planned, installed and
               supported by one local team, in Khmer or English.
             </p>
             <div className="enter mt-10 flex flex-wrap gap-3" style={{ ["--d" as string]: 1 }}>
@@ -157,8 +155,8 @@ export default async function HomePage() {
                 <span className="status-dot size-1.5 rounded-full bg-accent-500" />
                 3CX Gold Partner
               </span>
-              <span>Since {company.operatingSince}</span>
-              <span>Phnom Penh · Siem Reap</span>
+              <span>Local engineers</span>
+              <span>Across Cambodia</span>
             </p>
           </div>
         </div>
@@ -324,8 +322,10 @@ export default async function HomePage() {
           <div className="border-x border-line px-6 py-14 sm:px-12 lg:px-16 lg:py-20">
             <ul className="grid grid-cols-2 gap-x-6 gap-y-6 lg:grid-cols-4">
               {[
-                ...company.serviceAreas.map((a) => ({ icon: <MapPin aria-hidden className="size-4" />, name: a.name, note: a.note })),
+                { icon: <MapPin aria-hidden className="size-4" />, name: "Cambodia", note: "Service area" },
+                { icon: <Wrench aria-hidden className="size-4" />, name: "On-site installation", note: "Across the country" },
                 { icon: <Languages aria-hidden className="size-4" />, name: "Khmer · English", note: "Support languages" },
+                { icon: <HardHat aria-hidden className="size-4" />, name: "Local engineers", note: "Based in Cambodia" },
               ].map((t, i) => (
                 <li
                   key={t.name}
@@ -349,7 +349,7 @@ export default async function HomePage() {
                 </p>
               </blockquote>
               <figcaption className="mt-8 font-mono text-[0.75rem] tracking-[0.06em] uppercase">
-                <span className="mark-mono">KHCOLO · In Cambodia since {company.operatingSince}</span>
+                <span className="mark-mono">KHCOLO · Local IT support in Cambodia</span>
               </figcaption>
             </figure>
           </div>
@@ -361,7 +361,7 @@ export default async function HomePage() {
       <section aria-labelledby="expect-title" className="py-24 lg:py-32">
         <div className="container-site">
           <SectionHeader id="expect-title" title="An IT partner that’s close to home">
-            Ten services and the hardware behind them, from one team that already knows your setup.
+            Our services and the hardware behind them, from one team that already knows your setup.
           </SectionHeader>
           <ul className="mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {expectations.map((e, i) => (
@@ -369,13 +369,8 @@ export default async function HomePage() {
                 <span className="flex size-9 items-center justify-center bg-brand-50 text-brand-700">
                   <ServiceIcon name={e.icon} className="size-[18px]" />
                 </span>
-                <h3 className="mt-5 flex flex-wrap items-center gap-2 text-[1.15rem] tracking-[-0.015em] text-ink-950">
+                <h3 className="mt-5 text-[1.15rem] tracking-[-0.015em] text-ink-950">
                   {e.title}
-                  {i === 0 && (
-                    <span className="border border-brand-600/50 px-1.5 py-0.5 font-mono text-[0.6rem] tracking-[0.06em] text-brand-700 uppercase">
-                      Since {company.operatingSince}
-                    </span>
-                  )}
                 </h3>
                 <p className="mt-2 text-[0.95rem] leading-relaxed text-muted">{e.body}</p>
               </li>

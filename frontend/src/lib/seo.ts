@@ -26,7 +26,7 @@ export const CORE_KEYWORDS = [
   "3CX Bitrix24 integration",
   "cloud call center Cambodia",
   "IT support Cambodia",
-  "Phnom Penh IT company",
+  "IT company Cambodia",
 ];
 
 /** Platform brands behind each service, used in Service structured data. */
@@ -35,9 +35,7 @@ const SERVICE_BRANDS: Record<string, string[]> = {
   "3cx-bitrix24-integration": ["Bitrix24", "3CX"],
   "voice-communication": ["Yealink"],
   "eset-antivirus": ["ESET"],
-  "acronis-cyber-protect-cloud": ["Acronis"],
   "proxmoxve": ["Proxmox"],
-  "zimbra": ["Zimbra"],
 };
 
 export const DEFAULT_SHARE_IMAGE: ShareImage = {

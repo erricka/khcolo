@@ -223,13 +223,13 @@
       "Local licensing, activation and renewals",
       "Central management with ESET PROTECT",
       "Business tiers: Entry, Advanced, Complete",
-      "Works with Acronis backup and our hosting"
+      "Works alongside our hosting and IT maintenance"
     ],
     "overview": {
       "heading": "Protection you can see and manage",
       "body": [
         "Antivirus installed machine by machine is hard to keep current across a whole office. ESET PROTECT gives your business one console for deployment and policy, and we take care of the licences, renewals and setup.",
-        "ESET pairs well with Acronis backup and our hosting and security services when you want layered protection rather than a single product."
+        "ESET pairs well with our hosting, SSL and IT maintenance services when you want layered protection rather than a single product."
       ]
     },
     "capabilities": [
@@ -264,7 +264,7 @@
       { "q": "Which ESET business tier do we need?", "a": "It depends on what you need to protect. PROTECT Entry covers endpoints and file servers with central management, Advanced adds disk encryption and sandboxing, and Complete adds mail-server and cloud-application protection. We recommend a tier after reviewing your environment." },
       { "q": "Can you renew a licence we bought elsewhere?", "a": "We handle ESET licensing, activation and renewals locally. Send us your current licence details and we'll confirm the renewal options." }
     ],
-    "related": ["acronis-cyber-protect-cloud", "web-security", "it-maintenance"],
+    "related": ["web-security", "cloud-services", "it-maintenance"],
     "relatedCategories": [],
     "sourceUrl": "https://khcolo.com/eset-antivirus/",
     "updatedAt": "2026-11-03",
@@ -332,7 +332,7 @@
       { "q": "Will an SSL certificate stop my website being hacked?", "a": "No. TLS encrypts data in transit between the browser and your server. It's an important layer, but it doesn't fix vulnerable software or weak passwords, so combine it with updates, backups and endpoint protection." },
       { "q": "What's the difference between domain and business validation?", "a": "Domain validation confirms you control the domain and is usually issued quickly. Business validation also verifies your company, and its details are included in the certificate. It takes longer, typically one to three days." }
     ],
-    "related": ["cloud-services", "eset-antivirus", "zimbra"],
+    "related": ["cloud-services", "eset-antivirus", "it-maintenance"],
     "relatedCategories": [],
     "sourceUrl": "https://khcolo.com/web-security/",
     "updatedAt": "2026-11-03",
@@ -343,68 +343,6 @@
         "Confirm validation times and warranty terms for all three certificates.",
         "GoGetSSL Secure Domain validation level was not stated on the source page; shown as \"Domain\" based on product name. Confirm.",
         "Avoid implying every browser shows a padlock, that business validation changes the address bar, or that SSL alone improves rankings."
-      ]
-    }
-  },
-  {
-    "slug": "acronis-cyber-protect-cloud",
-    "group": "security",
-    "position": 6,
-    "name": "Acronis Cyber Protect Cloud",
-    "shortName": "Acronis Backup",
-    "icon": "backup",
-    "summary": "Backup, recovery and cyber protection for servers, PCs, VMs and cloud workloads.",
-    "h1": "Acronis business backup and cyber protection",
-    "intro": "Acronis Cyber Protect Cloud brings backup, recovery, security and management together for physical, virtual and cloud workloads. We configure the schedules, storage and alerts, and help you test that recovery actually works.",
-    "seo": {
-      "title": "Acronis Backup & Cyber Protection Cambodia — KHCOLO",
-      "description": "Acronis Cyber Protect Cloud from KHCOLO: backup, recovery and cyber protection for physical, virtual and cloud workloads, configured and supported locally."
-    },
-    "highlights": [
-      "Physical, virtual and cloud workloads",
-      "Image, file and encrypted backups",
-      "Malware scanning and vulnerability reports",
-      "Schedules, storage and alerts set up for you"
-    ],
-    "overview": {
-      "heading": "Backups you can actually restore",
-      "body": [
-        "A backup only matters on the day you need to restore it. Acronis combines image and file backup with malware scanning and disaster-recovery testing in a single agent and console.",
-        "We set up schedules, storage locations and alerts so problems surface early. No backup system can promise zero data loss; good design and regular restore tests are what reduce the risk."
-      ]
-    },
-    "capabilities": [
-      { "title": "Backup and recovery", "items": ["Disk and system images", "File-level recovery", "Restore to different hardware", "Disk cloning", "Encrypted backups", "Backup validation", "Resumable replication", "Web restore with password-protected sharing"] },
-      { "title": "Cyber protection", "items": ["Malware scanning", "Behavioral detection", "Web filtering", "Vulnerability reporting"] },
-      { "title": "Management", "items": ["Automated policies", "Disaster-recovery testing", "Secure file sharing", "Notarization and e-signing"] }
-    ],
-    "capabilitiesNote": "Capabilities depend on the Acronis edition and add-ons. We confirm what's included before you commit.",
-    "options": [
-      {
-        "heading": "Flexible licensing",
-        "layout": "cards",
-        "cards": [
-          { "title": "Per workload", "body": "Licensed per protected machine or workload, suited to a known, stable set of servers and PCs." },
-          { "title": "Consumption-based", "body": "Billed on usage, suited to environments that grow or change month to month." }
-        ]
-      }
-    ],
-    "process": [
-      { "title": "Inventory", "body": "List the machines, VMs and data that must be recoverable." },
-      { "title": "Design", "body": "Agree schedules, retention and where backups are stored." },
-      { "title": "Configure", "body": "Deploy agents, policies and alerts." },
-      { "title": "Test", "body": "Run restore and disaster-recovery tests, then review regularly." }
-    ],
-    "faqs": [],
-    "related": ["eset-antivirus", "proxmoxve", "it-maintenance"],
-    "relatedCategories": [],
-    "sourceUrl": "https://khcolo.com/acronis-cyber-protect-cloud/",
-    "updatedAt": "2026-11-03",
-    "review": {
-      "status": "needs_review",
-      "notes": [
-        "Confirm current capabilities and licensing models.",
-        "Backup timestamps, blocked-attack counts and green status indicators on the old page were demo content; not reproduced."
       ]
     }
   },
@@ -461,7 +399,7 @@
     "faqs": [
       { "q": "Can you move our existing website and email?", "a": "Yes, migration is part of our hosting service. We review your current setup first and confirm the scope, timing and any costs before we start." }
     ],
-    "related": ["web-security", "zimbra", "proxmoxve"],
+    "related": ["web-security", "proxmoxve", "it-maintenance"],
     "relatedCategories": [],
     "sourceUrl": "https://khcolo.com/cloud-services/",
     "updatedAt": "2026-11-03",
@@ -530,7 +468,7 @@
       { "q": "Does live migration cause downtime?", "a": "Live migration moves a running VM between nodes with minimal interruption, but the result depends on storage, network and workload. We plan migrations and test them so the behaviour is known before you rely on it." },
       { "q": "Is high availability automatic?", "a": "Proxmox VE can restart VMs on another node when one fails, but only on a properly sized cluster with quorum and fencing in place. We design and test HA as part of the deployment." }
     ],
-    "related": ["cloud-services", "acronis-cyber-protect-cloud", "it-maintenance"],
+    "related": ["cloud-services", "eset-antivirus", "it-maintenance"],
     "relatedCategories": [],
     "sourceUrl": "https://khcolo.com/proxmoxve/",
     "updatedAt": "2026-11-03",
@@ -541,72 +479,6 @@
         "Version-dependent storage, firewall and mobile-management claims need confirmation.",
         "Old link to https://khcolo.com/proxmox-backup-server returned 404 during review. Link removed; no empty page created.",
         "Sample cluster and VM names on the old page were illustrative and are not reproduced."
-      ]
-    }
-  },
-  {
-    "slug": "zimbra",
-    "group": "cloud",
-    "position": 9,
-    "name": "Zimbra Business Email",
-    "shortName": "Zimbra Email",
-    "icon": "mail",
-    "summary": "Private business email and collaboration, deployed, tuned and upgraded by our engineers.",
-    "h1": "Zimbra business email deployment and support",
-    "intro": "Zimbra gives organizations private email and collaboration they can run on infrastructure they control. We deploy it, tune it, upgrade it, and review its security and capacity.",
-    "seo": {
-      "title": "Zimbra Business Email & Support Cambodia — KHCOLO",
-      "description": "Private Zimbra business email and collaboration in Cambodia: deployment, configuration tuning, upgrades, capacity testing and security review by KHCOLO."
-    },
-    "highlights": [
-      "On-premise or in-country hosting",
-      "TLS/HTTPS, smart-card and SSO options",
-      "Configuration tuning and upgrades",
-      "Performance, capacity and security review"
-    ],
-    "overview": {
-      "heading": "Email that stays under your control",
-      "body": [
-        "Some organizations need to know exactly where their email lives and who can reach it. Zimbra can run on-premise or in-country, with TLS/HTTPS, smart-card authentication and single sign-on.",
-        "Alongside deployment, we offer the professional services that keep a mail platform healthy as it grows: tuning, upgrades, capacity testing and security review."
-      ]
-    },
-    "capabilities": [
-      { "title": "Platform", "items": ["Private business email", "Collaboration and calendars", "On-premise control", "Backups", "Responsive web access", "Custom branding"] },
-      { "title": "Security and control", "items": ["In-country hosting option", "Source visibility", "TLS/HTTPS", "Smart-card authentication", "Single sign-on (SSO)", "APIs and Zimlets"] },
-      { "title": "Integrations", "items": ["Slack", "Dropbox", "Zoom"] }
-    ],
-    "capabilitiesNote": "",
-    "options": [
-      {
-        "heading": "Professional services",
-        "layout": "cards",
-        "cards": [
-          { "title": "Configuration tuning", "body": "We examine logs, usage and concurrency, protocols, mailbox, database and message sizes, ports, patches, calendars, storage and mail flow." },
-          { "title": "Upgrades", "body": "Assessment, planning, feature guidance, software updates, verification and handover." },
-          { "title": "Performance and capacity", "body": "Usage profiling, server metrics and load testing to show how far your platform can grow." },
-          { "title": "Security review", "body": "A review of your deployment's security configuration, with practical recommendations." }
-        ],
-        "note": "Subscription and perpetual licensing are available, with support and renewals. Current editions and terms are confirmed in your quote."
-      }
-    ],
-    "process": [
-      { "title": "Assess", "body": "Review mailboxes, mail flow, storage and current version." },
-      { "title": "Plan", "body": "Agree hosting, licensing, migration or upgrade path." },
-      { "title": "Deploy or upgrade", "body": "Carry out the work with verification at each step." },
-      { "title": "Hand over", "body": "Document the platform and support it afterwards." }
-    ],
-    "faqs": [],
-    "related": ["cloud-services", "web-security", "it-maintenance"],
-    "relatedCategories": [],
-    "sourceUrl": "https://khcolo.com/zimbra/",
-    "updatedAt": "2026-11-03",
-    "review": {
-      "status": "needs_review",
-      "notes": [
-        "Brazilian and European government examples on the old page are not KHCOLO customers; not reproduced.",
-        "The 3,500–10,000 employee paragraph appears to be third-party testimonial material; not reproduced.",
-        "Version references calling 8.8/9 \"latest\", open-source/licensing descriptions and reinstatement terms are historical; not reproduced until confirmed."
       ]
     }
   },
@@ -662,7 +534,7 @@
       { "title": "Report", "body": "Monthly reporting and an updated action plan." }
     ],
     "faqs": [],
-    "related": ["eset-antivirus", "acronis-cyber-protect-cloud", "proxmoxve"],
+    "related": ["eset-antivirus", "cloud-services", "proxmoxve"],
     "relatedCategories": [],
     "sourceUrl": "https://khcolo.com/it-maintenance/",
     "updatedAt": "2026-11-03",

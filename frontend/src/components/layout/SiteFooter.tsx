@@ -86,7 +86,7 @@ export function SiteFooter({ company, services, categories }: { company: Company
               local team.
             </p>
             <p className="mt-4 font-mono text-[0.7rem] leading-relaxed tracking-[0.05em] text-muted uppercase">
-              Phnom Penh · Siem Reap · On-site across Cambodia
+              Serving businesses across Cambodia
             </p>
             <ul className="mt-7 divide-y divide-line border-y border-line">
               {contacts.map((c) => (

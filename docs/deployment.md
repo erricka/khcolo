@@ -109,7 +109,8 @@ docker compose logs -f api web
 ```
 
 On start the API runs `alembic upgrade head` and `python -m app.seed` (insert-only: rows edited
-through the admin API are never overwritten). The web image is built from the JSON content and
+through the admin API are never overwritten). Set `SEED_OVERWRITE=1` for one deploy to reset the
+database to the JSON files instead; see `docs/content-editing.md`. The web image is built from the JSON content and
 refreshes from the API after start-up.
 
 ### Staging vs production
@@ -175,6 +176,7 @@ Do **not** publish port 8000 or 5432.
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Optional Telegram alert for each inquiry. |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `SMTP_FROM`, `NOTIFY_EMAIL_TO` | Optional email alert for each inquiry (STARTTLS). |
 | `CONTENT_DIR` | Seed source; the Docker image sets `/app/content`. |
+| `SEED_OVERWRITE` | `1` makes the start-up seed behave like `--overwrite` (reset content to the files, unpublish removed rows). Use for one deploy, then remove. |
 
 Notifications are attempted after the inquiry is saved. Each inquiry records
 `notification_status`: `disabled` (nothing configured), `sent`, `partial` or `failed`. A failed

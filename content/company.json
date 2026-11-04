@@ -3,20 +3,12 @@
   "siteUrl": "https://khcolo.com",
   "tagline": "3CX, Bitrix24 and IT support for Cambodian businesses",
   "positioning": "One local provider for communications, CRM, cybersecurity, hosting, infrastructure, hardware and support.",
-  "description": "KHCOLO is a Cambodia-based IT and telecom partner. We license, deploy and support 3CX phone systems, Bitrix24 CRM, cybersecurity, backup, hosting and IT maintenance for businesses across Cambodia.",
+  "description": "KHCOLO is a Cambodia-based IT solutions company. We license, deploy and support 3CX phone systems, Bitrix24 CRM, cybersecurity, hosting and IT maintenance for businesses across Cambodia.",
   "operatingSince": 2017,
   "serviceAreas": [
     {
-      "name": "Phnom Penh",
-      "note": "Service area"
-    },
-    {
-      "name": "Siem Reap",
-      "note": "Service area"
-    },
-    {
-      "name": "Across Cambodia",
-      "note": "On-site installation"
+      "name": "Cambodia",
+      "note": "Nationwide, with on-site installation"
     }
   ],
   "languages": [
@@ -90,11 +82,6 @@
       "vendor": "ESET",
       "relationship": "Reseller",
       "scope": "Endpoint security licensing, activation and renewals."
-    },
-    {
-      "vendor": "Acronis",
-      "relationship": "Cyber Protect Cloud services",
-      "scope": "Backup, recovery and cyber protection."
     }
   ],
   "principles": [
@@ -124,15 +111,15 @@
     },
     {
       "key": "security",
-      "name": "Security & Backup",
-      "summary": "Endpoint protection, certificates and recoverable backups.",
-      "need": "Protect devices, data in transit and the files you can't afford to lose."
+      "name": "Security",
+      "summary": "Endpoint protection and SSL/TLS certificates.",
+      "need": "Protect your devices and the data moving between your business and its customers."
     },
     {
       "key": "cloud",
       "name": "Cloud & Infrastructure",
-      "summary": "Hosting, virtualization and private business email.",
-      "need": "Run websites, servers and email on infrastructure you control."
+      "summary": "Hosting, cloud VPS and virtualization.",
+      "need": "Run websites and servers on infrastructure you control."
     },
     {
       "key": "managed-it",
@@ -141,7 +128,7 @@
       "need": "Keep everyday IT healthy with a team that already knows your setup."
     }
   ],
-  "updatedAt": "2026-11-03",
+  "updatedAt": "2026-11-04",
   "review": {
     "status": "needs_review",
     "sourceUrls": [
@@ -150,11 +137,15 @@
       "https://khcolo.com/contact-us/"
     ],
     "notes": [
-      "Partner relationships are as published on the About page (3CX Gold Partner, Yeastar Certified Reseller, Yealink Authorized Reseller, cPanel Hosting Partner) plus ESET reseller and Acronis services described elsewhere. Confirm each status before launch.",
+      "Partner relationships are as published on the About page (3CX Gold Partner, Yeastar Certified Reseller, Yealink Authorized Reseller, cPanel Hosting Partner) plus the ESET reseller relationship described elsewhere. Confirm each status before launch.",
       "24/7 support is advertised on the current site. It is not used on the new site until the owner confirms which contracts and services it covers.",
       "No street address, office hours or map coordinates were published. LocalBusiness markup is deliberately omitted until confirmed.",
       "Logo is redrawn as vectors from the original colour artwork on khcolo.com: navy letters (#001088) and the blue globe with its diagonal gloss. Owner to supply original vector artwork if available, and confirm the colours.",
-      "Bitrix24 appears in the partner strip as \"CRM implementation\" (what KHCOLO does). If KHCOLO holds an official Bitrix24 partner status, update the wording to that exact tier."
+      "Bitrix24 appears in the partner strip as \"CRM implementation\" (what KHCOLO does). If KHCOLO holds an official Bitrix24 partner status, update the wording to that exact tier.",
+      "KHCOLO is not registered with TRC or MPTC, so the site describes it as an IT solutions company, not a telecom provider or partner (owner, 4 Nov 2026).",
+      "Acronis and Zimbra are no longer offered (owner, 4 Nov 2026). Their pages are removed and the old URLs redirect to IT Maintenance and Hosting & Cloud VPS.",
+      "The operating year (2017) is not shown anywhere until it is checked against the company registration licence. The value stays in this file as operatingSince for when it is confirmed.",
+      "Service area is shown as Cambodia (nationwide, with on-site installation) rather than listing Phnom Penh and Siem Reap (owner, 4 Nov 2026)."
     ]
   },
   "knowsAbout": [
@@ -166,10 +157,8 @@
     "Yealink IP phones and video conferencing",
     "Yeastar IP PBX",
     "ESET endpoint security",
-    "Acronis Cyber Protect Cloud",
     "SSL/TLS certificates",
     "Proxmox VE virtualization",
-    "Zimbra business email",
     "Web hosting",
     "IT maintenance"
   ]

@@ -1,7 +1,10 @@
-from sqlalchemy import text
+import json
+
+from sqlalchemy import select, text
 
 from app.config import get_settings
 from app.db import engine
+from app.seed import seed
 
 
 def test_health(client):
@@ -12,7 +15,7 @@ def test_services_are_public_without_review_data(client):
     res = client.get("/api/v1/services")
     assert res.status_code == 200
     services = res.json()
-    assert len(services) == 10
+    assert len(services) == 8
     for s in services:
         assert "review" not in s and "reviewNotes" not in s and "sourceUrl" not in s
         assert s["seo"]["title"].endswith("— KHCOLO")
@@ -150,10 +153,32 @@ def test_admin_product_edit_replaces_specs(client, admin_headers):
 
 
 def test_unpublished_service_disappears(client, admin_headers):
-    client.patch("/api/v1/admin/services/zimbra", json={"isPublished": False}, headers=admin_headers)
-    assert client.get("/api/v1/services/zimbra").status_code == 404
-    client.patch("/api/v1/admin/services/zimbra", json={"isPublished": True}, headers=admin_headers)
-    assert client.get("/api/v1/services/zimbra").status_code == 200
+    client.patch("/api/v1/admin/services/proxmoxve", json={"isPublished": False}, headers=admin_headers)
+    assert client.get("/api/v1/services/proxmoxve").status_code == 404
+    client.patch("/api/v1/admin/services/proxmoxve", json={"isPublished": True}, headers=admin_headers)
+    assert client.get("/api/v1/services/proxmoxve").status_code == 200
+
+
+def test_overwrite_seed_unpublishes_services_removed_from_the_files(client):
+    from app import models
+    from app.db import SessionLocal
+
+    with SessionLocal() as db:
+        template = db.scalar(select(models.Service).where(models.Service.slug == "proxmoxve"))
+        db.add(models.Service(
+            slug="retired-service", group_key="cloud", position=99, name="Retired", short_name="Retired",
+            icon="server", summary="s", h1="h", intro="i", seo_title="t — KHCOLO", seo_description="d",
+            body=template.body, review_status="approved", review_notes=[], is_published=True,
+        ))
+        db.commit()
+    assert client.get("/api/v1/services/retired-service").status_code == 200
+
+    result = seed(get_settings().content_dir, overwrite=True)
+
+    assert result.get("unpublished") == 1
+    assert client.get("/api/v1/services/retired-service").status_code == 404
+    slugs = {s["slug"] for s in client.get("/api/v1/services").json()}
+    assert slugs == {s["slug"] for s in json.loads((get_settings().content_dir / "services.json").read_text())}
 
 
 def test_validation_errors_do_not_echo_input(client, valid_inquiry):

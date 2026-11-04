@@ -1,13 +1,17 @@
 """Load the content inventory in /content into PostgreSQL.
 
     python -m app.seed               # insert anything missing, leave edited rows alone
-    python -m app.seed --overwrite   # reset every content row to the JSON files
+    python -m app.seed --overwrite   # reset every content row to the JSON files and
+                                     # unpublish services, categories and products
+                                     # that are no longer in them
 
-Inquiries are never touched.
+Setting SEED_OVERWRITE=1 in the environment has the same effect as --overwrite, so a host can
+run one syncing deploy without changing its start command. Inquiries are never touched.
 """
 
 import argparse
 import json
+import os
 from datetime import date
 from pathlib import Path
 
@@ -112,6 +116,19 @@ def seed(content_dir: Path, overwrite: bool = False) -> dict[str, int]:
             }, overwrite)
             bump("pages", c)
 
+        if overwrite:
+            # The files are the source of truth: hide anything that was removed from them.
+            # Rows are unpublished rather than deleted so inquiries that mention them keep context.
+            listed = {
+                models.Service: {s["slug"] for s in _load(content_dir, "services.json")},
+                models.ProductCategory: set(categories),
+                models.Product: {p["slug"] for p in _load(content_dir, "products.json")},
+            }
+            for model, slugs in listed.items():
+                for row in db.scalars(select(model).where(model.is_published.is_(True), model.slug.not_in(slugs))):
+                    row.is_published = False
+                    created["unpublished"] = created.get("unpublished", 0) + 1
+
         redirects = _load(content_dir, "redirects.json")
         for r in redirects["redirects"]:
             _, c = _upsert(db, models.Redirect, {"source": r["source"]}, {
@@ -135,7 +152,8 @@ def main() -> None:
     parser.add_argument("--content-dir", type=Path, default=None)
     args = parser.parse_args()
     content_dir = args.content_dir or get_settings().content_dir
-    result = seed(content_dir, overwrite=args.overwrite)
+    overwrite = args.overwrite or os.environ.get("SEED_OVERWRITE", "").strip().lower() in {"1", "true", "yes"}
+    result = seed(content_dir, overwrite=overwrite)
     print("Seed complete. New rows:", ", ".join(f"{k}={v}" for k, v in sorted(result.items())) or "none")
 
 

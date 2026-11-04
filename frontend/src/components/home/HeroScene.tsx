@@ -21,7 +21,7 @@ const CARDS: Card[] = [
   { icon: "phone", name: "3CX Phone System", status: { kind: "live", label: "Live" }, charts: ["Calls", "Queues"], next: ["Wallboards", "Presence"], seed: 3 },
   { icon: "crm", name: "Bitrix24 CRM", status: { kind: "ok", label: "Synced" }, charts: ["Leads", "Deals"], next: ["Tasks", "Workflows"], seed: 7 },
   { icon: "shield", name: "ESET Endpoint", status: { kind: "ok", label: "Protected" }, charts: ["Devices", "Updates"], next: ["Policies", "Reports"], seed: 11 },
-  { icon: "backup", name: "Acronis Backup", status: { kind: "busy", label: "Backing up" }, charts: ["Storage", "Restore points"], next: ["Servers", "PCs"], seed: 5 },
+  { icon: "cloud", name: "Cloud VPS", status: { kind: "busy", label: "Backing up" }, charts: ["CPU", "Storage"], next: ["Websites", "Backups"], seed: 5 },
 ];
 
 /** Deterministic wave whose last point equals its first, so two copies tile seamlessly. */

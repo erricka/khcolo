@@ -39,3 +39,27 @@ def test_reconcile_dry_run_then_apply(client):
     slugs = {s["slug"] for s in client.get("/api/v1/services").json()}
     assert slugs == {"cloud-call-center", "3cx-bitrix24-integration"}
     assert "Gold Partner" not in client.get("/api/v1/site").text
+
+
+def test_run_logs_full_old_value_before_applying(client, capsys, monkeypatch):
+    """The KH_RECONCILE hook in app.seed: the log line keeps the old value, then the row is fixed."""
+    from app import seed as seed_module
+
+    with SessionLocal() as db:
+        setting = db.scalar(select(models.SiteSetting).where(models.SiteSetting.key == "company"))
+        setting.value = {**setting.value, "tagline": "Stale again"}
+        db.commit()
+
+    monkeypatch.setenv("KH_RECONCILE", "dry-run")
+    monkeypatch.setattr("sys.argv", ["app.seed"])
+    seed_module.main()
+    assert "Dry run: nothing changed" in capsys.readouterr().out
+    assert "Stale again" in client.get("/api/v1/site").text
+
+    monkeypatch.setenv("KH_RECONCILE", "apply")
+    seed_module.main()
+    out = capsys.readouterr().out
+    backup = [line for line in out.splitlines() if line.startswith("RECONCILE-BACKUP ")]
+    assert len(backup) == 1 and '"value": "Stale again"' in backup[0]
+    assert "Applied 1 change(s)" in out
+    assert "Stale again" not in client.get("/api/v1/site").text

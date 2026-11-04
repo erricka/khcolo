@@ -3,6 +3,10 @@
     python -m app.reconcile            # dry run: print every field that differs, change nothing
     python -m app.reconcile --apply    # apply exactly those changes in one transaction
 
+On a host without shell access, set KH_RECONCILE=dry-run or KH_RECONCILE=apply: `python -m app.seed`
+(run on every start) then calls run() after seeding. Before applying, every changed field's full
+current value is printed on a line starting "RECONCILE-BACKUP", so the service log is the backup.
+
 Unlike `app.seed --overwrite`, this touches only the rows listed below and only the fields an
 editor approved in the 4 Nov 2026 legal recheck. Everything else in the database (inquiries,
 other editors' work, media) is left alone. Back up the database before running with --apply,
@@ -87,26 +91,33 @@ def plan(db, content_dir: Path) -> list[tuple[str, str, object, object, callable
     return changes
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--apply", action="store_true", help="write the changes (default is a dry run)")
-    parser.add_argument("--content-dir", type=Path, default=None)
-    args = parser.parse_args()
-    content_dir = args.content_dir or get_settings().content_dir
-
+def run(apply: bool, content_dir: Path | None = None) -> int:
+    """Print the differences; with apply=True, log full old values and write the changes. Returns the count."""
+    content_dir = content_dir or get_settings().content_dir
     with SessionLocal() as db:
         changes = plan(db, content_dir)
         for label, field, current, approved, _ in changes:
             short = lambda v: (json.dumps(v, ensure_ascii=False, default=str)[:140])  # noqa: E731
             print(f"{label:48} {field:16} {short(current)}\n{'':65}-> {short(approved)}")
         print(f"\n{len(changes)} field(s) differ from the approved copy.")
-        if not args.apply:
+        if not apply:
             print("Dry run: nothing changed. Re-run with --apply after a database backup.")
-            return
+            return len(changes)
+        for label, field, current, _, _ in changes:
+            print("RECONCILE-BACKUP " + json.dumps({"row": label, "field": field, "value": current}, ensure_ascii=False, default=str))
         for label, field, current, approved, setter in changes:
             setter(approved)
         db.commit()
         print(f"Applied {len(changes)} change(s) on {date.today().isoformat()}.")
+        return len(changes)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--apply", action="store_true", help="write the changes (default is a dry run)")
+    parser.add_argument("--content-dir", type=Path, default=None)
+    args = parser.parse_args()
+    run(args.apply, args.content_dir)
 
 
 if __name__ == "__main__":

@@ -4,20 +4,16 @@
 legal compliance. A website content review cannot confirm compliance with all Cambodian law or
 KHCOLO's actual permission status.
 
-**Where the change lives:** local branch `review/legal-recheck-2026-11-04` in this repository, not
-pushed, not merged, not deployed. No pull request was opened. Review this patch with the owner and
-Cambodian counsel before any repository update or deployment.
+**Where the change lives:** branch `review/legal-recheck-2026-11-04`, fast-forwarded into `main`
+and **published on 4 Nov 2026 at 08:17 UTC (`aa9e4af`)** after the owner approved it, relayed by
+the requester ("Publish now"). No pull request was opened. Cambodian counsel has not reviewed it
+yet; the legal questions below remain open.
 
-**Live sites today (unchanged by this review):**
+**Live sites:**
 
-- https://khcolo-web.onrender.com still runs `main` at `2f05123`. It still shows:
-  - hardware (IP phones, gateways, IP PBX)
-  - hosting/VPS, ESET, SSL, Proxmox and IT Maintenance pages
-  - the "3CX Gold Partner" and reseller tiers
-  - "across Cambodia"
-  - the hosted-3CX option
-
-  None of this is fixed on the live site until this branch is approved and deployed.
+- https://khcolo-web.onrender.com now serves this review: 3CX configuration and Bitrix24 CRM only,
+  no hosting, hardware, partner tiers or "across Cambodia". Retired URLs answer 410 + noindex.
+  The live database was reconciled the same minute (see "Live database" below).
 - The preview services https://khcolo-web-previous.onrender.com and
   https://khcolo-web-white.onrender.com show the earlier designs: Acronis, Zimbra, "Since 2017",
   "telecom partner" and hardware. They send `noindex` but are publicly reachable. Remove or
@@ -162,7 +158,17 @@ cd frontend && KHCOLO_API_URL=http://127.0.0.1:8001 INTERNAL_API_KEY=<local> SIT
   No form was submitted.
 - Screenshots: desktop and mobile for each public page, a 410 URL and the 404.
 
-## Live database: targeted reconciliation plan (not run)
+## Live database: targeted reconciliation (applied 4 Nov 2026, 08:18 UTC)
+
+**Applied.** Render's free web service has no shell, so `app.seed` (run on every API start) calls
+`reconcile.run()` when `KH_RECONCILE` is set. It was set to `apply` for one deploy of `aa9e4af`,
+then set back to `off`. The log reads "66 field(s) differ from the approved copy" and "Applied 66
+change(s)". Inquiries were not touched. The database blocks external connections, so there was no
+separate dump. Instead, every old value was printed to the service log on a `RECONCILE-BACKUP`
+line first. Those 66 old values are identical to `content/*.json` at commit `2f05123`, so git
+history is the backup.
+
+The plan as written before it ran:
 
 The live PostgreSQL rows still hold the pre-review copy: partner tiers, "Cambodia, nationwide",
 all services, categories and products published, and 308 redirects for Acronis, Zimbra and T46U.
@@ -274,7 +280,7 @@ decide how old URLs are handled. This review cannot change that site.
 | All previous-redesign and original-site URLs | 51 × 410 + noindex; no prohibited route is served |
 | Acronis / Zimbra / hosting / telecom-hardware claims in public HTML, metadata, schema, sitemap | None found |
 | Unverifiable founding year or partner tier visible | None found |
-| Live redesign (khcolo-web.onrender.com) | **Not changed.** Still serves `2f05123` |
-| Live database | **Not changed** by this recheck. Reconcile with the plan above |
+| Live redesign (khcolo-web.onrender.com) | **Published** 4 Nov 2026, `aa9e4af` |
+| Live database | **Reconciled**: 66 fields, inquiries untouched; old values = `2f05123` content |
 | Original khcolo.com (WordPress) | **Not changed.** Owner or editor action required |
-| Staging deploy | Not created. Deploy this branch to a staging service and re-run the route check before any merge to `main` |
+| Staging deploy | Skipped: the owner chose to publish directly. The production build was the one checked locally; this session cannot reach onrender.com, so check the live pages in a browser |

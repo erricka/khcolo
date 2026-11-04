@@ -37,11 +37,11 @@ export function Accordion({ items }: { items: { q: string; a: string }[] }) {
                 </span>
                 <span
                   aria-hidden
-                  className={`mt-0.5 flex size-8 shrink-0 items-center justify-center border transition-[background-color,border-color,color] duration-200 ${
-                    isOpen ? "border-brand-600 bg-brand-600 text-white" : "border-line-strong text-ink-700 group-hover:border-ink-900"
+                  className={`mt-0.5 flex size-8 shrink-0 items-center justify-center border transition-[transform,background-color,border-color,color] duration-200 ${
+                    isOpen ? "rotate-45 border-brand-600 bg-brand-600 text-white" : "border-line-strong text-ink-700 group-hover:border-ink-900"
                   }`}
                 >
-                  <Plus className={`size-4 transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`} />
+                  <Plus className="size-4" />
                 </span>
               </button>
             </h3>

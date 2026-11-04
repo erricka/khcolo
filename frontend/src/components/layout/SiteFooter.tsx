@@ -43,21 +43,29 @@ export function SiteFooter({ company, services, categories }: { company: Company
     },
   ];
 
-  // Service groups that have public services, then company links.
-  const serviceGroups: Group[] = company.solutionGroups
-    .map((g) => ({ title: groupName(g.key), links: group(g.key) }))
-    .filter((g) => g.links.length > 0);
   const columns: Group[][] = [
-    serviceGroups.length === 1 ? [{ ...serviceGroups[0], title: "Services" }] : serviceGroups,
-    ...(categories.length
-      ? [[{ title: "Products", links: [...categories.map((c) => ({ href: routes.category(c.slug), label: c.name })), { href: routes.products, label: "All products" }] }]]
-      : []),
+    [{ title: groupName("communications"), links: group("communications") }],
+    [{ title: groupName("security"), links: group("security") }],
+    [
+      { title: groupName("cloud"), links: group("cloud") },
+      { title: groupName("managed-it"), links: group("managed-it") },
+    ],
+    [
+      {
+        title: "Products",
+        links: [
+          ...categories.map((c) => ({ href: routes.category(c.slug), label: c.name })),
+          { href: routes.products, label: "All products" },
+        ],
+      },
+    ],
     [
       {
         title: "Company",
         links: [
           { href: routes.about, label: "About KHCOLO" },
           { href: routes.contact, label: "Contact" },
+          { href: `${routes.contact}#inquiry`, label: "Request a quote" },
           { href: routes.privacy, label: "Privacy notice" },
         ],
       },
@@ -74,11 +82,11 @@ export function SiteFooter({ company, services, categories }: { company: Company
               <Logo title={null} id="logo-footer" className="h-8 w-auto" />
             </Link>
             <p className="mt-5 max-w-sm leading-relaxed text-muted">
-              3CX phone system configuration and Bitrix24 CRM workflows for Cambodian businesses, from one local
-              team.
+              3CX phone systems, Bitrix24 CRM, security, cloud and IT support for businesses across Cambodia, from one
+              local team.
             </p>
             <p className="mt-4 font-mono text-[0.7rem] leading-relaxed tracking-[0.05em] text-muted uppercase">
-              Phnom Penh · Siem Reap · Projects by agreement
+              Serving businesses across Cambodia
             </p>
             <ul className="mt-7 divide-y divide-line border-y border-line">
               {contacts.map((c) => (
@@ -106,7 +114,7 @@ export function SiteFooter({ company, services, categories }: { company: Company
           </div>
 
           {/* Site map */}
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-6 lg:col-start-7">
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-5">
             {columns.map((col, ci) => (
               <div key={ci} className="space-y-9">
                 {col.map((g) => (
@@ -123,27 +131,29 @@ export function SiteFooter({ company, services, categories }: { company: Company
                     </ul>
                   </div>
                 ))}
+                {ci === columns.length - 1 && (
+                  <div>
+                    <p className="text-[0.95rem] text-ink-950">Socials</p>
+                    <ul className="mt-4 space-y-3 text-[0.92rem]" aria-label="KHCOLO on social media">
+                      {company.socials.map((sc) => (
+                        <li key={sc.name}>
+                          <a
+                            href={sc.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-muted transition-colors hover:text-ink-950"
+                          >
+                            <SocialIcon name={sc.name} className="size-3.5" />
+                            {sc.name}
+                            <span className="sr-only">(opens in a new tab)</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             ))}
-            <div>
-              <p className="text-[0.95rem] text-ink-950">Socials</p>
-              <ul className="mt-4 space-y-3 text-[0.92rem]" aria-label="KHCOLO on social media">
-                {company.socials.map((sc) => (
-                  <li key={sc.name}>
-                    <a
-                      href={sc.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-muted transition-colors hover:text-ink-950"
-                    >
-                      <SocialIcon name={sc.name} className="size-3.5" />
-                      {sc.name}
-                      <span className="sr-only">(opens in a new tab)</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </nav>
         </div>
 
@@ -167,8 +177,8 @@ export function SiteFooter({ company, services, categories }: { company: Company
           </div>
           <div className="mt-5 flex flex-col gap-1.5 text-muted lg:flex-row lg:flex-wrap lg:gap-x-6">
             <span>© {year} KHCOLO. All rights reserved.</span>
-            <span>Prices and scope are confirmed in your quotation.</span>
-            <span>Calls, phone numbers and connectivity are supplied separately by each customer&rsquo;s authorized provider.</span>
+            <span>Prices and availability confirmed on quotation.</span>
+            <span>Phone lines and numbers are provided by licensed telecom operators.</span>
           </div>
         </div>
       </div>

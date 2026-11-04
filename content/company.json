@@ -1,18 +1,14 @@
 {
   "brand": "KHCOLO",
   "siteUrl": "https://khcolo.com",
-  "tagline": "3CX phone system configuration and Bitrix24 CRM workflows for Cambodian businesses",
-  "positioning": "One local team for 3CX phone system configuration and Bitrix24 CRM workflows.",
-  "description": "KHCOLO is a Cambodia-based IT solutions company that configures and supports 3CX phone systems and implements Bitrix24 CRM workflows, with projects in Phnom Penh and Siem Reap by agreement.",
+  "tagline": "3CX, Bitrix24 and IT support for Cambodian businesses",
+  "positioning": "One local provider for communications, CRM, cybersecurity, hosting, infrastructure, hardware and support.",
+  "description": "KHCOLO is a Cambodia-based IT solutions company. We license, deploy and support 3CX phone systems, Bitrix24 CRM, cybersecurity, hosting and IT maintenance for businesses across Cambodia.",
   "operatingSince": 2017,
   "serviceAreas": [
     {
-      "name": "Phnom Penh",
-      "note": "Project area, by agreement"
-    },
-    {
-      "name": "Siem Reap",
-      "note": "Project area, by agreement"
+      "name": "Cambodia",
+      "note": "Nationwide, with on-site installation"
     }
   ],
   "languages": [
@@ -59,13 +55,33 @@
   "partners": [
     {
       "vendor": "3CX",
-      "relationship": "Phone system software",
-      "scope": "We configure and support 3CX for calls, queues, chat and video. Calls, phone numbers and connectivity are supplied separately by your authorized provider."
+      "relationship": "Gold Partner",
+      "scope": "Hosted and on-premise phone systems, call centers and omnichannel deployment."
     },
     {
       "vendor": "Bitrix24",
-      "relationship": "CRM workspace",
-      "scope": "We implement Bitrix24 CRM, task and contact-center workflows and connect them to 3CX."
+      "relationship": "CRM implementation",
+      "scope": "CRM, projects and contact-center workspace, implemented locally and connected to 3CX."
+    },
+    {
+      "vendor": "Yeastar",
+      "relationship": "Certified Reseller",
+      "scope": "Cloud and appliance PBX systems and gateways."
+    },
+    {
+      "vendor": "Yealink",
+      "relationship": "Authorized Reseller",
+      "scope": "IP phones, video conferencing and headsets."
+    },
+    {
+      "vendor": "cPanel",
+      "relationship": "Hosting Partner",
+      "scope": "Managed web hosting and server administration."
+    },
+    {
+      "vendor": "ESET",
+      "relationship": "Reseller",
+      "scope": "Endpoint security licensing, activation and renewals."
     }
   ],
   "principles": [
@@ -75,18 +91,22 @@
     },
     {
       "title": "Implementation and ongoing support",
-      "body": "The team that designs your setup is the team that answers when something needs attention."
+      "body": "The team that designs your environment is the team that answers when something needs attention."
     },
     {
-      "title": "Phone system and CRM together",
-      "body": "3CX and Bitrix24 configured to work together, with one point of contact for both."
+      "title": "Coordinated services",
+      "body": "Phone system, CRM, security, email and hosting from one provider, so there are no handoffs between vendors."
+    },
+    {
+      "title": "Proactive maintenance",
+      "body": "Preventive checks and reporting catch problems early instead of waiting for them to become outages."
     }
   ],
   "solutionGroups": [
     {
       "key": "communications",
       "name": "Communications",
-      "summary": "3CX phone system configuration and Bitrix24 CRM, working together.",
+      "summary": "Phone systems, CRM and meeting rooms that work together.",
       "need": "Reach customers on the channels they use and keep conversations in one place."
     },
     {
@@ -127,15 +147,21 @@
       "The operating year (2017) is not shown anywhere until it is checked against the company registration licence. The value stays in this file as operatingSince for when it is confirmed.",
       "Service area is shown as Cambodia (nationwide, with on-site installation) rather than listing Phnom Penh and Siem Reap (owner, 4 Nov 2026).",
       "Telecom wording reviewed against the Law on Telecommunications (4 Nov 2026): the site says phone lines, numbers and SIP trunks come from licensed telecom operators, and KHCOLO sets up and supports the 3CX software. See docs/legal-wording-review.md.",
-      "All content was checked against khcolo.com on 4 Nov 2026 (52 pages, 850 items). Claims the old site does not make were removed or reworded. See docs/content-verification.md.",
-      "Legal recheck (4 Nov 2026): public site limited to 3CX configuration and Bitrix24 CRM. Hardware, hosting/VPS, security, Proxmox and IT maintenance are archived (410). Partner tiers removed until a current vendor record is supplied. Service areas are Phnom Penh and Siem Reap by agreement. See docs/legal-recheck-2026-11-04.md.",
-      "Owner to confirm: the message mentions \"3CRM\"; the old site and this repository name Bitrix24 CRM. Confirm the intended product name and licence entitlement before any rename."
+      "All content was checked against khcolo.com on 4 Nov 2026 (52 pages, 850 items). Claims the old site does not make were removed or reworded. See docs/content-verification.md."
     ]
   },
   "knowsAbout": [
-    "3CX phone system configuration",
+    "3CX phone systems",
     "Bitrix24 CRM",
     "3CX and Bitrix24 integration",
-    "Contact-center workflows"
+    "Cloud call centers",
+    "IP phone systems",
+    "Yealink IP phones and video conferencing",
+    "Yeastar IP PBX",
+    "ESET endpoint security",
+    "SSL/TLS certificates",
+    "Proxmox VE virtualization",
+    "Web hosting",
+    "IT maintenance"
   ]
 }

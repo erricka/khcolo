@@ -5,38 +5,11 @@ import type { NextConfig } from "next";
 type RedirectRow = { source: string; destination: string | null; statusCode: number };
 
 const contentDir = process.env.KHCOLO_CONTENT_DIR ?? path.resolve(process.cwd(), "..", "content");
-const readContent = <T,>(file: string): T => JSON.parse(readFileSync(path.join(contentDir, file), "utf8")) as T;
 
-type Publication = {
-  editorialLock: boolean;
-  publicServices: string[];
-  productsPublic: boolean;
-  gonePaths: string[];
-  gonePrefixes: string[];
-};
-const publication = readContent<Publication>("publication.json");
-
-/**
- * Everything that is not public answers 410 Gone: hidden services, and (while products are
- * archived) every product and category URL, plus legacy URLs listed in publication.json.
- */
-function hiddenPaths(): string[] {
-  const services = readContent<{ slug: string }[]>("services.json")
-    .filter((s) => !publication.publicServices.includes(s.slug))
-    .map((s) => `/${s.slug}/`);
-  const catalog = publication.productsPublic
-    ? []
-    : [
-        ...readContent<{ slug: string }[]>("categories.json").map((c) => `/product-category/${c.slug}/`),
-        ...readContent<{ slug: string }[]>("products.json").map((p) => `/product/${p.slug}/`),
-      ];
-  return [...services, ...catalog, ...publication.gonePaths];
-}
-
-/** Redirect map from the API when available (and not locked), otherwise from content/redirects.json. */
+/** Redirect map from the API when available, otherwise from content/redirects.json. */
 async function loadRedirectRows(): Promise<RedirectRow[]> {
   const raw = process.env.KHCOLO_API_URL?.trim();
-  const api = raw && !publication.editorialLock ? (raw.includes("://") ? raw : `http://${raw}`).replace(/\/$/, "") : undefined;
+  const api = raw ? (raw.includes("://") ? raw : `http://${raw}`).replace(/\/$/, "") : undefined;
   if (api) {
     const key = process.env.INTERNAL_API_KEY;
     const res = await fetch(`${api}/api/v1/redirects`, { headers: key ? { "x-internal-key": key } : {} });
@@ -73,17 +46,8 @@ const securityHeaders = [
 
 export default async function config(): Promise<NextConfig> {
   const rows = await loadRedirectRows();
-  const hidden = new Set(hiddenPaths());
-  // A redirect into hidden content would leak it, so those old URLs are gone instead.
-  const moved = rows.filter(
-    (r) => r.destination && r.statusCode !== 410 && !hidden.has(r.source) && !hidden.has(r.destination),
-  );
-  const gone = [
-    ...new Set([
-      ...rows.filter((r) => r.statusCode === 410 || (r.destination && hidden.has(r.destination))).map((r) => r.source),
-      ...hidden,
-    ]),
-  ];
+  const moved = rows.filter((r) => r.destination && r.statusCode !== 410);
+  const gone = rows.filter((r) => r.statusCode === 410).map((r) => r.source);
 
   return {
     output: "standalone",
@@ -93,13 +57,10 @@ export default async function config(): Promise<NextConfig> {
     env: {
       // Read by src/proxy.ts to answer removed URLs with 410 Gone.
       KH_GONE_PATHS: JSON.stringify(gone),
-      KH_GONE_PREFIXES: JSON.stringify(publication.gonePrefixes),
     },
     images: {
       formats: ["image/avif", "image/webp"],
       qualities: [75],
-      // Archived product photos must not be served through the optimiser either.
-      localPatterns: publication.productsPublic ? undefined : [{ pathname: "/brand/**" }, { pathname: "/og/**" }],
     },
     async redirects() {
       return moved.map((r) => ({

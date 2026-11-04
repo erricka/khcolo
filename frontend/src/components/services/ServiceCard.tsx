@@ -15,7 +15,7 @@ export function ServiceCard({ service, index = 0, wide = false }: { service: Ser
       data-spotlight
       style={{ ["--i" as string]: index }}
       className={`group relative flex h-full flex-row items-start gap-4 border border-line bg-white p-5 transition-[border-color,background-color] duration-200 ease-[var(--ease-out-quart)] hover:border-ink-950 sm:flex-col sm:gap-0 sm:p-7 ${
-        wide ? "col-span-full md:flex-row md:items-start md:gap-10" : ""
+        wide ? "sm:col-span-2 md:flex-row md:items-start md:gap-10" : ""
       }`}
     >
       <span className="flex size-10 shrink-0 items-center justify-center bg-brand-50 text-brand-700 transition-colors duration-200 group-hover:bg-brand-600 group-hover:text-white">

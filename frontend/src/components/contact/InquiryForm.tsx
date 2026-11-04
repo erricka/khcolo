@@ -43,7 +43,7 @@ const INITIAL: Values = {
 
 const REQUEST_TYPES: { value: Values["requestType"]; label: string; hint: string }[] = [
   { value: "general", label: "A question", hint: "General inquiry" },
-  { value: "quote", label: "A quote", hint: "Pricing and scope" },
+  { value: "quote", label: "A quote", hint: "Pricing and availability" },
   { value: "consultation", label: "A consultation", hint: "Meeting or site visit" },
 ];
 
@@ -414,14 +414,14 @@ export function InquiryForm({ topics, products }: { topics: Group[]; products: G
               >
                 {submitting ? (
                   <>
-                    <span className="flex flex-1 items-center justify-center px-6">Sending&hellip;</span>
+                    <span className="flex items-center px-6">Sending&hellip;</span>
                     <span className="flex w-11 items-center justify-center bg-brand-600">
                       <LoaderCircle aria-hidden className="size-4 animate-spin" />
                     </span>
                   </>
                 ) : (
                   <>
-                    <span className="flex flex-1 items-center justify-center px-6">Send request</span>
+                    <span className="flex items-center px-6">Send request</span>
                     <span className="flex w-11 items-center justify-center bg-brand-600 transition-colors group-hover:bg-brand-700">
                       <ArrowRight aria-hidden className="arrow-nudge size-4" />
                     </span>

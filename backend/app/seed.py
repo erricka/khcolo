@@ -156,13 +156,6 @@ def main() -> None:
     result = seed(content_dir, overwrite=overwrite)
     print("Seed complete. New rows:", ", ".join(f"{k}={v}" for k, v in sorted(result.items())) or "none")
 
-    # Targeted reconciliation for hosts without a shell (see app/reconcile.py). Off unless set.
-    mode = os.environ.get("KH_RECONCILE", "").strip().lower()
-    if mode in {"dry-run", "apply"}:
-        from .reconcile import run
-
-        run(apply=mode == "apply", content_dir=content_dir)
-
 
 if __name__ == "__main__":
     main()

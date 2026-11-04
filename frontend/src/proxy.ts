@@ -9,7 +9,6 @@ import { NextResponse, type NextRequest } from "next/server";
  */
 
 const GONE = new Set<string>(JSON.parse(process.env.KH_GONE_PATHS ?? "[]"));
-const GONE_PREFIXES: string[] = JSON.parse(process.env.KH_GONE_PREFIXES ?? "[]");
 const CANONICAL_HOST = process.env.CANONICAL_HOST;
 const ENFORCE_HTTPS = process.env.ENFORCE_HTTPS === "true";
 
@@ -38,7 +37,7 @@ export function proxy(request: NextRequest) {
   if (changed) return NextResponse.redirect(url, 308);
 
   const withSlash = url.pathname.endsWith("/") ? url.pathname : `${url.pathname}/`;
-  if (GONE.has(withSlash) || GONE_PREFIXES.some((p) => url.pathname.startsWith(p))) {
+  if (GONE.has(withSlash)) {
     return new NextResponse("This page has been removed.", {
       status: 410,
       headers: { "content-type": "text/plain; charset=utf-8", "x-robots-tag": "noindex" },
@@ -50,6 +49,5 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   // Skip static assets and image optimisation.
-  // images/ is included so archived product photos can answer 410 as well.
-  matcher: ["/((?!_next/static|_next/image|brand/|og/|favicon.ico|icon.png|apple-icon.png).*)"],
+  matcher: ["/((?!_next/static|_next/image|images/|brand/|og/|favicon.ico|icon.png|apple-icon.png).*)"],
 };

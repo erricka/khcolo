@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 };
 
 const LINKS = [
-  { href: routes.service("cloud-call-center"), label: "3CX Phone System", body: "3CX configuration for calls, chat, video and queues" },
-  { href: routes.service("3cx-bitrix24-integration"), label: "Bitrix24 CRM", body: "CRM, tasks and contact-center workflows, connected to 3CX" },
+  { href: "/#solutions", label: "Solutions", body: "Phone systems, CRM, security, cloud and IT maintenance" },
+  { href: routes.products, label: "Products", body: "IP phones, VoIP gateways and IP PBX appliances" },
   { href: routes.contact, label: "Contact", body: "Telegram, phone, email or the inquiry form" },
 ];
 

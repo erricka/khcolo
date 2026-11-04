@@ -1,14 +1,16 @@
 import {
-  BarChart3,
-  CalendarDays,
+  Cloud,
+  DatabaseBackup,
   Headset,
-  ListChecks,
+  Lock,
   Mail,
   MessagesSquare,
   Phone,
-  UsersRound,
+  Router,
+  Server,
+  ShieldCheck,
   Video,
-  Workflow,
+  Wrench,
 } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
 
@@ -25,8 +27,7 @@ type Tile = {
   delay: number;
   float: number;
   big?: boolean;
-  /** Shown on phones too, at this vertical position (inside the band's top or bottom padding). */
-  mobileY?: string;
+  mobile?: boolean;
 };
 
 const TONES = {
@@ -39,18 +40,18 @@ const TONES = {
 
 const ic = "size-7";
 const TILES: Tile[] = [
-  { node: <span className="text-[1.05rem] font-semibold tracking-[-0.03em]">3CX</span>, tone: "blue", x: "6%", y: "9%", dur: 7, delay: 0, float: -10, mobileY: "3.5rem" },
+  { node: <span className="text-[1.05rem] font-semibold tracking-[-0.03em]">3CX</span>, tone: "blue", x: "6%", y: "9%", dur: 7, delay: 0, float: -10, mobile: true },
   { node: <Headset className={ic} />, tone: "green", x: "15%", y: "34%", dur: 8, delay: 1.2, float: 12 },
-  { node: <UsersRound className={ic} />, tone: "indigo", x: "3%", y: "62%", dur: 9, delay: 0.6, float: -8 },
-  { node: <CalendarDays className={ic} />, tone: "sky", x: "17%", y: "84%", dur: 7.5, delay: 2, float: 10, mobileY: "calc(100% - 3.5rem)" },
+  { node: <ShieldCheck className={ic} />, tone: "indigo", x: "3%", y: "62%", dur: 9, delay: 0.6, float: -8 },
+  { node: <Cloud className={ic} />, tone: "sky", x: "17%", y: "84%", dur: 7.5, delay: 2, float: 10, mobile: true },
   { node: <Video className={ic} />, tone: "teal", x: "29%", y: "4%", dur: 8.5, delay: 0.3, float: 9 },
-  { node: <ListChecks className={ic} />, tone: "blue", x: "38%", y: "90%", dur: 9.5, delay: 1.6, float: -9 },
+  { node: <Lock className={ic} />, tone: "blue", x: "38%", y: "90%", dur: 9.5, delay: 1.6, float: -9 },
   { node: <MessagesSquare className={ic} />, tone: "green", x: "56%", y: "3%", dur: 7.8, delay: 0.9, float: 11 },
-  { node: <span className="text-[0.95rem] font-semibold tracking-[-0.03em]">Bitrix24</span>, tone: "blue", x: "71%", y: "12%", dur: 8.8, delay: 0.2, float: -12, big: true, mobileY: "3.5rem" },
-  { node: <Phone className={ic} />, tone: "sky", x: "90%", y: "30%", dur: 7.2, delay: 1.4, float: 10 },
-  { node: <BarChart3 className={ic} />, tone: "indigo", x: "93%", y: "64%", dur: 9.2, delay: 0.5, float: -10 },
-  { node: <Workflow className={ic} />, tone: "teal", x: "79%", y: "84%", dur: 8.2, delay: 1.9, float: 9, mobileY: "calc(100% - 3.5rem)" },
-  { node: <span className="text-[0.95rem] font-semibold tracking-[-0.03em]">CRM</span>, tone: "green", x: "61%", y: "91%", dur: 7.6, delay: 1.1, float: -8 },
+  { node: <span className="text-[0.95rem] font-semibold tracking-[-0.03em]">Bitrix24</span>, tone: "blue", x: "71%", y: "12%", dur: 8.8, delay: 0.2, float: -12, big: true, mobile: true },
+  { node: <Server className={ic} />, tone: "sky", x: "90%", y: "30%", dur: 7.2, delay: 1.4, float: 10 },
+  { node: <DatabaseBackup className={ic} />, tone: "indigo", x: "93%", y: "64%", dur: 9.2, delay: 0.5, float: -10 },
+  { node: <Router className={ic} />, tone: "teal", x: "79%", y: "84%", dur: 8.2, delay: 1.9, float: 9, mobile: true },
+  { node: <Wrench className={ic} />, tone: "green", x: "61%", y: "91%", dur: 7.6, delay: 1.1, float: -8 },
 ];
 
 /** Closing call to action: a centred bordered box with floating service tiles around it. */
@@ -71,10 +72,8 @@ export function ContactBand({
         {TILES.map((t, i) => (
           <li
             key={i}
-            className={`absolute top-(--my) -translate-x-1/2 -translate-y-1/2 md:top-(--y) ${t.mobileY ? "" : "hidden md:block"}`}
-            style={
-              { left: `clamp(3.75rem, ${t.x}, calc(100% - 3.75rem))`, ["--y" as string]: t.y, ["--my" as string]: t.mobileY ?? t.y } as CSSProperties
-            }
+            className={`absolute -translate-x-1/2 -translate-y-1/2 ${t.mobile ? "" : "hidden md:block"}`}
+            style={{ left: t.x, top: t.y }}
           >
             <span
               className={`float-tile flex items-center justify-center ${TONES[t.tone]} ${

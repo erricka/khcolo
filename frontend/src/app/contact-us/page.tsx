@@ -27,15 +27,15 @@ export default async function ContactPage() {
     getProducts(),
   ]);
 
-  // Topics follow the public services only; groups with no public service are left out.
   const topics = [
-    ...company.solutionGroups.filter((g) => services.some((s) => s.group === g.key)).map((g) => ({
+    ...company.solutionGroups.map((g) => ({
       label: g.name,
       options: services.filter((s) => s.group === g.key).map((s) => ({ value: s.slug, label: s.shortName })),
     })),
     {
       label: "Other",
       options: [
+        { value: "hardware", label: "Hardware: phones, gateways, PBX" },
         { value: "general", label: "Something else" },
       ],
     },

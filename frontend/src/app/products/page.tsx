@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 
 import { CatalogBrowser } from "@/components/products/CatalogBrowser";
 import { CategoryCard } from "@/components/products/CategoryCard";
@@ -22,8 +21,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function ProductsPage() {
   const [page, categories, products, company] = await Promise.all([getPage(PATH), getCategories(), getProducts(), getCompany()]);
-  // The catalogue is archived during the legal review (content/publication.json).
-  if (!products.length) notFound();
 
   return (
     <>

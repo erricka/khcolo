@@ -211,20 +211,6 @@
   background-size: var(--cell) var(--cell);
 }
 
-/* Hairline columns that divide a frame exactly, so the first and last lines meet its borders */
-@utility cell-strip {
-  --cols: 6;
-  background-image: linear-gradient(to right, var(--color-line) 1px, transparent 1px);
-  background-size: calc(100% / var(--cols)) 100%;
-  background-position: 0 0;
-  @media (width >= 48rem) {
-    --cols: 9;
-  }
-  @media (width >= 64rem) {
-    --cols: 13;
-  }
-}
-
 /* Soft tinted band, the brand equivalent of a pastel section */
 @utility bg-tint {
   background:

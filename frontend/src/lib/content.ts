@@ -20,21 +20,6 @@ const API_URL = apiBaseUrl();
 const CONTENT_DIR = process.env.KHCOLO_CONTENT_DIR ?? path.resolve(/*turbopackIgnore: true*/ process.cwd(), "..", "content");
 export const REVALIDATE_SECONDS = 3600;
 
-/**
- * Publication scope (content/publication.json). While the editorial lock is on, company,
- * page and service copy always comes from the reviewed JSON files, even when an API URL is
- * set, because existing database rows have not been reconciled with the approved copy.
- * Only the listed services are public; products and categories are archived, not shown.
- */
-type Publication = { editorialLock: boolean; publicServices: string[]; productsPublic: boolean };
-const getPublication = cache(async (): Promise<Publication> => {
-  return JSON.parse(await readFile(path.join(CONTENT_DIR, "publication.json"), "utf8")) as Publication;
-});
-async function readFromApi(kind: "copy" | "catalog"): Promise<boolean> {
-  if (!API_URL) return false;
-  return kind === "catalog" || !(await getPublication()).editorialLock;
-}
-
 async function api<T>(endpoint: string): Promise<T | null> {
   const res = await fetch(`${API_URL}/api/v1${endpoint}`, {
     headers: apiHeaders(),
@@ -58,7 +43,7 @@ function stripPrivate<T extends WithReview>(row: T) {
 }
 
 export const getCompany = cache(async (): Promise<Company> => {
-  if (await readFromApi("copy")) return (await api<Company>("/site"))!;
+  if (API_URL) return (await api<Company>("/site"))!;
   return stripPrivate(await readJson<Company & WithReview>("company.json")) as Company;
 });
 
@@ -86,24 +71,18 @@ function normalizeService(s: Service): Service {
 }
 
 export const getServices = cache(async (): Promise<Service[]> => {
-  const { publicServices } = await getPublication();
-  const all = (await readFromApi("copy"))
-    ? ((await api<Service[]>("/services")) ?? [])
-    : (await readJson<(Service & WithReview)[]>("services.json")).map((s) => normalizeService(stripPrivate(s) as Service));
-  return all
-    .filter((s) => publicServices.includes(s.slug))
-    .map((s) => ({ ...s, related: s.related.filter((r) => publicServices.includes(r)) }))
-    .sort((a, b) => a.position - b.position);
+  if (API_URL) return (await api<Service[]>("/services")) ?? [];
+  const rows = await readJson<(Service & WithReview)[]>("services.json");
+  return rows.map((s) => normalizeService(stripPrivate(s) as Service)).sort((a, b) => a.position - b.position);
 });
 
-/** Hidden services resolve to null so their routes answer 404 (the proxy answers 410 first). */
 export const getService = cache(async (slug: string): Promise<Service | null> => {
+  if (API_URL) return api<Service>(`/services/${encodeURIComponent(slug)}`);
   return (await getServices()).find((s) => s.slug === slug) ?? null;
 });
 
 export const getProducts = cache(async (): Promise<Product[]> => {
-  if (!(await getPublication()).productsPublic) return [];
-  if (await readFromApi("catalog")) return (await api<Product[]>("/products")) ?? [];
+  if (API_URL) return (await api<Product[]>("/products")) ?? [];
   const rows = await readJson<(Product & WithReview & { image: Product["image"] & { sourceUrl?: string } })[]>(
     "products.json",
   );
@@ -118,14 +97,12 @@ export const getProducts = cache(async (): Promise<Product[]> => {
 });
 
 export const getProduct = cache(async (slug: string): Promise<Product | null> => {
-  if (!(await getPublication()).productsPublic) return null;
-  if (await readFromApi("catalog")) return api<Product>(`/products/${encodeURIComponent(slug)}`);
+  if (API_URL) return api<Product>(`/products/${encodeURIComponent(slug)}`);
   return (await getProducts()).find((p) => p.slug === slug) ?? null;
 });
 
 export const getCategories = cache(async (): Promise<Category[]> => {
-  if (!(await getPublication()).productsPublic) return [];
-  if (await readFromApi("catalog")) return (await api<Category[]>("/categories")) ?? [];
+  if (API_URL) return (await api<Category[]>("/categories")) ?? [];
   const [cats, products] = await Promise.all([
     readJson<(Omit<Category, "productCount"> & WithReview)[]>("categories.json"),
     readJson<{ category: string }[]>("products.json"),
@@ -136,13 +113,12 @@ export const getCategories = cache(async (): Promise<Category[]> => {
 });
 
 export const getCategory = cache(async (slug: string): Promise<Category | null> => {
-  if (!(await getPublication()).productsPublic) return null;
-  if (await readFromApi("catalog")) return api<Category>(`/categories/${encodeURIComponent(slug)}`);
+  if (API_URL) return api<Category>(`/categories/${encodeURIComponent(slug)}`);
   return (await getCategories()).find((c) => c.slug === slug) ?? null;
 });
 
 export const getPages = cache(async (): Promise<PageMeta[]> => {
-  if (await readFromApi("copy")) return (await api<PageMeta[]>("/pages")) ?? [];
+  if (API_URL) return (await api<PageMeta[]>("/pages")) ?? [];
   const rows = await readJson<(PageMeta & WithReview)[]>("pages.json");
   return rows.map((p) => stripPrivate(p) as PageMeta);
 });

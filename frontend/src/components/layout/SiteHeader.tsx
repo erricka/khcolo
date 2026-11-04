@@ -52,8 +52,8 @@ export function SiteHeader({ nav }: { nav: NavData }) {
       <div className="border-b border-brand-100 bg-brand-50 text-ink-900">
         <div className="container-site flex min-h-9 flex-wrap items-center justify-center gap-x-3 gap-y-1 py-1.5 text-center text-[0.86rem] leading-snug">
           <p>
-            <span className="hidden sm:inline">Moving your phones to 3CX? Ask us about keeping your existing numbers.</span>
-            <span className="sm:hidden">Moving to 3CX? Ask about keeping your numbers.</span>
+            <span className="hidden sm:inline">Moving your phones to 3CX? We plan the switch with your telecom operator.</span>
+            <span className="sm:hidden">Moving to 3CX? We plan the switch with you.</span>
           </p>
           <Link
             href={routes.consult("cloud-call-center")}

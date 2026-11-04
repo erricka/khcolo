@@ -158,17 +158,15 @@ export function SiteFooter({ company, services, categories }: { company: Company
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 flex flex-col gap-5 border-t border-line pt-6 text-sm lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-            <LogoMark id="mark-footer" className="size-6" />
-            <span className="inline-flex items-center gap-2 text-accent-700">
-              <span aria-hidden className="status-dot size-2 rounded-full bg-accent-500" />
-              Local support in <span lang="km">ខ្មែរ</span> and English
-            </span>
-          </div>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-muted">
-            <span>Prices and availability confirmed on quotation.</span>
-            <span>© {year} KHCOLO. All rights reserved.</span>
+        <div className="mt-16 border-t border-line pt-6 text-sm">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <LogoMark id="mark-footer" className="size-6" />
+              <span className="inline-flex items-center gap-2 text-accent-700">
+                <span aria-hidden className="status-dot size-2 rounded-full bg-accent-500" />
+                Local support in <span lang="km">ខ្មែរ</span> and English
+              </span>
+            </div>
             <a
               href="#main"
               className="group inline-flex h-9 items-center gap-1.5 border border-line px-3 text-ink-900 transition-colors hover:border-ink-950"
@@ -176,6 +174,11 @@ export function SiteFooter({ company, services, categories }: { company: Company
               <ArrowUp aria-hidden className="size-3.5 transition-transform duration-200 group-hover:-translate-y-0.5" />
               Back to top
             </a>
+          </div>
+          <div className="mt-5 flex flex-col gap-1.5 text-muted lg:flex-row lg:flex-wrap lg:gap-x-6">
+            <span>© {year} KHCOLO. All rights reserved.</span>
+            <span>Prices and availability confirmed on quotation.</span>
+            <span>Phone lines and numbers are provided by licensed telecom operators.</span>
           </div>
         </div>
       </div>

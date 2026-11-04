@@ -107,7 +107,7 @@
       "key": "communications",
       "name": "Communications",
       "summary": "Phone systems, CRM and meeting rooms that work together.",
-      "need": "Answer every customer and keep every conversation on record."
+      "need": "Reach customers on the channels they use and keep conversations in one place."
     },
     {
       "key": "security",
@@ -145,7 +145,8 @@
       "KHCOLO is not registered with TRC or MPTC, so the site describes it as an IT solutions company, not a telecom provider or partner (owner, 4 Nov 2026).",
       "Acronis and Zimbra are no longer offered (owner, 4 Nov 2026). Their pages are removed and the old URLs redirect to IT Maintenance and Hosting & Cloud VPS.",
       "The operating year (2017) is not shown anywhere until it is checked against the company registration licence. The value stays in this file as operatingSince for when it is confirmed.",
-      "Service area is shown as Cambodia (nationwide, with on-site installation) rather than listing Phnom Penh and Siem Reap (owner, 4 Nov 2026)."
+      "Service area is shown as Cambodia (nationwide, with on-site installation) rather than listing Phnom Penh and Siem Reap (owner, 4 Nov 2026).",
+      "Telecom wording reviewed against the Law on Telecommunications (4 Nov 2026): the site says phone lines, numbers and SIP trunks come from licensed telecom operators, and KHCOLO sets up and supports the 3CX software. See docs/legal-wording-review.md."
     ]
   },
   "knowsAbout": [
@@ -153,7 +154,7 @@
     "Bitrix24 CRM",
     "3CX and Bitrix24 integration",
     "Cloud call centers",
-    "VoIP",
+    "IP phone systems",
     "Yealink IP phones and video conferencing",
     "Yeastar IP PBX",
     "ESET endpoint security",

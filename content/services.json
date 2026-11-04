@@ -14,22 +14,22 @@
       "description": "KHCOLO supplies, hosts and supports 3CX phone systems in Cambodia: calls, video, WhatsApp, live chat and CRM integration, in the cloud or on-site."
     },
     "highlights": [
-      "Hosted by KHCOLO, in your own cloud, or on-premise",
+      "On a managed cloud server, your own cloud, or on-premise",
       "Annual licensing sized by simultaneous calls",
       "Works with Yealink, Cisco and Fanvil IP phones",
-      "Option to keep your existing numbers, planned with you"
+      "Works with lines and numbers from your licensed telecom operator"
     ],
     "overview": {
       "heading": "Every customer conversation in one system",
       "body": [
         "When calls, chat and messaging live in separate tools, customers wait and your team loses context. 3CX brings voice, video, WhatsApp, website chat and SMS into one platform, with queues, reporting and CRM integration built around it.",
-        "Your staff can answer from a desk phone, the desktop app or a mobile device. We choose the deployment, size the licence, connect your SIP trunk and stay on for support."
+        "Your staff can answer from a desk phone, the desktop app or a mobile device. We choose the deployment, size the licence, connect the SIP trunk from your telecom operator and stay on for support."
       ]
     },
     "capabilities": [
       { "title": "Channels", "items": ["Voice calls", "Video calls", "WhatsApp", "Website live chat", "SMS"] },
       { "title": "Contact center", "items": ["Call queues", "Reporting", "Wallboards", "Presence"] },
-      { "title": "Access and integration", "items": ["Desktop apps", "Mobile apps", "CRM integration", "Existing-number retention"] },
+      { "title": "Access and integration", "items": ["Desktop apps", "Mobile apps", "CRM integration", "Works with your existing operator lines"] },
       { "title": "Browser conferencing", "items": ["Scheduling", "Whiteboards", "Polls", "Streaming"] },
       { "title": "Administration", "items": ["Automated updates", "Automated backups", "SIP trunk choice"] }
     ],
@@ -39,21 +39,21 @@
         "heading": "Choose where your phone system runs",
         "layout": "cards",
         "cards": [
-          { "title": "Hosted by KHCOLO", "body": "We host and manage the system for you. Nothing to install on site beyond phones and network." },
+          { "title": "Managed cloud server", "body": "We run and manage the 3CX software on a cloud server for you. Nothing to install on site beyond phones and network." },
           { "title": "Your cloud", "body": "Deploy into your own cloud account. AWS, Tencent Cloud and Alibaba Cloud are all supported options." },
           { "title": "On-premise", "body": "Run 3CX on hardware at your office when you need the system on your own network." }
         ],
-        "note": "3CX is licensed annually, sized by the number of simultaneous calls. We help you pick a SIP trunk and the right licence size."
+        "note": "3CX is licensed annually, sized by the number of simultaneous calls. Phone lines and numbers come from your licensed telecom operator; we help you size the licence and connect their SIP trunk."
       }
     ],
     "process": [
       { "title": "Assess", "body": "Map your call flows, numbers, users and the channels customers use today." },
-      { "title": "Design and license", "body": "Choose hosting, SIP trunk and licence size, and plan any number migration." },
+      { "title": "Design and license", "body": "Choose where it runs and the licence size, and plan the connection to your telecom operator's lines." },
       { "title": "Deploy", "body": "Configure queues, extensions and integrations, then provision phones and apps." },
       { "title": "Train and support", "body": "Hand over to your team with training, then stay on for updates and support." }
     ],
     "faqs": [
-      { "q": "Can we keep our existing phone numbers?", "a": "In many cases, yes. Number retention depends on your current carrier and SIP trunk, so we confirm the approach and timing during planning before anything is switched over." },
+      { "q": "Can we keep our existing phone numbers?", "a": "Your phone numbers and lines are provided by your licensed telecom operator, not by KHCOLO. In many cases your operator can connect them to 3CX through a SIP trunk. We work with your operator to confirm the approach and timing before anything is switched over." },
       { "q": "Which desk phones work with 3CX?", "a": "3CX works with IP phones from vendors including Yealink, Cisco and Fanvil. We supply Yealink phones locally and can check whether equipment you already own can be reused." },
       { "q": "How is 3CX licensed?", "a": "3CX uses an annual licence sized by the number of simultaneous calls. Editions and included features change over time, so we confirm the current options in your quote." }
     ],
@@ -214,7 +214,7 @@
     "icon": "shield",
     "summary": "Local ESET licensing and business endpoint protection managed through ESET PROTECT.",
     "h1": "ESET antivirus and business endpoint protection",
-    "intro": "We handle ESET licensing, activation and renewals locally, and deploy business protection through the ESET PROTECT console, so every endpoint is covered and managed from one place.",
+    "intro": "We handle ESET licensing, activation and renewals locally, and deploy business protection through the ESET PROTECT console, so your endpoints are protected and managed from one place.",
     "seo": {
       "title": "ESET Antivirus & Endpoint Security Cambodia — KHCOLO",
       "description": "Local ESET licensing, activation and renewals, plus business endpoint protection deployed and managed through ESET PROTECT by KHCOLO in Cambodia."

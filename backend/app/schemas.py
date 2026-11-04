@@ -180,8 +180,10 @@ class InquiryIn(CamelModel):
     source_path: str | None = Field(default=None, max_length=300)
     # Honeypot. Real visitors never see or fill this field.
     website: str | None = Field(default=None, max_length=200)
+    # Google reCAPTCHA v3 token from the browser; checked when RECAPTCHA_SECRET_KEY is set.
+    recaptcha_token: str | None = Field(default=None, max_length=4096)
 
-    @field_validator("company", "email", "phone", "product_slug", "source_path", "website", "preferred_contact", mode="before")
+    @field_validator("company", "email", "phone", "product_slug", "source_path", "website", "preferred_contact", "recaptcha_token", mode="before")
     @classmethod
     def blank_to_none(cls, v):
         if isinstance(v, str) and not v.strip():

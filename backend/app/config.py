@@ -33,6 +33,12 @@ class Settings(BaseSettings):
     trust_proxy_headers: bool = False
     ip_hash_salt: str = "dev-salt-change-me"
 
+    # Google reCAPTCHA v3 on the inquiry form. Leave the secret unset to turn the check off.
+    # Scores run from 0.0 (likely a bot) to 1.0 (likely a person); Google suggests 0.5.
+    recaptcha_secret_key: str | None = None
+    recaptcha_min_score: float = 0.5
+    recaptcha_action: str = "inquiry"
+
     inquiry_rate_limit: int = 5
     inquiry_rate_window_minutes: int = 10
     inquiry_global_hourly_limit: int = 120

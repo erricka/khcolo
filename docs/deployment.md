@@ -160,6 +160,7 @@ Do **not** publish port 8000 or 5432.
 | `INTERNAL_API_KEY` | build + run | Sent as `X-Internal-Key` on every API call. Must match the API's value when it requires one. |
 | `CANONICAL_HOST` | run | Redirect any other host (e.g. `www.`) here with 308. Leave empty locally. |
 | `ENFORCE_HTTPS` | build + run | `true` redirects `http` to `https` (from `X-Forwarded-Proto`) and sends HSTS. |
+| `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` | build | Google reCAPTCHA v3 **site key**. Turns on the invisible check on the inquiry form. Rebuild after changing it. |
 
 ### API (`backend`)
 
@@ -174,6 +175,8 @@ Do **not** publish port 8000 or 5432.
 | `INQUIRY_RATE_LIMIT`, `INQUIRY_RATE_WINDOW_MINUTES`, `INQUIRY_GLOBAL_HOURLY_LIMIT` | Abuse limits (defaults 5 per 10 minutes per client, 120 per hour overall). |
 | `FRONTEND_REVALIDATE_URL`, `REVALIDATE_SECRET` | Where to send the regeneration webhook after admin edits. |
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Optional Telegram alert for each inquiry. |
+| `RECAPTCHA_SECRET_KEY` | Google reCAPTCHA v3 **secret key**. When set, inquiries need a valid token for the `inquiry` action. Unset = check off. If Google can't be reached the inquiry is accepted and a warning logged. |
+| `RECAPTCHA_MIN_SCORE` | Lowest accepted score, 0.0 to 1.0 (default `0.5`). |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `SMTP_FROM`, `NOTIFY_EMAIL_TO` | Optional email alert for each inquiry (STARTTLS). |
 | `CONTENT_DIR` | Seed source; the Docker image sets `/app/content`. |
 | `SEED_OVERWRITE` | `1` makes the start-up seed behave like `--overwrite` (reset content to the files, unpublish removed rows). Use for one deploy, then remove. |

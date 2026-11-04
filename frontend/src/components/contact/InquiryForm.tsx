@@ -3,10 +3,35 @@
 import { AnimatePresence, m } from "motion/react";
 import { ArrowRight, CircleAlert, LoaderCircle, X } from "lucide-react";
 import Link from "next/link";
+import Script from "next/script";
 import { useEffect, useId, useRef, useState } from "react";
 
 import { track } from "@/lib/analytics";
 import { routes } from "@/lib/site";
+
+/**
+ * Google reCAPTCHA v3: invisible, scores the visit when the form is sent. Set
+ * NEXT_PUBLIC_RECAPTCHA_SITE_KEY at build time to turn it on (the API checks the
+ * token with RECAPTCHA_SECRET_KEY). Without a key the form works as before.
+ */
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "";
+const RECAPTCHA_ACTION = "inquiry";
+
+type Grecaptcha = { ready(cb: () => void): void; execute(siteKey: string, options: { action: string }): Promise<string> };
+
+/** A fresh token for this submission, or null if reCAPTCHA is off or couldn't load. */
+function getRecaptchaToken(): Promise<string | null> {
+  const g = (window as Window & { grecaptcha?: Grecaptcha }).grecaptcha;
+  if (!RECAPTCHA_SITE_KEY || !g) return Promise.resolve(null);
+  return new Promise((resolve) => {
+    const timer = window.setTimeout(() => resolve(null), 8000);
+    const done = (token: string | null) => {
+      window.clearTimeout(timer);
+      resolve(token);
+    };
+    g.ready(() => g.execute(RECAPTCHA_SITE_KEY, { action: RECAPTCHA_ACTION }).then(done, () => done(null)));
+  });
+}
 
 type Option = { value: string; label: string };
 type Group = { label: string; options: Option[] };
@@ -117,6 +142,7 @@ export function InquiryForm({ topics, products }: { topics: Group[]; products: G
     setErrors({});
     setStatus("submitting");
     try {
+      const recaptchaToken = await getRecaptchaToken();
       const res = await fetch("/api/inquiry/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -125,6 +151,7 @@ export function InquiryForm({ topics, products }: { topics: Group[]; products: G
           preferredContact: values.preferredContact || null,
           productSlug: values.productSlug || null,
           sourcePath: window.location.pathname,
+          recaptchaToken,
         }),
       });
       if (res.status === 201) {
@@ -150,6 +177,9 @@ export function InquiryForm({ topics, products }: { topics: Group[]; products: G
 
   return (
     <div className="relative">
+      {RECAPTCHA_SITE_KEY && (
+        <Script src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`} strategy="afterInteractive" />
+      )}
       <AnimatePresence mode="wait" initial={false}>
         {status === "success" ? (
           <m.div
@@ -429,6 +459,19 @@ export function InquiryForm({ topics, products }: { topics: Group[]; products: G
                 )}
               </button>
             </div>
+            {RECAPTCHA_SITE_KEY && (
+              <p className="mt-5 text-xs leading-relaxed text-muted">
+                This form is protected by reCAPTCHA and the Google{" "}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-ink-950">
+                  Privacy Policy
+                </a>{" "}
+                and{" "}
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-ink-950">
+                  Terms of Service
+                </a>{" "}
+                apply.
+              </p>
+            )}
           </m.form>
         )}
       </AnimatePresence>
@@ -443,6 +486,9 @@ function replyChannel(v: Values) {
 }
 
 function serverErrors(status: number, body: unknown): Errors {
+  if (status === 400 && body && typeof body === "object" && typeof (body as { detail?: unknown }).detail === "string") {
+    return { form: (body as { detail: string }).detail };
+  }
   if (status === 429) {
     return { form: "We've received several requests from this connection. Please wait a few minutes, or message us on Telegram." };
   }

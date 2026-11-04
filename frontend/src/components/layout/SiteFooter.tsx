@@ -177,8 +177,6 @@ export function SiteFooter({ company, services, categories }: { company: Company
           </div>
           <div className="mt-5 flex flex-col gap-1.5 text-muted lg:flex-row lg:flex-wrap lg:gap-x-6">
             <span>© {year} KHCOLO. All rights reserved.</span>
-            <span>Prices and availability confirmed on quotation.</span>
-            <span>Phone lines and numbers are provided by licensed telecom operators.</span>
           </div>
         </div>
       </div>

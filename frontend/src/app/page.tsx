@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check, HardHat, Languages, MapPin, Wrench } from "lucide-react";
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import { CallFlow } from "@/components/home/CallFlow";
 import { HeroScene } from "@/components/home/HeroScene";
@@ -11,7 +11,6 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { ButtonLink } from "@/components/ui/Button";
 import { ContactBand } from "@/components/ui/ContactBand";
 import { PixelBlock } from "@/components/ui/Pixels";
-import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { Eyebrow, SectionHeader } from "@/components/ui/Section";
 import { ServiceIcon } from "@/components/ui/ServiceIcon";
 import { getCategories, getCompany, getPage, getProducts, getServices } from "@/lib/content";
@@ -25,13 +24,6 @@ export async function generateMetadata(): Promise<Metadata> {
   const page = await getPage("/");
   return pageMetadata({ title: page.title, description: page.description, path: "/", keywords: CORE_KEYWORDS });
 }
-
-const HOW_WE_WORK = [
-  { title: "Survey", body: "Tell us what you run today. For meeting rooms, we measure the room, lighting and network first." },
-  { title: "Recommend", body: "We recommend the right solution for your business and go through features and pricing with you." },
-  { title: "Install and set up", body: "Local engineers handle the setup, including cabling, mounting and on-site installation." },
-  { title: "Support", body: "Licensing, renewals and local support from the same team that designed your setup." },
-];
 
 /** The coloured service list. Every colour keeps at least 3:1 contrast on white at this size. */
 const WORDS: { slug: string; label: string; color: string }[] = [
@@ -104,14 +96,6 @@ export default async function HomePage() {
   const cloud = group("cloud");
   const managed = group("managed-it");
 
-  const expectations = [
-    ...company.principles.map((p, i) => ({ ...p, icon: ["engineer", "wrench", "layers", "radar"][i] ?? "server" })),
-    { title: "Khmer or English", body: "Talk to engineers directly in the language your team prefers, from planning through support.", icon: "languages" },
-    { title: "On site across Cambodia", body: "Service and on-site installation for businesses across Cambodia.", icon: "map" },
-    { title: "Hardware too", body: "VoIP gateways, IP phones and IP PBX appliances from the brands we install every day.", icon: "server" },
-    { title: "Scales with you", body: "As your business grows, so do your technology needs. KHCOLO is the IT partner that scales with you.", icon: "cloud" },
-  ];
-
   return (
     <>
       <JsonLd data={[organizationLd(company), websiteLd()]} />
@@ -161,38 +145,6 @@ export default async function HomePage() {
         </div>
         {/* Decorative scene: below the text on tablets, bleeding off the right edge on desktop. */}
         <HeroScene className="relative hidden h-[520px] border-t border-line md:block lg:absolute lg:inset-y-0 lg:right-0 lg:left-[58%] lg:h-auto lg:border-t-0 xl:left-[57%]" />
-      </section>
-
-      {/* Partners --------------------------------------------------------- */}
-      <section aria-labelledby="partners-strip-title" className="border-b border-line py-16 lg:py-20">
-        <div className="container-site">
-          <h2 id="partners-strip-title" className="text-eyebrow text-center text-muted">
-            Partners &amp; platforms we deploy
-          </h2>
-          <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:grid-cols-7">
-            {company.partners.map((p, i) => (
-              <li key={p.vendor} data-reveal style={{ ["--i" as string]: i }} className="border-b border-line pb-4 text-center">
-                <span className="block text-[1.3rem] tracking-[-0.03em] text-ink-950">{p.vendor}</span>
-                <span className="mt-1 block font-mono text-[0.66rem] tracking-[0.05em] text-muted uppercase">{p.relationship}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-10 text-center">
-            <DocLink href={`${routes.about}#partners`}>About our partnerships</DocLink>
-          </p>
-        </div>
-      </section>
-
-      {/* How we work ------------------------------------------------------ */}
-      <section aria-labelledby="approach-title" className="py-24 lg:py-32">
-        <div className="container-site">
-          <SectionHeader id="approach-title" title="Survey, install, support. Done.">
-            The engineers who design your environment are the same people who answer when something needs attention.
-          </SectionHeader>
-          <div className="mt-16 lg:mt-20">
-            <ProcessSteps steps={HOW_WE_WORK} />
-          </div>
-        </div>
       </section>
 
       <PlatformBand />
@@ -354,28 +306,6 @@ export default async function HomePage() {
           </div>
         </div>
         <div aria-hidden className="bg-cells h-[92px] border-t border-line bg-[position:center_top] [mask-image:linear-gradient(to_top,transparent,black)]" />
-      </section>
-
-      {/* What to expect --------------------------------------------------- */}
-      <section aria-labelledby="expect-title" className="py-24 lg:py-32">
-        <div className="container-site">
-          <SectionHeader id="expect-title" title="An IT partner that’s close to home">
-            Our services and the hardware behind them, from one team that already knows your setup.
-          </SectionHeader>
-          <ul className="mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-            {expectations.map((e, i) => (
-              <li key={e.title} data-reveal style={{ ["--i" as string]: i % 4 } as CSSProperties}>
-                <span className="flex size-9 items-center justify-center bg-brand-50 text-brand-700">
-                  <ServiceIcon name={e.icon} className="size-[18px]" />
-                </span>
-                <h3 className="mt-5 text-[1.15rem] tracking-[-0.015em] text-ink-950">
-                  {e.title}
-                </h3>
-                <p className="mt-2 text-[0.95rem] leading-relaxed text-muted">{e.body}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
       </section>
 
       {/* Hardware --------------------------------------------------------- */}

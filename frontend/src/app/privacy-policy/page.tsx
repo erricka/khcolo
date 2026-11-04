@@ -28,6 +28,12 @@ export default async function PrivacyPage() {
         <>
           <p>When you send the inquiry form we collect what you enter: your name, company, email address and/or phone number, preferred contact method, the topic and product you chose, and your message.</p>
           <p>To protect the form from abuse we also store a one-way hash of your IP address and your browser&rsquo;s user-agent string. We cannot recover your IP address from the hash.</p>
+          <p>
+            The form also uses Google reCAPTCHA to tell people from automated spam. When you send it, reCAPTCHA shares
+            information about your device and how you used the page with Google, under Google&rsquo;s{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and{" "}
+            <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>.
+          </p>
         </>
       ),
     },

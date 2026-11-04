@@ -6,6 +6,7 @@ from .. import models, schemas
 from ..config import Settings, get_settings
 from ..db import get_db
 from ..notify import notify_inquiry
+from ..recaptcha import check as recaptcha_check
 from ..security import client_ip, enforce_inquiry_rate_limit, hash_ip
 
 router = APIRouter(tags=["inquiries"])
@@ -29,6 +30,12 @@ def create_inquiry(
     if payload.website:
         # Honeypot filled in: almost certainly automated. Reject without saving.
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "Your request could not be processed.")
+
+    if not recaptcha_check(payload.recaptcha_token, client_ip(request, settings), settings):
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST,
+            "We couldn't confirm this request came from a person. Please try again, or message us on Telegram.",
+        )
 
     allowed = GENERAL_INTERESTS | set(db.scalars(select(models.Service.slug).where(models.Service.is_published.is_(True))))
     if payload.interest not in allowed:

@@ -611,3 +611,8 @@ html.js-reveal [data-reveal-line].is-revealed {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+/* reCAPTCHA v3: the form shows Google's required notice, so the floating badge is hidden. */
+.grecaptcha-badge {
+  visibility: hidden;
+}

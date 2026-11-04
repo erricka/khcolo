@@ -22,6 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function AboutPage() {
   const [page, company, services] = await Promise.all([getPage(PATH), getCompany(), getServices()]);
+  const groups = company.solutionGroups.filter((g) => services.some((s) => s.group === g.key));
 
   return (
     <>
@@ -92,26 +93,33 @@ export default async function AboutPage() {
           <SectionHeader eyebrow="What we do" index="02" id="what-title" title="Phone system and CRM, one team.">
             Each service links to its own page with capabilities, options and how we deliver it.
           </SectionHeader>
-          <div className="mt-14 grid gap-4 md:grid-cols-2">
-            {company.solutionGroups.filter((g) => services.some((s) => s.group === g.key)).map((g, i) => (
+          <div className={`mt-14 grid gap-4 ${groups.length > 1 ? "md:grid-cols-2" : ""}`}>
+            {groups.map((g, i) => (
               <div
                 key={g.key}
                 data-reveal
                 style={{ ["--i" as string]: i }}
-                className="border border-line bg-white p-7 sm:p-8"
+                className={`border border-line bg-white p-7 sm:p-8 ${groups.length === 1 ? "lg:grid lg:grid-cols-12 lg:gap-8" : ""}`}
               >
-                <p className="flex size-6 items-center justify-center bg-brand-600 font-mono text-[0.72rem] text-white tabular-nums">{i + 1}</p>
-                <h3 className="mt-5 text-[1.6rem] tracking-[-0.025em] text-ink-950">{g.name}</h3>
-                <p className="mt-2 leading-relaxed text-muted">{g.summary}</p>
-                <ul className="mt-6 divide-y divide-line border-t border-line">
+                <div className={groups.length === 1 ? "lg:col-span-5" : ""}>
+                  {groups.length > 1 && (
+                    <p className="mb-5 flex size-6 items-center justify-center bg-brand-600 font-mono text-[0.72rem] text-white tabular-nums">{i + 1}</p>
+                  )}
+                  <h3 className="text-[1.6rem] tracking-[-0.025em] text-ink-950">{g.name}</h3>
+                  <p className="mt-2 max-w-md leading-relaxed text-muted">{g.summary}</p>
+                </div>
+                <ul className={`mt-6 divide-y divide-line border-t border-line ${groups.length === 1 ? "lg:col-span-7 lg:mt-0 lg:border-t-0" : ""}`}>
                   {services
                     .filter((s) => s.group === g.key)
                     .map((s) => (
-                      <li key={s.slug}>
-                        <Link href={routes.service(s.slug)} className="group flex items-center gap-3 py-3.5 text-ink-900 hover:text-brand-700">
-                          <ServiceIcon name={s.icon} className="size-4 text-brand-700" />
-                          <span className="flex-1">{s.shortName}</span>
-                          <ArrowRight aria-hidden className="arrow-nudge size-4 text-ink-400 group-hover:text-brand-700" />
+                      <li key={s.slug} className={groups.length === 1 ? "lg:first:pt-0" : ""}>
+                        <Link href={routes.service(s.slug)} className="group flex items-start gap-3 py-4 text-ink-900 hover:text-brand-700">
+                          <ServiceIcon name={s.icon} className="mt-1 size-4 shrink-0 text-brand-700" />
+                          <span className="flex-1">
+                            <span className="block">{s.shortName}</span>
+                            {groups.length === 1 && <span className="mt-1 block text-[0.95rem] leading-relaxed text-muted">{s.summary}</span>}
+                          </span>
+                          <ArrowRight aria-hidden className="arrow-nudge mt-1 size-4 shrink-0 text-ink-400 group-hover:text-brand-700" />
                         </Link>
                       </li>
                     ))}

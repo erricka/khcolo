@@ -106,7 +106,7 @@ export function SiteFooter({ company, services, categories }: { company: Company
           </div>
 
           {/* Site map */}
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-7 lg:col-start-6">
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-6 lg:col-start-7">
             {columns.map((col, ci) => (
               <div key={ci} className="space-y-9">
                 {col.map((g) => (
@@ -123,29 +123,27 @@ export function SiteFooter({ company, services, categories }: { company: Company
                     </ul>
                   </div>
                 ))}
-                {ci === columns.length - 1 && (
-                  <div>
-                    <p className="text-[0.95rem] text-ink-950">Socials</p>
-                    <ul className="mt-4 space-y-3 text-[0.92rem]" aria-label="KHCOLO on social media">
-                      {company.socials.map((sc) => (
-                        <li key={sc.name}>
-                          <a
-                            href={sc.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-muted transition-colors hover:text-ink-950"
-                          >
-                            <SocialIcon name={sc.name} className="size-3.5" />
-                            {sc.name}
-                            <span className="sr-only">(opens in a new tab)</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </div>
             ))}
+            <div>
+              <p className="text-[0.95rem] text-ink-950">Socials</p>
+              <ul className="mt-4 space-y-3 text-[0.92rem]" aria-label="KHCOLO on social media">
+                {company.socials.map((sc) => (
+                  <li key={sc.name}>
+                    <a
+                      href={sc.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-muted transition-colors hover:text-ink-950"
+                    >
+                      <SocialIcon name={sc.name} className="size-3.5" />
+                      {sc.name}
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </nav>
         </div>
 
@@ -169,7 +167,7 @@ export function SiteFooter({ company, services, categories }: { company: Company
           </div>
           <div className="mt-5 flex flex-col gap-1.5 text-muted lg:flex-row lg:flex-wrap lg:gap-x-6">
             <span>© {year} KHCOLO. All rights reserved.</span>
-            <span>Prices and availability confirmed on quotation.</span>
+            <span>Prices and scope are confirmed in your quotation.</span>
             <span>Calls, phone numbers and connectivity are supplied separately by each customer&rsquo;s authorized provider.</span>
           </div>
         </div>

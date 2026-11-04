@@ -87,9 +87,9 @@ export default async function HomePage() {
       <JsonLd data={[organizationLd(company), websiteLd()]} />
 
       {/* Hero ------------------------------------------------------------ */}
-      <section className="relative overflow-hidden border-b border-line bg-white">
-        <div className="container-site relative grid lg:min-h-[640px] lg:grid-cols-12">
-          <div className="relative z-10 pt-14 pb-16 sm:pt-20 lg:col-span-7 lg:pt-28 lg:pb-24">
+      <section className="@container relative overflow-hidden border-b border-line bg-white">
+        <div className="container-site relative grid xl:min-h-[640px] xl:grid-cols-12">
+          <div className="relative z-10 pt-14 pb-16 sm:pt-20 lg:pt-28 lg:pb-24 xl:col-span-7">
             <h1 className="text-display max-w-[11.5em] text-ink-950">
               3CX phone system configuration and Bitrix24 CRM workflows
               <span
@@ -126,21 +126,27 @@ export default async function HomePage() {
             </p>
           </div>
         </div>
-        {/* Decorative example: below the text on tablets, bleeding off the right edge on desktop. */}
-        <HeroScene className="relative hidden h-[520px] border-t border-line md:block lg:absolute lg:inset-y-0 lg:right-0 lg:left-[58%] lg:h-auto lg:border-t-0 xl:left-[57%]" />
+        {/* Decorative example: below the text up to 1279px, beside it from the 7/12 column line on wide screens. Its panel ends on the content edge. */}
+        <HeroScene className="relative hidden h-[520px] border-t border-line md:block xl:absolute xl:inset-y-0 xl:right-0 xl:left-[calc(50%+100px)] xl:h-auto xl:border-t-0" />
       </section>
 
       {/* Platforms ------------------------------------------------------- */}
       <section aria-labelledby="platforms-strip-title" className="border-b border-line py-16 lg:py-20">
-        <div className="container-site">
-          <h2 id="platforms-strip-title" className="text-eyebrow text-center text-muted">
-            Platforms we configure
-          </h2>
-          <ul className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+        <div className="container-site grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-4" data-reveal>
+            <h2 id="platforms-strip-title" className="text-eyebrow text-muted">
+              Platforms we configure
+            </h2>
+            <p className="mt-4 max-w-xs text-[0.95rem] leading-relaxed text-muted">
+              3CX and Bitrix24 are products of their own vendors. We set them up and support them for your business.
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 border-t border-l border-line sm:grid-cols-2 lg:col-span-8">
             {company.partners.map((p, i) => (
-              <li key={p.vendor} data-reveal style={{ ["--i" as string]: i }} className="border-b border-line pb-5 text-center">
-                <span className="block text-[1.5rem] tracking-[-0.03em] text-ink-950">{p.vendor}</span>
-                <span className="mt-1 block font-mono text-[0.68rem] tracking-[0.05em] text-muted uppercase">{p.relationship}</span>
+              <li key={p.vendor} data-reveal style={{ ["--i" as string]: i + 1 }} className="border-r border-b border-line p-6 sm:p-8">
+                <span className="block text-[1.5rem] leading-none tracking-[-0.03em] text-ink-950">{p.vendor}</span>
+                <span className="mt-3 block font-mono text-[0.68rem] tracking-[0.05em] text-muted uppercase">{p.relationship}</span>
+                <p className="mt-4 text-[0.95rem] leading-relaxed text-muted">{p.scope}</p>
               </li>
             ))}
           </ul>
@@ -232,8 +238,8 @@ export default async function HomePage() {
         <h2 id="quote-title" className="sr-only">
           How we work with customers
         </h2>
-        <div aria-hidden className="bg-cells h-[92px] border-b border-line bg-[position:center_top] [mask-image:linear-gradient(to_bottom,transparent,black)]" />
         <div className="container-site">
+          <div aria-hidden className="cell-strip h-[92px] border-x border-b border-line [mask-image:linear-gradient(to_bottom,transparent,black)]" />
           <div className="border-x border-line px-6 py-14 sm:px-12 lg:px-16 lg:py-20">
             <ul className="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-3">
               {[
@@ -267,8 +273,8 @@ export default async function HomePage() {
               </figcaption>
             </figure>
           </div>
+          <div aria-hidden className="cell-strip h-[92px] border-x border-t border-line [mask-image:linear-gradient(to_top,transparent,black)]" />
         </div>
-        <div aria-hidden className="bg-cells h-[92px] border-t border-line bg-[position:center_top] [mask-image:linear-gradient(to_top,transparent,black)]" />
       </section>
 
       {/* What to expect --------------------------------------------------- */}

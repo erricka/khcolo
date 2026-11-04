@@ -56,7 +56,9 @@ cited as an enacted requirement.
   - 3CX is described as configuration of the customer's 3CX. Calls, phone numbers and connectivity
     are "supplied separately by your authorized provider", with no carrier named.
   - The "managed cloud server" option is removed. 3CX runs in the customer's own cloud account or
-    on-premise.
+    on-premise. The 3CX page states it directly: "KHCOLO does not host 3CX or provide server
+    hosting." The customer opens and pays for the cloud account; KHCOLO installs and configures 3CX
+    in it.
   - Bitrix24 is unchanged apart from removing the Twilio and RingCentral integrations and tying
     "Telephony" to the customer's 3CX.
   - No partner tiers, hardware, hosting, security or maintenance offers, "nationwide" or years.
@@ -234,6 +236,35 @@ decide how old URLs are handled. This review cannot change that site.
   offices. Earlier on 4 Nov the owner asked for "Cambodia" instead of the two cities; this recheck
   restores "Phnom Penh and Siem Reap, by agreement". Please confirm which wording you want.
 - The exact product name behind "3CRM" (assumed Bitrix24 CRM; not renamed).
+
+## Follow-up the same day: hosting wording and layout
+
+- **Hosting.** On the owner's instruction (no hosting licence), the 3CX options now read "A cloud
+  account you own" and "On-premise", with the note "KHCOLO does not host 3CX or provide server
+  hosting." A scan of the six public pages (visible text, metadata, JSON-LD) finds "host" only in
+  that sentence and in the privacy notice, which says the website itself runs with a third-party
+  hosting provider. The URL `/cloud-call-center/` is kept from the original site for search
+  continuity; its title and H1 say "3CX phone system configuration".
+- **Layout.** Checked at 390, 768, 1024, 1280, 1440 and 1920 px. Fixes:
+  - **Hero:** the example panel ends on the content edge, so "Illustration · not live data" is
+    never cut off (it was clipped at 1024 and 1440 px). Below 1280 px the illustration sits under
+    the text, lined up with it. The per-card "Example" chips are replaced by the panel label.
+  - **Home sections:**
+    - The platforms strip is on the 12-column grid.
+    - The quote section's grid lines meet its frame.
+    - The contact-band tiles stay clear of the screen edge and, on phones, sit above and below the
+      box instead of behind it.
+  - **Footer:** Services, Company and Socials in three columns, right-aligned.
+  - **Service pages:**
+    - "What's included" fills every row (5 cards = 3 + 2).
+    - A single related service gets a full-width card.
+    - The open FAQ icon stays square.
+  - **About:** the single service group is a full-width card.
+  - **Contact:** the "Send request" arrow sits at the button's end on phones.
+  - **Wording:** "Pricing and availability" is now "Pricing and scope", because no stock is sold.
+- **Results:** 21/21 browser checks, no horizontal overflow at any width, and the route check is
+  unchanged (6 × 200, 51 × 410 + noindex, sitemap 6 URLs). Lighthouse (home and 3CX, mobile)
+  scores 100 for accessibility, best practices and SEO, with CLS 0.
 
 ## Completion gate
 

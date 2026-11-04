@@ -20,6 +20,20 @@ import { routes } from "@/lib/site";
 
 export const revalidate = 3600;
 
+/**
+ * Column spans that fill every row: three per row on desktop, with the last row
+ * split evenly (5 cards = 3 + 2, 4 = 2 + 2), and an odd last card full width on tablets.
+ */
+function capabilitySpan(i: number, n: number) {
+  const fromEnd = n - i;
+  let lg = "lg:col-span-2";
+  if (n === 1) lg = "lg:col-span-6";
+  else if (n % 3 === 2 && fromEnd <= 2) lg = "lg:col-span-3";
+  else if (n % 3 === 1 && fromEnd <= 4) lg = "lg:col-span-3";
+  const md = n % 2 === 1 && fromEnd === 1 ? "md:col-span-2" : "";
+  return `${md} ${lg}`;
+}
+
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
@@ -147,15 +161,13 @@ export default async function ServicePage({ params }: Props) {
           <SectionHeader eyebrow="Capabilities" index="02" id="capabilities-title" title="What’s included">
             {service.capabilitiesNote || null}
           </SectionHeader>
-          <div
-            className={`mt-14 columns-1 gap-4 md:columns-2 ${service.capabilities.length >= 3 ? "lg:columns-3" : ""}`}
-          >
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6">
             {service.capabilities.map((group, i) => (
               <div
                 key={group.title}
                 data-reveal
                 style={{ ["--i" as string]: i }}
-                className="mb-4 break-inside-avoid border border-line bg-white p-7"
+                className={`border border-line bg-white p-7 ${capabilitySpan(i, service.capabilities.length)}`}
               >
                 <h3 className="text-eyebrow text-brand-700">{group.title}</h3>
                 <ul className="mt-5 space-y-2.5">
@@ -237,9 +249,9 @@ export default async function ServicePage({ params }: Props) {
               </h2>
             </div>
           </div>
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
+          <div className={`mt-12 grid gap-4 ${related.length === 2 ? "md:grid-cols-2" : related.length > 2 ? "md:grid-cols-3" : ""}`}>
             {related.map((s, i) => (
-              <ServiceCard key={s.slug} service={s} index={i} />
+              <ServiceCard key={s.slug} service={s} index={i} wide={related.length === 1} />
             ))}
           </div>
           {relatedCategories.length > 0 && (

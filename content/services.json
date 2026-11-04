@@ -11,10 +11,10 @@
     "intro": "We deploy, configure and support 3CX for businesses in Phnom Penh and Siem Reap: calls, video, messaging and contact-center queues on one platform. Calls, phone numbers and connectivity are supplied separately by your authorized provider.",
     "seo": {
       "title": "3CX Phone System Configuration Cambodia — KHCOLO",
-      "description": "KHCOLO configures and supports 3CX in Cambodia: calls, video, WhatsApp, live chat and Bitrix24 CRM integration, in your own cloud account or on-premise."
+      "description": "KHCOLO configures and supports 3CX in Cambodia: calls, video, WhatsApp, live chat and Bitrix24 CRM integration, installed in a cloud account you own or on-premise."
     },
     "highlights": [
-      "Deployed in your own cloud account or on-premise",
+      "Installed in a cloud account you own, or on-premise",
       "Annual licensing sized by simultaneous calls",
       "Works with IP phones you already own, including Yealink, Cisco and Fanvil",
       "Calls, numbers and connectivity supplied by your authorized provider"
@@ -39,10 +39,10 @@
         "heading": "Choose where your phone system runs",
         "layout": "cards",
         "cards": [
-          { "title": "Your cloud", "body": "Deploy into your own cloud account. AWS, Tencent Cloud and Alibaba Cloud are all supported options." },
-          { "title": "On-premise", "body": "Run 3CX on hardware at your office when you need the system on your own network." }
+          { "title": "A cloud account you own", "body": "You open and pay for the account with the cloud provider directly; we install and configure 3CX in it." },
+          { "title": "On-premise", "body": "We install and configure 3CX on your own server at your office, on your own network." }
         ],
-        "note": "3CX is licensed annually, sized by the number of simultaneous calls. Calls, phone numbers and connectivity come from your authorized provider; we help you size the licence and configure the connection."
+        "note": "KHCOLO does not host 3CX or provide server hosting. 3CX is licensed annually, sized by the number of simultaneous calls. Calls, phone numbers and connectivity come from your authorized provider; we help you size the licence and configure the connection."
       }
     ],
     "process": [
